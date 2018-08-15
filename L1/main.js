@@ -1,3 +1,6 @@
+// alert prompt confirm
+
+
 // alert
 
 // alert( "Привет" );
@@ -21,3 +24,7 @@
 
 // var urname = prompt('как вас зовут?', '')
 // alert(urname);
+
+
+
+
