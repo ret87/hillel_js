@@ -42,14 +42,14 @@ console.log('lection 1');
 
 // VAR 
 
-var name = 'Artem';
-var Admin = name;
-var $ = 'Hello $';
-var _ = 'Hello _';
+// var name = 'Artem';
+// var Admin = name;
+// var $ = 'Hello $';
+// var _ = 'Hello _';
 
 // константы
-var COLOR_RED = '#F00'; 
-var color = COLOR_RED;
+// var COLOR_RED = '#F00'; 
+// var color = COLOR_RED;
 // alert(color);
 // вызов переменной при алерте - без кавычек - как бы обращаемся к ней - в кавычках будет конкретный текс.
 // name1 = 'art1'; при 'use strict' нельзя.
