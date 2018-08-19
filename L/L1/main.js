@@ -4,26 +4,22 @@ console.log('lection 1');
 
 
 // alert
-
 // alert( "Привет" );
 // alert( "Привет1" );
 // alert( "Привет2" );
 
 
 // prompt
-
 // var years = prompt('Сколько вам лет?', 100);
 // alert('Вам ' + years + ' лет!');
 
 
 // confirm
-
 // var isAdmin = confirm ('вы админ?');
 // alert(isAdmin);
 
 
 // practice
-
 // var urname = prompt('как вас зовут?', '')
 // alert(urname);
 
@@ -35,13 +31,12 @@ console.log('lection 1');
     //     script.async = false; // чтобы гарантировать порядок
     //     document.head.appendChild(script);
     //   }  
-    //   addScript('1.js'); // загружаться эти скрипты начнут сразу
-//   addScript('2.js'); // выполнятся, как только загрузятся
-//   addScript('3.js'); // но, гарантированно, в порядке 1 -> 2 -> 3
+//  addScript('1.js'); // загружаться эти скрипты начнут сразу
+//  addScript('2.js'); // выполнятся, как только загрузятся
+//  addScript('3.js'); // но, гарантированно, в порядке 1 -> 2 -> 3
 
 
 // VAR 
-
 // var name = 'Artem';
 // var Admin = 'name';
 // console.log(typeof Admin);
@@ -56,3 +51,12 @@ console.log('lection 1');
 // alert(color);
 // вызов переменной при алерте - без кавычек - как бы обращаемся к ней - в кавычках будет конкретный текс.
 // name1 = 'art1'; при 'use strict' нельзя.
+
+
+// основные операторы
+// + сложение и склеивание
+// var apples = "2";
+// var oranges = "3";
+// console.log(apples + oranges);
+// console.log(+apples + +oranges);
+
