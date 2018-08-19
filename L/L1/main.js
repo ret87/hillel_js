@@ -110,7 +110,6 @@ console.log('lection 1');
 // for (a=1, b=2, c=a*b; a<10; a++) {
 // }
 // console.log(c);
-
 // var a=1, b=1, c, d;
 // c = ++a;
 // console.log(c);
@@ -123,3 +122,65 @@ console.log('lection 1');
 // console.log(d);
 // console.log(b);
 // console.log(a);
+
+
+// Операторы сравнения >, <, >=, <=, !=
+// логические операторы true, false
+// var a = 5;
+// var b = 10;
+// console.log(a>b);
+// console.log(a<b);
+// console.log(a!=b);
+
+// явное присваивание
+// var c = true;
+// var d = (a!=b);
+// console.log(c);
+// console.log(d);
+// console.log(c==d);
+
+// сравнение строк, нижний регистр > верхнего, я > a, колличество не важно, сравниваются по очереди - первые потом вторые буквы.
+// console.log('А'>'а');
+// console.log('а'>'А');
+// console.log('я'>'б');
+// console.log('а'<'ж');
+// console.log('б'<'ад');
+
+// если числа привести как строки, то 9>8>7>6>5>4>3>2>1>0, когда чисел несколько, сравниваются первые, если равны, то вторые
+// console.log('9'>'19999');
+
+// но строки легко можно привести в числа 
+// console.log(+'9'>+'19999');
+
+// при сравнении разных типов используется числовое преобразование
+// console.log('9'>19999);
+// console.log(false==0);
+// console.log(true==1);
+// console.log(''==0);
+// console.log(''==false);
+
+// строгое равенство, используем === или !==
+// console.log('' === false);
+// console.log(0 === false);
+
+// сравнение null c 0 выдаст ложь 
+// console.log(0 === null);
+// console.log(0 === undefined);
+// console.log(0 == null);
+// console.log(0 > null);
+// console.log(0 == undefined);
+// console.log(0 < undefined);
+
+// но null  >=, <=  с 0 выдаст тру
+// console.log(0 <= null);
+
+// в тоже время null u undefined равны друг друг
+// console.log(null == undefined);
+
+// undefined вообще нельзя сравнивать ни со строками ни с числами, т.к. при числовом преобразовании оно даёт Nan
+// console.log(0 <= undefined);
+// console.log("привет" > undefined);
+
+// null и undefined равны друг-другу или самим себе, < и > лучше не сравнивать
+// console.log(null == undefined);
+
