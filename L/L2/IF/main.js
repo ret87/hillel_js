@@ -1,10 +1,14 @@
 'use strict';
 console.log('lection 1');
 
-// Условные операторы: if, '?' 
+// Условные операторы: if, '?'
+// 
+// 
 // if выполняет действия в зависимости от условия, else выполняет действия если условия не верны
 // if - нужен для выполнения разных веток кода
 // ? - возвращает то или иное значение в зависимости от условия
+// if может быть вложенным в другой if 
+// null может быть использован для задания условия при клике на Esc или отмены ввода
 // 
 // var a = 12;
 // var b = 15;
@@ -111,3 +115,82 @@ console.log('lection 1');
 // } else if (gamesList=='HS') {
 // }
 // alert('get ' + chooseGames + ' link');
+// 
+// 
+// 
+// Задача про Экмаскрипт
+// var nameJS;
+// var questJS = prompt('Каково официальное название JavaScript?');
+// if (questJS=='ECMAScript') {
+//     nameJS = 'Верно!';
+// } else {
+//     nameJS = '«Не знаете? «ECMAScript»!»';
+// }
+// alert(nameJS);
+// 
+// 
+// Задача про три числа и больше/меньше
+// var value;
+// var getNumber = prompt('Введите любое число', 2);
+// if (getNumber == 0) {
+//     value = 0;
+// } else if (getNumber > 0) {
+//      value = 1;
+// } else if (getNumber < 0) {
+//     value = -1;
+// }
+// alert(value);
+// 
+// 
+// Задача про вход и пароль для админа
+// var admin;
+// var access;
+// var enter = prompt('Enter login');
+// if (enter=='Админ') {
+//     var password=prompt('Enter password');
+//     if (password == 'Чёрный Властелин') {
+//         alert('Добро пожаловать!');
+//     } else if (password == null) {
+//         alert('Вход отменён')
+//     } else
+//         alert('Пароль неверен');
+// } else if (enter == null) {
+//     alert('Вход отменён')
+// } else
+//     alert('Я вас не знаю')
+// 
+// Задача переписать if в ?
+// 
+// if (a + b < 4) {
+//     result = 'Мало';
+//   } else {
+//     result = 'Много';
+//   }
+// 
+// var a = +prompt("a", 2);
+// var b = +prompt("b", 2);
+// var result = (a + b < 4) ? 'Мало' : 'Много';
+// alert(result);
+// 
+// 
+// Задача перепишите 'if..else' в '?'
+// 
+// var message;
+// if (login == 'Вася') {
+//   message = 'Привет';
+// } else if (login == 'Директор') {
+//   message = 'Здравствуйте';
+// } else if (login == '') {
+//   message = 'Нет логина';
+// } else {
+//   message = '';
+// }
+// 
+// 
+// var login = prompt('Вы кто?', "имя");
+// var message = (login == 'Вася') ? 'Привет' :
+// (login == 'Директор') ? 'Здравствуйте':
+// (login == '') ? 'Нет логина': '';
+// alert(message);
+// 
+// 
