@@ -196,15 +196,121 @@ console.log('lection 1');
 //     }
 
 
+// var i, j;
+// loop1:
+// for (i = 0; i < 3; i++) {      //Первый цикл, обозначенный меткой "loop1"
+//    loop2:
+//    for (j = 0; j < 3; j++) {   //Второй цикл, обозначенный меткой "loop2"
+//       if (i == 1 && j == 1) {
+//          continue loop1;
+//       }
+//       console.log("i = " + i + ", j = " + j);
+//    }
+// }
+
+// Обратите внимание на пропуск "i = 1, j = 1" и "i = 1, j = 2"
+
+
+// var i, j;
+// loop1:
+// for (i = 0; i < 3; i++) {      //Первый цикл, обозначенный меткой "loop1"
+//    loop2:
+//    for (j = 0; j < 3; j++) {   //Второй цикл, обозначенный меткой "loop2"
+//       if (i == 1 && j == 1) {
+//          break loop1;
+//       }
+//       console.log("i = " + i + ", j = " + j);
+//    }
+// }
+
+
+// Цикл в цикле так же используют для того что бы вложенному циклу задать порядок, пропуск или 
+// срок действия (допустим вывести первых 5 чисел, но нужно пропустить "3")
+// N выводит числа равные сумме предыдущих двух n1 = n + i; n = 1+0 == 1; n2 = 1 + 2 == 3; n3 = 3 + continue; n4 = 3 +4==7; n5=7+5==12; 
+// var i = 0;
+// var n = 0;
+// while (i < 10) {
+//    i++;
+//    if (i === 3) {
+//       continue;
+//    }
+//    n +=i;
+//   //  console.log('i = ' + i);
+//    console.log('n = ' + n);
+// }
 
 
 
+// var i = 0, 
+//     j = 8;
+// checkiandj: while (i < 4) {
+//    console.log("i: " + i);
+//    i++;
+//    checkj: while (j > 4) {
+//       console.log("j: "+ j);
+//       j--;
+//       if ((j % 2) == 0)
+//          continue checkj;
+//       console.log(j + " является нечётным.");
+//    }
+//    console.log("i = " + i);
+//    console.log("j = " + j);
+// }
 
 
+// var i = 0;
+// while (i < 6) {
+//    if (i == 3) {
+//       break;
+//    }
+//    i++;
+//    console.log (i);
+// }
 
 
+// число фибоначи 
+// var x = 0;
+// var y = 0;
+// var n = 0;
+// while (n < 30) {
+//   x++;
+//   y++;
+//   n++;
+//   console.log(y);
+  // console.log(x);
+//   console.log('fibonachi ' + n + ' is ' + x);
+// }
 
 
+// var result = "";
+// var i = 0;
+// do {
+//   i++;
+//   result = result + i;
+//   console.log(i);
+// } while (i < 5);
+// result = result + i;
+// console.log(result);
+
+
+// Ввести с клавиатуры 2 числа a и b (где a <<< b). Запустить цикл перебора от a до b. Вывести в консоль квадраты чётных чисел.
+// var a = +prompt('enter ur number (lower)', 3);
+// var b = +prompt('enter ur number (higher)', 10);
+// number:
+// if(!(isNaN(a, b))){
+//   alert('thx');
+// } else {
+//   alert('enter number pls!');
+//   console.log(a, b);
+//   break number;
+// }
+// for(var i=a; i<=b; i++) {
+//     if(i%2==0) {
+//       console.log('i = ' + i);  
+//       var c=i*i;
+//       console.log('i*i = ' + c);
+//     }  
+// }
 
 
 
@@ -252,3 +358,4 @@ console.log('lection 1');
 
 
 // Чётность проверяется по остатку при делении на 2, используя оператор «деление с остатком» %: i % 2.
+// Цикл в цикле так же используют для того что бы вложенному циклу задать порядок действия или срок его действия (допустим вывести первых 5 чисел фибоначи)
