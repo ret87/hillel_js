@@ -1,3 +1,6 @@
+'use strict';
+console.log('Home Task 1.1: if else');
+
 // чётность
 var a = +prompt('введите целое число', 100);
 console.log(a);
