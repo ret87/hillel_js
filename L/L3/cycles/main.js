@@ -62,21 +62,47 @@ console.log('lection 1');
 // "n" пропускает цикл связанный с сумированием на числе 10 по "а"
 // var n =0;
 // for(var a=1;a<5;a++){
-//   // console.log('a = ' +a);
-//   if (a == 3) {
-//     continue; 
-//   }
-//   n+=a;
-//   console.log('n = ' +n);
-// }
+  //   // console.log('a = ' +a);
+  //   if (a == 3) {
+    //     continue; 
+    //   }
+    //   n+=a;
+    //   console.log('n = ' +n);
+    // }
+    
+    // var i = 0;
+    // var n = 0;
+    // while (i < 5) {
+      //   i++;
+      //   if (i == 3) {
+        //     continue;
+        //   }
+        //   n += i;
+        //   console.log(n);
+        // }
+        
+        
+// "j" делает цикл на уменьшение, паралельно показывая парные значения от исходного показателя, 
+// но продолжает показывать крайние цифры пока цикл по "i" ещё действителен, работая до конца цикла "i" 
 
-// var i = 0;
-// var n = 0;
-// while (i < 5) {
-//   i++;
-//   if (i == 3) {
-//     continue;
+// checkiandj:
+// var j=6;
+// var i=0;
+// while (i < 4) {
+//   // console.log(i);
+//     i += 1;
+//     checkj:
+//       while (j > 4) {
+//         // console.log(j);
+//         j -= 1;
+//         if ((j % 2) != 0) {
+//           continue checkj;
+//         }
+//         console.log(j + " чётное.");
+//       }
+//       console.log("i = " + i);
+//       console.log("j = " + j);
 //   }
-//   n += i;
-//   console.log(n);
-// }
+
+
+
