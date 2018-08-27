@@ -43,3 +43,39 @@ console.log('lection 1');
 //   }
 // }
 
+// тоже самое но через for
+// CancelLoops:
+// for(var x=0;true;x++){
+//   console.log('внешний цикл: ' + x);
+//   var z=1;
+//   for(;true;z++){
+//     console.log('внутренний цикл: ' + z);
+//     if (x === 9 && z === 9) {
+//       break CancelLoops;
+//     }
+//     else if (z === 9) {
+//       break;
+//     }
+//   }
+// }
+
+var n =0;
+for(var a=0;a<10 && a<15;a++){
+  console.log(a);
+  if(a == 10) {
+    continue; 
+  }
+  // n +=i;
+  // console.log(n);
+}
+
+// var i = 0;
+// var n = 0;
+// while (i < 5) {
+//   i++;
+//   if (i == 3) {
+//     continue;
+//   }
+//   n += i;
+//   console.log(n);
+// }
