@@ -60,15 +60,15 @@ console.log('lection 1');
 // }
 
 // "n" пропускает цикл связанный с сумированием на числе 10 по "а"
-var n =0;
-for(var a=0;a<20;a++){
-  console.log('a = ' +a);
-  if (a == 10) {
-    continue; 
-  }
-  n+=a;
-  console.log('n = ' +n);
-}
+// var n =0;
+// for(var a=1;a<5;a++){
+//   // console.log('a = ' +a);
+//   if (a == 3) {
+//     continue; 
+//   }
+//   n+=a;
+//   console.log('n = ' +n);
+// }
 
 // var i = 0;
 // var n = 0;
