@@ -74,5 +74,15 @@ console.log('Lection №3 Tasks');
 
 
 // 3. a и b вводятся с клавиатуры (числа). Каждое число от a до b вывести в квадрате с сохранением знака.
-
-
+// var a, b, i;
+// var sum=0;
+// a = +prompt('vvedite chislo A', 1);
+// b = +prompt('vvedite chislo B bol`wee A', 5);
+// for(i=a;i<=b;i++){
+//     // console.log(i);
+//     if(i<0){
+//         sum =-1*(i*i);
+//     }else
+//     sum = i*i;
+//     console.log(sum);
+// }
