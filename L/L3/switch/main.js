@@ -3,6 +3,8 @@ console.log('lection 1');
 
 // Конструкция switch заменяет собой сразу несколько if.
 // Она представляет собой более наглядный способ сравнить выражение сразу с несколькими вариантами.
+// case 1,2,n... можно объединять под одно условие
+
 // switch(x) {
 //     case 'value1':  // if (x === 'value1')
 //       ...
@@ -79,3 +81,88 @@ console.log('lection 1');
 //   default:
 //     alert('Неизвестное значение: ' + arg)
 // }
+
+
+// Задачка переделать в иф елсе
+
+// var browser = prompt('vvedite vaw browser IE, Opera, Chrome, Firefox, Safari');
+// switch (browser) {
+//     case 'IE':
+//     alert( 'О, да у вас IE!' );
+//     break;
+    
+//     case 'Chrome':
+//     case 'Firefox':
+//     case 'Safari':
+//     case 'Opera':
+//     alert( 'Да, и эти браузеры мы поддерживаем' );
+//     break;
+    
+//     default:
+//     alert( 'Мы надеемся, что и в вашем браузере все ок!' );
+// }
+// 
+// равно
+// 
+// var browser = prompt('vvedite vaw browser IE, Opera, Chrome, Firefox, Safari', );
+// if(browser === "IE") {
+//     alert( 'О, да у вас IE!' );
+// } else if(browser === 'Chrome' || browser == 'Firefox' || browser == 'Safari' || browser == 'Opera') {
+//     alert( 'Да, и эти браузеры мы поддерживаем' );
+// } else {
+//     alert( 'Мы надеемся, что и в вашем браузере все ок!' );
+// }
+
+
+// Задачка переделать в свитч
+
+// var a = +prompt('a?', '');
+// if (a == 0) {
+//   alert( 0 );
+// }
+// if (a == 1) {
+//   alert( 1 );
+// }
+// if (a == 2 || a == 3) {
+//   alert( '2,3' );
+// }
+// 
+// равно
+// 
+// var a = +prompt('vvedite a?', 0);
+// switch(a) {
+//     case 0:
+//     alert(0);
+//     break;
+
+//     case 1:
+//     alert(1);
+//     break;
+    
+//     case 2:
+//     case 3:
+//     alert('2,3');
+//     break;
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Конструкция switch заменяет собой сразу несколько if.
+// Она представляет собой более наглядный способ сравнить выражение сразу с несколькими вариантами.
+// case 1,2,n... можно объединять под одно условие
+// внимательно смотрим на типы данных что записываем при выводе (case 3 -не число)
+// так же следить стоит за break
