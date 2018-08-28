@@ -86,3 +86,6 @@ console.log('Lection №3 Tasks');
 //     sum = i*i;
 //     console.log(sum);
 // }
+
+
+// 4.
