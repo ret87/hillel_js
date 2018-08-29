@@ -34,3 +34,35 @@ console.log('Home Tasks №3.1, №3.2, №3.3 №3.4');
 // alert('naibol`waja cifra iz '+ n + ' eto ' + b);
 // console.log('naibol`waja cifra iz '+ n + ' eto ' + b);
 
+// №3.4 Отгадать целое число, которое "загадал" компьютер в определенном диапазоне. 
+// Использовать генерацию случайного числа Math.random(), диапазон - от 0 до 20. 
+// Система должна подсказывать: "холодно" (когда до числа больше 4 значений), "тепло" (2-4 значения), "несите мне азот" (1-2 значения)
+
+// var min = 0;
+// var max = 20;
+// var c = Math.floor(Math.random() * ((max+1) - min)) + min;
+// console.log(c);
+// while(a!== c){
+//     var a = +prompt('vvedite chislo');
+//     switch(a-c) {
+//         case (0):
+//             alert('юхууу');
+//             a=c;
+//             break;
+//         case (1):
+//         case (2):
+//         case (-1):
+//         case (-2):
+//             alert('несите мне азот'); 
+//             break;
+//         case (3):
+//         case (4):
+//         case (-3):
+//         case (-4):
+//             alert('тепло');
+//             break;
+//         default:
+//             alert('холодно');
+//             break;
+//     }
+// }
