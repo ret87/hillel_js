@@ -88,4 +88,24 @@ console.log('Lection №3 Tasks');
 // }
 
 
-// 4.
+// 4. Дано числа x, y, data, где data в диапазоне от x до y.
+// Вывести все числа от x до y, которые отличаются от data на 5 едениц по значению.
+
+
+// var x = 1;
+// var y = 50;
+// var i;
+// var data = 23;
+// while(x<data){
+//     data = data-5;
+//     if(data>x){
+//         // console.log(data);
+//     }    
+// }
+// while(data<y){
+//     data = data+5;
+//     if(data<y){
+//         console.log(data);
+//     }
+// }
+
