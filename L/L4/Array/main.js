@@ -295,3 +295,29 @@
 // console.log(a);
 // a[5]=6;
 // console.log(b);
+
+    //7. Задача 
+    // Поиск в массиве
+    // Создайте функцию find(arr, value), которая ищет в массиве arr значение value и 
+    // возвращает его номер, если найдено, или -1, если не найдено.
+    // Например:
+    // arr = ["test", 2, 1.5, false];
+    // find(arr, "test"); // 0
+    // find(arr, 2); // 1
+    // find(arr, 1.5); // 2
+    // find(arr, 0); // -1
+
+// var arr = ["test", 2, 1.5, false];
+// var value = +prompt('vvedite iskomoe chislo', )
+// find(arr, value);
+// for(var i=0; i < arr.length; i++){
+//     console.log(arr[i]);
+//     if(arr[i]==value){
+//         alert(i);
+//     } else{
+//         alert('-');
+//     }
+// }
+
+    //8. Задача
+    
