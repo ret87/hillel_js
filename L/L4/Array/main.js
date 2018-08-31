@@ -164,7 +164,17 @@
 // arr[20]=30;
 // console.log(arr);
 
+//      //  
+    // remove last elem
 
+// arr.length--;
+// console.log(arr);
+
+//      // 
+    // add last elem
+
+// arr[arr.length] = 'LAST';
+// console.log(arr);
 
 //      //
         // Итого
@@ -356,3 +366,59 @@
 //     }
 // }
 // console.log(sum);
+
+//      // 
+        // Lecions tasks
+    // Задача с лекции №1
+    // Создать массив размерностью n, где n вводится с клавиатуры. Заполнить случайными числами в диапазоне -20 ... 45. 
+    // Вывести в документ числа, которые состоят из двух цифр.
+
+var n =+prompt('vvedite razmer massiva', 5);
+var arr=[];
+arr.length=n;
+for(var i=0; i<arr.length; i++){
+    arr[i] = Math.floor(Math.random()*46)-20;    
+    console.log(arr[i]);
+    if(
+        (arr[i]>9 && arr[i] <100) || 
+        (arr[i]<-9 && arr[i] >-100)
+    ){
+        console.log('chisla x2 '+ arr[i]);
+        document.write(arr[i] + '<br>');
+    } 
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// var arr=[];
+// arr.length=+prompt('vvedite razmer massiva', 5);
+// var rand = Math.floor(Math.random() * 66) - 20;
+
+// for(var i=0; i<arr.length; i++){
+//     arr[i] = rand;    
+//     console.log(arr[i]);
+// }
+// if(arr.length){
+//     var min = arr[0];
+//     var max = arr[0];
+// }
+
+// // console.log(arr);
+// // console.log(min);
+// console.log(rand);
+
