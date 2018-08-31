@@ -373,52 +373,58 @@
     // Создать массив размерностью n, где n вводится с клавиатуры. Заполнить случайными числами в диапазоне -20 ... 45. 
     // Вывести в документ числа, которые состоят из двух цифр.
 
-var n =+prompt('vvedite razmer massiva', 5);
-var arr=[];
-arr.length=n;
-for(var i=0; i<arr.length; i++){
-    arr[i] = Math.floor(Math.random()*46)-20;    
-    console.log(arr[i]);
-    if(
-        (arr[i]>9 && arr[i] <100) || 
-        (arr[i]<-9 && arr[i] >-100)
-    ){
-        console.log('chisla x2 '+ arr[i]);
-        document.write(arr[i] + '<br>');
-    } 
-} 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// var n =+prompt('vvedite razmer massiva', 5);
 // var arr=[];
-// arr.length=+prompt('vvedite razmer massiva', 5);
-// var rand = Math.floor(Math.random() * 66) - 20;
-
+// arr.length=n;
 // for(var i=0; i<arr.length; i++){
-//     arr[i] = rand;    
+//     arr[i] = Math.floor(Math.random()*46)-20;    
 //     console.log(arr[i]);
-// }
-// if(arr.length){
-//     var min = arr[0];
-//     var max = arr[0];
-// }
+//     if(
+//         (arr[i]>9 && arr[i] <100) || 
+//         (arr[i]<-9 && arr[i] >-100)
+//     ){
+//         console.log('chisla x2 '+ arr[i]);
+//         document.write(arr[i] + '<br>');
+//     } 
+// } 
 
-// // console.log(arr);
-// // console.log(min);
-// console.log(rand);
+
+        // Задача с лекции №2
+        // Создать массив с длинной 21. Найти минимальный элемент и поменять его местами с центральным элементом массива.
+// var arr=[];
+// arr.length=21;
+// for(var i=0; i<arr.length; i++){
+//     arr[i] =-100 + Math.floor(Math.random()*201);    
+// }        
+// if(arr.length){
+//     var min= arr[0]; //делаем переменную и приравниваем её к первому номеру в искомом массиве, условно предполагая, что он минимален
+//     var max = arr[0]; // такая же процедура только с максимумом
+// }
+// for(i=-100; i<arr.length; i++){ // задаём функцию стандартного перебора
+//     if(arr[i] < min){  // поочередно проверяя следующие по очереди с массиве цифры с минимальным
+//         min = arr[i]; // переприсваиваем наш условный мин к след минимальному в массиве и так до тех пор пока не закончится цикл
+//     } if(arr[i]>max){ // такая же процедура только с максимумом
+//         max = arr[i]; 
+//     }
+// }
+// console.log("было = " + arr);
+
+// // ищем номер в масиве минимального числа
+// var lengthMin=0;
+// for(var i=0; i < arr.length; i++){
+//     if(arr[i]==min){
+//         lengthMin=i;
+//     }
+// }
+// console.log('номер минимального числа =' + lengthMin);
+
+// // меняем местами минимальное число с центральным
+// var centrale = Math.floor(arr.length/2);
+// arr.push(arr[centrale]); //добавили центр число в самый конец
+// arr[centrale] = min;
+// arr[lengthMin] = arr[arr.length-1];
+// arr.pop();
+// console.log('стало = ' + arr);
+// console.log('min = ' + min);
+// console.log('max = ' + max);
 
