@@ -367,6 +367,8 @@
 // }
 // console.log(sum);
 
+
+
 //      // 
         // Lecions tasks
     // Задача с лекции №1
@@ -428,3 +430,29 @@
 // console.log('min = ' + min);
 // console.log('max = ' + max);
 
+
+        // Задача с лекции №3
+    // В массиве arr заполненом случайными числами ( > 0) - произвести перезапись значений - i в степени arr[i]. 
+    // i - номер итерации. Нельзя использовать Math.power()
+
+// var arr=[];
+// arr.length=Math.floor(Math.random() * Math.floor(30));
+// for(var i=0; i<arr.length; i++){
+//     arr[i] = Math.floor(Math.random() * Math.floor(10));    
+//     // console.log(arr[i]);
+// }
+// console.log(arr);
+// for(var i=0; i<arr.length; i++){
+//     arr[i] *= arr[i];
+//     console.log(arr[i]);
+// }
+// console.log(arr);
+
+
+// var a = 12;
+// var n = 4;
+// var res;
+// for(i = 1, res = 1; i <= n; i ++){
+//     res *= a;
+// }
+// console.log(res);
