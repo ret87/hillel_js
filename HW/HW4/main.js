@@ -96,16 +96,34 @@ console.log('Home Tasks, Lection 4');
     // Перевернуть массив, т.е. если был массив 1, 5, 6, 2, 4 -- то мы должны получить 4, 2, 6, 5, 1. 
     // Нельзя использовать стандартный метод reverse(). Постарайтесь не использовать дополнительный массив. 
     // Оригинальный массив А сохранять не нужно (т.е. он должен перевернуться).
-var R = [1,5,6,2,4];
-console.log(R);
-for(var i=R.length-1; i>=0;i--){
-    console.log(R[i]);
-    R.push(R[i]);    
-}
-console.log(R);
-R.shift();
-R.shift();
-R.shift();
-R.shift();
-R.shift();
-console.log(R);
+
+// Решение 4ой задачи
+// var R = [1,5,6,2,4];
+// console.log(R);
+// for(var i=R.length-1; i>=0;i--){
+//     console.log(R[i]);
+//     R.push(R[i]);    
+// }
+// console.log(R);
+// R.shift();
+// R.shift();
+// R.shift();
+// R.shift();
+// R.shift();
+// console.log(R);
+
+
+
+    // 5th home task
+    // Определить количество элементов в заданном массиве, отличающихся от минимального на 5.
+
+// Решение 5ой задачи
+// var R = [1,5,6,2];
+// console.log(R);
+// var min = R[0];
+// for(var i=0; i<R.length; i++){
+//     if(R[i]<min) min=R[i];
+//     // if(min+5 == R[i]) console.log(1*true);
+//     if(min+5 == R[i]) console.log('nomer v massive min+5 = ' + i);
+// }
+// console.log(min);
