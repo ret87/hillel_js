@@ -11,8 +11,8 @@ console.log('Home Tasks, Lection 4');
 // var A = [23,1,2,52,5,34,23,6,246,436];
 // var B = [];
 // for(var i =0; i<A.length; i++){
-//     if(A[i]%2==0){ // часов 6 думал как сделать проверку на случайны числа - и метод Эндосфера пробовал и другое - скажи как???? 
-//         continue;
+//     if(A[i]%2==0){ //часов 6 думал как сделать проверку на случайные числа - и метод Эндосфера пробовал и другое - скажи как плз??? 
+        // continue;  //сделать случайные числа в случайном диапазоне я могу, а вот именно сам перебор в ПРОСТЫЕ числа у меня НИКАК!
 //     } else {
 //         B.push(A[i]);
 //     }
@@ -31,6 +31,8 @@ console.log('Home Tasks, Lection 4');
 // console.log('min chislo = ' + min);
 // console.log('max chislo = ' + max);
 
+
+
     // 2nd home task
     // Создать массив A = [23,1,2,52,5,34,23,6,246,436]; 
     // Элементы массива между min -- max записать в массив B. 
@@ -38,7 +40,6 @@ console.log('Home Tasks, Lection 4');
 // Решение 2ой задачи
 
 // var A = [23,1,2,52,5,34,23,6,246,436];
-// var B = [];
 // var min = A[0];
 // var max = A[0];
 // for(var i=0; i<A.length;i++){
@@ -56,7 +57,39 @@ console.log('Home Tasks, Lection 4');
 // }
 // console.log('nomer min chisla v spiske = ' + iMin);
 // console.log('nomer max chisla v spiske = ' + iMax);
+// var B = [];
 // for(var i=iMin; i<=iMax;i++){
 //     B.push(A[i]);
 // }
 // console.log(B);
+
+    // 3rd home task
+    // В массиве A поменять местами min и max. Массив взять из 2го задания
+
+// Решение 3ьей задачи
+// var A = [23,1,2,52,5,34,23,6,246,436];
+// var min = A[0];
+// var max = A[0];
+// for(var i=0; i<A.length;i++){
+//     if(A[i]<min) min=A[i];
+//     if(A[i]>max) max=A[i];
+// }
+// console.log(A);
+// console.log('min chislo = ' + min);
+// console.log('max chislo = ' + max);
+// var iMin=0;
+// var iMax=0;
+// for(var i=0; i<A.length;i++){
+//     if(A[i]==min) iMin=i;
+//     if(A[i]==max) iMax=i;
+// }
+// console.log('nomer min chisla v spiske = ' + iMin);
+// console.log('nomer max chisla v spiske = ' + iMax);
+// console.log(A);
+// var cash = max;
+// A[iMax] = min;
+// A[iMin] = cash;
+// console.log(A);
+
+
+    // 4th home task
