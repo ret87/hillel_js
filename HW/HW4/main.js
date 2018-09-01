@@ -123,7 +123,29 @@ console.log('Home Tasks, Lection 4');
 // var min = R[0];
 // for(var i=0; i<R.length; i++){
 //     if(R[i]<min) min=R[i];
-//     // if(min+5 == R[i]) console.log(1*true);
 //     if(min+5 == R[i]) console.log('nomer v massive min+5 = ' + i);
 // }
 // console.log(min);
+
+
+    // 6th home task
+    // Создать массивы А и В. Заполнить случайными числами. Найди все элементы которые повторяются в массивах А и Б. 
+    // *Повторяющиеся элементы вырезать. (без использования splice)
+var n = 20;
+var A = [];
+var B = [];
+A.length = n;
+B.length = n;
+
+for(var i=0;i<A.length;i++){
+    A[i]=Math.floor(Math.random()*101);
+}
+console.log(A);
+for(var j=0;j<B.length;j++){
+    B[j]=Math.floor(Math.random()*101);
+}
+console.log(B);
+// if(A[i]===B[j]){
+//     console.log(i, j);
+// }
+
