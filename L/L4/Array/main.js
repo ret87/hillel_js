@@ -165,7 +165,7 @@
 // console.log(arr);
 
 //      //  
-    // remove last elem
+    // remove last elem удаление последнего елемента
 
 // arr.length--;
 // console.log(arr);
@@ -411,7 +411,7 @@
 // }
 // console.log("было = " + arr);
 
-// // ищем номер в масиве минимального числа
+// // ищем номер в массиве минимального числа
 // var lengthMin=0;
 // for(var i=0; i < arr.length; i++){
 //     if(arr[i]==min){
