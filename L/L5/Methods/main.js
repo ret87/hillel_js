@@ -83,4 +83,75 @@ var CopyEndNameArr = NameArr.slice();
 console.log(CopyEndNameArr);
 
 
-//      //  
+//      //sort(fn) - сортировка елементов в массиве на месте
+    // по умолчанию сортирует елементы, пробразовывая их к строке
+var ArrNumb = [0, 1, 4, 15, 25, 17, 35, 3, 5];
+console.log(ArrNumb);
+ArrNumb.sort();
+console.log(ArrNumb);
+    //что бы задать свой алгоритм сортировки - стоит создать свою функцию с условиями сортировки
+    // а имя этой функции использовать в скобках sort();
+function sortNumbers (a,b) {
+    if(a<b) return -1;
+    if(a>b) return 1;
+}
+ArrNumb.sort(sortNumbers);
+console.log(ArrNumb);
+
+
+//      //reverse() - меняет порядок элементов в массиве на обратный.
+ArrNumb.reverse();
+console.log(ArrNumb);
+
+
+//      //concat() - копирует елементы из одного массива в другой + можно добавить новые значнения в скобках
+var SomeNumb = [1,2,3,4,5,6,7]
+console.log(SomeNumb);
+var NewSomeNumb = SomeNumb.concat(8,9);
+console.log(NewSomeNumb);
+    // Если аргумент concat – массив, то concat добавляет элементы из него.
+var NewArrNumb = ArrNumb.concat([-1,-2],-3, 4, 6, 8, 3, 1);
+console.log(NewArrNumb);
+
+
+//      //indexOf/lastIndexOf - (searchElement[,fromIndex]);
+    //возвращает номер елемента указанный в searchElement
+    //для поиска используется строгое сравнение === 
+    //ищет с номера индекса указанного в fromIndex или с конца елемента массива - если не указано
+    //ищет справа на лево
+    //если находит выдаёт номер первого index искомого числа, если нет, то выдаст -1 
+    //работает по принципу перебора (как for()) 
+console.log(NewArrNumb.indexOf(0)); //выдаст index первого числа 0;
+console.log(NewArrNumb.indexOf(1)); //выдаст index первого числа 1;
+console.log(NewArrNumb.indexOf(2)); //выдаст index первого числа 2;
+    //можно задать во втором значении index числа после которого искать index числа в первом значении
+console.log(NewArrNumb.indexOf(1,8)); //выдаст index первого числа 1, после index №8;
+
+
+//      //Object.keys(obj) 
+    // возвращает массив состоящий из свойств объекта
+var user = {
+    name: 'Artem',
+    age: 30,
+    sex: 'male'
+}
+var keys = Object.keys(user);
+console.log(keys); //тут keys - преобразуется в массив из свойств объекта user
+
+
+//      // Итог:
+
+// Методы массивов:
+// push/pop, shift/unshift, splice – для добавления и удаления элементов.
+// join/split – для преобразования строки в массив и обратно.
+// slice – копирует участок массива.
+// sort – для сортировки массива. Если не передать функцию сравнения – сортирует элементы как строки.
+// reverse – меняет порядок элементов на обратный.
+// concat – объединяет массивы.
+// indexOf/lastIndexOf – возвращают позицию элемента в массиве (не поддерживается в IE8-).
+// Object.keys(obj) возвращает массив свойств объекта.
+
+
+
+// Практика по лекции
+
