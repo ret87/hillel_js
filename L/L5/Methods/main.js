@@ -177,8 +177,10 @@ console.log('sorted = ' + arr6Sorted);
 
     // №7 Случайный порядок в массиве
     // Используйте функцию sort для того, чтобы «перетрясти» элементы массива в случайном порядке.
-var arr = [1, 2, 3, 4, 5];
+var arr7 = [1, 2, 3, 4, 5];
+function sortNumbers7 (a,b) {
+    return Math.random() - 0.5;
+}
+arr7.sort(sortNumbers7);
+console.log(arr7);
 
-
-
-    // №
