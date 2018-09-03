@@ -120,15 +120,20 @@ console.log('Home Tasks, Lection 4');
     // Определить количество элементов в заданном массиве, отличающихся от минимального на 5.
 
 // Решение 5ой задачи
-// var R = [1,5,6,2];
-// console.log(R);
-// var min = R[0];
-// for(var i=0; i<R.length; i++){
-//     if(R[i]<min) min=R[i];
-//     if(min+5 == R[i]) console.log('nomer v massive min+5 = ' + i);
-// }
-// console.log(min);
-// добавить переменную конст - которая будет равно +1 если тру значение при мин числе +5
+
+var R = [1,5,6,2,6,6,6,6];
+console.log(R);
+var value = 0;
+var min = R[0];
+for(var i=0; i<R.length; i++){
+    if(R[i]<min) min=R[i];
+    if(min+5 == R[i]) {
+        value +=1;
+        console.log('nomer v massive min+5 = ' + i);
+    }
+}
+console.log(min);
+console.log(value);
 
     // 6th home task
     // Создать массивы А и В. Заполнить случайными числами. Найди все элементы которые повторяются в массивах А и Б. 
