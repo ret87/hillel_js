@@ -42,29 +42,29 @@ console.log('Home Tasks, Lection 4');
 
 // Решение 2ой задачи
 
-// var A = [23,1,2,52,5,34,23,6,246,436];
-// var min = A[0];
-// var max = A[0];
-// for(var i=0; i<A.length;i++){
-//     if(A[i]<min) min=A[i];
-//     if(A[i]>max) max=A[i];
-// }
-// console.log(A);
-// console.log('min chislo = ' + min);
-// console.log('max chislo = ' + max);
-// var iMin=0;
-// var iMax=0;
-// for(var i=0; i<A.length;i++){
-//     if(A[i]==min) iMin=i;
-//     if(A[i]==max) iMax=i;
-// }
-// console.log('nomer min chisla v spiske = ' + iMin);
-// console.log('nomer max chisla v spiske = ' + iMax);
-// var B = [];
-// for(var i=iMin; i<=iMax;i++){
-//     B.push(A[i]);
-// }
-// console.log(B);
+var A = [23,1,2,52,5,34,23,6,246,436];
+var min = A[0];
+var max = A[0];
+for(var i=0; i<A.length;i++){
+    if(A[i]<min) min=A[i];
+    if(A[i]>max) max=A[i];
+}
+console.log(A);
+console.log('min chislo = ' + min);
+console.log('max chislo = ' + max);
+var iMin=0;
+var iMax=0;
+for(var i=0; i<A.length;i++){
+    if(A[i]==min) iMin=i;
+    if(A[i]==max) iMax=i;
+}
+console.log('nomer min chisla v spiske = ' + iMin);
+console.log('nomer max chisla v spiske = ' + iMax);
+var B = [];
+for(var i=iMin+1; i<iMax;i++){
+    B.push(A[i]);
+}
+console.log(B);
 
     // 3rd home task
     // В массиве A поменять местами min и max. Массив взять из 2го задания
@@ -134,18 +134,20 @@ console.log('Home Tasks, Lection 4');
     // 6th home task
     // Создать массивы А и В. Заполнить случайными числами. Найди все элементы которые повторяются в массивах А и Б. 
     // *Повторяющиеся элементы вырезать. (без использования splice)
-var n = 20;
-var A = [];
-var B = [];
-A.length = n;
-B.length = n;
 
-for(var i=0;i<A.length;i++){
-    A[i]=Math.floor(Math.random()*101);
-}
-console.log(A);
-for(var j=0;j<B.length;j++){
-    B[j]=Math.floor(Math.random()*101);
-}
-console.log(B);
+// Решение 6ой задачи    
+// var n = 20;
+// var A = [];
+// var B = [];
+// A.length = n;
+// B.length = n;
+
+// for(var i=0;i<A.length;i++){
+//     A[i]=Math.floor(Math.random()*101);
+// }
+// console.log(A);
+// for(var j=0;j<B.length;j++){
+//     B[j]=Math.floor(Math.random()*101);
+// }
+// console.log(B);
 // вывести все повтор елементы и удалить их (или вывести массивы без повтор елементов)

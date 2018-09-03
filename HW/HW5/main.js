@@ -17,9 +17,9 @@ console.log('Home Tasks, Lection 5');
 //     } 
 // } else if (arr.length%2==0){
 //     for(var i=0;i<arr.length;i+=2){
-//         var uneven = arr[i];
+//         var even = arr[i];
 //         arr[i] = arr[i+1]
-//         arr[i+1] = uneven;
+//         arr[i+1] = even;
 //     }
 // }
 // console.log(arr);
@@ -74,8 +74,4 @@ console.log(sum);
 // min=sum; //минимальному значению присваиваем сумму этой строчки.
 // var min_num=i; //номер текущей строки присваиваем номеру минимальной строки по умолчанию
 // }
-
-
-
-
 
