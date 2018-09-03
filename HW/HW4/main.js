@@ -121,37 +121,52 @@ console.log('Home Tasks, Lection 4');
 
 // Решение 5ой задачи
 
-var R = [1,5,6,2,6,6,6,6];
-console.log(R);
-var value = 0;
-var min = R[0];
-for(var i=0; i<R.length; i++){
-    if(R[i]<min) min=R[i];
-    if(min+5 == R[i]) {
-        value +=1;
-        console.log('nomer v massive min+5 = ' + i);
-    }
-}
-console.log(min);
-console.log(value);
+// var R = [1,5,6,2,6,6,6,6];
+// console.log(R);
+// var value = 0;
+// var min = R[0];
+// for(var i=0; i<R.length; i++){
+//     if(R[i]<min) min=R[i];
+//     if(min+5 == R[i]) {
+//         value +=1;
+//         console.log('nomer v massive min+5 = ' + i);
+//     }
+// }
+// console.log(min);
+// console.log(value);
+
 
     // 6th home task
     // Создать массивы А и В. Заполнить случайными числами. Найди все элементы которые повторяются в массивах А и Б. 
     // *Повторяющиеся элементы вырезать. (без использования splice)
 
 // Решение 6ой задачи    
-// var n = 20;
-// var A = [];
-// var B = [];
-// A.length = n;
-// B.length = n;
-
-// for(var i=0;i<A.length;i++){
-//     A[i]=Math.floor(Math.random()*101);
-// }
-// console.log(A);
-// for(var j=0;j<B.length;j++){
-//     B[j]=Math.floor(Math.random()*101);
-// }
-// console.log(B);
-// вывести все повтор елементы и удалить их (или вывести массивы без повтор елементов)
+var n = 20;
+var A = [];
+var B = [];
+var resA = [];
+var resB = [];
+A.length = n;
+B.length = n;
+for(var i=0;i<A.length;i++){
+    A[i]=Math.floor(Math.random()*101);
+}
+console.log(A);
+for(var j=0;j<B.length;j++){
+    B[j]=Math.floor(Math.random()*101);
+}
+console.log(B);
+for(var i=0;i<A.length;i++){
+    if (B.indexOf(A[i]) == -1) {
+        resA.push(A[i]);
+    }
+}
+for(var j=0;j<B.length;j++){
+    if (A.indexOf(B[j]) == -1) {
+        resB.push(B[j]);
+    }
+}
+A=resA;
+B=resB;
+console.log(A);
+console.log(B);

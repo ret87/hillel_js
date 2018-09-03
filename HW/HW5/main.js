@@ -45,17 +45,33 @@ for(var i = 0; i < A.length; i++){
     for(var j = 0; j < A[i].length; j++) {
         A[i][j] = Math.floor(Math.random()*90 + 10);    
         if (i==0) {
-            sum+=A[i][j]; //считаем сумму cтроки согласно условию
-            min+=A[i][j]; //по умолчанию считаем что сумма первой строки минимальная
-            max+=A[i][j]; // она же максимальная
+        sum +=A[i][j]; //считаем сумму cтроки согласно условию
+            // min+=A[i][j]; //по умолчанию считаем что сумма первой строки минимальная
+            // max+=A[i][j]; // она же максимальная
+            }
+            // как дальше это применить к циклу?     
         }
-        // как дальше это применить к циклу?     
-    }
 }
 console.log(A);
 console.log(sum);
 // console.log(max_num);
 // console.log(min_num);
+sum=0;
+
+
+for(var i = 0; i < A.length; i++){
+    if(i==0) sum +=A[i][j];     
+    for(var j = 0; j < A[i].length; j++) {        
+    }
+}
+console.log(A);
+console.log(sum);
+
+
+
+
+
+
 
 
 // if (i==0) {
