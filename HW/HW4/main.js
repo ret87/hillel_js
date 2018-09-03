@@ -6,6 +6,7 @@ console.log('Home Tasks, Lection 4');
 // - проверить все числа на простоту, и найденные простые числа сохранить в массив B.
 // - найти максимальное число и минимальное число.
 
+
 //Решение 1ой задачи
 
 // узнать максимальное выпавшее число в массиве - потом запустить второй цикл через решето Ендосфера до максимального выпавшего
@@ -42,34 +43,36 @@ console.log('Home Tasks, Lection 4');
 
 // Решение 2ой задачи
 
-var A = [23,1,2,52,5,34,23,6,246,436];
-var min = A[0];
-var max = A[0];
-for(var i=0; i<A.length;i++){
-    if(A[i]<min) min=A[i];
-    if(A[i]>max) max=A[i];
-}
-console.log(A);
-console.log('min chislo = ' + min);
-console.log('max chislo = ' + max);
-var iMin=0;
-var iMax=0;
-for(var i=0; i<A.length;i++){
-    if(A[i]==min) iMin=i;
-    if(A[i]==max) iMax=i;
-}
-console.log('nomer min chisla v spiske = ' + iMin);
-console.log('nomer max chisla v spiske = ' + iMax);
-var B = [];
-for(var i=iMin+1; i<iMax;i++){
-    B.push(A[i]);
-}
-console.log(B);
+// var A = [23,1,2,52,5,34,23,6,246,436];
+// var min = A[0];
+// var max = A[0];
+// for(var i=0; i<A.length;i++){
+//     if(A[i]<min) min=A[i];
+//     if(A[i]>max) max=A[i];
+// }
+// console.log(A);
+// console.log('min chislo = ' + min);
+// console.log('max chislo = ' + max);
+// var iMin=0;
+// var iMax=0;
+// for(var i=0; i<A.length;i++){
+//     if(A[i]==min) iMin=i;
+//     if(A[i]==max) iMax=i;
+// }
+// console.log('nomer min chisla v spiske = ' + iMin);
+// console.log('nomer max chisla v spiske = ' + iMax);
+// var B = [];
+// for(var i=iMin+1; i<iMax;i++){
+//     B.push(A[i]);
+// }
+// console.log(B);
+
 
     // 3rd home task
     // В массиве A поменять местами min и max. Массив взять из 2го задания
 
 // Решение 3ьей задачи
+
 // var A = [23,1,2,52,5,34,23,6,246,436];
 // var min = A[0];
 // var max = A[0];
@@ -101,20 +104,16 @@ console.log(B);
     // Оригинальный массив А сохранять не нужно (т.е. он должен перевернуться).
 
 // Решение 4ой задачи
-// var R = [1,5,6,2,4];
-// console.log(R);
-// for(var i=R.length-1; i>=0;i--){
-//     console.log(R[i]);
-//     R.push(R[i]);    
-// }
-// console.log(R);
-// R.shift();
-// R.shift();
-// R.shift();
-// R.shift();
-// R.shift();
-// console.log(R);
 
+// var A = [1,5,6,2,4,2,3,6];
+// var n = A.length;
+// console.log(A);
+// for(var i=A.length-1; i>=0;i--){
+//     console.log(A[i]);
+//     A.push(A[i]);
+// }
+// A.splice(0,n);
+// console.log(A);
 
 
     // 5th home task
