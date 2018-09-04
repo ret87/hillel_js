@@ -9,32 +9,31 @@ console.log('Home Tasks, Lection 4');
 
 //Решение 1ой задачи
 
-// узнать максимальное выпавшее число в массиве - потом запустить второй цикл через решето Ендосфера до максимального выпавшего
-// далее сравнить два массива и вывести числа что повторяются :)
-
-// var A = [23,1,2,52,5,34,23,6,246,436];
+// var A = [];
+// var maxA = [0];
 // var B = [];
+// var resForB = [];
+// A.length = prompt('vvedite dlinny masiva', 20);
 // for(var i =0; i<A.length; i++){
-//     if(A[i]%2==0){ //часов 6 думал как сделать проверку на случайные числа - и метод Эндосфера пробовал и другое - скажи как плз??? 
-        // continue;  //сделать случайные числа в случайном диапазоне я могу, а вот именно сам перебор в ПРОСТЫЕ числа у меня НИКАК!
-//     } else {
+//     A[i] = Math.floor(Math.random()*500);
+// }     
+// for(var i =0; i<A.length; i++){
+//     if(A[i]>maxA) maxA=A[i];
+// }     
+// nextPrime:
+// for (var i = 2; i <= maxA; i++) {
+//     for (var j = 2; j < i; j++) {
+//         if (i % j == 0) continue nextPrime;
+//     }
+//     resForB.push(i);
+// }
+// for(var i=0;i<A.length;i++){
+//     if (resForB.indexOf(A[i]) !== -1) {
 //         B.push(A[i]);
 //     }
-// }     
+// }
 // console.log(A);
 // console.log(B);
-
-// if(B.length){
-//     var max = B[0];
-//     var min = B[0];
-// } 
-// for(i=0;i<B.length;i++){
-//     if(B[i]<min) min=B[i];
-//     if(B[i]>max) max=B[i];
-// }
-// console.log('min chislo = ' + min);
-// console.log('max chislo = ' + max);
-
 
 
     // 2nd home task
@@ -141,32 +140,32 @@ console.log('Home Tasks, Lection 4');
     // *Повторяющиеся элементы вырезать. (без использования splice)
 
 // Решение 6ой задачи    
-var n = 20;
-var A = [];
-var B = [];
-var resA = [];
-var resB = [];
-A.length = n;
-B.length = n;
-for(var i=0;i<A.length;i++){
-    A[i]=Math.floor(Math.random()*101);
-}
-console.log(A);
-for(var j=0;j<B.length;j++){
-    B[j]=Math.floor(Math.random()*101);
-}
-console.log(B);
-for(var i=0;i<A.length;i++){
-    if (B.indexOf(A[i]) == -1) {
-        resA.push(A[i]);
-    }
-}
-for(var j=0;j<B.length;j++){
-    if (A.indexOf(B[j]) == -1) {
-        resB.push(B[j]);
-    }
-}
-A=resA;
-B=resB;
-console.log(A);
-console.log(B);
+// var n = 20;
+// var A = [];
+// var B = [];
+// var resA = [];
+// var resB = [];
+// A.length = n;
+// B.length = n;
+// for(var i=0;i<A.length;i++){
+//     A[i]=Math.floor(Math.random()*101);
+// }
+// console.log(A);
+// for(var j=0;j<B.length;j++){
+//     B[j]=Math.floor(Math.random()*101);
+// }
+// console.log(B);
+// for(var i=0;i<A.length;i++){
+//     if (B.indexOf(A[i]) == -1) {
+//         resA.push(A[i]);
+//     }
+// }
+// for(var j=0;j<B.length;j++){
+//     if (A.indexOf(B[j]) == -1) {
+//         resB.push(B[j]);
+//     }
+// }
+// A=resA;
+// B=resB;
+// console.log(A);
+// console.log(B);

@@ -33,61 +33,37 @@ console.log('Home Tasks, Lection 5');
 
 
 
-var n = 7;
-var m = 7;
-var A = new Array(n);
-var sum = 0;
-var min = 0;
-var max = 0;
+// var n = 7;
+// var m = 7;
+// var A = new Array(n);
+// var sum = 0;
+// var min = 0;
+// var max = 0;
 
-for(var i = 0; i < A.length; i++){
-    A[i] = new Array(m);
-    for(var j = 0; j < A[i].length; j++) {
-        A[i][j] = Math.floor(Math.random()*90 + 10);    
-        if (i==0) {
-        sum +=A[i][j]; //считаем сумму cтроки согласно условию
-            // min+=A[i][j]; //по умолчанию считаем что сумма первой строки минимальная
-            // max+=A[i][j]; // она же максимальная
-            }
-            // как дальше это применить к циклу?     
-        }
-}
-console.log(A);
-console.log(sum);
-// console.log(max_num);
-// console.log(min_num);
-sum=0;
-
-
-for(var i = 0; i < A.length; i++){
-    if(i==0) sum +=A[i][j];     
-    for(var j = 0; j < A[i].length; j++) {        
-    }
-}
-console.log(A);
-console.log(sum);
-
-
-
-
-
-
-
-
-// if (i==0) {
-//     sum+=A[i][j]; //считаем сумму
-//     min+=A[i][j]; //по умолчанию считаем что сумма первой строки минимальная
-//     max+=A[i][j]; // она же максимальная
-// } else sum+=A[i][j]; //для всех остальных строк просто считаем сумму
-// } 
-// if (sum>max) //если сумма строки больше максимальной
-// {
-// max=sum;  //максимальному значению присваиваем сумму этой строчки.
-// var max_num=i; //номер текущей строки присваиваем номеру максимальной строки по умолчанию
+// for(var i = 0; i < A.length; i++){
+//     A[i] = new Array(m);
+//     for(var j = 0; j < A[i].length; j++) {
+//         A[i][j] = Math.floor(Math.random()*90 + 10);    
+//         if (i==0) {
+//         sum +=A[i][j]; //считаем сумму cтроки согласно условию
+//             // min+=A[i][j]; //по умолчанию считаем что сумма первой строки минимальная
+//             // max+=A[i][j]; // она же максимальная
+//             }
+//             // как дальше это применить к циклу?     
+//         }
 // }
-// if (sum<min)
-// {
-// min=sum; //минимальному значению присваиваем сумму этой строчки.
-// var min_num=i; //номер текущей строки присваиваем номеру минимальной строки по умолчанию
+// console.log(A);
+// console.log(sum);
+// // console.log(max_num);
+// // console.log(min_num);
+// sum=0;
+
+
+// for(var i = 0; i < A.length; i++){
+//     if(i==0) sum +=A[i][j];     
+//     for(var j = 0; j < A[i].length; j++) {        
+//     }
 // }
+// console.log(A);
+// console.log(sum);
 
