@@ -187,39 +187,38 @@
 
 // Lection tasks двумерные массивы
 
-// создание массива
-// 1.
-var n = 10;
-var m = 10;
-arr = [];
-arr.length = n;
+// // создание массива
+// // 1.
+// var n = 10;
+// var m = 10;
+// arr = [];
+// arr.length = n;
 
-for(i=0; i<arr.length; i++) {
-    arr[i] = [];
-    arr[i].length = m;
-}
-console.log(arr);
+// for(i=0; i<arr.length; i++) {
+//     arr[i] = [];
+//     arr[i].length = m;
+// }
+// console.log(arr);
 
 
-// 2.
-var arr = new Array(n);
-for(i=0; i<arr.length;i++){
-    arr[i]= new Array(m);
-}
-console.log(arr);
+// // 2.
+// var arr = new Array(n);
+// for(i=0; i<arr.length;i++){
+//     arr[i]= new Array(m);
+// }
+// console.log(arr);
 
-// Заполнение массива случайными числами от -42 до 38
-for(i=0; i<arr.length;i++){
-    for(var j=0;j<arr[i].length;j++){
-        arr[i][j] = -42 + Math.floor(Math.random()*81);     
-        document.write(arr[i][j] + ' ');
-    }
-    document.write('<br />');
-}
-console.log(arr);
+// // Заполнение массива случайными числами от -42 до 38
+// for(i=0; i<arr.length;i++){
+//     for(var j=0;j<arr[i].length;j++){
+//         arr[i][j] = -42 + Math.floor(Math.random()*81);     
+//         document.write(arr[i][j] + ' ');
+//     }
+//     document.write('<br />');
+// }
+// console.log(arr);
 
-// числа до 50 = 00
-
+// // числа до 50 = 00
 // document.write('<hr />');
 // for(i=0; i<arr.length;i++){
 //     for(var j=0;j<arr[i].length;j++){
@@ -231,6 +230,59 @@ console.log(arr);
 //     document.write('<br />');
 // }
 // console.log(arr);
+
+// // Найти наименьшее число и поменять его местами с первым в массиве
+// var min = arr[0][0];
+// var minI;
+// var minJ;
+// var bufer;
+// for(i=0; i<arr.length;i++){
+//     for(var j=0;j<arr[i].length;j++){
+//         if(arr[i][j]<min) min = arr[i][j];
+//         if(arr[i][j]==min) minI = i;
+//         if(arr[i][j]==min) minJ = j;
+//     }
+// }
+
+// var bufer = arr[0][0];
+// arr[0][0] = arr[minI][minJ];
+// arr[minI][minJ] = bufer;
+
+// console.log(arr);
+// console.log(arr[minI][minJ]);
+// console.log(arr[0][0]);
+
+
+// Дан массив A размера NxM. Найти минимальное значение из рядов с четной позицией.
+var n = 10;
+var m = 15;
+var A = new Array (n);
+for(var i=0; i<A.length; i++){
+    A[i] = new Array(m);
+}
+for(i=0; i<A.length; i++){
+    for(var j=0; j<A[i].length;j++){
+        A[i][j] = -50 + Math.floor(Math.random()*101);
+    }
+}
+var minA = A[0][0];
+console.log(minA);
+for(i=0; i<A.length; i++){
+    for(var j=0; j<A[i].length;j++){
+        if(i%2==0){
+            if(A[i][j]<minA) minA = A[i][j]
+        }
+    }
+}
+console.log(A);
+console.log(minA);
+
+
+
+
+
+
+
 
 // сумма рядков
 // document.write('<hr />');
