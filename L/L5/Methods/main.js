@@ -231,6 +231,7 @@
 // }
 // console.log(arr);
 
+// Первая лекционная практика
 // // Найти наименьшее число и поменять его местами с первым в массиве
 // var min = arr[0][0];
 // var minI;
@@ -253,6 +254,7 @@
 // console.log(arr[0][0]);
 
 
+// Вторая лекционная практика
 // // Дан массив A размера NxM. Найти минимальное значение из рядов с четной позицией.
 // var n = 10;
 // var m = 15;
@@ -277,59 +279,112 @@
 // console.log(A);
 // console.log(minA);
 
-// Найти элементы массива, которые сильно отклоняются от среднего значения (элементов массива).
+
+// Третья лекционная практика
+// // Найти элементы массива, которые сильно отклоняются от среднего значения (элементов массива).
 // "Отклонение" будет вычисляться как процент разности между элементом и средним значением к среднему значению.
 // Например, если очередной элемент равен 10, а среднее значение массива равно 5, то (10-5)/5 = 1 (100%). 
 // Т.е. значение элемента превышает среднее значение на 100%.
 
-var n = 10;
-var m = 15;
-var A = new Array (n);
-for(var i=0; i<A.length; i++){
-    A[i] = new Array(m);
-}
-for(i=0; i<A.length; i++){
-    for(var j=0; j<A[i].length;j++){
-        A[i][j] = Math.floor(Math.random()*101);
-    }
-}
-var minA = A[0][0];
-var maxA = A[0][0];
-for(i=0; i<A.length; i++){
-    for(var j=0; j<A[i].length;j++){
-        if(A[i][j]<minA) minA = A[i][j]
-        if(A[i][j]>maxA) maxA = A[i][j]
-    }
-}
-var midlA = Math.round((maxA+minA)/2);
-console.log(A);
-for(i=0; i<A.length; i++){
-    for(var j=0; j<A[i].length;j++){
-        if(((A[i][j]-midlA)/midlA)*10>=5 || ((midlA-A[i][j])/midlA)*10>=5){
-            console.log(A[i][j]);
-        }
-    }
-}
-
-
-
-
-
-// сумма рядков
-// document.write('<hr />');
-// var sumI = 0;
-// var sum = 0;
-// for(i=0; i<arr.length;i++){
-//     for(var j=0;j<arr[i].length;j++){
-//         sum += arr[i][j]; 
-//         // sumI = sum - arr[i+1][j];       
-//         console.log(sumI);        
-//     }
-//     // document.write(sumI + ' ');
-//     // document.write(res + ' ');
-//     document.write(sum + ' ');
-//     document.write('<br />');
+// var n = 10;
+// var m = 15;
+// var A = new Array (n);
+// for(var i=0; i<A.length; i++){
+//     A[i] = new Array(m);
 // }
-// // console.log(res);
-// // console.log(sumI);
-// console.log(sum);
+// for(i=0; i<A.length; i++){
+//     for(var j=0; j<A[i].length;j++){
+//         A[i][j] = Math.floor(Math.random()*101);
+//     }
+// }
+// var minA = A[0][0];
+// var maxA = A[0][0];
+// for(i=0; i<A.length; i++){
+//     for(var j=0; j<A[i].length;j++){
+//         if(A[i][j]<minA) minA = A[i][j]
+//         if(A[i][j]>maxA) maxA = A[i][j]
+//     }
+// }
+// var midlA = Math.round((maxA+minA)/2);
+// var res = [];
+// console.log(A);
+// for(i=0; i<A.length; i++){
+//     for(var j=0; j<A[i].length;j++){
+//         if(((A[i][j]-midlA)/midlA)*10>=5 || ((midlA-A[i][j])/midlA)*10>=5){
+//             console.log(A[i][j]);
+//         }
+//     }
+// }
+
+// Четвёртая лекционная практика
+// // Написать программу, которая сжимает серии массива, состоящего из единиц и нулей по следующему принципу:
+// например, массив [0,0,0,0,1,1,1,1,1,1,1,0,0,1,1,1,1] преобразуется в [4,7,2,4]
+
+// var a = [0,0,0,0,1,1,1,1,1,1,1,0,0,1,1,1,1];
+// // var b = [0,0,0,0,1,1,1,1,1,1,1,0,0,1,1,1,1];
+// // var resa = [];
+// var b = [];
+// // b.length = 5;
+// var aI = 0;
+// for(var i=0; i<a.length;i++){
+//     if (a.indexOf(a[i]) !== -1) {
+//         b.push(a[i]);
+//     }    
+
+//     //     if(a[i] = a[i+1]){
+//     //         aI +=1;
+
+//     // }
+// }
+// console.log(a);
+// // console.log(aI);
+//     console.log(b);
+
+// попытка наоборот //
+// var arr = [6, 4, 3, 3, 1, 5, 12, 4, 1, 2, 7, 2, 1];
+// var ks=[];
+// for(var value of arr){
+//     ks[value] = (ks[value]||0)+1;
+// }
+// var arr2 =[];
+// for(var i in arr) {
+//   if ( ks[ arr[i] ] > 1 ) {
+//         arr2.push(arr[i]);
+//     }
+// }
+
+// console.log(arr2);
+
+
+// задачки с лекции
+var n = 5;
+var m = 5;
+var A = new Array(n);
+
+for(var i = 0; i < A.length; i++){
+    A[i] = new Array(m);
+    for(var j = 0; j < A[i].length; j++) {
+        A[i][j] = Math.floor(Math.random()*90 + 10);
+    }
+}
+console.log(A);
+// главная диагональ
+for(var i = 0; i < A.length; i++){
+    for(var j = 0; j < A[i].length; j++) {
+        if(A[i] == A[j]){
+            console.log(A[i][j])
+            document.write('**' + ' ');
+        } else document.write(A[i][j] + ' ');
+    }
+    document.write('<br />');
+}
+// побочная диагональ
+for(var i = 0; i < A.length; i++){
+    for(var j = 0; j < A[i].length; j++) {
+        if(A[i] == A[j]){
+            console.log(A[i][j])
+            document.write('**' + ' ');
+        } else document.write(A[i][j] + ' ');
+    }
+    document.write('<br />');
+}
