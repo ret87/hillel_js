@@ -253,7 +253,35 @@
 // console.log(arr[0][0]);
 
 
-// Дан массив A размера NxM. Найти минимальное значение из рядов с четной позицией.
+// // Дан массив A размера NxM. Найти минимальное значение из рядов с четной позицией.
+// var n = 10;
+// var m = 15;
+// var A = new Array (n);
+// for(var i=0; i<A.length; i++){
+//     A[i] = new Array(m);
+// }
+// for(i=0; i<A.length; i++){
+//     for(var j=0; j<A[i].length;j++){
+//         A[i][j] = -50 + Math.floor(Math.random()*101);
+//     }
+// }
+// var minA = A[0][0];
+// console.log(minA);
+// for(i=0; i<A.length; i++){
+//     for(var j=0; j<A[i].length;j++){
+//         if(i%2==0){
+//             if(A[i][j]<minA) minA = A[i][j]
+//         }
+//     }
+// }
+// console.log(A);
+// console.log(minA);
+
+// Найти элементы массива, которые сильно отклоняются от среднего значения (элементов массива).
+// "Отклонение" будет вычисляться как процент разности между элементом и средним значением к среднему значению.
+// Например, если очередной элемент равен 10, а среднее значение массива равно 5, то (10-5)/5 = 1 (100%). 
+// Т.е. значение элемента превышает среднее значение на 100%.
+
 var n = 10;
 var m = 15;
 var A = new Array (n);
@@ -262,23 +290,26 @@ for(var i=0; i<A.length; i++){
 }
 for(i=0; i<A.length; i++){
     for(var j=0; j<A[i].length;j++){
-        A[i][j] = -50 + Math.floor(Math.random()*101);
+        A[i][j] = Math.floor(Math.random()*101);
     }
 }
 var minA = A[0][0];
-console.log(minA);
+var maxA = A[0][0];
 for(i=0; i<A.length; i++){
     for(var j=0; j<A[i].length;j++){
-        if(i%2==0){
-            if(A[i][j]<minA) minA = A[i][j]
+        if(A[i][j]<minA) minA = A[i][j]
+        if(A[i][j]>maxA) maxA = A[i][j]
+    }
+}
+var midlA = Math.round((maxA+minA)/2);
+console.log(A);
+for(i=0; i<A.length; i++){
+    for(var j=0; j<A[i].length;j++){
+        if(((A[i][j]-midlA)/midlA)*10>=5 || ((midlA-A[i][j])/midlA)*10>=5){
+            console.log(A[i][j]);
         }
     }
 }
-console.log(A);
-console.log(minA);
-
-
-
 
 
 
