@@ -371,17 +371,40 @@ console.log(A);
 // главная диагональ
 for(var i = 0; i < A.length; i++){
     for(var j = 0; j < A[i].length; j++) {
-        if(A[i] == A[j]){
+        if(i == j){
+            console.log(A[i][j])
+            document.write('**' + ' ');
+        } else 
+        document.write(A[i][j] + ' ');
+    }
+    document.write('<br />');
+}
+document.write('<br />');
+    // побочная диагональ
+for(var i = 0; i < A.length; i++){
+    for(var j = 0; j < A[i].length; j++) {
+        if(i + j == n - 1){
             console.log(A[i][j])
             document.write('**' + ' ');
         } else document.write(A[i][j] + ' ');
     }
     document.write('<br />');
 }
-// побочная диагональ
+document.write('<br />');
+// средний столбец
 for(var i = 0; i < A.length; i++){
     for(var j = 0; j < A[i].length; j++) {
-        if(A[i] == A[j]){
+        if(j + j == n - 1){
+            console.log(A[i][j])
+            document.write('**' + ' ');
+        } else document.write(A[i][j] + ' ');
+    }
+    document.write('<br />');
+}
+// средний рядок
+for(var i = 0; i < A.length; i++){
+    for(var j = 0; j < A[i].length; j++) {
+        if(i + i == n - 1){
             console.log(A[i][j])
             document.write('**' + ' ');
         } else document.write(A[i][j] + ' ');
