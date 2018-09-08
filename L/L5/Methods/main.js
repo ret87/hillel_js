@@ -357,57 +357,184 @@
 
 
 // задачки с лекции
-var n = 5;
-var m = 5;
+// // Тривиальные условия
+var n = 7;
+var m = 7;
 var A = new Array(n);
-
 for(var i = 0; i < A.length; i++){
     A[i] = new Array(m);
     for(var j = 0; j < A[i].length; j++) {
-        A[i][j] = Math.floor(Math.random()*90 + 10);
+        // A[i][j] = Math.floor(Math.random()*90 + 10);
+        A[i][j] = i + ""+ j;
+        document.write(A[i][j] + ' ');
+        // document.write(i+ '' + j + ' ');
+
     }
+    document.write('<br />');
 }
 console.log(A);
-// главная диагональ
+document.write('<br />');
+
+// // главная диагональ
+// for(var i = 0; i < A.length; i++){
+//     for(var j = 0; j < A[i].length; j++) {
+//         if(i == j){
+//             // console.log(A[i][j])
+//             document.write('**' + ' ');
+//         } else 
+//         document.write(A[i][j] + ' ');
+//     }
+//     document.write('<br />');
+// }
+// document.write('<br />');
+// // побочная диагональ
+// for(var i = 0; i < A.length; i++){
+//     for(var j = 0; j < A[i].length; j++) {
+//         if(i + j == n - 1){
+//             // console.log(A[i][j])
+//             document.write('**' + ' ');
+//         } else document.write(A[i][j] + ' ');
+//     }
+//     document.write('<br />');
+// }
+// document.write('<br />');
+// // средний столбец
+// for(var i = 0; i < A.length; i++){
+//     for(var j = 0; j < A[i].length; j++) {
+//         if(j + j == n - 1){
+//             // console.log(A[i][j])
+//             document.write('**' + ' ');
+//         } else document.write(A[i][j] + ' ');
+//     }
+//     document.write('<br />');
+// }
+// document.write('<br />');
+// // средний рядок
+// for(var i = 0; i < A.length; i++){
+//     for(var j = 0; j < A[i].length; j++) {
+//         if(i + i == n - 1){
+//             // console.log(A[i][j])
+//             document.write('**' + ' ');
+//         } else document.write(A[i][j] + ' ');
+//     }
+//     document.write('<br />');
+// }
+// document.write('<br />');
+// // какой-то энный (k) рядок
+// var k = 4;
+// for(var i = 0; i < A.length; i++){
+//     for(var j = 0; j < A[i].length; j++) {
+//         if(i == k){
+//             // console.log(A[i][j])
+//             document.write('**' + ' ');
+//         } else document.write(A[i][j] + ' ');
+//     }
+//     document.write('<br />');
+// }
+// document.write('<br />');
+// // какой-то энный (k) столбец
+// var k = 4;
+// for(var i = 0; i < A.length; i++){
+//     for(var j = 0; j < A[i].length; j++) {
+//         if(j == k){
+//             // console.log(A[i][j])
+//             document.write('**' + ' ');
+//         } else document.write(A[i][j] + ' ');
+//     }
+//     document.write('<br />');
+// }
+// document.write('<br />');
+
+// // зона под главной диаганалью, не включая её
+// for(var i = 0; i < A.length; i++){
+//     for(var j = 0; j < A[i].length; j++) {
+//         if(i > j){
+//             // console.log(A[i][j])
+//             document.write('**' + ' ');
+//         } else document.write(A[i][j] + ' ');
+//     }
+//     document.write('<br />');
+// }
+// document.write('<br />');
+// // зона под главной диаганалью, включая её
+// for(var i = 0; i < A.length; i++){
+//     for(var j = 0; j < A[i].length; j++) {
+//         if(i >= j){
+//             // console.log(A[i][j])
+//             document.write('**' + ' ');
+//         } else document.write(A[i][j] + ' ');
+//     }
+//     document.write('<br />');
+// }
+// document.write('<br />');
+// // зона над главной диаганалью, не включая её
+// for(var i = 0; i < A.length; i++){
+//     for(var j = 0; j < A[i].length; j++) {
+//         if(i < j){
+//             // console.log(A[i][j])
+//             document.write('**' + ' ');
+//         } else document.write(A[i][j] + ' ');
+//     }
+//     document.write('<br />');
+// }
+// document.write('<br />');
+// // зона над главной диаганалью, включая её
+// for(var i = 0; i < A.length; i++){
+//     for(var j = 0; j < A[i].length; j++) {
+//         if(i <= j){
+//             // console.log(A[i][j])
+//             document.write('**' + ' ');
+//         } else document.write(A[i][j] + ' ');
+//     }
+//     document.write('<br />');
+// }
+// document.write('<br />');
+
+// // зона под главной побочной диагональю, включая её
 for(var i = 0; i < A.length; i++){
     for(var j = 0; j < A[i].length; j++) {
-        if(i == j){
-            console.log(A[i][j])
+        if(i + j >= n - 1){
+            // console.log(A[i][j])
             document.write('**' + ' ');
-        } else 
-        document.write(A[i][j] + ' ');
+        } else document.write(A[i][j] + ' ');
     }
     document.write('<br />');
 }
 document.write('<br />');
-    // побочная диагональ
+// // зона под главной побочной диагональю, не включая её
 for(var i = 0; i < A.length; i++){
     for(var j = 0; j < A[i].length; j++) {
-        if(i + j == n - 1){
-            console.log(A[i][j])
+        if(i + j > n - 1){
+            // console.log(A[i][j])
             document.write('**' + ' ');
         } else document.write(A[i][j] + ' ');
     }
     document.write('<br />');
 }
 document.write('<br />');
-// средний столбец
+// // зона над главной побочной диагональю, включая её
 for(var i = 0; i < A.length; i++){
     for(var j = 0; j < A[i].length; j++) {
-        if(j + j == n - 1){
-            console.log(A[i][j])
+        if(i + j <= n - 1){
+            // console.log(A[i][j])
             document.write('**' + ' ');
         } else document.write(A[i][j] + ' ');
     }
     document.write('<br />');
 }
-// средний рядок
+document.write('<br />');
+// // зона над побочной диагональю, не включая её
 for(var i = 0; i < A.length; i++){
     for(var j = 0; j < A[i].length; j++) {
-        if(i + i == n - 1){
-            console.log(A[i][j])
+        if(i + j < n - 1){
+            // console.log(A[i][j])
             document.write('**' + ' ');
         } else document.write(A[i][j] + ' ');
     }
     document.write('<br />');
 }
+document.write('<br />');
+
+// побочная диагональ вычисляется n-1 если стартует индекс с 0, если с 1 то n+1
+
+// // Сложные условия
