@@ -434,21 +434,27 @@
         // Задача с лекции №3
     // В массиве arr заполненом случайными числами ( > 0) - произвести перезапись значений - i в степени arr[i]. 
     // i - номер итерации. Нельзя использовать Math.power()
+// i = i v stepeni arr
 
-// var arr=[];
-// arr.length=Math.floor(Math.random() * Math.floor(30));
+var a = 12;
+var res;
+var arr=[1,2,3,4,5,6,7];
+var n = arr.length;
+for(var i=0; i<arr.length; i++){
+    for(i = 1, res = 1; i <= n; i++){
+        res *= arr[i];
+        console.log('arr[i] = ' + arr[i]);
+        console.log(res);
+    }
+}
+
+// var arr=[1,2,3,4,5,6,7];
 // for(var i=0; i<arr.length; i++){
-//     arr[i] = Math.floor(Math.random() * Math.floor(10));    
-//     // console.log(arr[i]);
 // }
 // console.log(arr);
-// for(var i=0; i<arr.length; i++){
-//     arr[i] *= arr[i];
-//     console.log(arr[i]);
-// }
-// console.log(arr);
 
 
+// // var n = arr.length;
 // var a = 12;
 // var n = 4;
 // var res;
