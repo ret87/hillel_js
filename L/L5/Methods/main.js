@@ -358,22 +358,22 @@
 
 // задачки с лекции
 // // Тривиальные условия
-var m = 10;
-var n = 10;
-var A = new Array(n);
-for(var i = 0; i < A.length; i++){
-    A[i] = new Array(m);
-    for(var j = 0; j < A[i].length; j++) {
-        // A[i][j] = Math.floor(Math.random()*90 + 10);
-        A[i][j] = i + ""+ j;
-        document.write(A[i][j] + ' ');
-        // document.write(i+ '' + j + ' ');
+// var m = 10;
+// var n = 10;
+// var A = new Array(n);
+// for(var i = 0; i < A.length; i++){
+//     A[i] = new Array(m);
+//     for(var j = 0; j < A[i].length; j++) {
+//         // A[i][j] = Math.floor(Math.random()*90 + 10);
+//         A[i][j] = i + ""+ j;
+//         document.write(A[i][j] + ' ');
+//         // document.write(i+ '' + j + ' ');
 
-    }
-    document.write('<br />');
-}
-console.log(A);
-document.write('<br />');
+//     }
+//     document.write('<br />');
+// }
+// console.log(A);
+// document.write('<br />');
 
 // // главная диагональ
 // for(var i = 0; i < A.length; i++){
@@ -547,21 +547,20 @@ document.write('<br />');
 //     }
 //     document.write('<br />');
 // }
-// числа над побочной до середины между центральной и первой линиями столбцов и рядков
-for(var i = 0; i < A.length; i++){
-    for(var j = 0; j < A[i].length; j++) {
-        if(i + j <= n - 1 && i + i < n-1 && i+i >= Math.floor((n-1)/2) && j + j > n-1){
-            document.write('**' + ' ');
-        } else if(i+i >= (n -1)*1.5 && j+j >= (n-1)*1.5 ){
-            document.write('22' + ' ');
-        } else if(i + j >= n - 1 && i >= j){
-            document.write('xx' + ' ');
-        } else if(i + j <= n - 1 && j+j <= n -1 && i+i >= Math.floor((n-1)/2) && i+i <= Math.floor((n-1)*1.75)){
-            document.write('00' + ' ');
-        }
-        else document.write('ло' + ' ');
-        // } else document.write(A[i][j] + ' ');
-    }
-    document.write('<br />');
-}
-
+// // числа над побочной до середины между центральной и первой линиями столбцов и рядков
+// for(var i = 0; i < A.length; i++){
+//     for(var j = 0; j < A[i].length; j++) {
+//         if(i + j <= n - 1 && i + i < n-1 && i+i >= Math.floor((n-1)/2) && j + j > n-1){
+//             document.write('**' + ' ');
+//         } else if(i+i >= (n -1)*1.5 && j+j >= (n-1)*1.5 ){
+//             document.write('22' + ' ');
+//         } else if(i + j >= n - 1 && i >= j){
+//             document.write('xx' + ' ');
+//         } else if(i + j <= n - 1 && j+j <= n -1 && i+i >= Math.floor((n-1)/2) && i+i <= Math.floor((n-1)*1.75)){
+//             document.write('00' + ' ');
+//         }
+//         else document.write('ло' + ' ');
+//         // } else document.write(A[i][j] + ' ');
+//     }
+//     document.write('<br />');
+// }
