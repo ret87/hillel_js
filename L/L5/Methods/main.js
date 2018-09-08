@@ -358,8 +358,8 @@
 
 // задачки с лекции
 // // Тривиальные условия
-var n = 7;
-var m = 7;
+var m = 10;
+var n = 10;
 var A = new Array(n);
 for(var i = 0; i < A.length; i++){
     A[i] = new Array(m);
@@ -490,51 +490,75 @@ document.write('<br />');
 // }
 // document.write('<br />');
 
-// // зона под главной побочной диагональю, включая её
-for(var i = 0; i < A.length; i++){
-    for(var j = 0; j < A[i].length; j++) {
-        if(i + j >= n - 1){
-            // console.log(A[i][j])
-            document.write('**' + ' ');
-        } else document.write(A[i][j] + ' ');
-    }
-    document.write('<br />');
-}
-document.write('<br />');
-// // зона под главной побочной диагональю, не включая её
-for(var i = 0; i < A.length; i++){
-    for(var j = 0; j < A[i].length; j++) {
-        if(i + j > n - 1){
-            // console.log(A[i][j])
-            document.write('**' + ' ');
-        } else document.write(A[i][j] + ' ');
-    }
-    document.write('<br />');
-}
-document.write('<br />');
-// // зона над главной побочной диагональю, включая её
-for(var i = 0; i < A.length; i++){
-    for(var j = 0; j < A[i].length; j++) {
-        if(i + j <= n - 1){
-            // console.log(A[i][j])
-            document.write('**' + ' ');
-        } else document.write(A[i][j] + ' ');
-    }
-    document.write('<br />');
-}
-document.write('<br />');
-// // зона над побочной диагональю, не включая её
-for(var i = 0; i < A.length; i++){
-    for(var j = 0; j < A[i].length; j++) {
-        if(i + j < n - 1){
-            // console.log(A[i][j])
-            document.write('**' + ' ');
-        } else document.write(A[i][j] + ' ');
-    }
-    document.write('<br />');
-}
-document.write('<br />');
+// // зона под побочной диагональю, включая её
+// for(var i = 0; i < A.length; i++){
+//     for(var j = 0; j < A[i].length; j++) {
+//         if(i + j >= n - 1){
+//             // console.log(A[i][j])
+//             document.write('**' + ' ');
+//         } else document.write(A[i][j] + ' ');
+//     }
+//     document.write('<br />');
+// }
+// document.write('<br />');
+// // // зона под побочной диагональю, не включая её
+// for(var i = 0; i < A.length; i++){
+//     for(var j = 0; j < A[i].length; j++) {
+//         if(i + j > n - 1){
+//             // console.log(A[i][j])
+//             document.write('**' + ' ');
+//         } else document.write(A[i][j] + ' ');
+//     }
+//     document.write('<br />');
+// }
+// document.write('<br />');
+// // // зона над побочной диагональю, включая её
+// for(var i = 0; i < A.length; i++){
+//     for(var j = 0; j < A[i].length; j++) {
+//         if(i + j <= n - 1){
+//             // console.log(A[i][j])
+//             document.write('**' + ' ');
+//         } else document.write(A[i][j] + ' ');
+//     }
+//     document.write('<br />');
+// }
+// document.write('<br />');
+// // // зона над побочной диагональю, не включая её
+// for(var i = 0; i < A.length; i++){
+//     for(var j = 0; j < A[i].length; j++) {
+//         if(i + j < n - 1){
+//             // console.log(A[i][j])
+//             document.write('**' + ' ');
+//         } else document.write(A[i][j] + ' ');
+//     }
+//     document.write('<br />');
+// }
+// document.write('<br />');
 
 // побочная диагональ вычисляется n-1 если стартует индекс с 0, если с 1 то n+1
 
 // // Сложные условия
+// числа под побочной диагональю и выше средней линии
+// for(var i = 0; i < A.length; i++){
+//     for(var j = 0; j < A[i].length; j++) {
+//         if(i + j >= n - 1 && i + i < n-1 ){
+//             document.write('**' + ' ');
+//         } else document.write(A[i][j] + ' ');
+//     }
+//     document.write('<br />');
+// }
+// // числа над побочной до середины между центральной и первой линиями столбцов и рядков
+// for(var i = 0; i < A.length; i++){
+//     for(var j = 0; j < A[i].length; j++) {
+//         if(i + j <= n - 1 && i + i < n-1 && i+i >= Math.floor((n-1)/2) && j + j > n-1){
+//             document.write('**' + ' ');
+//         } else if(i + j >= n - 1 && i >= j){
+//             document.write('xx' + ' ');
+//         } else if(i + j <= n - 1 && j+j <= n -1 && i+i >= Math.floor((n-1)/2) && i+i <= Math.floor((n-1)*1.75)){
+//             document.write('00' + ' ');
+//         } else document.write('11' + ' ');
+//         // } else document.write(A[i][j] + ' ');
+//     }
+//     document.write('<br />');
+// }
+
