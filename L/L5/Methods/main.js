@@ -547,18 +547,21 @@ document.write('<br />');
 //     }
 //     document.write('<br />');
 // }
-// // числа над побочной до середины между центральной и первой линиями столбцов и рядков
-// for(var i = 0; i < A.length; i++){
-//     for(var j = 0; j < A[i].length; j++) {
-//         if(i + j <= n - 1 && i + i < n-1 && i+i >= Math.floor((n-1)/2) && j + j > n-1){
-//             document.write('**' + ' ');
-//         } else if(i + j >= n - 1 && i >= j){
-//             document.write('xx' + ' ');
-//         } else if(i + j <= n - 1 && j+j <= n -1 && i+i >= Math.floor((n-1)/2) && i+i <= Math.floor((n-1)*1.75)){
-//             document.write('00' + ' ');
-//         } else document.write('11' + ' ');
-//         // } else document.write(A[i][j] + ' ');
-//     }
-//     document.write('<br />');
-// }
+// числа над побочной до середины между центральной и первой линиями столбцов и рядков
+for(var i = 0; i < A.length; i++){
+    for(var j = 0; j < A[i].length; j++) {
+        if(i + j <= n - 1 && i + i < n-1 && i+i >= Math.floor((n-1)/2) && j + j > n-1){
+            document.write('**' + ' ');
+        } else if(i+i >= (n -1)*1.5 && j+j >= (n-1)*1.5 ){
+            document.write('22' + ' ');
+        } else if(i + j >= n - 1 && i >= j){
+            document.write('xx' + ' ');
+        } else if(i + j <= n - 1 && j+j <= n -1 && i+i >= Math.floor((n-1)/2) && i+i <= Math.floor((n-1)*1.75)){
+            document.write('00' + ' ');
+        }
+        else document.write('ло' + ' ');
+        // } else document.write(A[i][j] + ' ');
+    }
+    document.write('<br />');
+}
 
