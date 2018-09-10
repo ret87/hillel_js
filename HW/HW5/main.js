@@ -40,30 +40,45 @@ var sum = 0;
 var min = 0;
 var max = 0;
 
-for(var i = 0; i < A.length; i++){
+for(var i = 0; i < n; i++){
     A[i] = new Array(m);
-    for(var j = 0; j < A[i].length; j++) {
+    for(var j = 0; j < m; j++) {
         A[i][j] = Math.floor(Math.random()*90 + 10);    
-        if (i==0) {
-        sum +=A[i][j]; //считаем сумму cтроки согласно условию
-            // min+=A[i][j]; //по умолчанию считаем что сумма первой строки минимальная
-            // max+=A[i][j]; // она же максимальная
-            }
-            // как дальше это применить к циклу?     
-        }
-}
-console.log(A);
-console.log(sum);
-// console.log(max_num);
-// console.log(min_num);
-sum=0;
-
-
-for(var i = 0; i < A.length; i++){
-    if(i==0) sum +=A[i][j];     
-    for(var j = 0; j < A[i].length; j++) {        
     }
 }
+min = 0;
+console.log(A);
+for(var i = 0; i < A.length; i++){
+    for(var j = 0; j < A[i].length; j++) {
+        // while()
+        
+        
+        if ((j >= 0 && i == 0)) {
+            sum +=A[i][j]; //считаем сумму cтроки согласно условию
+            min = sum;
+            console.log(sum);
+        //     } if ((j >= 0 && i == 0)) {
+        //         console.log(sum);
+            } 
+        // // sum +=A[i][j]; //считаем сумму cтроки согласно условию
+        // min+=A[i][j]; //по умолчанию считаем что сумма первой строки минимальная
+        // max+=A[i][j]; // она же максимальная
+        // как дальше это применить к циклу?     
+        }
+    }
 console.log(A);
 console.log(sum);
+// console.log(sum);
+// console.log(max_num);
+// console.log(min_num);
+// sum=0;
+
+
+// for(var i = 0; i < A.length; i++){
+//     if(i==0) sum +=A[i][j];     
+//     for(var j = 0; j < A[i].length; j++) {        
+//     }
+// }
+// console.log(A);
+// console.log(sum);
 
