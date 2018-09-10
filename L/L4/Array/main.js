@@ -435,17 +435,17 @@
     // В массиве arr заполненом случайными числами ( > 0) - произвести перезапись значений - i в степени arr[i]. 
     // i - номер итерации. Нельзя использовать Math.power()
 
-var res;
-var arr = [];
-arr.length= +prompt('vvedite razmer massiva', 10)
-var n = arr.length;
-for(var i=0; i<n; i++){
-    arr[i] = Math.floor(Math.random()*10 + 1);
-}
-console.log(arr);
-for(var i=0; i<n; i++){
-    res = i**arr[i];
-    console.log(res);
-    arr[i]=res;
-}
-console.log(arr);
+// var res;
+// var arr = [];
+// arr.length= +prompt('vvedite razmer massiva', 10)
+// var n = arr.length;
+// for(var i=0; i<n; i++){
+//     arr[i] = Math.floor(Math.random()*10 + 1);
+// }
+// console.log(arr);
+// for(var i=0; i<n; i++){
+//     res = i**arr[i];
+//     console.log(res);
+//     arr[i]=res;
+// }
+// console.log(arr);
