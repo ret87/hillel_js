@@ -175,4 +175,15 @@ var b = 10;
 // var b = +prompt('vvedite chislo', 10);
 console.log(min(a,b));
 
-// // 4. 
+// // 4. Напишите функцию pow(x,n), которая возвращает x в степени n. 
+// Иначе говоря, умножает x на себя n раз и возвращает результат.
+
+function pow(x, n){
+    return x**n;
+    
+}
+var x = 5;
+var n = 4;
+// var n = prompt('vvedite n');
+// var x = prompt('vvedite x');
+console.log(pow(x, n));
