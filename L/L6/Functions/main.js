@@ -96,7 +96,8 @@ function checkAge(age){
     //     return confirm('roditeli razreshili?')
     // }
 }
-var age = prompt('vvedite vash vozvrast', 18);
+// var age = prompt('vvedite vash vozvrast', 18);
+var age = 19;
 if(checkAge(age)) {
     console.log('zahodi smotri');
 } else {
@@ -135,3 +136,31 @@ if(checkAge(age)) {
 // Функция – это действие, поэтому для имён функций, как правило, используются глаголы.
 // Функции являются основными строительными блоками скриптов. 
 
+// // Практика по теории 
+
+// // 1. нужен ли тут ЕЛСЕ?
+// function checkAge2(age) {
+//     if (age > 18) {
+//         return true;
+//     } 
+//     else {
+//         return confirm('Родители разрешили?');
+//     }
+// }
+// console.log(checkAge2(age));
+
+// // 2. Перепишите функцию, используя оператор '?' или '||'
+
+// function checkAge2(age) {
+//         return age > 18 || confirm('Родители разрешили?');
+//     }
+// var age = prompt('vvedite chislo', 19)
+// console.log(checkAge2(age));
+
+// function checkAge2(age) {
+//     return age > 18 ? true : confirm('Родители разрешили?');
+// }
+// var age = prompt('vvedite chislo', 19)
+// console.log(checkAge2(age));
+
+// // 3.
