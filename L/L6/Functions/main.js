@@ -157,10 +157,22 @@ if(checkAge(age)) {
 // var age = prompt('vvedite chislo', 19)
 // console.log(checkAge2(age));
 
-// function checkAge2(age) {
-//     return age > 18 ? true : confirm('Родители разрешили?');
-// }
-// var age = prompt('vvedite chislo', 19)
-// console.log(checkAge2(age));
+function checkAge2(age) {
+    return age > 18 ? true : confirm('Родители разрешили?');
+}
+// var age = prompt('vvedite chislo', 19);
+var age = 19;
+console.log(checkAge2(age));
 
-// // 3.
+// // 3. Напишите функцию min(a,b), которая возвращает меньшее из чисел a,b.
+
+function min (a, b){
+    return a < b ? a : b;
+}
+var a = 5;
+var b = 10;
+// var a = +prompt('vvedite chislo', 5);
+// var b = +prompt('vvedite chislo', 10);
+console.log(min(a,b));
+
+// // 4. 
