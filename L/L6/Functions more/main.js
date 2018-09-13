@@ -152,3 +152,23 @@ A(5);
 
 
         // // Замыкания
+// - Главная особенность js - это вложенность функций, внутренняя функция имеет доступ ко всем параметрам, переменым и ф-иям внешней.
+// - В тоже время внешняя к параметром и функциям внутренней не имеет доступа.
+// - Замыкание создаётся, когда внутренняя функция, как-то стала доступной в параметрах вне внешней функции.
+function pet(name){
+    var getName = function (){
+        return name;
+    }
+    return getName;
+}
+var myPet = pet('Simba');
+console.log(myPet());
+
+// - Вложенные переменные вложенной функции являются безопасными хранилищами для внешних аргументов и переменных
+var getCode = (function() {
+    var apiCode = '0]Eal(eh&2'; // A code we do not want outsiders to be able to modify...
+    return function() {
+        return apiCode;
+    };
+}());
+console.log(getCode());
