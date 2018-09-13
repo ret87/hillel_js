@@ -212,3 +212,16 @@ var a2 = a.map(function(s) { return s.length; });     // зададим функ
 console.log(a2); // logs [8, 6, 7, 9]
 var a3 = a.map(s => s.length);                        // а вот и короткое значение
 console.log(a3); // logs [8, 6, 7, 9]                 
+
+
+        // // Конструкция THIS
+// - главная суть создать замыкание, прировняв переменную var self = this;
+// - далее уже делаем с переменной self дела
+
+function Person() {
+    var self = this;
+    self.age = 0;  
+    setInterval(function growUp() {
+        self.age++;
+    }, 1000);
+}
