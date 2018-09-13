@@ -47,3 +47,74 @@ console.log(pow(3,4));
 // Рекурсия – это когда функция вызывает сама себя, как правило, с другими аргументами.
 // Также рекурсия используется для работы с «естественно рекурсивными» структурами данных, 
 // такими как HTML-документы, для «глубокого» копирования сложных объектов.
+
+
+
+    // // Практика
+// 1. Задача
+// Напишите функцию sumTo(n), которая для данного n вычисляет сумму чисел от 1 до n, например:
+// вариант через цикл
+function sumTo(n1){
+    var resultN = n1;
+    for(var i=n1; i>1; i--){
+        n1 = i;
+        resultN +=n1-1;
+
+    }
+    return resultN;
+}
+console.log(sumTo(100));
+
+// вариант через рекрусию
+function sumTo2(n2){
+    if(n2 > 1){ 
+        return n2 + sumTo2(n2-1); 
+    } else {
+        return n2;
+    }
+}
+console.log(sumTo2(100));
+
+// Решение по формуле: sumTo(n) = n*(n+1)/2:
+function sumTo3(n3){
+    if(n3 > 1){ 
+        return n3 * (n3+1)/2; 
+    } else {
+        return n3;
+    }
+}
+console.log(sumTo3(100));
+
+
+// 2. Задача 
+// факториал числа 5:  n * (n-1)!
+function factorial(f){
+    if(f>1){
+        return f*(factorial(f-1));
+    } else {
+        return f;
+    }
+
+}
+console.log(factorial(5));
+
+
+// 3. Задча
+// Числа Фибоначчи
+// рекруссия
+function fib(f2){
+    if(f2 > 1){ 
+        return f2 = fib(f2-1) + fib(f2-2); 
+    } else {
+        return f2;
+    }
+}
+console.log(fib(17));
+// // алгоритм вычисления в цикле
+var a =1, b=1, c, n=17;
+for(var i=3;i<=n;i++){
+    c = a + b;
+    a = b;
+    b = c;
+}
+console.log(c);
