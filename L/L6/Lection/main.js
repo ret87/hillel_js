@@ -99,3 +99,14 @@ function sum5 (a, b){
 }
 var res = sum5(sum5(5, 5),200);
 console.log(res); 
+// склеить массивы разной длинны
+function concat(a1, a2, a3){
+    return a1.concat(a2.concat(a3));
+}
+var arr = concat([1, 2], [9, 2, 9], [2]);
+console.log(arr);
+// сохранив в отдельный массив можно вывести далее в перебор через цикл все данные
+for(var i=0;i<arr.length;i++){
+    console.log(arr[i]);
+}
+// SOME PRACTICE FOR LECTION 6
