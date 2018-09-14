@@ -109,4 +109,14 @@ console.log(arr);
 for(var i=0;i<arr.length;i++){
     console.log(arr[i]);
 }
+
+
 // SOME PRACTICE FOR LECTION 6
+// 1. Написать функцию вывода одномерного массива через разделитель в документ. (без join)
+var arr1 = [1,2,3,4,5,6,7,8,9,19]; 
+var outputArr = function(a){
+    for(var i =0; i<arr1.length;i++){
+        document.write(arr1[i] + ' | ');
+    }
+}
+outputArr(arr1);
