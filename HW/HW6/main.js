@@ -3,6 +3,7 @@ console.log('Functions');
 
     // // Практические задания
 
+    
 // 1. Задача
 // Написать функцию заполнения двумерного массива. Имя произвольное.
 function doubleArray(n, m){
@@ -27,6 +28,7 @@ console.log(doubleArray(7,7));
 //     }
 // }
 // console.log(A);
+
 
 // 2. Задача
 // Написать функцию, которая примет как аргумент(параметр) два массива и сравнить суммы всех ЧИСЛОВЫХ элементов. 
@@ -53,4 +55,19 @@ function arrays(arr1, arr2){
 }
 arrays(arr1, arr2);
 
+
 // 3. Задача
+// Написать функцию doMath(x, znak, y), которая получает 3 аргумента: числа x и y, строку znak. 
+// В переменной знак может быть: +, -, *, /, %, ^. Вывести результат математического действия, указанного в переменной znak.
+function doMath(x, znak, y){
+    if(znak == '+') return console.log(x + y);
+    else if(znak == '-') return console.log(x - y);
+    else if(znak == '*') return console.log(x * y);
+    else if(znak == '/') return console.log(x / y);
+    else if(znak == '%') return console.log(x % y);
+    else if(znak == '^') return console.log(x ^ y);
+}
+doMath(3,'^',3);
+
+
+// 4. Задача
