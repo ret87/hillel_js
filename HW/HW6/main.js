@@ -67,13 +67,27 @@ function doMath(x, znak, y){
     else if(znak == '%') return console.log(x % y);
     else if(znak == '^') return console.log(x ^ y);
 }
-doMath(3,'^',3);
+doMath(6,'/',3);
 
 
 // 4. Задача
 // Создать функцию, которая убирает из строки все символы, которые мы передали вторым аргументом.
 // 'func("hello world", ['l', 'd'])' вернет нам "heo wor"
-
+function func(words, delLetters){
+    var arrWords = words.split('');
+    var words2 = [];
+    nextInput:
+    for(var i=0; i<arrWords.length; i++){
+        var str = arrWords[i];
+        for(var j=0; j<delLetters.length; j++){
+            if(str == delLetters[j]) continue nextInput;            
+        }
+        words2.push(str);
+    }
+    words2 = words2.join('');
+    console.log(words2);
+}
+func("hello world", ['l', 'd']);
 
 // 5. Задача
 // напиши функцию filter, которая принимает функцию-предикат и массив. 
