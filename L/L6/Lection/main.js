@@ -120,3 +120,5 @@ var outputArr = function(a){
     }
 }
 outputArr(arr1);
+
+
