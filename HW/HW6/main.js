@@ -109,7 +109,7 @@ function filter(input, isEven) {
         if( isEven(x)){
             arr.push(x);
         }
-    }        
+    }            
     return arr;
 }
 console.log(filter(input, isEven));
