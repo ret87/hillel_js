@@ -90,9 +90,26 @@ function func(words, delLetters){
 func("hello world", ['l', 'd']);
 
 // 5. Задача
-// напиши функцию filter, которая принимает функцию-предикат и массив. 
-// Возвращает она массив значений, для которых предикат вернет true.
+// напиши функцию filter, которая принимает функцию-предикат и массив. Возвращает она массив значений, для которых предикат вернет true.
 
 //  var input = [1, 2, 3, 4, 5, 6];
 //  function isEven(x) { return x % 2 == 0; } // проверяет на четность
 //  console.log(filter(input, isEven)); // [2, 4, 6]
+
+// function filter (input, isEven) {
+
+var arr = [];
+var input = [1,2,3,4,5,6];    
+function isEven(x){ 
+    return x % 2 == 0; 
+} 
+function filter(input, isEven) {
+    for(var i=0; i<input.length; i++){
+        var x = input[i];
+        if( isEven(x)){
+            arr.push(x);
+        }
+    }        
+    return arr;
+}
+console.log(filter(input, isEven));
