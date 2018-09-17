@@ -40,14 +40,15 @@ var res = f(2,6,7,12,9,12,false,{},2,1)
 console.log(res);
 
 // Ссылка на выполняющуюся функцию arguments.callee -  её можно использовать для задания и чтения статических свойств.
-function func() {
-   arguments.callee.called++
-}
-func.called = 0;
-func()
-func()
-console.log(func.called) // 2
-
+// УСТАРЕВШЕЕ
+// function func() {
+//    arguments.callee.called++
+// }
+// func.called = 0;
+// func()
+// func()
+// console.log(func.called) // 2
+// 
 
 
     // callback
@@ -145,3 +146,19 @@ fofoFunction([1, 2, 3], [3,6,3223], [2,8,5,7,457,457,4]);
 //  step(); // 2
 //  step(); // 8
 //  step(); // 9
+
+function makeCounter() {
+    var currentCount = 1;
+    return function() {
+        return currentCount++;
+    };
+}
+var counter = makeCounter();
+console.log(counter());
+console.log(counter());
+
+function factory(c){
+    console.log(c[2]);
+}
+var step = factory([2, 8, 9, 2, 4]);
+step();
