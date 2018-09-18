@@ -147,18 +147,24 @@ fofoFunction([1, 2, 3], [3,6,3223], [2,8,5,7,457,457,4]);
 //  step(); // 8
 //  step(); // 9
 
-function makeCounter() {
-    var currentCount = 1;
-    return function() {
-        return currentCount++;
-    };
-}
-var counter = makeCounter();
-console.log(counter());
-console.log(counter());
+// function makeCounter() {
+//     var currentCount = 1;
+//     return function() {
+//         return currentCount++;
+//     };
+// }
+// var counter = makeCounter();
+// console.log(counter());
+// console.log(counter());
 
-function factory(c){
-    console.log(c[2]);
+function factory(list){
+    var currentCount = 0;
+    return function(){
+        console.log(list[currentCount]);
+        return currentCount++;
+    }
 }
 var step = factory([2, 8, 9, 2, 4]);
+step();
+step();
 step();
