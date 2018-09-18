@@ -148,18 +148,18 @@ fofoFunction([1, 2, 3], [3,6,3223], [2,8,5,7,457,457,4]);
 //  step(); // 8
 //  step(); // 9
 
-// function factory(list){
-//     var count = 0;
-//     return function(){
-//         console.log(list[count++]);
-//     }
-// }
-// var step = factory([2, 8, 9, 2, 4]);
-// step();
-// step();
-// step();
-// step();
-// step();
+function factory(list){
+    var count = 0;
+    return function(){
+        console.log(list[count++]);
+    }
+}
+var step = factory([2, 8, 9, 2, 4]);
+step();
+step();
+step();
+step();
+step();
 
 
 // 3. Задача
@@ -173,16 +173,94 @@ fofoFunction([1, 2, 3], [3,6,3223], [2,8,5,7,457,457,4]);
 //  }
 
 
-function factory(list){
+function factory1(list){
     var count = 0;
     return function (callback){
         return callback(list[count++]);
     }
 }
-var step = factory([2, 8, 9, 2, 4]);
+var step1 = factory1([2, 8, 9, 2, 4]);
 function sqr(x) {
     return x*x;
 }
-console.log(step(sqr));
-console.log(step(sqr));
-console.log(step(sqr));
+console.log(step1(sqr));
+console.log(step1(sqr));
+console.log(step1(sqr));
+
+
+// // 4. Задача
+// // Написать функцию getMaxs(args), где args - любое количество массивов. 
+// // Функция должна вернуть максимумы всех переданных массивов в виде строки, через разделитель , .
+// var arr2 = [];
+// function getMaxs(args){
+//     for(var i=0;i<arguments.length;i++){
+//         // for(var j=0;j<arguments[i].length;j++){
+//             // console.log([i][j]);
+//             console.log([i]);
+//         var numb = arguments[0];
+//         if(arguments[i] >= numb){
+//         numb = arguments[i];
+//         console.log(numb);
+//     }       
+//     arr2 = arr2.concat(numb);
+//     // }
+//     console.log(arr2);
+
+//     }
+// }
+// getMaxs([1,2,3,4],[5,6,7,8,9,],[10,11,12,13,14]);
+
+
+
+console.log('Пораждающие функции');        
+
+        // // Пораждающие функции 
+// Функции, которые что либо возвращают в другую функцию 
+// Пораждающие функции - те которые что либо возвращают  и порождают (factory - популярное название для подобных функций)
+// Варианты создания порождающих функций: 
+// - Анонимные функции с использованием замыкания (создали переменную и внутри кода её используем)
+// - Возвращение другой функции по имени (мы обращаемся к другой функции по её имени - она может быть создана где угодно)
+// Удобно использовать для параметрического определения данно функции - пораждающей, т.е. в зависимости от условий входящих параметров
+// можем вернуть разные функции
+
+
+// - Анонимные функции с использованием замыкания
+function factoryAnon(){
+    var z = 19; 
+    // // - анонимные функции с использованием замыкания 
+    return function () {
+        console.log(z); //создали переменную и внутри кода её используем
+    }
+}
+var funcAnon = factoryAnon();
+funcAnon();
+
+
+// - Возвращение другой функции по имени
+function factoryName(){
+    var z = 19; 
+    // - Возвращение другой функции по имени
+    return addFunc; //мы обращаемся к другой функции по её имени - она может быть создана где угодно
+}
+function addFunc(){
+    console.log(10);
+}
+var funcName = factoryName();
+funcName(); 
+console.log(funcName === addFunc);
+
+
+// Удобно использовать для параметрического определения данно функции - пораждающей, т.е. в зависимости от условий входящих параметров
+// можем вернуть разные функции
+
+function factoryParam(){
+    var z = 19; 
+    // - Возвращение другой функции по имени
+    return funcParam1; //мы обращаемся к другой функции по её имени - она может быть создана где угодно
+}
+function funcParam1(){
+    console.log(12);
+}
+var funcParam = factoryParam();
+funcParam(); 
+
