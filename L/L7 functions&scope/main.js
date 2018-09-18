@@ -8,6 +8,7 @@ console.log('Funstions and scope');
 
         // Callback функции (функция как аргумент в функции).
 // - Переменная в js - может быть всем что угодно
+// - Что бы прировнять какую либо переменную к готовой функции - нужно прописать в этой самой функции functio(){ RETURN FUNCTION(){} }
 // - Переменную "sum" -которая является функцией, можно использовать как аргумент для другой функции.
 // - Даже если значение у данного аргумента другоей - идёт перенаименование аргумента.
 // - Функции, которые передаются, как параметры, называются CALLBACK функциями
@@ -147,24 +148,41 @@ fofoFunction([1, 2, 3], [3,6,3223], [2,8,5,7,457,457,4]);
 //  step(); // 8
 //  step(); // 9
 
-// function makeCounter() {
-//     var currentCount = 1;
-//     return function() {
-//         return currentCount++;
-//     };
+// function factory(list){
+//     var count = 0;
+//     return function(){
+//         console.log(list[count++]);
+//     }
 // }
-// var counter = makeCounter();
-// console.log(counter());
-// console.log(counter());
+// var step = factory([2, 8, 9, 2, 4]);
+// step();
+// step();
+// step();
+// step();
+// step();
+
+
+// 3. Задача
+// Адаптировать итератор из 2 задания под такой функционал: step(callback);, где callback - функция с 1 аргументом.
+//  var step = factory([2, 8, 9, 2, 4]);
+//  step(sqr); // 4
+//  step(sqr); // 64
+//  step(sqr); // 81
+//  function sqr(x) {
+//      return x*x;
+//  }
+
 
 function factory(list){
-    var currentCount = 0;
-    return function(){
-        console.log(list[currentCount]);
-        return currentCount++;
+    var count = 0;
+    return function (callback){
+        return callback(list[count++]);
     }
 }
 var step = factory([2, 8, 9, 2, 4]);
-step();
-step();
-step();
+function sqr(x) {
+    return x*x;
+}
+console.log(step(sqr));
+console.log(step(sqr));
+console.log(step(sqr));
