@@ -277,6 +277,7 @@ console.log(step1(sqr));
 console.log(step1(sqr));
 
 
+
 // // 4. Задача
 console.log('Задача №4');        
 // // Написать функцию getMaxs(args), где args - любое количество массивов. 
@@ -303,10 +304,6 @@ getMaxs([1,2,16,3,4],[5,6,7,19,8,9,],[10,11,12,21,13,14]);
 
 
 
-
-
-
-
 // 5. Задача
 console.log('Задача №5');        
 // Реализовать функцию Some() через Factory(), которая будет возвращать интерфейс для получения массива.
@@ -319,3 +316,14 @@ console.log('Задача №5');
 // struct_1(); // [2, 7]
 // struct_2(); // [3, 9, 6]
 // struct_3(); // [4]
+
+function factorySt (){
+    return some;
+}
+function some(){
+    return function() {
+        
+    }        
+}
+
+// var some = factorySt([[2, 7], [3, 9, 6], [4], [2, 2, 2], [1]]);
