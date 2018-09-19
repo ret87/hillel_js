@@ -249,8 +249,6 @@ funcName();
 console.log(funcName === addFunc);
 
 
-// Удобно использовать для параметрического определения данной функции - пораждающей, т.е. в зависимости от условий входящих параметров
-// можем вернуть разные функции
 
 function factoryParam(){
     // - Возвращение другой функции по имени
@@ -261,3 +259,34 @@ function funcParam1(){
 }
 var funcParam = factoryParam();
 funcParam();
+
+
+// Удобно использовать для параметрического определения данной функции - пораждающей, т.е. в зависимости от условий входящих параметров
+// можем вернуть разные функции 
+// при таком подходе нет замыкания
+// function factoryParamIf(a){
+//     if (a){
+//         return function (){
+//             console.log('If');
+//         }
+//     } return funcParam1If;
+// }
+// function funcParam1If(){
+//     console.log('not If');
+// }
+// var funcParamIf = factoryParamIf(2);
+// funcParamIf();
+
+// при таком подходе замыкание есть
+function factoryParamIf(a){
+    if (a){
+        return function (){
+            console.log('If');
+        }
+    } return funcParam1If;
+    function funcParam1If(){
+        console.log('not If');
+    }
+}
+var funcParamIf = factoryParamIf();
+funcParamIf();
