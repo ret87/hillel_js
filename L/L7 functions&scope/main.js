@@ -125,102 +125,6 @@ function f1(a){
 f1(80);
 
 
-
-        // // Практическая часть лекции
-
-console.log('Задача №1');        
-//  1. Задача
-//  -  Написать функцию которая получает аргументами любое количество массивов. 
-// fofoFunction([1, 2, 3], [3,6,3223], [2,8,5,7,457,457,4]). 
-// Возвращает супер-массив, который состоит из всех элементов переданных массивов.
-
-var arr = [];
-function fofoFunction(){
-    for(var i=0;i<arguments.length;i++){
-        arr = arr.concat(arguments[i]);
-    }
-    return console.log(arr);
-} 
-fofoFunction([1, 2, 3], [3,6,3223], [2,8,5,7,457,457,4]); 
-
-
-console.log('Задача №2');        
-// 2. Задача
-// Написать функцию итератор, при каждом последующем обращении будет возвращать next элемент. 
-// var step = factory([2, 8, 9, 2, 4]);
-//  step(); // 2
-//  step(); // 8
-//  step(); // 9
-
-function factory(list){
-    var count = 0;
-    return function(){
-        console.log(list[count++]);
-    }
-}
-var step = factory([2, 8, 9, 2, 4]);
-step();
-step();
-step();
-step();
-step();
-
-
-console.log('Задача №3');        
-// 3. Задача
-// Адаптировать итератор из 2 задания под такой функционал: step(callback);, где callback - функция с 1 аргументом.
-//  var step = factory([2, 8, 9, 2, 4]);
-//  step(sqr); // 4
-//  step(sqr); // 64
-//  step(sqr); // 81
-//  function sqr(x) {
-//      return x*x;
-//  }
-
-
-function factory1(list){
-    var count = 0;
-    return function (callback){
-        return callback(list[count++]);
-    }
-}
-var step1 = factory1([2, 8, 9, 2, 4]);
-function sqr(x) {
-    return x*x;
-}
-console.log(step1(sqr));
-console.log(step1(sqr));
-console.log(step1(sqr));
-
-
-console.log('Задача №4');        
-// // 4. Задача
-// // Написать функцию getMaxs(args), где args - любое количество массивов. 
-// // Функция должна вернуть максимумы всех переданных массивов в виде строки, через разделитель , .
-// var arr2 = [];
-// function getMaxs(args){
-//     for(var i=0;i<arguments.length;i++){
-//         // for(var j=0;j<arguments[i].length;j++){
-//             // console.log([i][j]);
-//             console.log([i]);
-//         var numb = arguments[0];
-//         if(arguments[i] >= numb){
-//         numb = arguments[i];
-//         console.log(numb);
-//     }       
-//     arr2 = arr2.concat(numb);
-//     // }
-//     console.log(arr2);
-
-//     }
-// }
-// getMaxs([1,2,3,4],[5,6,7,8,9,],[10,11,12,13,14]);
-
-
-
-
-
-
 console.log('Пораждающие функции');        
 
         // // Пораждающие функции 
@@ -272,6 +176,7 @@ funcParam();
 
 // Удобно использовать для параметрического определения данной функции - пораждающей, т.е. в зависимости от условий входящих параметров
 // можем вернуть разные функции 
+
 // при таком подходе нет замыкания
 // function factoryParamIf(a){
 //     if (a){
@@ -297,12 +202,113 @@ function factoryParamIf(a){
         console.log('not If');
     }
 }
-var funcParamIf = factoryParamIf();
+var funcParamIf = factoryParamIf(2);
 funcParamIf();
 
 
-console.log('Задача №5');        
+
+
+        // // Практическая часть лекции
+console.log(' ');        
+console.log('Практическая часть лекции');        
+
+//  1. Задача
+console.log('Задача №1');        
+//  -  Написать функцию которая получает аргументами любое количество массивов. 
+// fofoFunction([1, 2, 3], [3,6,3223], [2,8,5,7,457,457,4]). 
+// Возвращает супер-массив, который состоит из всех элементов переданных массивов.
+
+var arr = [];
+function fofoFunction(){
+    for(var i=0;i<arguments.length;i++){
+        arr = arr.concat(arguments[i]);
+    }
+    return console.log(arr);
+} 
+fofoFunction([1, 2, 3], [3,6,3223], [2,8,5,7,457,457,4]); 
+
+
+// 2. Задача
+console.log('Задача №2');        
+// Написать функцию итератор, при каждом последующем обращении будет возвращать next элемент. 
+// var step = factory([2, 8, 9, 2, 4]);
+//  step(); // 2
+//  step(); // 8
+//  step(); // 9
+
+function factory(list){
+    var count = 0;
+    return function(){
+        console.log(list[count++]);
+    }
+}
+var step = factory([2, 8, 9, 2, 4]);
+step();
+step();
+step();
+step();
+step();
+
+
+// 3. Задача
+console.log('Задача №3');        
+// Адаптировать итератор из 2 задания под такой функционал: step(callback);, где callback - функция с 1 аргументом.
+//  var step = factory([2, 8, 9, 2, 4]);
+//  step(sqr); // 4
+//  step(sqr); // 64
+//  step(sqr); // 81
+//  function sqr(x) {
+//      return x*x;
+//  }
+
+
+function factory1(list){
+    var count = 0;
+    return function (callback){
+        return callback(list[count++]);
+    }
+}
+var step1 = factory1([2, 8, 9, 2, 4]);
+function sqr(x) {
+    return x*x;
+}
+console.log(step1(sqr));
+console.log(step1(sqr));
+console.log(step1(sqr));
+
+
+// // 4. Задача
+console.log('Задача №4');        
+// // Написать функцию getMaxs(args), где args - любое количество массивов. 
+// // Функция должна вернуть максимумы всех переданных массивов в виде строки, через разделитель , .
+function getMaxs(args){
+    var arr2 = [];
+    var maxNumb = [];
+    for(var i=0;i<arguments.length;i++){
+        arr2 = arr2.concat(arguments[i]);
+        if(arr2.length){
+            var maxArr2 = arr2[0];
+        }
+        for(var j=0; j<arr2.length;j++){
+            if(arr2[j] > maxArr2){
+                maxArr2 = arr2[j];
+            }
+        }
+        maxNumb = maxNumb.concat(maxArr2);
+        var strMaxArr2 = maxNumb.join(', ')
+    }
+    console.log(strMaxArr2);
+}
+getMaxs([1,2,16,3,4],[5,6,7,19,8,9,],[10,11,12,21,13,14]);
+
+
+
+
+
+
+
 // 5. Задача
+console.log('Задача №5');        
 // Реализовать функцию Some() через Factory(), которая будет возвращать интерфейс для получения массива.
 // var Some = Factory([[2, 7], [3, 9, 6], [4], [2, 2, 2], [1]]);
 // var struct_1 = Some(); 
