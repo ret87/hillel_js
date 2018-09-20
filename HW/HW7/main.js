@@ -86,13 +86,26 @@ console.log('Задача №3 var 3');
 function mul(a, b) {
     return a * b;
 }
-console.log(doFunction(5, -3,mul))
+console.log(doFunction(5, -3, mul))
 
 
 // 4. Задача 
 console.log('Задача №4');        
 // Из п.2, если количество числовых аргументов равно единице и переданная функция factorial - реализовать расчет факторикала. 
 // doFunction(6, factorial);, в ответе поулчаем 6! = 720. // arguments.length и typeof
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // 5. Задача
 console.log('Задача №5');        
