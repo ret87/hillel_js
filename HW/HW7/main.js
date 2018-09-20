@@ -9,6 +9,37 @@ console.log('Задача №1');
 // Центральный элемент, это один центральный, если массив по длине непарный [1, 2, 3, 4, 5] -> 3
 // Центральный элемент, это пара центральных, если массив по длине парный: [1, 2, 3, 4, 5, 6] -> 3, 4
 
+// var1 - for one array
+console.log('Задача №1 var1');        
+
+function midArr(arr){
+    var arrMid = [];
+    if(arr.length%2 == 0){
+        arrMid.push(arr[(arr.length/2 - 1)], arr[(arr.length/2)]);
+    } else if (arr.length%2 !== 0){
+        arrMid.push(arr[(Math.floor(arr.length/2))]);
+    }
+    console.log(arrMid);
+}
+midArr([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+midArr([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+
+// var2 - for any arrays
+console.log('Задача №1 var2');       
+
+function midArrays(){
+    var arrMid = [];
+    for(var i=0; i<arguments.length;i++){
+        if(arguments[i].length%2 == 0){
+            arrMid.push((arguments[i].length/2), (arguments[i].length/2+1));
+        } else if (arguments[i].length%2 !== 0){
+            arrMid.push(Math.round(arguments[i].length/2));
+        } 
+    }
+    console.log(arrMid);
+}
+midArrays([1, 2, 3, 4, 5, 6, 7, 8, 9], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+
 // 2. Задача
 console.log('Задача №2');        
 // Написать функцию, которая получает 3 аргумента: два числа и функцию. Произвести вызов переданной ф-ии с двумя аргументами числами.
@@ -45,10 +76,11 @@ function some(){
         
     }        
 }
-var Some = Factory([[2, 7], [3, 9, 6], [4], [2, 2, 2], [1]]);
-var struct_1 = Some(); 
-var struct_2 = Some(); 
-var struct_3 = Some(); 
-struct_1(); // [2, 7]
-struct_2(); // [3, 9, 6]
-struct_3(); // [4]
+// var some = factory([[2, 7], [3, 9, 6], [4], [2, 2, 2], [1]]);
+// var struct_1 = Some(); 
+// var struct_2 = Some(); 
+// var struct_3 = Some(); 
+
+// struct_1(); // [2, 7]
+// struct_2(); // [3, 9, 6]
+// struct_3(); // [4]
