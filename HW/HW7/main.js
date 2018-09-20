@@ -45,10 +45,50 @@ console.log('Задача №2');
 // Написать функцию, которая получает 3 аргумента: два числа и функцию. Произвести вызов переданной ф-ии с двумя аргументами числами.
 // doFunction(2, 3, power); в ответе должны получить 8, как 2 в степени 3.
 
+function doFunction(a, b, callback){
+    return callback(a, b);    
+}
+function power(a, b){
+    return a ** b;
+}
+console.log(doFunction(2,3, power));
+
+
 // 3. Задача 
 console.log('Задача №3');        
 // Из п.2 реализовать функции sum, div, mul, power
 // doFunction(16, -23, mul); // 16*(-23)
+
+console.log('Задача №3 var 1');        
+// function doFunction(a, b, callback){
+//     return callback (a, b);
+// }
+function sum(a, b){
+    return a + b;
+}
+console.log(doFunction(2,3, sum));
+
+
+console.log('Задача №3 var 2');        
+// function doFunction(a, b, callback){
+//     return callback (a, b);
+// }
+function div(a, b){
+    return a - b;
+}
+console.log(doFunction(15, 5, div));
+
+
+console.log('Задача №3 var 3');        
+// function doFunction(a, b, callback){
+//     return callback (a, b);
+// }
+function mul(a, b) {
+    return a ** b;
+}
+console.log(doFunction(5, -3,mul))
+
+
 
 // 4. Задача 
 console.log('Задача №4');        
