@@ -84,10 +84,9 @@ console.log('Задача №3 var 3');
 //     return callback (a, b);
 // }
 function mul(a, b) {
-    return a ** b;
+    return a * b;
 }
 console.log(doFunction(5, -3,mul))
-
 
 
 // 4. Задача 
