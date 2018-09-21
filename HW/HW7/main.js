@@ -86,7 +86,7 @@ console.log('Задача №3 var 3');
 function mul(a, b) {
     return a * b;
 }
-console.log(doFunction(5, -3, mul))
+console.log(doFunction(16, -23, mul))
 
 
 // 4. Задача 
@@ -94,45 +94,51 @@ console.log('Задача №4');
 // Из п.2, если количество числовых аргументов равно единице и переданная функция factorial - реализовать расчет факторикала. 
 // doFunction(6, factorial);, в ответе поулчаем 6! = 720. // arguments.length и typeof
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-// 5. Задача
-console.log('Задача №5');        
-// Реализовать функцию Some() через Factory(), которая будет возвращать интерфейс для получения массива.
-// var Some = Factory([[2, 7], [3, 9, 6], [4], [2, 2, 2], [1]]);
-// var struct_1 = Some(); 
-// var struct_2 = Some(); 
-// var struct_3 = Some(); 
-// struct_1(); // [2, 7]
-// struct_1(); // [2, 7]
-// struct_1(); // [2, 7]
-// struct_2(); // [3, 9, 6]
-// struct_3(); // [4]
-
-function factorySt (){
-    return some;
+function doFunction(a, b, callback){
+    if (arguments.length = 1 && typeof a || b == number){
+    // if (arguments.length = 1 && typeof a || b == number){
+        return factorial (a);
+    } else return callback (a, b);
+} 
+function power (a, b){
+    return a ** b;
 }
-function some(){
-    return function() {
+function factorial (a){
+    return a ? a*factorial(a-1) : 1;
+}
+console.log(doFunction(3, 6, power));
+console.log(doFunction(6, factorial));
+
+
+
+// // 5. Задача
+// console.log('Задача №5');        
+// // Реализовать функцию some() через factory(), которая будет возвращать интерфейс для получения массива.
+// // var Some = Factory([[2, 7], [3, 9, 6], [4], [2, 2, 2], [1]]);
+// // var struct_1 = some(); 
+// // var struct_2 = some(); 
+// // var struct_3 = some(); 
+// // struct_1(); // [2, 7]
+// // struct_1(); // [2, 7]
+// // struct_1(); // [2, 7]
+// // struct_2(); // [3, 9, 6]
+// // struct_3(); // [4]
+
+
+
+// function factory (){
+//     return some;
+// }
+// function some(){
+//     return function() {
         
-    }        
-}
-// var some = factory([[2, 7], [3, 9, 6], [4], [2, 2, 2], [1]]);
-// var struct_1 = Some(); 
-// var struct_2 = Some(); 
-// var struct_3 = Some(); 
+//     }        
+// }
+// // var some = factory([[2, 7], [3, 9, 6], [4], [2, 2, 2], [1]]);
+// // var struct_1 = Some(); 
+// // var struct_2 = Some(); 
+// // var struct_3 = Some(); 
 
-// struct_1(); // [2, 7]
-// struct_2(); // [3, 9, 6]
-// struct_3(); // [4]
+// // struct_1(); // [2, 7]
+// // struct_2(); // [3, 9, 6]
+// // struct_3(); // [4]
