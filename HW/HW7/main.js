@@ -95,7 +95,7 @@ console.log('Задача №4');
 // doFunction(6, factorial);, в ответе поулчаем 6! = 720. // arguments.length и typeof
 
 function doFunction(a, b, callback){
-    if (arguments.length = 1 && typeof a || b == number){
+    if (arguments.length = 1 && typeof a || b == "number"){
         return factorial (a);
     } else return callback (a, b);
 } 
