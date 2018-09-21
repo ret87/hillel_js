@@ -38,7 +38,7 @@ function midArrays(){
     }
     console.log(arrMid);
 }
-midArrays([1, 2, 3, 4, 5, 6, 7, 8, 9], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+midArrays([1, 2, 3, 4], [1, 2, 3, 4, 5]);
 
 // 2. Задача
 console.log('Задача №2');        
@@ -96,7 +96,6 @@ console.log('Задача №4');
 
 function doFunction(a, b, callback){
     if (arguments.length = 1 && typeof a || b == number){
-    // if (arguments.length = 1 && typeof a || b == number){
         return factorial (a);
     } else return callback (a, b);
 } 
@@ -113,32 +112,41 @@ console.log(doFunction(6, factorial));
 
 // // 5. Задача
 // console.log('Задача №5');        
-// // Реализовать функцию some() через factory(), которая будет возвращать интерфейс для получения массива.
-// // var Some = Factory([[2, 7], [3, 9, 6], [4], [2, 2, 2], [1]]);
-// // var struct_1 = some(); 
-// // var struct_2 = some(); 
-// // var struct_3 = some(); 
-// // struct_1(); // [2, 7]
-// // struct_1(); // [2, 7]
-// // struct_1(); // [2, 7]
-// // struct_2(); // [3, 9, 6]
-// // struct_3(); // [4]
+// Реализовать функцию some() через factory(), которая будет возвращать интерфейс для получения массива.
+// var Some = Factory([[2, 7], [3, 9, 6], [4], [2, 2, 2], [1]]);
+// var struct_1 = some(); 
+// var struct_2 = some(); 
+// var struct_3 = some(); 
+// struct_1(); // [2, 7]
+// struct_1(); // [2, 7]
+// struct_1(); // [2, 7]
+// struct_2(); // [3, 9, 6]
+// struct_3(); // [4]
 
+function factory (a){
+    var array = [];        
+    return function(){
+        for(var i = 0; i<arguments.length; i++){
+            array = array.concat(arguments[i]);
+        }
+// так точно не работает - понимаю что вопрос в условии присваивания переменной STRUCT_1/2 и тд к функции SOME
+        return function(){
+            if(struct_1 = some()){
+                console.log(array[0]);
+            } else if (struct_2 = some()){
+                console.log(array[1]);    
+            }
+            else if (struct_3 = some()){
+                console.log(array[2]);    
+            }
+        }
 
+    }
+}
 
-// function factory (){
-//     return some;
-// }
-// function some(){
-//     return function() {
-        
-//     }        
-// }
-// // var some = factory([[2, 7], [3, 9, 6], [4], [2, 2, 2], [1]]);
-// // var struct_1 = Some(); 
-// // var struct_2 = Some(); 
-// // var struct_3 = Some(); 
-
-// // struct_1(); // [2, 7]
-// // struct_2(); // [3, 9, 6]
-// // struct_3(); // [4]
+var some = factory([[2, 7], [3, 9, 6], [4], [2, 2, 2], [1]]);
+some([[2, 7], [3, 9, 6], [4], [2, 2, 2], [1]]);
+var struct_1 = some(); 
+struct_1(); 
+var struct_2 = some(); 
+struct_2(); 
