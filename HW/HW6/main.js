@@ -89,18 +89,21 @@ console.log('Задача 5')
 //  function isEven(x) { return x % 2 == 0; } // проверяет на четность
 //  console.log(filter(input, isEven)); // [2, 4, 6]
 
-var arr = [];
-var input = [1,2,3,4,5,6];    
-function isEven(x){ 
-    return x % 2 == 0; 
-} 
-function filter(input, isEven) {
+function filter(input, callback) {
+    var arr = [];
     for(var i=0; i<input.length; i++){
         var x = input[i];
-        if( isEven(x)){
+        if( callback(x)){
             arr.push(x);
         }
     }            
     return arr;
 }
-console.log(filter(input, isEven));
+function isEven(x){ 
+    return x % 2 == 0; 
+} 
+function notEven(x){ 
+    return x % 2 !== 0; 
+} 
+console.log(filter([1,2,3,4,5,6], notEven));
+console.log(filter([1,2,3,4,5,6], isEven));
