@@ -7,17 +7,19 @@ console.log('Functions');
     // 1. Задача
 console.log('Задача 1')
 // Написать функцию заполнения двумерного массива. без создания и получения размеров. Имя произвольное.
-function doubleArray(row, coll){
-    var A = new Array(row);
+function doubleArray(row, coll, name){
+    name = new Array(row);
     for(var i = 0; i < row; i++){
-        A[i] = new Array(coll);
+        name[i] = new Array(coll);
         for(var j = 0; j < coll; j++) {
-            A[i][j] = Math.floor(Math.random()*90 + 10);
+            name[i][j] = Math.floor(Math.random()*90 + 10);
         }
     }
-    return A;
+    return name;
 }
-console.log(doubleArray(4,4));
+var A = [doubleArray(5,5,A)];
+console.log(A);
+
 
 // 2. Задача
 console.log('Задача 2')
