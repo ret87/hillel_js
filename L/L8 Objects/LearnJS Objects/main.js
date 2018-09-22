@@ -16,6 +16,7 @@ console.log('Objects');
 // удалять можно так же - обращаясь к имени объекта и ключу через   delete obj.namekey;
 // можно проверять на наличие ключей в объекте через конструкцию if("namekey" in obj){some do} 
 // но так же можно через undefined       if(obj.namekey === undefined){some do}
+// В качестве значения можно тут же указать и другой объект использовав его как ключ - значени в родительском объекте obj = {obj2:{}}
 
 
 
@@ -37,6 +38,9 @@ console.log(o1['age']);
 o1.sex = "male";
 o1.born = 1987;
 console.log(o1);
+// так же можно добавлять отдельно елементы, обращаясь к имени объекта['ключ'] = 'значение';  obj['namekey'] = 'value';
+o1['from'] = 'Kiev';
+console.log(o1);
 // удалять можно так же - обращаясь к имени объекта и ключу через   delete obj.namekey;
 delete o1.age; 
 console.log(o1);
@@ -44,3 +48,29 @@ console.log(o1);
 if("name" in o1){
     console.log(o1.name)
 }
+// В качестве значения можно тут же указать и другой объект использовав его как ключ - значени в родительском объекте obj = {obj2:{}}
+o1.situated = {
+    city: 'Kiev',
+    street: 'Kopernika',
+    house: 3 
+}
+console.log(o1);
+
+// Практика по теории
+// 1. Задача
+console.log('Задача 1');
+console.log('1.1');
+var user = {}
+console.log(user);
+console.log('1.2');
+user.name = 'Вася';
+console.log(user);
+console.log('1.3');
+user.surname = "Петров";
+console.log(user);
+console.log('1.4');
+user.name = "Сергей"
+console.log(user);
+console.log('1.5');
+delete user.name;
+console.log(user);
