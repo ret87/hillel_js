@@ -112,3 +112,43 @@ console.log(user);
 
 // 2. Задача
 console.log('Задача 2');
+// Создайте функцию isEmpty(obj), которая возвращает true, если в объекте нет свойств и false – если хоть одно свойство есть.
+
+function isEmpty(obj){
+    for(var key in obj){
+        return false;
+    } 
+    return true;
+}
+var schedule = {};
+console.log(isEmpty(schedule));
+var schedule1 = {name: 1};
+console.log(isEmpty(schedule1));
+
+// 3. Задача
+// Есть объект salaries с зарплатами. Напишите код, который выведет сумму всех зарплат.
+// Если объект пустой, то результат должен быть 0.
+var salaries = {
+    "Вася": 100,
+    "Петя": 300,
+    "Даша": 250
+};
+var summ = 0;
+for(var key in salaries){
+    summ += salaries[key]
+}
+console.log(summ);
+
+// 4. Задача
+// Свойство с наибольшим значением
+// Есть объект salaries с зарплатами. Напишите код, который выведет имя сотрудника, у которого самая большая зарплата.
+// Если объект пустой, то пусть он выводит «нет сотрудников».
+var maxKey = 0;
+for(var max in salaries){
+    if(maxKey<salaries[max]){
+        maxKey = salaries[max];
+    }
+}
+console.log(maxKey);
+
+// 5. Задача
