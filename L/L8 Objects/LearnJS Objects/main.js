@@ -152,3 +152,23 @@ for(var max in salaries){
 console.log(maxKey);
 
 // 5. Задача
+// Создайте функцию multiplyNumeric, которая получает объект и умножает все численные свойства на 2. 
+var menu = {
+    'width': 300,
+    'height': 400,
+    'title': 'My menu'
+}
+console.log(menu);
+function isNumeric(n) {
+    return !isNaN(parseFloat(n)) && isFinite(n)
+}
+function multiplyNumeric(obj){
+    for(var numb in obj){
+        // if(typeof obj[numb] == "number"){
+        if(isNumeric(obj[numb])){
+            obj[numb] *= 2;
+        }
+    }
+}
+multiplyNumeric(menu);
+console.log(menu);
