@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 console.log('Objects');
 
         // THIS 
@@ -34,7 +34,7 @@ console.log(data2.sum(1,2));
 // alert();
 // prompt();
 document.write();
-// sumSource(2, 8); // не понял - выдаёт ошибку 
+sumSource(2, 8); 
 console.log(data.sum === sumSource); // ссылки одинаковы, но контекст у них разный! - обращается к тому месту,где действие выполняется
 
 
@@ -55,13 +55,13 @@ var obj = {
         }
 }
 // Написать функцию convert(obj), который будет хранится в window, он получает аргументом obj. Функция должна вернуть объект:
-var newObj = {
+// var newObj = {
 //         x: 20,
 //         y: 20,
 //         z: 30,
 //         k: 23,
 //         p: 13
-}
+// }
 function convert(object){
         for(var key in object){
                 if(typeof object[key] ===  "object"){
@@ -71,15 +71,59 @@ function convert(object){
                         delete object[key];
                 }
         }
-        return newObj = object;
 }
 convert(obj);
-console.log(newObj);
+console.log(obj);
 
 console.log('Задча 2');
 // Написать методы push, pop, splice, split самостоятельно. Их функциональность должна соответствовать стандартным методам массивов.
 
-// list.myPush(); 
-// list.mySplit();
+console.log('Задча 2 push');
+function myPush(item){
+        this [this.length] = item;
+        return item;
+}
+var list = [0,4,8,2];
+list.myPush = myPush;
+console.log(list.myPush(9));
+
+console.log('Задча 2 pop');
+function myPop(){
+        var item = this[this.length-1];
+        delete this [this.length-1] ;
+        return item;
+}
+list.myPop = myPop;
+console.log(list.myPop());
+
+console.log('Задча 2 split');
+
+console.log('Задча 2 splice');
 
 console.log('Задча 3');
+// Написать функцию assignObjects(obj1, obj2), которая принимает аргументами 2 обьекта и возвращает новый,
+//  который состоит из свойство обоих обьектов (склеить). Если свойство повторяется, то взять значение второго обьекта
+// assignObjects({ x: 10, y: 20 }, { z: 30 }) -> { x:10, y:20, z: 30 }
+
+// assignObjects({ x: 10 }, { x: 20, y: 30 }) - > { x:20, y: 30 }
+function assignObjects(obj1, obj2){
+        for(var key1 in obj1){
+                obj1[key1] = obj2[key1] 
+                // console.log(obj1[key])
+                // for(var key2 in obj2){
+                // }
+                
+        }
+        return obj1;
+}
+var obj1 = {
+        x: 10
+}
+var obj2 = {
+        x: 20,
+        y: 30
+}
+var obj;
+console.log(obj1, obj2)
+console.log(assignObjects(obj1, obj2))
+
