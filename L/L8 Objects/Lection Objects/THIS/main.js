@@ -64,17 +64,22 @@ var newObj = {
 }
 function convert(object){
         for(var key in object){
-                console.log(key);
                 if(typeof object[key] ===  "object"){
                         for(var keyIn in object[key]){
-
-                        }
-
+                                object[keyIn] = object[key][keyIn];
+                        }   
+                        delete object[key];
                 }
         }
-        return newObj;
+        return newObj = object;
 }
 convert(obj);
+console.log(newObj);
 
 console.log('Задча 2');
+// Написать методы push, pop, splice, split самостоятельно. Их функциональность должна соответствовать стандартным методам массивов.
+
+// list.myPush(); 
+// list.mySplit();
+
 console.log('Задча 3');
