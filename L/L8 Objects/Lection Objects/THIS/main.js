@@ -40,6 +40,8 @@ console.log(data.sum === sumSource); // ссылки одинаковы, но к
 
 // Лекционная практика
 console.log('Лекционная практика');
+
+
 console.log('Задча 1');
 // Создать объект с такой структурой:
 var obj = {
@@ -75,6 +77,7 @@ function convert(object){
 convert(obj);
 console.log(obj);
 
+
 console.log('Задча 2');
 // Написать методы push, pop, splice, split самостоятельно. Их функциональность должна соответствовать стандартным методам массивов.
 
@@ -105,17 +108,6 @@ console.log('Задча 3');
 //  который состоит из свойство обоих обьектов (склеить). Если свойство повторяется, то взять значение второго обьекта
 // assignObjects({ x: 10, y: 20 }, { z: 30 }) -> { x:10, y:20, z: 30 }
 
-// assignObjects({ x: 10 }, { x: 20, y: 30 }) - > { x:20, y: 30 }
-function assignObjects(obj1, obj2){
-        for(var key1 in obj1){
-                obj1[key1] = obj2[key1] 
-                // console.log(obj1[key])
-                // for(var key2 in obj2){
-                // }
-                
-        }
-        return obj1;
-}
 var obj1 = {
         x: 10
 }
@@ -124,6 +116,4 @@ var obj2 = {
         y: 30
 }
 var obj;
-console.log(obj1, obj2)
-console.log(assignObjects(obj1, obj2))
-
+console.log(Object.assign(obj1,obj2));
