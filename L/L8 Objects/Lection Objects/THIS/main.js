@@ -100,6 +100,26 @@ list.myPop = myPop;
 console.log(list.myPop());
 
 console.log('Задча 2 split');
+var string = [1, 'ab', 2, 'cd', 'df', 'ht'];
+function mySplit(znak){
+        if(znak != undefined){
+                var item = this[0];
+                for(var i=1; i<this.length;i++){
+                        item += znak + this[i];
+                }
+        } else if (znak == undefined){
+                var item = this[0];
+                for(var i=1; i<this.length;i++){
+                        item += ',' + this[i];
+                }
+        }
+        
+        return item;
+}
+string.mySplit = mySplit;
+console.log(string.mySplit())
+console.log(string.mySplit('; '))
+
 
 console.log('Задча 2 splice');
 
