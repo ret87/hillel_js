@@ -103,3 +103,30 @@ console.log('Задча 2 split');
 
 console.log('Задча 2 splice');
 
+
+console.log('Задча 3');
+// 3. Задача
+// Написать функцию assignObjects(obj1, obj2), которая принимает аргументами 2 обьекта и возвращает новый,
+//  который состоит из свойство обоих обьектов (склеить). Если свойство повторяется, то взять значение второго обьекта
+// assignObjects({ x: 10, y: 20 }, { z: 30 }) -> { x:10, y:20, z: 30 }
+
+function assignObjects(obj1, obj2){
+    var obj = {};
+    for(var key1 in obj1){
+        for(var key2 in obj2){
+            obj[key2] = obj2[key2]; 
+        }
+        obj[key1] = obj1[key1]; 
+    }
+    return obj;
+}
+var obj1 = {
+    x: 10,
+    z: 40
+}
+var obj2 = {
+    x: 20,
+    y: 30
+}
+var obj;
+console.log(assignObjects(obj1, obj2));
