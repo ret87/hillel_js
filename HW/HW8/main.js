@@ -22,31 +22,41 @@ inArray('hello', arr);
 
 console.log('Задча 2');
 // 2. Задача
-// В задачу п.2 из лекции добавить 3ий аргумента flag, который является boolean. 
+// В задачу п.3 из лекции добавить 3ий аргумента flag, который является boolean. 
 // Если флаг true, тогда при наличии свойства в обоих объектов в результат пойдет значение из первого обьекта, false - из второго.
 // assignObjects({...}, {...}, false);
-function assignObjects(obj1, obj2){
+// 3. Задача
+// В задачу п.3, сделать параметр flag не обязательный, если параметр не передать - устанавливать значение false.
+
+function assignObjects(obj1, obj2, flag){
     var object = {}
-    for(var key1 in obj1){
-        object[key1] = obj1[key1];
-        for(var key2 in obj2){
-            object[key2] = obj2[key2];
+    if(flag == false || flag == undefined){
+        for(var key1 in obj1){
+            object[key1] = obj1[key1];
+            for(var key2 in obj2){
+                object[key2] = obj2[key2];
+            }
         }
+        return object;
+    } else if (flag == true){
+        for(var key2 in obj2){
+            for(var key1 in obj1){
+                object[key1] = obj1[key1];
+            }
+        }
+        object[key2] = obj2[key2];
+        return object;
     }
-    return object;
 }
 var object1 = {
-    a: 10,
-    b: 20,
-    c: 50,
-    d: 30
+    a: 1,
+    b: 2,
+    d: 3
 } 
 var object2 = {
     a: 30,
-    e: 20,
-    f: 40,
-    d: 20
+    e: 20
 } 
+console.log(assignObjects(object1, object2, true));
+console.log(assignObjects(object1, object2, false));
 console.log(assignObjects(object1, object2));
-// 3. Задача
-// В задачу п.2, сделать параметр flag не обязательный, если параметр не передать - устанавливать значение false.
