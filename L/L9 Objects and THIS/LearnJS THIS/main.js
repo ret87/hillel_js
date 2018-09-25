@@ -46,10 +46,12 @@ function nameObj (name){
 objectC.nameO();
 
 console.log('Задачи к теории')
+
+
 // Задачи к теории
 
 console.log('Задачa 1');
-
+// Задача №1
 var arr = ["a", "b"];
 arr.push(function() {
     console.log( this );
@@ -58,7 +60,7 @@ arr[2](); // "a","b",function
 
 
 console.log('Задачa 2');
-// Создайте калькулятор
+// Задача №2 - создайте калькулятор
 // Создайте объект calculator с тремя методами:
 // read() запрашивает prompt два значения и сохраняет их как свойства объекта
 // sum() возвращает сумму этих двух значений
@@ -79,3 +81,23 @@ calculator.read();
 calculator.sum();
 calculator.mul();
 console.log(calculator);
+
+
+console.log('Задачa 3');
+// Задача №3 - чейнинг» (chaining)
+var ladder = {
+    step: 0,
+    up: function() {
+        this.step++;
+        return this;
+    },
+    down: function() {
+        this.step--;
+        return this;
+    },
+    showStep: function() {
+        console.log( this.step );
+        return this;
+    }
+}
+ladder.up().up().down().up().down().showStep(); 
