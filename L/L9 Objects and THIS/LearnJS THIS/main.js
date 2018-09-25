@@ -52,6 +52,30 @@ console.log('Задачa 1');
 
 var arr = ["a", "b"];
 arr.push(function() {
-  console.log( this );
+    console.log( this );
 })
 arr[2](); // "a","b",function
+
+
+console.log('Задачa 2');
+// Создайте калькулятор
+// Создайте объект calculator с тремя методами:
+// read() запрашивает prompt два значения и сохраняет их как свойства объекта
+// sum() возвращает сумму этих двух значений
+// mul() возвращает произведение этих двух значений
+var calculator = {
+    read: function (){
+        this.a = +prompt('a?',);
+        this.b = +prompt('a?',);
+    },
+    sum: function(a, b){
+        return console.log(this.a + this.b);
+    },
+    mul: function(a, b){
+        return console.log(this.a * this.b);
+    }
+}
+calculator.read();
+calculator.sum();
+calculator.mul();
+console.log(calculator);
