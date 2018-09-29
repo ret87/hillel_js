@@ -39,3 +39,49 @@ function mul (x,y){
 obj.doFunction(2,4, sum).doFunction(6,3, mul).copy('buffer').clear();
 console.log(obj.result);
 console.log(obj);
+
+
+console.log('Задача №2');        
+// 2. Задача
+// Дана строка вида 'var_text_hello'. Сделайте из него текст 'varTextHello'.
+
+// var begin = 'var_text_hello';
+// console.log(begin);
+// var end = '';
+// for(var i=0; i<begin.length; i++){
+//     if(begin[i] == '_'){
+//         end += begin[i+1].toUpperCase();
+//         i++;
+//         continue;
+//     }
+//     end += begin[i];
+// }
+// console.log(end);
+
+
+var begin = 'var_text_hello';
+console.log(begin);
+function upCase(string, symbol){
+    var stringB = '';
+    for(var i=0; i<string.length;i++){
+        if(string[i] == symbol){
+            stringB += string[i+1].toUpperCase();
+            i++;
+            continue;
+        }
+        stringB += string[i];
+    }
+    string = stringB;
+    console.log(string);
+    return string;
+}
+upCase(begin, '_');
+
+
+
+console.log('Задача №3');        
+// 3. Задача
+// Сделайте функцию inArray, которая определяет, есть в массиве элемент с заданным текстом или нет. 
+// Функция первым параметром должна принимать текст элемента, а вторым - массив, в котором делается поиск. 
+// Функция должна возвращать true или false.
+// inArray('foo', ['sjhfnaof', 'affooasf', 'dfhdfhdfh']) должно вернуть true, т.к. в affooasf есть совпадение.

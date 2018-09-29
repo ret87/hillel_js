@@ -106,3 +106,5 @@ var data = {
 data.addRecord({x: 10}, {y: 20}, {z: 30, x: 50}, true);
 // data.addRecord({x: 10}, {y: 20}, {z: 30, x: 50}, false);
 console.log(data);
+
+// попробовать через 0 и 1 - тру = 1, фолус = 0
