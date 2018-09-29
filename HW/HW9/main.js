@@ -85,3 +85,13 @@ console.log('Задача №3');
 // Функция первым параметром должна принимать текст элемента, а вторым - массив, в котором делается поиск. 
 // Функция должна возвращать true или false.
 // inArray('foo', ['sjhfnaof', 'affooasf', 'dfhdfhdfh']) должно вернуть true, т.к. в affooasf есть совпадение.
+
+function inArray(text, array){
+    for(var i in array){
+        if (~array[i].indexOf(text)){
+            return true;
+        } 
+    }
+    return false;
+}
+console.log(inArray('foo', ['sjhfnaof', 'affooasf', 'dfhdfhdfh'])) ;
