@@ -85,31 +85,24 @@ console.log("Задача 3, 4");
 // По умолчанию flag = false;
 
 var data = {
-    addRecord: function(){
+    addRecord: function(flag){
         for(var i=0; i<arguments.length;i++){
             for(var key in arguments[i]){
-                console.log(dataK);
                 for(var dataK in this){
+                    if(dataK == key){
+                        arguments[i][key] = this[dataK];
+                    } 
                 }
-                // if(key == dataK){
-                //     continue;
-                // }
                 this[key] = arguments[i][key];
+                // if(flag == false){
+                // }
             }
         }
-                        // this[dataK] = this[dataK];
-                        // this[key] = this[dataK];
-                        // this[dataK] = this[dataK];
-                        // console.log(key);
-                        // if(arguments[i] == true){
-                            //     for(var keyObj in this){
-                                // } else {
     },
     p: 600,
     str: 'hello',
     y: -50,
 }
-// data.addRecord({x: 10}, {y: 20}, {z: 30, x: 50});
 data.addRecord({x: 10}, {y: 20}, {z: 30, x: 50}, true);
 // data.addRecord({x: 10}, {y: 20}, {z: 30, x: 50}, false);
 console.log(data);
