@@ -1,4 +1,4 @@
-// 'use strict';
+'use strict';
 console.log('Objects THIS');
 
         // THIS OBJECT
@@ -21,14 +21,14 @@ var obj = {
     },
     // var 1
     // renderObject: function(){
-        //     for(var key in this){
-            //         if(key == 'renderObject'){
-                //             continue;
-                //         }   
-                //         console.log(key + ': ' + this[key] + ';');
-                //         document.write(key + ': ' + this[key] + ';' + '<br />');
-                //     }
-            // },
+    //     for(var key in this){
+    //         if(key == 'renderObject'){
+    //             continue;
+    //             }   
+    //             console.log(key + ': ' + this[key] + ';');
+    //             document.write(key + ': ' + this[key] + ';' + '<br />');
+    //         }
+    //     },
     // var 2
     renderObject: renderObject,
     list: [1,2,3,4,5]
@@ -89,6 +89,7 @@ var data = {
         for(var i=0; i<arguments.length;i++){
             for(var key in arguments[i]){
                 for(var dataK in this){
+                    // console.log(arguments[arguments.length-1]);
                     if(dataK == key){
                         arguments[i][key] = this[dataK];
                     } 
@@ -103,8 +104,34 @@ var data = {
     str: 'hello',
     y: -50,
 }
-data.addRecord({x: 10}, {y: 20}, {z: 30, x: 50}, true);
-// data.addRecord({x: 10}, {y: 20}, {z: 30, x: 50}, false);
+// data.addRecord({x: 10}, {y: 20}, {z: 30, x: 50}, true);
+data.addRecord({x: 10}, {y: 20}, {z: 30, x: 50}, false);
 console.log(data);
 
 // попробовать через 0 и 1 - тру = 1, фолус = 0
+
+
+console.log("Задача 5");
+// Задача 5
+// клонирование и объединение объектов
+
+function copy(dstr){
+    for(var i=0; i<arguments.length;i++){
+        for(var key in arguments[i]){
+            dstr[key] = arguments[i][key];
+        }
+    }
+    return dstr;
+}
+var names = {
+    name: 'Artem',
+    nick: 'Charli'
+}
+var yo = {
+    born: 1987,
+    age: 31
+}
+// copy(names, yo); // объединение объектов
+console.log(names); 
+var userClone = copy({}, yo, names);
+console.log(userClone);
