@@ -125,20 +125,20 @@ console.log('Задача №5');
 
 // // так точно не работает - понимаю что вопрос в условии присваивания переменной STRUCT_1/2 и тд к функции SOME
 function factory (){
-    // return function(){
-    return function some(){
-        console.log(arguments[0][0]);    
+    var array = [];
+    return function(){
+        for(var i=0; i<arguments.length;i++){
+            array = array.concat(arguments[i]);
+        }        
         return function(){
-            // if(struct_1 = some()){
-            //         // console.log(array[0]);
-            // } else if (struct_2 = some()){
-                //     // struct_2() = array[1];
-                // console.log(arguments[0][1]);    
-                //         // console.log(array[0]);
-                // }
-                // else if (struct_3 = some()){
-                    // console.log(arguments[0][2]);    
-                    //         // console.log(array[0]);
+            if(struct_1 = some()){
+                console.log(array[0]);
+            } 
+            else if (struct_2 = some()){
+                console.log(array[1]);
+            }
+            // else if (struct_3 = some()){
+            //     console.log(array[0]);
             // }
         }
     }
@@ -146,8 +146,7 @@ function factory (){
 
 var some = factory([[2, 7], [3, 9, 6], [4], [2, 2, 2], [1]]);
 some([[2, 7], [3, 9, 6], [4], [2, 2, 2], [1]]);
-// var struct_1 = some(); 
-// struct_1(); 
-// var struct_2 = some(); 
-// struct_2(); 
-// console.log(struct_2());    
+var struct_1 = some(); 
+struct_1(); 
+var struct_2 = some(); 
+struct_2(); 
