@@ -123,7 +123,7 @@ console.log('Задача №5');
 // struct_2(); // [3, 9, 6]
 // struct_3(); // [4]
 
-// // так точно не работает - понимаю что вопрос в условии присваивания переменной STRUCT_1/2 и тд к функции SOME
+// // так точно не работает - понимаю что вопрос в условии присваивания переменной STRUCT_1/2/3... и тд к функции SOME
 function factory (){
     var array = [];
     return function(){
@@ -137,9 +137,15 @@ function factory (){
             else if (struct_2 = some()){
                 console.log(array[1]);
             }
-            // else if (struct_3 = some()){
-            //     console.log(array[0]);
-            // }
+            else if (struct_3 = some()){
+                console.log(array[2]);
+            }
+            else if (struct_3 = some()){
+                console.log(array[3]);
+            }
+            else if (struct_3 = some()){
+                console.log(array[4]);
+            }
         }
     }
 }
@@ -150,3 +156,9 @@ var struct_1 = some();
 struct_1(); 
 var struct_2 = some(); 
 struct_2(); 
+var struct_3 = some(); 
+struct_3(); 
+var struct_4 = some(); 
+struct_4(); 
+var struct_5 = some(); 
+struct_5(); 
