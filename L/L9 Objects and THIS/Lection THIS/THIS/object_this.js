@@ -84,28 +84,53 @@ console.log("Задача 3, 4");
 // с одинаковым названием. Если true - берется свойство из первоначального объекта this, если false - берется свойство из arguments. 
 // По умолчанию flag = false;
 
-var data = {
-    addRecord: function(flag){
-        for(var i=0; i<arguments.length;i++){
-            for(var key in arguments[i]){
-                for(var dataK in this){
-                    // console.log(arguments[arguments.length-1]);
-                    if(dataK == key){
-                        arguments[i][key] = this[dataK];
-                    } 
+function addRecord(){
+    for(var i=0; i<arguments.length;i++){
+        if(arguments[i] == true){
+            for (var k=0; k<arguments.length;k++){
+                // console.log(arguments[k])
+                for(var key in arguments[k]){
+                    // console.log(arguments[k])
+                    // console.log(key)
+                    for(var dataK in this){
+                        // console.log(dataK)
+                        // this[key] = arguments[k][key]; 
+                        if(dataK == key){
+                            console.log(dataK)
+                            // console.log(arguments[k][key])
+                            console.log(this[dataK])
+                            // this[key] = arguments[k][key];
+                        // continue;
+                        // dataK = this[dataK];
+                            // arguments[k][key] = this[dataK];
+                        } 
+                        else {
+                            // arguments[k][key] = this[dataK];
+                            // this[key] = arguments[k][key];
+                        }
+                    }
                 }
-                this[key] = arguments[i][key];
-                // if(flag == false){
-                // }
             }
-        }
-    },
+        } 
+        // else {
+        //     for (var k=0; k<arguments.length;k++){
+        //         for(var key in arguments[i]){
+        //             this[key] = arguments[i][key];
+        //         } 
+        //     }
+        // }
+    }
+}
+var data = {
+    addRecord: addRecord,
     p: 600,
     str: 'hello',
     y: -50,
 }
-// data.addRecord({x: 10}, {y: 20}, {z: 30, x: 50}, true);
-data.addRecord({x: 10}, {y: 20}, {z: 30, x: 50}, false);
+data.addRecord({x: 10}, {y: 20}, {z: 30, x: 50}, true);
+// data.addRecord({x: 10}, {y: 20}, {z: 30, x: 50}, false);
+
+// data.addRecord({x: 10}, {y: 20}, {z: 30, x: 50});
 console.log(data);
 
 // попробовать через 0 и 1 - тру = 1, фолус = 0
