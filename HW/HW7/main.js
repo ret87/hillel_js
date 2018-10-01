@@ -123,39 +123,45 @@ console.log('Задача №5');
 // struct_2(); // [3, 9, 6]
 // struct_3(); // [4]
 
+
+
 // // так точно не работает - понимаю что вопрос в условии вложенной ф-ии if STRUCT_1/2/3... и тд к функции SOME
 function factory (){
-    var array = [];
-    return function(){
+    var array = {};
+    return function (){
         for(var i=0; i<arguments.length;i++){
-            array = array.concat(arguments[i]);
-        }        
-        return function(){
-            if(struct_1 = some()){
-                console.log(array[0]);
-            } 
-            else if (struct_2 = some()){
-                console.log(array[1]);
+            for(var k=0;k<arguments[i].length;k++){
+                array[k+1] = arguments[i][k]
             }
-            // else if (struct_3 = some()){
-            //     console.log(array[2]);
-            // }
+        }        
+        console.log(array);
+        return function (){
+            // console.log(array[1]);
+            if(typeof struct_1 == "function"){
+                return console.log(array[1]);
+            } 
+        //     else if (typeof struct_2 == "function"){
+        //         console.log(array[2]);
+        //     }
             // else if (struct_3 = some()){
             //     console.log(array[3]);
             // }
-            // else if (struct_3 = some()){
+            // else if (struct_4 = some()){
             //     console.log(array[4]);
+            // }
+            // else if (struct_5 = some()){
+            //     console.log(array[5]);
             // }
         }
     }
 }
 
-var some = factory([[2, 7], [3, 9, 6], [4], [2, 2, 2], [1]]);
-some([[2, 7], [3, 9, 6], [4], [2, 2, 2], [1]]);
+factory([[2, 7], [3, 9, 6], [4], [2, 2, 2], [1]]);
+var some = factory(); 
 var struct_1 = some(); 
 struct_1(); 
-var struct_2 = some(); 
-struct_2(); 
+// var struct_2 = some(); 
+// struct_2(); 
 // var struct_3 = some(); 
 // struct_3(); 
 // var struct_4 = some(); 
