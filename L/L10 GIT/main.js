@@ -62,3 +62,6 @@ console.log('GIT');
 //
 // 4. После этого вы можете скачать Git с помощью самого Git'а, чтобы получить обновления: 
 // $ git clone git://git.kernel.org/pub/scm/git/git.git
+
+
+    // Первоначальная настройка Git
