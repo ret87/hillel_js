@@ -40,3 +40,25 @@ console.log('GIT');
 // * Подготавливаете файлы, добавляя их слепки в область подготовленных файлов.
 // * Делаете коммит, который берёт подготовленные файлы из индекса и помещает их в каталог Git'а на постоянное хранение.
 
+
+    
+    // Установка Git
+// 1. Для установки Git'а вам понадобятся библиотеки, от которых он зависит: curl, zlib, openssl, expat и libiconv.
+// если в вашей системе менеджер пакетов — yum (Fedora), или apt-get (Debian, Ubuntu),
+//  можно воспользоваться следующими командами, чтобы разрешить все зависимости:
+// $ yum install curl-devel expat-devel gettext-devel \
+//      openssl-devel zlib-devel
+// или. $ apt-get install libcurl4-gnutls-dev libexpat1-dev gettext \
+//   libz-dev libssl-dev
+// 
+// 2. Cкачать последнюю версию с офф сайта
+// http://git-scm.com/download
+// 
+// 3. Теперь скомпилируйте и установите:
+// $ tar -zxf git-1.7.2.2.tar.gz
+// $ cd git-1.7.2.2
+// $ make prefix=/usr/local all
+// $ sudo make prefix=/usr/local install
+//
+// 4. После этого вы можете скачать Git с помощью самого Git'а, чтобы получить обновления: 
+// $ git clone git://git.kernel.org/pub/scm/git/git.git
