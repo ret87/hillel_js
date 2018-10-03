@@ -120,3 +120,6 @@ console.log('GIT');
 // Можно изменить каталог присвоив своё имя после URL
 // $ git clone           git://github.com/schacon/grit.git           mygrit
 
+
+    // Запись изменений в репозиторий
+// 
