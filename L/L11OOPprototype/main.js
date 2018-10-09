@@ -20,6 +20,9 @@ console.log('OOP Prototype');
 // Вызов obj.hasOwnProperty(prop) возвращает true, если свойство prop принадлежит самому объекту obj, иначе false.
 // Для того, чтобы перебрать свойства самого объекта, достаточно профильтровать key через hasOwnProperty:
     
+    // Object.create(null)
+// Объект, создаваемый при помощи Object.create(null) не имеет прототипа, а значит в нём нет лишних свойств. 
+
 
 // - Если один объект имеет специальную ссылку __proto__ на другой объект, то при чтении свойства из него, 
 // если свойство отсутствует в самом объекте, оно ищется в объекте __proto__.
@@ -56,3 +59,15 @@ for(var key1 in rabbit){
     if(!rabbit.hasOwnProperty(key1)) continue;
         console.log(key1 + '= '+ rabbit[key1]);
 }
+
+    // Object.create(null)
+// Объект, создаваемый при помощи Object.create(null) не имеет прототипа, а значит в нём нет лишних свойств. 
+var data = {};
+data.text = 'Привет';
+data.age = '35';
+console.log(data.toString); // выведет функцию, хотя мы её туда не записывали
+// выведет функцию только если мы её записывали, иначе андефаинд
+console.log(data.hasOwnProperty('toString') ? data.toString : undefined);
+// тоже самое с помощью Object.create(null)
+var data = Object.create(null);
+console.log(data.toString); 
