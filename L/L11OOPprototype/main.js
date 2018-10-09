@@ -15,6 +15,11 @@ console.log('OOP Prototype');
 // - У объекта, который является __proto__, может быть свой __proto__, у того – свой, и так далее. Cвойства будут искаться по цепочке.
 // - В ECMAScript – свойство __proto__ обозначено в ней как [[Prototype]].
 
+    // Метод hasOwnProperty
+// Обычный цикл for..in не делает различия между свойствами объекта и его прототипа. Он перебирает всё.
+// Вызов obj.hasOwnProperty(prop) возвращает true, если свойство prop принадлежит самому объекту obj, иначе false.
+    
+
 // - Если один объект имеет специальную ссылку __proto__ на другой объект, то при чтении свойства из него, 
 // если свойство отсутствует в самом объекте, оно ищется в объекте __proto__.
 // пример
@@ -28,3 +33,25 @@ obj1.__proto__ = obj2;
 console.log(obj1.key2);
 console.log(obj1.key1);
 
+    // Метод hasOwnProperty
+// Обычный цикл for..in не делает различия между свойствами объекта и его прототипа. Он перебирает всё, например:
+var animal = {
+    eats: true
+};
+var rabbit = {
+    jumps: true,
+    __proto__: animal
+};
+// то есть перебор проходит в обоих объектах через протитпно наследуемый объект
+for(var key in rabbit){
+    console.log(key + '= '+ rabbit[key]);
+}
+
+// Вызов obj.hasOwnProperty(prop) возвращает true, если свойство prop принадлежит самому объекту obj, иначе false.
+console.log(rabbit.hasOwnProperty('jumps'));
+console.log(rabbit.hasOwnProperty('eats'));
+// Для того, чтобы перебрать свойства самого объекта, достаточно профильтровать key через hasOwnProperty:
+for(var key1 in rabbit){
+    if(!rabbit.hasOwnProperty(key1)) continue;
+        console.log(key1 + '= '+ rabbit[key1]);
+}
