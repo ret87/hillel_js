@@ -30,6 +30,31 @@ console.log('OOP Prototype');
 // Object.getPrototypeOf(); - выводит значения объектов прототипа (наследуемые)
 // Object.setPrototypeOf(obj, proto); - можно записывать в прототип 
 
+
+        // // Свойство F.prototype и создание объектов через new
+    // Свойство F.prototype
+// - Чтобы новым объектам автоматически ставить прототип, конструктору ставится свойство prototype.
+// - При создании объекта через new, в его прототип __proto__ записывается ссылка из prototype функции-конструктора.
+// - Установка Object1.prototype = Object2 буквально говорит интерпретатору: 
+// "При создании объекта через new Rabbit запиши ему __proto__ = Object2".
+// - Чтобы новым объектам автоматически ставить прототип, конструктору ставится свойство prototype.
+// - При создании объекта через new, в его прототип __proto__ записывается ссылка из prototype функции-конструктора.
+// - Установка Object1.prototype = Object2 буквально говорит интерпретатору: 
+// "При создании объекта через new Rabbits запишет ему __proto__ = Object2".
+// - Свойство prototype имеет смысл только у конструктора.
+// - Само по себе, без вызова оператора new, оно ничего не делает, его единственное назначение – указывать __proto__ для новых объектов
+// - Значением prototype может быть только объект.
+// - При работе new, свойство prototype будет использовано в том случае, если это объект. Примитивные значения: игнорируются.
+
+
+    // Свойство constructor
+// У каждой функции по умолчанию уже есть свойство prototype.
+
+
+
+
+
+console.log('Свойство __proto__'); 
 // - Если один объект имеет специальную ссылку __proto__ на другой объект, то при чтении свойства из него, 
 // если свойство отсутствует в самом объекте, оно ищется в объекте __proto__.
 // пример
@@ -43,6 +68,8 @@ obj1.__proto__ = obj2;
 console.log(obj1.key2);
 console.log(obj1.key1);
 
+
+console.log('Метод hasOwnProperty'); 
     // Метод hasOwnProperty
 // Обычный цикл for..in не делает различия между свойствами объекта и его прототипа. Он перебирает всё, например:
 var animal = {
@@ -66,12 +93,15 @@ for(var key1 in rabbit){
         console.log(key1 + '= '+ rabbit[key1]);
 }
 
+
+console.log('Object.create(null)'); 
     // Object.create(null)
 // Объект, создаваемый при помощи Object.create(null) не имеет прототипа, а значит в нём нет лишних свойств. 
 var data = {};
 data.text = 'Привет';
 data.age = '35';
 console.log(data.toString); // выведет функцию, хотя мы её туда не записывали
+
 // выведет функцию только если мы её записывали, иначе андефаинд
 console.log(data.hasOwnProperty('toString') ? data.toString : undefined);
 // тоже самое с помощью Object.create(null)
@@ -83,6 +113,8 @@ var dataNext = {
 data.__proto__ = dataNext;
 console.log(data.redLine);
 
+
+console.log('Методы для работы с proto'); 
     // Методы для работы с proto
 // Object.getPrototypeOf(); - выводит значения объектов прототипа (наследуемые)
 var object = {
@@ -101,6 +133,60 @@ console.log(Object.getPrototypeOf(object));
 
 // Object.create(proto, descriptors); - создание объекта с прототипом: 
 // Создаёт пустой объект с __proto__, равным первому аргументу
+
+
+console.log('Свойство F.prototype и создание объектов через new'); 
+        // // Свойство F.prototype и создание объектов через new
+    // Свойство F.prototype
+// - Чтобы новым объектам автоматически ставить прототип, конструктору ставится свойство prototype.
+// - При создании объекта через new, в его прототип __proto__ записывается ссылка из prototype функции-конструктора.
+// - Установка Object1.prototype = Object2 буквально говорит интерпретатору: 
+// "При создании объекта через new Rabbit запиши ему __proto__ = Object2".
+
+console.log('Свойство F.prototype'); 
+    // Свойство F.prototype
+var animal = {
+    eats: true
+};
+function Rabbit(name) {
+    this.name = name;
+    this.__proto__ = animal;
+}
+var rabbit = new Rabbit("Кроль");
+console.log( rabbit.eats ); // true, из прототипа
+
+// Чтобы новым объектам автоматически ставить прототип, конструктору ставится свойство prototype.
+// При создании объекта через new, в его прототип __proto__ записывается ссылка из prototype функции-конструктора.
+// - Установка Object1.prototype = Object2 буквально говорит интерпретатору: 
+// "При создании объекта через new Rabbits запишет ему __proto__ = Object2":
+var object = {
+    key: 'yes'
+};
+function Func(name) {
+    this.name = name;
+}
+Func.prototype = object;
+var object2 = new Func("Кроль"); //  object2.__proto__ == object
+console.log(object2.key); // true
+// Свойство prototype имеет смысл только у конструктора.
+// Само по себе, без вызова оператора new, оно ничего не делает, его единственное назначение – указывать __proto__ для новых объектов.
+// Значением prototype может быть только объект.
+// При работе new, свойство prototype будет использовано в том случае, если это объект. Примитивные значения: игнорируются.
+
+
+    // Свойство constructor
+// У каждой функции по умолчанию уже есть свойство prototype.
+
+
+
+
+
+
+
+
+
+
+
 
 
 console.log('Лекционная практика')
