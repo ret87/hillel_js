@@ -58,16 +58,35 @@ console.log('OOP Prototype');
 // var creatObj2= new creatObj.constructor('keyValue2'); 
 // пример
 // function CreateObj(keyValue) {
-//         this.keyName = keyValue;
-//         console.log(keyValue);
-//     }
+//     this.keyName = keyValue;
+//     console.log(keyValue);
+// }
 // var creatObj = new CreateObj('keyValue1');
 // var creatObj2= new creatObj.constructor('keyValue2'); 
 // console.log(creatObj);
 // console.log(creatObj2);
 // При перезаписи объекта, что бы не потерять constructor - стоит его указать как отдельный ключ, а его значение - имя объекта  
 
+    // Эмуляция Object.create для всех браузеров и версий 
+// function inherit(proto) {
+//     function F() {}
+//     F.prototype = proto;
+//     var object = new F;
+//     return object;
+// }
+// Создана новая функция F. Она ничего не делает с this, так что если вызвать new F, то получим пустой объект.
+// Свойство F.prototype устанавливается в будущий прототип proto
+// Результатом вызова new F будет пустой объект с __proto__ равным значению F.prototype.
+// Мы получили пустой объект с заданным прототипом, как и хотели. Возвратим его.
+    
 
+// // Встроенные "классы" в JavaScript
+// JavaScript есть встроенные объекты: Date, Array, Object и другие. 
+// Они используют прототипы и демонстрируют организацию «псевдоклассов» на JavaScript, которую мы вполне можем применить и для себя.
+    // Откуда методы у {} ?
+// Даже у пустого объекта есть методы и прототипы. 
+// Object.prototype
+// У пустого объекта, есть метод toString, который находится в его прототипе .__proto__
 
 
 
@@ -219,10 +238,48 @@ console.log(creatObj2);
 
 // При перезаписи объекта, что бы не потерять constructor - стоит его указать как отдельный ключ, а его значение - имя объекта  
 CreateObj.prototype = {
-    key : value,
+    key : 'value',
     constructor: CreateObj
 }
 console.log()
+
+
+    // Эмуляция Object.create для всех браузеров и версий 
+function inherit(proto) {
+    function F() {}
+    F.prototype = proto;
+    var object = new F;
+    return object;
+}
+// Создана новая функция F. Она ничего не делает с this, так что если вызвать new F, то получим пустой объект.
+// Свойство F.prototype устанавливается в будущий прототип proto
+// Результатом вызова new F будет пустой объект с __proto__ равным значению F.prototype.
+// Мы получили пустой объект с заданным прототипом, как и хотели. Возвратим его.
+
+
+console.log('Встроенные "классы" в JavaScript');
+        // // Встроенные "классы" в JavaScript
+// JavaScript есть встроенные объекты: Date, Array, Object и другие. 
+// Они используют прототипы и демонстрируют организацию «псевдоклассов» на JavaScript, которую мы вполне можем применить и для себя.
+    
+    // Откуда методы у {} ?
+// Даже у пустого объекта есть методы и прототипы. 
+    
+    // Object.prototype
+// У пустого объекта, есть метод toString, который находится в его прототипе .__proto__
+var obj = {};
+console.log(obj);
+console.log({}.__proto__.toString);
+console.log(obj.toString);
+console.log(obj.toString == Object.prototype.toString );
+console.log(obj.__proto__);
+console.log(Object.prototype);
+console.log(obj.__proto__ == Object.prototype);
+
+
+    // Встроенные «классы» в JavaScript
+// Встроенные методы для массивов также находятся в Array.prototype, Function.prototype и т.п.
+
 
 
 
