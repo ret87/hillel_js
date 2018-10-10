@@ -49,6 +49,23 @@ console.log('OOP Prototype');
 
     // Свойство constructor
 // У каждой функции по умолчанию уже есть свойство prototype.
+// Object.getOwnPropertyNames(SomeFunction.prototype); // - получить ключи функции/объекта 
+// Получить ключи функции/объекта  Object.getOwnPropertyNames(SomeFunction.prototype); 
+// - Что бы создать объект с помощью конструктора, стоит создать функцию, со значение, которое будет поступать при обращение к функции,
+// и будет являться значением нового ключа, в самой функции выдаём this.ключ = поступающее значение.
+// Далее создаём новую переменную и приравниваем её через new ИмяФункции("новое значение"); var creatObj = new CreateObj('keyValue1');
+// След значение при использованиее constructor, создав новую переменную и прировняв её через new имя пред. переменной.констр(значение)
+// var creatObj2= new creatObj.constructor('keyValue2'); 
+// пример
+// function CreateObj(keyValue) {
+//         this.keyName = keyValue;
+//         console.log(keyValue);
+//     }
+// var creatObj = new CreateObj('keyValue1');
+// var creatObj2= new creatObj.constructor('keyValue2'); 
+// console.log(creatObj);
+// console.log(creatObj2);
+// При перезаписи объекта, что бы не потерять constructor - стоит его указать как отдельный ключ, а его значение - имя объекта  
 
 
 
@@ -167,20 +184,45 @@ function Func(name) {
 }
 Func.prototype = object;
 var object2 = new Func("Кроль"); //  object2.__proto__ == object
-console.log(object2.key); // true
+// console.log(object2.key); // true
+
 // Свойство prototype имеет смысл только у конструктора.
 // Само по себе, без вызова оператора new, оно ничего не делает, его единственное назначение – указывать __proto__ для новых объектов.
 // Значением prototype может быть только объект.
 // При работе new, свойство prototype будет использовано в том случае, если это объект. Примитивные значения: игнорируются.
 
 
+console.log('Свойство constructor'); 
     // Свойство constructor
 // У каждой функции по умолчанию уже есть свойство prototype.
+// Object.getOwnPropertyNames(SomeFunction.prototype); // - получить ключи функции/объекта 
+function someFunc(){}
+console.log(Object.getOwnPropertyNames(someFunc.prototype)); // выведет construction
 
+// Иногда получив объект, мы не знаем, какой у него был конструктор (например, сделан вне нашего кода), а нужно создать такой же.
+// Можно использовать construction для создания объекта с тем же конструктором, что и данный:
+function Constr(name) {
+    this.name = name;
+    console.log(name);    
+}
+var construct = new Constr('what?');
+var construct2 = new construct.constructor('what is it?');
+// то есть вот создание новых ключей и свойств объекта через функцию:
+function CreateObj(keyValue) {
+    this.keyName = keyValue;
+    console.log(keyValue);
+}
+var creatObj = new CreateObj('keyValue1');
+var creatObj2= new creatObj.constructor('keyValue2'); 
+console.log(creatObj);
+console.log(creatObj2);
 
-
-
-
+// При перезаписи объекта, что бы не потерять constructor - стоит его указать как отдельный ключ, а его значение - имя объекта  
+CreateObj.prototype = {
+    key : value,
+    constructor: CreateObj
+}
+console.log()
 
 
 
