@@ -1,6 +1,7 @@
 'use strict';
 console.log('OOP NEW');
 
+console.log('NEW');
 // Конструктор - собирает объект на основе класса (функции), в примере ниже объект Р собирается на основе параметров функции Person;
 // function Person(x,y) {x,y, run};
 // p = new Person();
@@ -15,5 +16,5 @@ function Person(x,y){
     this.y=y;
     this.run = function(){};
 };
-var p = new Person(10, 15);
+var p = new Person(10, 'text');
 console.log(p);
