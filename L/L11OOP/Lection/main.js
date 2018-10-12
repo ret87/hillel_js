@@ -30,10 +30,11 @@ console.log('OOP Prototype');
 // * new - вызывает функцию к которой его прировняли;
 // * new - меняет поведение THIS и заставляет объект смотреть на новый, созданный при помощи new;
 function Person(x,y){
-    thix.x=x;
-    thix.y=y;
-    thix.run = function(){};
-    console.log(x,y,run)
+    x=x;
+    y=y;
+    // var run;
+    var run = function(x,y){return run = x + y;};
+    // console.log(x,y,run)
 };
 var p = new Person(10, 15);
-// console.log(p);
+console.log(p);
