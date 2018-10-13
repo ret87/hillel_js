@@ -559,13 +559,14 @@ Func.prototype = object;
 var object2 = new Func("Кроль"); //  говорит что object2.__proto__ == object
 console.log(object2.key); // true
 
-// Получить ключи функции/объекта 
-function CreateObj(keyValue) {
+// Функция-конструктор, для создания однотипных объектов 
+function CreateObj(keyValue,key2Value) {
     this.keyName = keyValue;
+    this.key2Name = key2Value;
     console.log(keyValue);
 }
-var creatObj = new CreateObj('keyValue1');
-var creatObj2= new creatObj.constructor('keyValue2'); 
+var creatObj = new CreateObj('keyValue1','key2Value');
+var creatObj2= new creatObj.constructor('keyValue2','key2Value'); 
 console.log(creatObj);
 console.log(creatObj2);
 
