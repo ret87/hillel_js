@@ -203,33 +203,24 @@
 // - Для оптимизации, если через ссылку прототип вкладываем, какой либо метод из класса в себя, стоит поставить проверку,
 // ограничивающую вызов этого самого метода: if(!nameFunc.prototype.method){nameFunc.prototype.method{some do}} - вызов будет 1раз
 
-function Person(x,y) {
-    var privat = 200; // на прямую в Р, без THIS не будет видел, но можно использовать, добавив к другой переменной с THIS 
-    this.x=x;
-    this.y=y;
-    this.z=x+y+privat;
-    // this.getPrivat = function (){
-    //     return privat;                  // инкапсуляция с замыканием 
-    // };
-    if(!Person.prototype.getPrivat){       //каждый следующий вызов не будет переприсваиваться, так как мы отменили его повторный вызов
-        console.log('GET DECLARATION')
-        Person.prototype.getPrivat = function (){   //присваиваем замыкание через ссылку прототипа 
-            return privat;                 
-        };
-    }
-    // arguments.callee.prototype.getPrivat = function (){          //тоже самое но если не юзают use strict
-    //     return privat;                  
-    // };
-    // this.sleep = function (){}               // не правильное наследование - стоит записать в Прототип  
-};
-Person.prototype.sleep = function (x,y) {return  x+y} // правильное наследование, через Прототип
-    
-
-
+// function Person(x,y) {
+//     var privat = 200; // на прямую в Р, без THIS не будет видел, но можно использовать, добавив к другой переменной с THIS 
+//     this.x=x;
+//     this.y=y;
+//     this.z=x+y+privat;
+//     if(!Person.prototype.getPrivat){       //каждый следующий вызов не будет переприсваиваться, так как мы отменили его повторный вызов
+//         console.log('GET DECLARATION')
+//         Person.prototype.getPrivat = function (){   //присваиваем замыкание через ссылку прототипа 
+//             return privat;                 
+//         };
+//     }
+// };
+// Person.prototype.sleep = function (x,y) {return  x+y} // правильное наследование, через Прототип
+// var p = new Person(10, 2);
+// var d = new Person(12, 3);
 
 
         // // Прототип объекта    
-
 // - Объекты в JS можно организовать в цепочки так, чтобы свойство, не найденное в одном объекте, автоматически искалось бы в другом.
 // - Связующим звеном выступает специальное свойство __proto__.        
  
