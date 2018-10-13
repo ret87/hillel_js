@@ -570,6 +570,30 @@ var creatObj2= new creatObj.constructor('keyValue2','key2Value');
 console.log(creatObj);
 console.log(creatObj2);
 
+// Создание методов в функции-конструтор
+function Func (name){
+    this.name = name;
+    this.sayHi = function(){
+        console.log('Привет ' + this.name);
+    }
+}
+var Artur = new Func('Artur');
+console.log(Artur);
+Artur.sayHi();
+
+// Локальные переменные в функции-конструкторе
+function User(fName, lName){
+    var phrase = 'Hello';
+    function getFullName(){
+        return fName + ' ' + lName;
+    }
+    this.sayHi = function (){
+        console.log(phrase + ' ' + getFullName());
+    }
+}
+var vasya = new User('Vasiliy', 'Nikolaevich');
+vasya.sayHi();
+
 // При перезаписи объекта, что бы не потерять constructor - стоит его указать как отдельный ключ, а его значение - имя объекта  
 CreateObj.prototype = {
     key : value,
@@ -582,3 +606,4 @@ function inherit(proto) {
     var object = new F;
     return object;
 }
+
