@@ -141,3 +141,58 @@ function User(fName, lName){
 var vasya = new User('Vasiliy', 'Nikolaevich');
 vasya.sayHi();
 
+
+
+console.log('Теоретическая практика'); 
+// Теоретическая практика
+
+console.log('Задача №1'); 
+// Задача №1
+// Напишите функцию-конструктор Calculator, которая создает объект с тремя методами:
+// Метод read() запрашивает два значения при помощи prompt и запоминает их в свойствах объекта.
+// Метод sum() возвращает сумму запомненных свойств.
+// Метод mul() возвращает произведение запомненных свойств.
+
+function Calc (){
+    this.read = function(){
+        this.a = +prompt('введите первое число ', 5);
+        this.b = +prompt('введите второе число ', 10);
+        console.log(this.a,this.b);
+    }
+    this.sum = function(){
+        return this.a + this.b;
+    }
+    this.mul = function(){
+        return this.a*this.b;
+    }
+}
+var calc = new Calc();
+calc.read();
+console.log(calc.sum());
+console.log(calc.mul());
+
+
+console.log('Задача №2'); 
+// Задача №2
+// Создать Accumulator при помощи конструктора
+// Напишите функцию-конструктор Accumulator(startingValue). 
+// Объекты, которые она создает, должны хранить текущую сумму и прибавлять к ней то, что вводит посетитель.
+
+function Accumulator(startingValue){
+    this.value = startingValue;
+    this.read = function(){
+        this.value +=  +prompt('vvedite chislo = ', 5);
+    }
+}
+var accumulator = new Accumulator(5);
+accumulator.read();
+accumulator.read();
+console.log(accumulator.value);
+
+
+console.log('Задача №3'); 
+// Задача №3
+// Создайте калькулятор
+// Напишите конструктор Calculator, который создаёт расширяемые объекты-калькуляторы.
+
+
