@@ -541,6 +541,8 @@ var data = Object.create(null);
 console.log(data.toString); 
 
   // Методы для работы с proto
+// создаст исключительно чистый объект, без наследования от прототипов
+var object = Object.create(null)
 // выводит значения объектов прототипа (наследуемые)
 Object.getPrototypeOf(ObjectPrototyped); 
 // можно записывать в прототип 

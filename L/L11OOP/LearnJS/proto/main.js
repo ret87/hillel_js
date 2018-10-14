@@ -24,6 +24,13 @@ console.log('OOP proto');
 // - Удобно использовать для перебора и вывода своих или родительских свойст, родительские выводит лишь отличимые по имени ключа
 // for(var key in obj) {if(obj.hasOwnProperty(key)){console.log(obj[key])} };
 
+    // Методы для работы с proto
+// var obj = Object.create(proto, descriptors);
+// - В любом объект, по умолчанию есть определённые свойства - функции, но они наследованы общим прародителем
+// - Но с помощью метода var object = Object.create(null) - мы можем создать исключительно чистый объект,без наследования от прототипов
+// Object.getPrototypeOf(obj) - тоже самое что и obj.__proto__;
+// Object.setPrototypeOf(obj, proto) - тоже самое что и obj.__proto__ = obj1;
+
 
 
     // Proto
@@ -83,3 +90,27 @@ for(var key in object1){
         console.log('родителей ' + object1[key]);
     }
 };
+
+
+    // Методы для работы с proto
+    console.log('Object.create(null)');
+
+// Object.create(proto, descriptors)
+// - В любом объект, по умолчанию есть определённые свойства - функции, но они наследованы общим прародителем
+var data = {};
+console.log(data.valueOf);
+console.log(data.__proto__);
+console.log(data.__proto__.constructor);
+console.log(data.hasOwnProperty('valueOf'));
+// - Но с помощью метода var object = Object.create(null) - мы можем создать исключительно чистый объект,без наследования от прототипов 
+var data1 = Object.create(null);
+console.log(data1.__proto__);
+// Object.getPrototypeOf(obj) - тоже самое что и obj.__proto__;
+console.log(Object.getPrototypeOf(data));
+console.log(data.__proto__);
+// Object.setPrototypeOf(obj, proto) - тоже самое что и obj.__proto__ = obj1;
+var o = {key: 'value'};
+var o1= {key2: 'value2'}
+Object.setPrototypeOf(o, o1);
+console.log(o.__proto__);
+console.log(Object.getPrototypeOf(o));
