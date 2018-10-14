@@ -550,17 +550,6 @@ Object.setPrototypeOf(obj, proto);
 // cоздание объекта с прототипом
 Object.create(proto, descriptors); 
 
-// Поиск свойств объекта через Function.prototype = object; 
-var object = {
-    key: 'yes'
-};
-function Func(name) {
-    this.name = name;
-}
-Func.prototype = object;
-var object2 = new Func("Кроль"); //  говорит что object2.__proto__ == object
-console.log(object2.key); // true
-
 // Функция-конструктор, для создания однотипных объектов 
 function CreateObj(keyValue,key2Value) {
     this.keyName = keyValue;
@@ -571,6 +560,18 @@ var creatObj = new CreateObj('keyValue1','key2Value');
 var creatObj2= new creatObj.constructor('keyValue2','key2Value'); 
 console.log(creatObj);
 console.log(creatObj2);
+
+// Поиск свойств объекта через Function.prototype = object; 
+var objDad = {
+    key: 'value'
+};
+function Func(name) {
+    this.name = name;
+    this.__proto__ = obj
+}
+objNew.prototype = objDad;              //  говорит что objNew.__proto__ == objDad
+var objNew = new Func("someValue");     //  присваивает objNew функцию Func с параметром "someValue" и делает новый объект
+console.log(objNew.key); // true
 
 // Создание методов в функции-конструтор
 function Func (name){
