@@ -1,5 +1,5 @@
 'use strict';
-console.log('OOP f.prototype and NEW');
+console.log('OOP f.prototype and constructor');
 
         // f.prototype and NEW 
 
