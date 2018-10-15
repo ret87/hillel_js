@@ -291,7 +291,7 @@
 // - Но с помощью метода var object = Object.create(null) - мы можем создать исключительно чистый объект,без наследования от прототипов
 // Object.getPrototypeOf(obj) - тоже самое что и obj.__proto__;
 // Object.setPrototypeOf(obj, proto) - тоже самое что и obj.__proto__ = obj1;
-
+// Object.getOwnPropertyNames(object) - показывает все заданные свойства
 
         // f.prototype and NEW 
     // Свойство F.prototype

@@ -114,3 +114,4 @@ var o1= {key2: 'value2'}
 Object.setPrototypeOf(o, o1);
 console.log(o.__proto__);
 console.log(Object.getPrototypeOf(o));
+// Object.getOwnPropertyNames(o) - показывает все заданные свойства

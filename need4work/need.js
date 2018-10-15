@@ -549,6 +549,9 @@ Object.getPrototypeOf(ObjectPrototyped);
 Object.setPrototypeOf(obj, proto); 
 // cоздание объекта с прототипом
 Object.create(proto, descriptors); 
+// показывает все заданные свойства
+Object.getOwnPropertyNames(object) 
+
 
 // Функция-конструктор, для создания однотипных объектов 
 function CreateObj(keyValue,key2Value) {
@@ -556,8 +559,8 @@ function CreateObj(keyValue,key2Value) {
     this.key2Name = key2Value;
     console.log(keyValue);
 }
-var creatObj = new CreateObj('keyValue1','key2Value');
-var creatObj2= new creatObj.constructor('keyValue2','key2Value'); 
+var creatObj = new CreateObj('keyValue1','key2Value');              // просто через new и функцию
+var creatObj2= new creatObj.constructor('keyValue2','key2Value');   // через constructor
 console.log(creatObj);
 console.log(creatObj2);
 
@@ -597,7 +600,8 @@ function User(fName, lName){
 var vasya = new User('Vasiliy', 'Nikolaevich');
 vasya.sayHi();
 
-// При перезаписи объекта, что бы не потерять constructor - стоит его указать как отдельный ключ, а его значение - имя объекта  
+// Если мы вручную создаём свойства объекта (функции-конструктора), то лучше самому прописать в его свойствах  constructor: nameObj
+function CreateObj(){};
 CreateObj.prototype = {
     key : value,
     constructor: CreateObj
@@ -609,4 +613,4 @@ function inherit(proto) {
     var object = new F;
     return object;
 }
-
+var newObj = inherit(objPrototype);
