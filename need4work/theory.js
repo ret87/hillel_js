@@ -286,7 +286,7 @@
 // for(var key in obj) {if(obj.hasOwnProperty(key)){console.log(obj[key])} };
 
     // Методы для работы с proto
-// var obj = Object.create(proto, descriptors);
+// var obj = Object.create(proto, descriptors); - создаст объект со свойствами другого объекта (в параметрах)
 // - В любом объект, по умолчанию есть определённые свойства - функции, но они наследованы общим прародителем
 // - Но с помощью метода var object = Object.create(null) - мы можем создать исключительно чистый объект,без наследования от прототипов
 // Object.getPrototypeOf(obj) - тоже самое что и obj.__proto__;

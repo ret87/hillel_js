@@ -542,7 +542,9 @@ console.log(data.toString);
 
   // Методы для работы с proto
 // создаст исключительно чистый объект, без наследования от прототипов
-var object = Object.create(null)
+var object = Object.create(null);
+// создаст объект со свойствами другого объекта (в параметрах)
+var obj = Object.create(proto, descriptors);
 // выводит значения объектов прототипа (наследуемые)
 Object.getPrototypeOf(ObjectPrototyped); 
 // можно записывать в прототип 
@@ -552,6 +554,10 @@ Object.create(proto, descriptors);
 // показывает все заданные свойства
 Object.getOwnPropertyNames(object) 
 
+// создаст объект со свойствами другого объекта (в параметрах)
+var proto = {a: 1, b: 2};
+var obj = Object.create(proto);
+console.log(obj);
 
 // Функция-конструктор, для создания однотипных объектов 
 function CreateObj(keyValue,key2Value) {
