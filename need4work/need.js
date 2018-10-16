@@ -68,6 +68,21 @@ for(i=min_num; i<max_num ; i++){
         }
     }
 }
+// Вычислить сумму чисел до данного через рекруссию
+function pow(x) {
+    if (x != 0) {
+        return x + pow(x - 1);
+    } else {
+        return x;
+    }
+}
+console.log(pow(100)); 
+
+// Вычислить сумму чисел до данного через формулу
+function sumTo(n){
+    return n = n*(n+1)/2;
+};
+console.log(sumTo(100));
 
 // Числа Фибоначчи рекруссия
 function fib(f2){
@@ -347,6 +362,14 @@ function factorial(n) {
     return n ? n*factorial(n-1) : 1;
 };
 console.log(factorial(6));
+
+// Факториал числа через рекруссию
+function fact(n){
+    if ( n !=1){
+        return n * fact(n - 1);
+    } return n;
+}
+console.log(fact(5));
 
 // Факториал числа через функцию c обращением через глобальную переменную
 var f = function factorial(n) {
