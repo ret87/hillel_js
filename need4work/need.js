@@ -643,3 +643,15 @@ function inherit(proto) {
     return object;
 }
 var newObj = inherit(objPrototype);
+
+// Перечисляет вводимые параметры [].join.call(arguments, ' - ')
+function showList(){
+    console.log( [].join.call(arguments, ' - ') );
+}
+showList('Artem', 'Vasja', 'Valja');
+
+// Перечисляет вводимые параметры [].join.call(arguments, ' - ')
+function showList(){
+    console.log( Array.prototype.join.call(arguments, ' - ') );
+}
+showList('Artem', 'Vasja', 'Valja');
