@@ -674,3 +674,27 @@ String.prototype.repeat = function(param){      // код создания из�
     return new Array(param+1).join(this);
 }
 console.log("aaaa".repeat(3));                  // обращение строки и использование измененного метода
+
+// Встроенные функции в функции-конструкторе и обращение к ним
+function Constr (name) {
+    this.speed = 0;
+    this.name = name;
+    this.run = function(speed){
+        this.speed += speed;
+        console.log(this.name + ' бежит со скоростью ' + this.speed);
+    };
+    this.time = function(time){
+        this.time = 0;
+        this.time += time;
+        console.log(this.name + ' бежит ' + this.time + ' часов');
+    };
+    this.stop = function(){
+        this.speed = 0;
+        console.log(this.name + ' стоит');
+    };
+}
+var cat = new Constr ('simba');
+console.log(cat['speed']);
+cat.run(3);
+cat.time(3);
+cat.stop(0);
