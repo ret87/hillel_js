@@ -83,3 +83,24 @@ console.log('Практика к теории');
 // Практика к теории
 // Задача №1
 console.log('Задача №1');
+
+function CoffeeMachine(power) {
+    var waterAmount = 0;
+    var WATER_HEAT_CAPACITY = 4200;
+    function getTimeToBoil() {
+        return waterAmount * WATER_HEAT_CAPACITY * 80 / power;
+    }
+    this.run = function() {
+        setTimeout(function() {
+            console.log( 'Кофе готов!' );
+        }, getTimeToBoil());
+    };
+    this.setWaterAmount = function(amount) {
+        waterAmount = amount;
+    };
+}
+
+var coffeeMachine = new CoffeeMachine(10000);
+coffeeMachine.setWaterAmount(5);
+coffeeMachine.run();
+
