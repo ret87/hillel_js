@@ -131,3 +131,15 @@ user.each(function(prop, val){
     console.log(prop);    
 });
 
+// Задачи к теории
+console.log('Задачи к теории');    
+
+console.log('Задача №1');    
+// Задача №1 Добавить всем функциям в прототип метод defer(ms)
+Function.prototype.defer = function (ms){
+    setTimeout(this, ms);
+};
+function f (){
+    console.log('hello');
+}
+f.defer(1000);
