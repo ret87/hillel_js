@@ -32,6 +32,11 @@ console.log('OOP Inherit classes');
 //  - возвращение результата в виде создания новой сущности
 
 
+    // Изменение встроенных прототипов
+// Обращаясь к Классу объекта, через prototype и метод этого класса (String.prototype.repeat)- можно изменять поведение этих методов
+// Так же можно добавлять новые методы, Object.prototype.each = function(f){}
+
+
 
     // Общее понимание 
 // В JavaScript есть встроенные объекты: Date, Array, Object, Window и другие. Они первые чаилды глобального объекта.
@@ -101,3 +106,28 @@ showList('Artem', 'Vasja', 'Valja');
 
 
     // Изменение встроенных прототипов
+console.log('Изменение встроенных прототипов');
+console.log(String.prototype.repeat);
+console.log(String.prototype);
+
+// Изменение существующего метода, через (String.prototype.repeat = function(param){}
+String.prototype.repeat = function(param){
+    return new Array(param+1).join(this);
+}
+console.log("aaaa".repeat(3));
+var str = 'hhhh';
+console.log(str.repeat(3));
+
+// Добавление нового метода, через Object.prototype.each = function(f){}
+var user = { name: 'artem', age: '31' }
+Object.prototype.each = function(f){
+    for (var prop in this){
+        if (!this.hasOwnProperty(prop)) continue;       
+        var value = this[prop];
+        f.call(value, prop, value);
+    }
+}
+user.each(function(prop, val){
+    console.log(prop);    
+});
+

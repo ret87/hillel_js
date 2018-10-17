@@ -655,3 +655,22 @@ function showList(){
     console.log( Array.prototype.join.call(arguments, ' - ') );
 }
 showList('Artem', 'Vasja', 'Valja');
+
+// Добавление нового метода, через Object.prototype.each = function(f){}
+var user = { name: 'artem', age: '31' }             // опред объект
+Object.prototype.each = function(f){                // код создания нового метода
+    for (var prop in this){
+        if (!this.hasOwnProperty(prop)) continue;    
+        var value = this[prop];
+        f.call(value, prop, value);
+    }
+}
+user.each(function(prop, val){                      // выозов нового метода
+    console.log(prop);    
+});
+
+// Изменение существующего метода, через (String.prototype.repeat = function(param){}
+String.prototype.repeat = function(param){      // код создания изменения 
+    return new Array(param+1).join(this);
+}
+console.log("aaaa".repeat(3));                  // обращение строки и использование измененного метода
