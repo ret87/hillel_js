@@ -675,7 +675,8 @@ String.prototype.repeat = function(param){      // код создания из�
 }
 console.log("aaaa".repeat(3));                  // обращение строки и использование измененного метода
 
-// Встроенные функции в функции-конструкторе и обращение к ним
+
+// Создание своего класса через функцию-конструктор и своих методов к ней
 function Constr (name) {
     this.speed = 0;
     this.name = name;
@@ -698,3 +699,28 @@ console.log(cat['speed']);
 cat.run(3);
 cat.time(3);
 cat.stop(0);
+
+
+// Создание своего класса через prototype
+// 1. Объявить функцию-конструктор.
+function Constructor (name){
+    this.name = name;
+    this.speed = 0;
+}
+// 2. Записать методы и свойства, нужные всем объектам класса, в prototype.
+Constructor.prototype.run = function(speed) {
+    this.speed += speed;
+    console.log(this.name + ' бежит со скоростью ' + this.speed);
+};
+Constructor.prototype.stop = function(){
+    this.stop = 0;
+    console.log(this.name + ' стоит' + this.stop);
+};
+Constructor.prototype.time = function(time){
+    this.time = 0;
+    this.time += time;
+    console.log(this.name + ' бежит ' + this.time + ' часа' );
+};
+var simba = new Constructor('Simba');
+simba.run(10);
+simba.time(2);
