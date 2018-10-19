@@ -38,3 +38,10 @@ SuperArray.prototype.render = function(separator){
     }
 }
 arr.render(' ');
+
+
+console.log('Задача 3');
+// Задача 3.
+// Создать метод clear(direction, k), где direction может быть "row" или "column", а k - номер строки или столбца, 
+// который нужно очистить. (поставить 0)
+
