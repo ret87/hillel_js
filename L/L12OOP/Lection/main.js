@@ -15,24 +15,26 @@ console.log('Задача 1');
 
 function SuperArray(n, m, min, max){
     for(var i=0; i<n; i++){
-        this[i] = new Array(m);
-        for(var j=0; j<this[i].length;j++){
+        this[i] = new Array();
+        for(var j=0; j<m;j++){
             this[i][j] = min + Math.floor(Math.random() * (max + 1 - min));
         }
     }
     return console.log(this);
 };
-
-var array = new SuperArray(3, 3, 10, 55);
+var array = new SuperArray(7, 5, 10, 55);
 array;
 
 
 console.log('Задача 2');
 // Задача 2.
 // Создать метод render(separator), в прототипе. Который выведет двумерный массив в документ. С разделителем separator, под массивом.
-// var arr = new SuperArray(3, 6, 1, 30);
-// SuperArray.prototype.render = function(){
-//     // this.separator
-// }
-// console.log(arr);
-// console.log(SuperArray.prototype);
+var arr = new SuperArray(7, 5, 10, 55);
+SuperArray.prototype.render = function(separator){
+    for(var i=0; i<this[0].length;i++){
+        for(var j=0; j<this[i].length;j++)
+        document.write(this[i][j] + separator);
+        document.write('</br>');
+    }
+}
+arr.render(' ');
