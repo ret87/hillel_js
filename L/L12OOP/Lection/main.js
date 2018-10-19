@@ -14,26 +14,25 @@ console.log('Задача 1');
 // в диапазоне options.min - options.max. Массив сохраняется в екземпляр класса SuperArray.
 
 function SuperArray(n, m, min, max){
-    var array = new Array(n);
-    for(var i=0; i<array.length; i++){
-        array[i] = new Array(m);
-        for(var j=0; j<array[i].length;j++){
-            array[i][j] = min + Math.floor(Math.random() * (max + 1 - min));
+    for(var i=0; i<n; i++){
+        this[i] = new Array(m);
+        for(var j=0; j<this[i].length;j++){
+            this[i][j] = min + Math.floor(Math.random() * (max + 1 - min));
         }
     }
-    return array;
+    return console.log(this);
 };
 
-var array = new SuperArray(5, 4, 10, 55);
-console.log(array);
+var array = new SuperArray(3, 3, 10, 55);
+array;
 
 
 console.log('Задача 2');
 // Задача 2.
 // Создать метод render(separator), в прототипе. Который выведет двумерный массив в документ. С разделителем separator, под массивом.
-var arr = new SuperArray(3, 6, 1, 30);
-SuperArray.prototype.render = function(){
-    // this.separator
-}
-console.log(arr);
-console.log(SuperArray.prototype);
+// var arr = new SuperArray(3, 6, 1, 30);
+// SuperArray.prototype.render = function(){
+//     // this.separator
+// }
+// console.log(arr);
+// console.log(SuperArray.prototype);
