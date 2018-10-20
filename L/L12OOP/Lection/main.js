@@ -18,7 +18,6 @@ function SuperArray(n, m, min, max){
     this.marker = '&';    
     this.buferLoc = Array;
     this.buferNum = Number;
-    // this.bufer = this.name[][];
     for(var i=0; i<this.name.length; i++){
         this.name[i] = new Array(m);
         for(var j=0; j<this.name[i].length;j++){
@@ -43,7 +42,7 @@ SuperArray.prototype.render = function(separator){
         document.write('</br>');
     };
 };
-arr.render(' ');
+arr.render(' &nbsp ');
 document.write('</br>');
 
 
