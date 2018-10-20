@@ -15,6 +15,10 @@ console.log('Задача 1');
 
 function SuperArray(n, m, min, max){
     this.name = new Array(n);
+    this.marker = '&';    
+    this.buferLoc = Array;
+    this.buferNum = Number;
+    // this.bufer = this.name[][];
     for(var i=0; i<this.name.length; i++){
         this.name[i] = new Array(m);
         for(var j=0; j<this.name[i].length;j++){
@@ -71,17 +75,22 @@ document.write('</br>');
 arr2.clears('column', 3);
 console.log(typeof(arr2));
 console.log(typeof(arr2.name));
-
 document.write('</br>');
+
+
 console.log('Задача 4');
 // Задача 4.
 // Создать Метод setMarker({ x: 6, y: 9 }), который устанавливает маркер "&" в в переданную точку.
-var arr3 = new SuperArray(7,5,10,99);
+var arr3 = new SuperArray(7,5,1,9);
 SuperArray.prototype.setMarket = function(x, y){
-    this.marker = '&';
+    this.buferLoc = {
+        x: x,
+        y: y
+    };
+    this.buferNum = this.name[this.buferLoc.x][this.buferLoc.y]
     for(var i = 0; i < this.name.length; i++){        
         for(var j = 0; j < this.name[i].length; j++) {
-            this.name[x][y] = this.marker; 
+            this.name[x][y] = this.marker;
             document.write(this.name[i][j] + ' &nbsp ');
         };
         document.write('</br>');
@@ -89,14 +98,25 @@ SuperArray.prototype.setMarket = function(x, y){
 };
 arr3.setMarket(2,2);
 console.log(arr3);
+document.write('</br>');
 
 
 console.log('Задача 5');
 // Задача 5.
 // Создать метод goTo({ x: 2, y: 4 }), маркер передвигается в указанную точку.
-
-
-
+SuperArray.prototype.goTo = function(x, y){
+    for(var i = 0; i < this.name.length; i++){        
+        for(var j = 0; j < this.name[i].length; j++) {
+            this.name[this.buferLoc.x][this.buferLoc.y] = this.buferNum; 
+            this.name[x][y] = this.marker;
+            document.write(this.name[i][j] + ' &nbsp ');
+        };
+        document.write('</br>');
+    };
+    console.log(arr3);
+}
+arr3.goTo(3,4);
+document.write('</br>');
 
 
 console.log('Задача 6');
