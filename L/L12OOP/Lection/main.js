@@ -49,7 +49,7 @@ console.log('Задача 3');
 // который нужно очистить. (поставить 0)
 var arr2 = new SuperArray(5, 5, 1, 9);
 SuperArray.prototype.clears = function(direction, k){
-    for(var i = 0; i < this.name.length; i++){        // как задать ленгз
+    for(var i = 0; i < this.name.length; i++){        
         for(var j = 0; j < this.name[i].length; j++) {
             if(direction == 'row' ){
                 if(i == k ){
@@ -72,12 +72,23 @@ arr2.clears('column', 3);
 console.log(typeof(arr2));
 console.log(typeof(arr2.name));
 
-
+document.write('</br>');
 console.log('Задача 4');
 // Задача 4.
 // Создать Метод setMarker({ x: 6, y: 9 }), который устанавливает маркер "&" в в переданную точку.
-
-
+var arr3 = new SuperArray(7,5,10,99);
+SuperArray.prototype.setMarket = function(x, y){
+    this.marker = '&';
+    for(var i = 0; i < this.name.length; i++){        
+        for(var j = 0; j < this.name[i].length; j++) {
+            this.name[x][y] = this.marker; 
+            document.write(this.name[i][j] + ' &nbsp ');
+        };
+        document.write('</br>');
+    };
+};
+arr3.setMarket(2,2);
+console.log(arr3);
 
 
 console.log('Задача 5');
