@@ -2,7 +2,29 @@
 console.log('OOP Prototype');
 
 
+console.log('Методы и функции в прототипном ООП');
+// Методы и функции в ООП
+// getObject - получить информацию из объекта (или другого типа данных);
+// setObject - задать информацию в объект (или другой тип данных);
+function Human (name, bd, city){
+    var email = 'what?';
 
+    this.name = name;
+    this.bd = bd;
+    this.city = city;
+    this.some = 'hello ' + name + ' what happend in ' + city + '?';
+    
+    this.getEmail = function() {            //задаём
+        return email;                       
+    };
+    this.setEmail = function(mail) {        //получаем
+        return email = mail; 
+    }
+}
+var artem = new Human('Artem', '31 july 1987 year', 'Kyiv');
+artem.setEmail('umc') ;             // задаём 
+artem.getEmail() ;                  // получаем
+console.log(artem.getEmail());
 
 
 

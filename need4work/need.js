@@ -701,7 +701,7 @@ cat.time(3);
 cat.stop(0);
 
 
-// Создание своего класса через prototype
+// Создание своего класса через prototype (прототипное програмирование)
 // 1. Объявить функцию-конструктор.
 function Constructor (name){
     this.name = name;
@@ -724,3 +724,26 @@ Constructor.prototype.time = function(time){
 var simba = new Constructor('Simba');
 simba.run(10);
 simba.time(2);
+
+
+// setObject и getObject через функицональное програмирование
+// getObject - получить информацию из объекта (или другого типа данных);
+// setObject - задать информацию в объект (или другой тип данных);
+function Human (name, bd, city){
+    var email = 'what?';
+
+    this.name = name;
+    this.bd = bd;
+    this.city = city;
+    this.some = 'hello ' + name + ' what happend in ' + city + '?';
+    this.getEmail = function() {            //задаём
+        return email;                       
+    };
+    this.setEmail = function(mail) {        //получаем
+        return email = mail; 
+    }
+}
+var artem = new Human('Artem', '31 july 1987 year', 'Kyiv');
+artem.setEmail('umc') ;             // задаём 
+artem.getEmail() ;                  // получаем
+console.log(artem.getEmail());
