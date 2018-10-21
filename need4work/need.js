@@ -761,3 +761,6 @@ var childParrentTwo = new ParrentTwo();
 childParrentTwo;
 childParrentTwo.sleep();
 childParrentTwo.run();
+
+// Для создания прототипного наследования классов, стоит прировнять ParrentTwo.prototype = Object.create(ParrentOne.prototype){}; 
+ParrentTwo.prototype = Object.create(ParrentOne.prototype);

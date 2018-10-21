@@ -369,6 +369,12 @@
 // Так же можно добавлять методы других классов по цепочке
 // Плох этот подход тем что нам нужно вызывать отдельные классы и получаем доступ только к их методам но не свойствам
 // Хорош он тогда, когда нужно за счёт аргументов методов ParrentOne и ParrentTwo положить что либо в прототип   
+// ParrentTwo.prototype = new ParrentOne();
+
+    // Наследование классов через Object.create 
+// Object.create(prototype ){}; - какой-то другой объект, прототипом которого он будет (в скобках имя объекта);
+// Для создания прототипного наследования классов, стоит прировнять ParrentTwo.prototype = Object.create(ParrentOne.prototype){}; 
+// ParrentTwo.prototype = Object.create(ParrentOne.prototype);
 
 
 

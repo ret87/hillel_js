@@ -16,6 +16,9 @@ console.log('Методы и функции в прототипном ООП');
 // Хорош он тогда, когда нужно за счёт аргументов методов ParrentOne и ParrentTwo положить что либо в прототип   
 
     // Наследование классов через Object.create 
+// Object.create(prototype ){}; - какой-то другой объект, прототипом которого он будет (в скобках имя объекта);
+// Для создания прототипного наследования классов, стоит прировнять ParrentTwo.prototype = Object.create(ParrentOne.prototype){}; 
+ParrentTwo.prototype = Object.create(ParrentOne.prototype);
 
 
 
@@ -56,17 +59,26 @@ function ParrentOne (nick){this.nick = nick};
 ParrentOne.prototype.run = function(old){console.log(this.name * old)};
 
 function ParrentTwo(x, y){ this.name = x + y; return console.log(this.name)};
-ParrentTwo.prototype = new ParrentOne();
+ParrentTwo.prototype = new ParrentOne();                                // вариант 1 - менее удобный и правильный
+ParrentTwo.prototype = Object.create(ParrentOne.prototype);             // вариант 2 - более правильный согласно ООП
 ParrentTwo.prototype.sleep = function(m){return console.log(this.name + m)};
 var childParrentTwo = new ParrentTwo(1, 2);
+
 childParrentTwo;
 childParrentTwo.sleep(2);
 childParrentTwo.run(3);
 
     // Наследование классов через Object.create 
+// Object.create(prototype ){}; - какой-то другой объект, прототипом которого он будет (в скобках имя объекта);
+var data = {
+    x: 20,
+    str: 'sads'
+};
+var d = Object.create(data);
+console.log(d);
 
-
-
+// Для создания прототипного наследования классов, стоит прировнять ParrentTwo.prototype = Object.create(ParrentOne.prototype){}; 
+ParrentTwo.prototype = Object.create(ParrentOne.prototype);
 
 
 
