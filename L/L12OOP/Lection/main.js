@@ -92,7 +92,11 @@ console.log('Задача 1');
 
 function SuperArray(n, m, options){
     this.name = new Array(n);
-    this.marker = '&';    
+    this.marker = '&';
+    this.markerIJ = {
+        i: 0,
+        j: 0
+    };
     this.buferLoc = Array;
     this.buferNum = Number;
     for(var i=0; i<this.name.length; i++){
@@ -165,11 +169,7 @@ SuperArray.prototype.setMarket = function(x, y){
         y: y
     };
     this.buferNum = this.name[this.buferLoc.x][this.buferLoc.y]
-    for(var i = 0; i < this.name.length; i++){        
-        for(var j = 0; j < this.name[i].length; j++) {
-            this.name[x][y] = this.marker;
-        };
-    };
+    this.name[x][y] = this.marker;
 };
 arr3.setMarket(2,2);
 arr3.render('---task 4 end---');
@@ -179,21 +179,44 @@ console.log(arr3);
 console.log('Задача 5');
 // Задача 5.
 // Создать метод goTo({ x: 2, y: 4 }), маркер передвигается в указанную точку.
-// var arr3 = Object.create(array);
 SuperArray.prototype.goTo = function(x, y){
+    this.name[this.buferLoc.x][this.buferLoc.y] = this.buferNum; 
+    this.name[x][y] = this.marker;
     for(var i = 0; i < this.name.length; i++){        
         for(var j = 0; j < this.name[i].length; j++) {
-            this.name[this.buferLoc.x][this.buferLoc.y] = this.buferNum; 
-            this.name[x][y] = this.marker;
+            // this.name[this.markerIJ.i][this.markerIJ.j] = this.buferNum;
+            if(this.name[i][j] == this.marker){
+                this.markerIJ.i=i;
+                this.markerIJ.j=j;
+            };
         };
     };
+
     console.log(arr3);
 }
-arr3.goTo(3,4);
+arr3.goTo(1,1);
 arr3.render('---end 5 task---');
+// arr3.goTo(1,2);
+// arr3.render('---end 5 task---');
 
 
-console.log('Задача 6');
-// Задача 6.
-// Создать метод shift(direction), где direction может иметь значение "left", "right", "top", "bottom", 
-// и маркер сдвинется в указанную сторону на 1 шаг.
+// console.log('Задача 6');
+// // Задача 6.
+// // Создать метод shift(direction), где direction может иметь значение "left", "right", "top", "bottom", 
+// // и маркер сдвинется в указанную сторону на 1 шаг.
+// SuperArray.prototype.shift = function(direction){
+//     for(var i = 0; i < this.name.length; i++){        
+//         for(var j = 0; j < this.name[i].length; j++) {
+//             if(direction == 'left'){
+//                 // this.name[this.buferLoc.x][this.buferLoc.y] = this.buferNum; 
+//                 // this.name[x][y] = this.marker;
+//             this.name[this.buferLoc.x][this.buferLoc.y] = this.buferNum; 
+//             // this.buferLoc = this.buferNum;;
+                
+//             }
+//         };
+//     };
+    
+// }
+// arr3.shift('left');
+// arr3.render('---end 6 task---')
