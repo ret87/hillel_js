@@ -102,8 +102,9 @@ function SuperArray(n, m, options){
             this.name[i][j] = options.min + Math.floor(Math.random() * (options.max + 1 - options.min));
         }
     }
-    this._array1 = this.name;
-    return console.log(this._array1);
+    return console.log(this.name);
+    // this._array1 = this.name;
+    // return console.log(this._array1);
 };
 var array = new SuperArray(7, 5, {min:10, max:55});
 array;
@@ -112,17 +113,19 @@ array;
 console.log('Задача 2');
 // Задача 2.
 // Создать метод render(separator), в прототипе. Который выведет двумерный массив в документ. С разделителем separator, под массивом.
-var arr = new SuperArray(7, 5, {min:10, max:55});
+// var arr = new SuperArray(7, 5, {min:10, max:55});
+var arr = Object.create(array);
 SuperArray.prototype.render = function(separator){
     for(var i=0; i<this.name.length;i++){
         for(var j=0; j<this.name[i].length;j++){
             document.write(this.name[i][j] + ' &nbsp ');
         };
-        document.write(separator);
+        document.write('</br>');
     };
+    document.write([this.name.length][j] = separator + '</br>' );
 };
-arr.render(' &nbsp ');
-document.write('</br>');
+console.log(arr);
+arr.render('</br>');
 
 
 console.log('Задача 3');
@@ -148,12 +151,14 @@ SuperArray.prototype.clears = function(direction, k){
         document.write('</br>');
     };
 };
+
+arr2.render('hello');
 arr2.clears('row', 3);
 document.write('</br>');
 arr2.clears('column', 3);
 console.log(typeof(arr2));
 console.log(typeof(arr2.name));
-document.write('</br>');
+// document.write('</br>');
 
 
 console.log('Задача 4');
@@ -174,9 +179,10 @@ SuperArray.prototype.setMarket = function(x, y){
         document.write('</br>');
     };
 };
+arr3.render('---------');
 arr3.setMarket(2,2);
 console.log(arr3);
-document.write('</br>');
+// document.write('</br>');
 
 
 console.log('Задача 5');
