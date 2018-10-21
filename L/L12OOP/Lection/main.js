@@ -90,7 +90,6 @@ console.log('Задача 1');
 // Создать класс new SuperArray(n, m, { min: 10, max: 55 }), который создаст массив размерностью n на m и заполнит случайными числами 
 // в диапазоне options.min - options.max. Массив сохраняется в екземпляр класса SuperArray.
 
-// function SuperArray(n, m, min, max){
 function SuperArray(n, m, options){
     this.name = new Array(n);
     this.marker = '&';    
@@ -113,7 +112,6 @@ array;
 console.log('Задача 2');
 // Задача 2.
 // Создать метод render(separator), в прототипе. Который выведет двумерный массив в документ. С разделителем separator, под массивом.
-// var arr = new SuperArray(7, 5, {min:10, max:55});
 var arr = Object.create(array);
 SuperArray.prototype.render = function(separator){
     for(var i=0; i<this.name.length;i++){
@@ -122,9 +120,9 @@ SuperArray.prototype.render = function(separator){
         };
         document.write('</br>');
     };
-    document.write([this.name.length][j] = separator + '</br>' );
+    document.write( separator + '</br>' );
 };
-arr.render('task 2 end');
+arr.render('---task 2 end---');
 console.log(arr.name);
 
 
@@ -132,8 +130,7 @@ console.log('Задача 3');
 // Задача 3.
 // Создать метод clear(direction, k), где direction может быть "row" или "column", а k - номер строки или столбца, 
 // который нужно очистить. (поставить 0)
-// var arr2 = new SuperArray(5, 5, {min:1, max:9});
-var arr2 = Object.create(array);
+var arr2 = Object.create(arr);
 SuperArray.prototype.clears = function(direction, k){
     for(var i = 0; i < this.name.length; i++){        
         for(var j = 0; j < this.name[i].length; j++) {
@@ -147,23 +144,21 @@ SuperArray.prototype.clears = function(direction, k){
                     this.name[i][j] = 0;
                 };            
             };
-            document.write(this.name[i][j] + ' &nbsp ');
         };
-        document.write('</br>');
     };
 };
 
-arr2.render('task 3 end');
 arr2.clears('row', 3);
-document.write('</br>');
+arr2.render('');
 arr2.clears('column', 3);
+arr2.render('---task 3 end---');
 console.log(arr2.name);
 
 
 console.log('Задача 4');
 // Задача 4.
 // Создать Метод setMarker({ x: 6, y: 9 }), который устанавливает маркер "&" в в переданную точку.
-var arr3 = new SuperArray(7,5,{min:1,max:9});
+var arr3 = Object.create(array);
 SuperArray.prototype.setMarket = function(x, y){
     this.buferLoc = {
         x: x,
@@ -173,15 +168,12 @@ SuperArray.prototype.setMarket = function(x, y){
     for(var i = 0; i < this.name.length; i++){        
         for(var j = 0; j < this.name[i].length; j++) {
             this.name[x][y] = this.marker;
-            document.write(this.name[i][j] + ' &nbsp ');
         };
-        document.write('</br>');
     };
 };
-arr3.render('---------');
 arr3.setMarket(2,2);
+arr3.render('---task 4 end---');
 console.log(arr3);
-// document.write('</br>');
 
 
 console.log('Задача 5');
