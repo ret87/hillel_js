@@ -106,7 +106,7 @@ function SuperArray(n, m, options){
     // this._array1 = this.name;
     // return console.log(this._array1);
 };
-var array = new SuperArray(7, 5, {min:10, max:55});
+var array = new SuperArray(7, 7, {min:1, max:9});
 array;
 
 
@@ -124,15 +124,16 @@ SuperArray.prototype.render = function(separator){
     };
     document.write([this.name.length][j] = separator + '</br>' );
 };
-console.log(arr);
-arr.render('</br>');
+arr.render('task 2 end');
+console.log(arr.name);
 
 
 console.log('Задача 3');
 // Задача 3.
 // Создать метод clear(direction, k), где direction может быть "row" или "column", а k - номер строки или столбца, 
 // который нужно очистить. (поставить 0)
-var arr2 = new SuperArray(5, 5, {min:1, max:9});
+// var arr2 = new SuperArray(5, 5, {min:1, max:9});
+var arr2 = Object.create(array);
 SuperArray.prototype.clears = function(direction, k){
     for(var i = 0; i < this.name.length; i++){        
         for(var j = 0; j < this.name[i].length; j++) {
@@ -152,13 +153,11 @@ SuperArray.prototype.clears = function(direction, k){
     };
 };
 
-arr2.render('hello');
+arr2.render('task 3 end');
 arr2.clears('row', 3);
 document.write('</br>');
 arr2.clears('column', 3);
-console.log(typeof(arr2));
-console.log(typeof(arr2.name));
-// document.write('</br>');
+console.log(arr2.name);
 
 
 console.log('Задача 4');
