@@ -180,8 +180,6 @@ console.log('Задача 5');
 // Задача 5.
 // Создать метод goTo({ x: 2, y: 4 }), маркер передвигается в указанную точку.
 SuperArray.prototype.goTo = function(x, y){
-    this.name[this.buferLoc.x][this.buferLoc.y] = this.buferNum; 
-    this.name[x][y] = this.marker;
     for(var i = 0; i < this.name.length; i++){        
         for(var j = 0; j < this.name[i].length; j++) {
             // this.name[this.markerIJ.i][this.markerIJ.j] = this.buferNum;
@@ -191,6 +189,8 @@ SuperArray.prototype.goTo = function(x, y){
             };
         };
     };
+    this.name[this.buferLoc.x][this.buferLoc.y] = this.buferNum; 
+    this.name[x][y] = this.marker;
 
     console.log(arr3);
 }
@@ -198,7 +198,6 @@ arr3.goTo(1,1);
 arr3.render('---end 5 task---');
 // arr3.goTo(1,2);
 // arr3.render('---end 5 task---');
-
 
 // console.log('Задача 6');
 // // Задача 6.
