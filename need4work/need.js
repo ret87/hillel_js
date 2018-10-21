@@ -750,7 +750,7 @@ console.log(artem.getEmail());
 
     // Наследование классов
 // Наследование одним классом методами другого класса
-// Что бы child одного класса обращался к методам родителя другого класса, нужно прировнять ParrentOne.prototype = new Parrent.Two();
+// Что бы child одного класса обращался к методам родителя другого класса, нужно прировнять ParrentTwo.prototype = new Parrent.One();
 function ParrentOne (){};
 ParrentOne.prototype.run = function(){};
 
