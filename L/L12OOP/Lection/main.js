@@ -120,7 +120,7 @@ var arr = Object.create(array);
 SuperArray.prototype.render = function(separator){
     for(var i=0; i<this.name.length;i++){
         for(var j=0; j<this.name[i].length;j++){
-            document.write(this.name[i][j] + ' &nbsp ');
+            document.write(this.name[i][j] + ' &nbsp &nbsp ');
         };
         document.write('</br>');
     };
@@ -190,8 +190,11 @@ SuperArray.prototype.goTo = function(x, y){
     };
     this.name[this.markerIJ.i][this.markerIJ.j] = this.buferNum;
     this.buferNum = this.name[x][y];
-    this.name[x][y] = this.marker; 
+    this.name[x][y] = this.marker;
+    this.markerIJ.i = x;
+    this.markerIJ.j = y;
     console.log(arr3);
+    return this.name;
 }
 arr3.goTo(1,1);
 arr3.render('---end 5 task---');
@@ -204,22 +207,59 @@ arr3.render('---end 5 task---');
 arr3.goTo(4,2);
 arr3.render('---end 5 task---');
 
+
 // console.log('Задача 6');
 // // Задача 6.
 // // Создать метод shift(direction), где direction может иметь значение "left", "right", "top", "bottom", 
 // // и маркер сдвинется в указанную сторону на 1 шаг.
+
 SuperArray.prototype.shift = function(direction){
-    for(var i = 0; i < this.name.length; i++){        
-        for(var j = 0; j < this.name[i].length; j++) {
-            // if(direction == 'left'){
-//                 // this.name[this.buferLoc.x][this.buferLoc.y] = this.buferNum; 
-//                 // this.name[x][y] = this.marker;
-//             this.name[this.buferLoc.x][this.buferLoc.y] = this.buferNum; 
-//             // this.buferLoc = this.buferNum;;
-                
-//             }
-        };
+    console.log(this.buferNum);
+    // this.buferNum = 
+    
+    if(direction == 'left'){
+        this.name[this.markerIJ.i][this.markerIJ.j] = this.buferNum;
+        this.markerIJ.j = this.markerIJ.j-1;
+        this.buferNum = this.name[this.markerIJ.i][this.markerIJ.j]; 
+        this.name[this.markerIJ.i][this.markerIJ.j] = this.marker;
+    };
+    if(direction == 'right'){
+        this.name[this.markerIJ.i][this.markerIJ.j] = this.buferNum;
+        this.markerIJ.j = this.markerIJ.j+1;
+        this.buferNum = this.name[this.markerIJ.i][this.markerIJ.j]; 
+        this.name[this.markerIJ.i][this.markerIJ.j] = this.marker;
     };    
+    if(direction == 'top'){
+        this.name[this.markerIJ.i][this.markerIJ.j] = this.buferNum;
+        this.markerIJ.i = this.markerIJ.i-1;
+        this.buferNum = this.name[this.markerIJ.i][this.markerIJ.j]; 
+        this.name[this.markerIJ.i][this.markerIJ.j] = this.marker;
+    };    
+    if(direction == 'bot'){
+        this.name[this.markerIJ.i][this.markerIJ.j] = this.buferNum;
+        this.markerIJ.i = this.markerIJ.i+1;
+        this.buferNum = this.name[this.markerIJ.i][this.markerIJ.j]; 
+        this.name[this.markerIJ.i][this.markerIJ.j] = this.marker;
+    };    
+
 };
-// arr3.shift('left');
-// arr3.render('---end 6 task---')
+arr3.shift('right');
+arr3.render('---end 6 task---')
+arr3.shift('right');
+arr3.render('---end 6 task---')
+arr3.shift('right');
+arr3.render('---end 6 task---')
+arr3.shift('top');
+arr3.render('---end 6 task---')
+arr3.shift('left');
+arr3.render('---end 6 task---')
+arr3.shift('left');
+arr3.render('---end 6 task---')
+arr3.shift('left');
+arr3.render('---end 6 task---')
+arr3.shift('bot');
+arr3.render('---end 6 task---')
+arr3.shift('bot');
+arr3.render('---end 6 task---')
+arr3.shift('right');
+arr3.render('---end 6 task---')
