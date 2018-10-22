@@ -182,40 +182,44 @@ console.log('Задача 5');
 SuperArray.prototype.goTo = function(x, y){
     for(var i = 0; i < this.name.length; i++){        
         for(var j = 0; j < this.name[i].length; j++) {
-            // this.name[this.markerIJ.i][this.markerIJ.j] = this.buferNum;
             if(this.name[i][j] == this.marker){
                 this.markerIJ.i=i;
                 this.markerIJ.j=j;
             };
         };
     };
-    this.name[this.buferLoc.x][this.buferLoc.y] = this.buferNum; 
-    this.name[x][y] = this.marker;
-
+    this.name[this.markerIJ.i][this.markerIJ.j] = this.buferNum;
+    this.buferNum = this.name[x][y];
+    this.name[x][y] = this.marker; 
     console.log(arr3);
 }
 arr3.goTo(1,1);
 arr3.render('---end 5 task---');
-// arr3.goTo(1,2);
-// arr3.render('---end 5 task---');
+arr3.goTo(1,2);
+arr3.render('---end 5 task---');
+arr3.goTo(2,2);
+arr3.render('---end 5 task---');
+arr3.goTo(3,2);
+arr3.render('---end 5 task---');
+arr3.goTo(4,2);
+arr3.render('---end 5 task---');
 
 // console.log('Задача 6');
 // // Задача 6.
 // // Создать метод shift(direction), где direction может иметь значение "left", "right", "top", "bottom", 
 // // и маркер сдвинется в указанную сторону на 1 шаг.
-// SuperArray.prototype.shift = function(direction){
-//     for(var i = 0; i < this.name.length; i++){        
-//         for(var j = 0; j < this.name[i].length; j++) {
-//             if(direction == 'left'){
+SuperArray.prototype.shift = function(direction){
+    for(var i = 0; i < this.name.length; i++){        
+        for(var j = 0; j < this.name[i].length; j++) {
+            // if(direction == 'left'){
 //                 // this.name[this.buferLoc.x][this.buferLoc.y] = this.buferNum; 
 //                 // this.name[x][y] = this.marker;
 //             this.name[this.buferLoc.x][this.buferLoc.y] = this.buferNum; 
 //             // this.buferLoc = this.buferNum;;
                 
 //             }
-//         };
-//     };
-    
-// }
+        };
+    };    
+};
 // arr3.shift('left');
 // arr3.render('---end 6 task---')
