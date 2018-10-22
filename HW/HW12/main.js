@@ -15,6 +15,24 @@ console.log('OOP');
 //     * resetPosition() - перенос в начальную позицию
 // Нужно самим решить какие методы получают аргументы, какие нет. Организовывать код можно любым образом.
 // Вызов методов происходит из консоли.
+function Field(width, height){
+    var arr = new Array(height);
+    for(var i=0;i<arr.length;i++){
+        arr[i] = new Array(width);
+        for(var j=0;j<arr[i].length;j++){
+            arr[i][j] = 0;
+        };
+    };
+    this.array = arr;
+    console.log(arr);
+    return arr;
+};
+var field = new Field(10,10);
+field;
+
+
+
+
 
 // Суть такая:
 // field.renderField();
