@@ -59,7 +59,7 @@ function ParrentOne (nick){this.nick = nick};
 ParrentOne.prototype.run = function(old){console.log(this.name * old)};
 
 function ParrentTwo(x, y){ this.name = x + y; return console.log(this.name)};
-ParrentTwo.prototype = new ParrentOne();                                // вариант 1 - менее удобный и правильный
+ParrentTwo.prototype = new ParrentOne();                                // вариант 1 - менее удобный и менее правильный
 ParrentTwo.prototype = Object.create(ParrentOne.prototype);             // вариант 2 - более правильный согласно ООП
 ParrentTwo.prototype.sleep = function(m){return console.log(this.name + m)};
 var childParrentTwo = new ParrentTwo(1, 2);

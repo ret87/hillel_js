@@ -15,20 +15,46 @@ console.log('OOP');
 //     * resetPosition() - перенос в начальную позицию
 // Нужно самим решить какие методы получают аргументы, какие нет. Организовывать код можно любым образом.
 // Вызов методов происходит из консоли.
+
 function Field(width, height){
     var arr = new Array(height);
-    for(var i=0;i<arr.length;i++){
+    for(var i=0; i<arr.length; i++){
         arr[i] = new Array(width);
-        for(var j=0;j<arr[i].length;j++){
+        for(var j=0; j<arr[i].length;j++){
             arr[i][j] = 0;
-        };
-    };
-    this.array = arr;
-    console.log(arr);
-    return arr;
+        }
+    }
+    this._array = arr;
+    return console.log(this._array);
 };
-var field = new Field(10,10);
+var field = new Field(10, 10);
+
+Field.prototype.renderField = function (){
+    document.write(`<hr />`);
+    for(var i=0; i<this._array.length;i++){
+        document.write(` &nbsp &nbsp  &nbsp &nbsp  &nbsp`);
+        for(var j=0; j<this._array[i].length;j++){
+            document.write(this._array[i][j] + ' &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ');
+        };
+        document.write(`<hr />`);
+    };
+    this.heroName = 1;
+    this.heroLoc = [heroLocI][heroLocJ];
+    var heroLocI = 4;
+    var heroLocJ = 4;
+    this._array[heroLocI][heroLocJ] = this.heroName;
+
+};
+
+Field.prototype.clearField = function (){
+    this.heroName = 0;
+};
+
 field;
+field.renderField();
+field.clearField();
+field.renderField();
+    
 
 
 
