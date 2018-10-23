@@ -17,9 +17,11 @@ console.log('OOP');
 // Вызов методов происходит из консоли.
 
 function Field(width, height){
-    var arr = new Array(height);
+    this.x = width;
+    this.y = height;
+    var arr = new Array(this.x);
     for(var i=0; i<arr.length; i++){
-        arr[i] = new Array(width);
+        arr[i] = new Array(this.y);
         for(var j=0; j<arr[i].length;j++){
             arr[i][j] = 0;
         }
@@ -49,12 +51,20 @@ Field.prototype.renderField = function (){
 Field.prototype.clearField = function (){
     this.heroName = 0;
 };
-
+Field.prototype.changeSize = function(newX, newY){
+    var x = newX;
+    var y = newY;
+    // this.x = newX;
+    // this.y = newY;
+    return function Field(x, y){};          //???
+};
+field.renderField();
+field;
+field.clearField();
+field.changeSize(5,5);
 field;
 field.renderField();
-field.clearField();
-field.renderField();
-    
+    // похоже все изменения надо производить через рендер филд
 
 
 
