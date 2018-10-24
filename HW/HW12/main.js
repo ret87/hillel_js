@@ -19,14 +19,13 @@ console.log('OOP');
 function Field(width, height){
     this.x = width;
     this.y = height;
-    var arr = new Array(this.x);
-    for(var i=0; i<arr.length; i++){
-        arr[i] = new Array(this.y);
-        for(var j=0; j<arr[i].length;j++){
-            arr[i][j] = 0;
+    this._array = new Array(this.x);
+    for(var i=0; i<this._array.length; i++){
+        this._array[i] = new Array(this.y);
+        for(var j=0; j<this._array[i].length;j++){
+            this._array[i][j] = 0;
         }
     }
-    this._array = arr;
     return console.log(this._array);
 };
 var field = new Field(10, 10);
@@ -45,25 +44,37 @@ Field.prototype.renderField = function (){
     var heroLocI = 4;
     var heroLocJ = 4;
     this._array[heroLocI][heroLocJ] = this.heroName;
-
 };
 
 Field.prototype.clearField = function (){
     this.heroName = 0;
 };
+
 Field.prototype.changeSize = function(newX, newY){
-    var x = newX;
-    var y = newY;
-    // this.x = newX;
-    // this.y = newY;
-    return function Field(x, y){};          //???
+    this.x = newX;
+    this.y = newY;
+    this._array = new Array(this.x);
+    for(var i=0; i<this._array.length; i++){
+        this._array[i] = new Array(this.y);
+        for(var j=0; j<this._array[i].length;j++){
+            this._array[i][j] = 0;
+        }
+    }
+    this.heroName = 1;
+    this.heroLoc = [heroLocI][heroLocJ];
+    // var heroLocI = 4;
+    // var heroLocJ = 4;
+
+    return console.log(this._array);
 };
-field.renderField();
-field;
-field.clearField();
-field.changeSize(5,5);
 field;
 field.renderField();
+// field.clearField();
+// field.changeSize(5,5);
+// field;
+// field.renderField();
+// field;
+// field.renderField();
     // похоже все изменения надо производить через рендер филд
 
 
