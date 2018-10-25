@@ -20,9 +20,9 @@ function Field(width, height){
     this.width = width;
     this.height = height;
 
-    this.heroName = 1;
-    this.heroLocX = 4;
-    this.heroLocY = 4;
+    var heroName = 1;
+    var heroLocX = 4;
+    var heroLocY = 4;
 
     this._array = new Array(this.height);
     for(var i=0; i<this._array.length; i++){
@@ -31,7 +31,8 @@ function Field(width, height){
             this._array[i][j] = 0;
         }
     }
-    this._array[this.heroLocX][this.heroLocY] = this.heroName;
+    this._array[heroLocX][heroLocY] = heroName;
+    var array = this._array;
     return console.log(this._array);
 };
 
@@ -70,23 +71,27 @@ Field.prototype.changeSize = function(newX, newY){
     return console.log(this._array);
 };
 
-// function Person(name, XPosition, YPosition){
-//     // var heroName = name;
-//     // var heroLocX = XPosition;
-//     // var heroLocY = YPosition;
-//     // return console.log(this);
-// };
+function Person(name, XPosition, YPosition){
+    this.name = name;
+    this.XPosition = XPosition;
+    this.YPosition = YPosition;
+    // console.log(array);
+    // this._array[YPosition][XPosition] = name;
+};
 // Person.prototype = Object.create(Field.prototype);
 // var person = new Person(10, 1, 1);
 
 
 var field = new Field(10, 10);
+var person = new Person(1, 10, 10);
+// person.__proto__ = field;
+// field.__proto__ = person;
 
 field;
 // field.clearField(1);
 field.renderField();
-field.changeSize(15,15);
-field.renderField();
+// field.changeSize(15,15);
+// field.renderField();
 // person;
 
 
