@@ -17,26 +17,23 @@ console.log('OOP');
 // Вызов методов происходит из консоли.
 
 function Field(width, height){
-    this.x = width;
-    this.y = height;
-    this._array = new Array(this.x);
-    this.heroName;
-    this.heroLoc = {
-        x: 4,
-        y: 4
-    };
+    this.width = width;
+    this.height = height;
+
+    this.heroName = 1;
+    this.heroLocX = 4;
+    this.heroLocY = 4;
+
+    this._array = new Array(this.height);
     for(var i=0; i<this._array.length; i++){
-        this._array[i] = new Array(this.y);
+        this._array[i] = new Array(this.width);
         for(var j=0; j<this._array[i].length;j++){
             this._array[i][j] = 0;
         }
     }
-    // this._array[this.heroLoc.x][this.heroLoc.y] = 1;
-    // this._array[this.heroLoc.x][this.heroLoc.y] = this.heroName;
-    var array = this._array;
+    this._array[this.heroLocX][this.heroLocY] = this.heroName;
     return console.log(this._array);
 };
-var field = new Field(10, 10);
 
 Field.prototype.renderField = function (){
     document.write(`<hr />`);
@@ -49,49 +46,47 @@ Field.prototype.renderField = function (){
     };
 };
 
-Field.prototype.clearField = function (){
-    // this._array[heroLoc.i][heroLoc.j] = 0;
-    // this.heroName = 0;
-    // field;
-    // field.renderField();
-
+Field.prototype.clearField = function (heroName){
+    for(var i=0; i<this._array.length;i++){
+        for(var j=0; j<this._array[i].length;j++){
+            if(this._array[i][j] == heroName){
+                this._array[i][j] = 0;
+            };
+        };
+    };
 };
 
 Field.prototype.changeSize = function(newX, newY){
-    this.x = newX;
-    this.y = newY;
-    this._array = new Array(this.x);
+    this.width = newX;
+    this.height = newY;
+    this._array = new Array(this.height);
     for(var i=0; i<this._array.length; i++){
-        this._array[i] = new Array(this.y);
+        this._array[i] = new Array(this.width);
         for(var j=0; j<this._array[i].length;j++){
             this._array[i][j] = 0;
         }
     }
-
+    this._array[this.heroLocX][this.heroLocY] = this.heroName;
     return console.log(this._array);
 };
 
-// Person имеет такие методы:
-//     * start() - герой появляется на доске
-//     * go(direction, step) - движение по переданом параметру (direction может быть: 'left', 'right', 'top', 'bottom') и с шагом step
-//     * resetPosition() - перенос в начальную позицию
 // function Person(name, XPosition, YPosition){
-    // this.heroName = name;
-    // this.heroLoc.x = XPosition;
-    // this.heroLoc.y = YPosition;
-    // this._array[4][4] = 1;
-    // this._array[YPosition][XPosition] = name;  
+//     // var heroName = name;
+//     // var heroLocX = XPosition;
+//     // var heroLocY = YPosition;
+//     // return console.log(this);
 // };
 // Person.prototype = Object.create(Field.prototype);
-// var person = new Person();
+// var person = new Person(10, 1, 1);
 
-// Person.prototype = new Field();
-// var person = new Person();
 
+var field = new Field(10, 10);
 
 field;
+// field.clearField(1);
 field.renderField();
-// field.changeSize(5,5);
+field.changeSize(15,15);
+field.renderField();
 // person;
 
 
