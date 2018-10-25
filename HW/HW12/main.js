@@ -1,5 +1,5 @@
 'use strict';
-console.log('OOP');
+console.log('OOP HW12');
 
 // Создать игру:
 // Есть поле field, является экземпляром класса Field(width, height), предпочитаемые размеры 10 на 10.
