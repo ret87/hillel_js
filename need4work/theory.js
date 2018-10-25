@@ -374,12 +374,18 @@
     // Наследование классов через Object.create 
 // Object.create(prototype ){}; - какой-то другой объект, прототипом которого он будет (в скобках имя объекта);
 // Для создания прототипного наследования классов, стоит прировнять ParrentTwo.prototype = Object.create(ParrentOne.prototype){}; 
-// ParrentTwo.prototype = Object.create(ParrentOne.prototype);
+// ParrentTwo.prototype = Object.create(ParrentOne.prototype); - объявлять сразу после конструктора ParrentTwo!
 
+// ParrentTwo.apply(this, arguments); - внутри функции конструктора ParrentTwo - при создании ссылается на аргументы ParrentOne
+// ParrentOne.prototype.run = function(args){do some} - таким образом задаётся метод к ParrentOne
+// ParrentTwo.prototype.run() - после наследования мы можем использовать методы ParrentOne к ParrentTwo
+// ParrentTwo.prototype.run = function(args){do some} - можем переприсваивать методы ParrentOne для ParrentTwo 
 
-
-
-
+// вызвать метод родителя, передав ему текущие аргументы - добавит к ParrentTwo метод ParrentOne с небольшими изменениями
+// ParrentTwo.prototype.run = function() { 
+// ParrentOne.prototype.run.apply(this, arguments); 
+// this.run(); 
+// }
 
     // Методы и функции в ООП
 // getObject = function() {} - получить информацию из объекта (или другого типа данных);

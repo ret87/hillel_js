@@ -755,7 +755,9 @@ function ParrentOne (){};
 ParrentOne.prototype.run = function(){};
 
 function ParrentTwo(){};
-ParrentTwo.prototype = new ParrentOne();
+ParrentTwo.prototype = new ParrentOne(
+    // ParrentTwo.apply(this, arguments); - при создании ссылается на аргументы функции-конструктора ParrentOne
+);
 ParrentTwo.prototype.sleep = function(){};
 var childParrentTwo = new ParrentTwo();
 childParrentTwo;
@@ -764,3 +766,25 @@ childParrentTwo.run();
 
 // Для создания прототипного наследования классов, стоит прировнять ParrentTwo.prototype = Object.create(ParrentOne.prototype){}; 
 ParrentTwo.prototype = Object.create(ParrentOne.prototype);
+
+// Кросс-браузерный Object.create
+if (!Object.create) Object.create = inherit;
+function inherit(proto) {
+    function F() {}     // (1)
+    F.prototype = proto // (2)
+    var object = new F; // (3)
+    return object;      // (4)
+};
+
+// Таким образом задаётся метод к ParrentOne
+ParrentOne.prototype.run = function(){};
+// После наследования мы можем использовать методы ParrentOne к ParrentTwo
+ParrentTwo.prototype.run(); 
+// Можем переприсваивать методы ParrentOne для ParrentTwo 
+ParrentTwo.prototype.run = function(){}; 
+
+// Вызвать метод родителя, передав ему текущие аргументы - добавит к ParrentTwo метод ParrentOne с небольшими изменениями
+ParrentTwo.prototype.run = function() { 
+ParrentOne.prototype.run.apply(this, arguments); 
+this.run(); 
+}

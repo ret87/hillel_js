@@ -20,9 +20,9 @@ function Field(width, height){
     this.width = width;
     this.height = height;
 
-    var heroName = 1;
-    var heroLocX = 4;
-    var heroLocY = 4;
+    this.heroName = 1;
+    this.heroLocX = 4;
+    this.heroLocY = 4;
 
     this._array = new Array(this.height);
     for(var i=0; i<this._array.length; i++){
@@ -31,8 +31,7 @@ function Field(width, height){
             this._array[i][j] = 0;
         }
     }
-    this._array[heroLocX][heroLocY] = heroName;
-    var array = this._array;
+    this._array[this.heroLocX][this.heroLocY] = this.heroName;
     return console.log(this._array);
 };
 
@@ -58,41 +57,32 @@ Field.prototype.clearField = function (heroName){
 };
 
 Field.prototype.changeSize = function(newX, newY){
-    this.width = newX;
-    this.height = newY;
-    this._array = new Array(this.height);
-    for(var i=0; i<this._array.length; i++){
-        this._array[i] = new Array(this.width);
-        for(var j=0; j<this._array[i].length;j++){
-            this._array[i][j] = 0;
-        }
-    }
-    this._array[this.heroLocX][this.heroLocY] = this.heroName;
-    return console.log(this._array);
+    Field.apply(this, arguments);
 };
 
 function Person(name, XPosition, YPosition){
-    this.name = name;
-    this.XPosition = XPosition;
-    this.YPosition = YPosition;
-    // console.log(array);
-    // this._array[YPosition][XPosition] = name;
-};
-// Person.prototype = Object.create(Field.prototype);
-// var person = new Person(10, 1, 1);
+    // this.name = name;
+    // var heroName = 1;
+    // var heroLocX = 4;
+    // var heroLocY = 4;
+    // this.XPosition = XPosition;
+    // this.YPosition = YPosition;
 
+    Field.apply(this, arguments);
+    // Field.prototype.method.apply(this, arguments);
+};
+Person.prototype = Object.create(Field.prototype);
 
 var field = new Field(10, 10);
-var person = new Person(1, 10, 10);
-// person.__proto__ = field;
-// field.__proto__ = person;
+var person = new Person(7, 7);
+
 
 field;
 // field.clearField(1);
-field.renderField();
-// field.changeSize(15,15);
+field.changeSize(15,15);
 // field.renderField();
-// person;
+field.renderField();
+person;
 
 
 
