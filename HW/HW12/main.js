@@ -20,12 +20,20 @@ function Field(width, height){
     this.x = width;
     this.y = height;
     this._array = new Array(this.x);
+    this.heroName;
+    this.heroLoc = {
+        x: 4,
+        y: 4
+    };
     for(var i=0; i<this._array.length; i++){
         this._array[i] = new Array(this.y);
         for(var j=0; j<this._array[i].length;j++){
             this._array[i][j] = 0;
         }
     }
+    // this._array[this.heroLoc.x][this.heroLoc.y] = 1;
+    // this._array[this.heroLoc.x][this.heroLoc.y] = this.heroName;
+    var array = this._array;
     return console.log(this._array);
 };
 var field = new Field(10, 10);
@@ -33,21 +41,20 @@ var field = new Field(10, 10);
 Field.prototype.renderField = function (){
     document.write(`<hr />`);
     for(var i=0; i<this._array.length;i++){
-        document.write(` &nbsp &nbsp  &nbsp &nbsp  &nbsp`);
+        document.write('</br>');
         for(var j=0; j<this._array[i].length;j++){
-            document.write(this._array[i][j] + ' &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ');
+            document.write(this._array[i][j] + ' &nbsp &nbsp &nbsp &nbsp &nbsp ');
         };
         document.write(`<hr />`);
     };
-    this.heroName = 1;
-    this.heroLoc = [heroLocI][heroLocJ];
-    var heroLocI = 4;
-    var heroLocJ = 4;
-    this._array[heroLocI][heroLocJ] = this.heroName;
 };
 
 Field.prototype.clearField = function (){
-    this.heroName = 0;
+    // this._array[heroLoc.i][heroLoc.j] = 0;
+    // this.heroName = 0;
+    // field;
+    // field.renderField();
+
 };
 
 Field.prototype.changeSize = function(newX, newY){
@@ -60,22 +67,32 @@ Field.prototype.changeSize = function(newX, newY){
             this._array[i][j] = 0;
         }
     }
-    this.heroName = 1;
-    this.heroLoc = [heroLocI][heroLocJ];
-    // var heroLocI = 4;
-    // var heroLocJ = 4;
 
     return console.log(this._array);
 };
+
+// Person имеет такие методы:
+//     * start() - герой появляется на доске
+//     * go(direction, step) - движение по переданом параметру (direction может быть: 'left', 'right', 'top', 'bottom') и с шагом step
+//     * resetPosition() - перенос в начальную позицию
+// function Person(name, XPosition, YPosition){
+    // this.heroName = name;
+    // this.heroLoc.x = XPosition;
+    // this.heroLoc.y = YPosition;
+    // this._array[4][4] = 1;
+    // this._array[YPosition][XPosition] = name;  
+// };
+// Person.prototype = Object.create(Field.prototype);
+// var person = new Person();
+
+// Person.prototype = new Field();
+// var person = new Person();
+
+
 field;
 field.renderField();
-// field.clearField();
 // field.changeSize(5,5);
-// field;
-// field.renderField();
-// field;
-// field.renderField();
-    // похоже все изменения надо производить через рендер филд
+// person;
 
 
 
