@@ -795,11 +795,14 @@ this.run();
 // Открыть страницу по адресу
 window.open('http://ya.ru');
 // Глобальный объект document даёт возможность взаимодействовать с содержимым страницы.
-document.body.style.background = 'red';
+console.log(document.body.style.background = 'red');
 // содержит информацию о браузере 
-navigator.userAgent; 
+console.log(navigator.userAgent); 
 // содержит информацию о платформе, позволяет различать Windows/Linux/Mac 
-navigator.platform 
-
+console.log(navigator.platform); 
 // содержит информацию о текущем URL страницы и позволяет перенаправить посетителя на новый URL
-location
+console.log(location);
+// даёт доступ ко всему дереву елементов html - покажет как console
+console.log(document.documentElement);
+
+
