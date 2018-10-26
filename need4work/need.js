@@ -788,3 +788,18 @@ ParrentTwo.prototype.run = function() {
 ParrentOne.prototype.run.apply(this, arguments); 
 this.run(); 
 }
+
+
+                                // DOM BOM JS
+
+// Открыть страницу по адресу
+window.open('http://ya.ru');
+// Глобальный объект document даёт возможность взаимодействовать с содержимым страницы.
+document.body.style.background = 'red';
+// содержит информацию о браузере 
+navigator.userAgent; 
+// содержит информацию о платформе, позволяет различать Windows/Linux/Mac 
+navigator.platform 
+
+// содержит информацию о текущем URL страницы и позволяет перенаправить посетителя на новый URL
+location
