@@ -76,3 +76,42 @@ for (var i=0; i<document.body.children.length; i++){
 
 
     // Особые ссылки для таблиц
+
+// У конкретных элементов DOM могут быть свои дополнительные ссылки для большего удобства навигации.
+    // TABLE
+// table.rows – коллекция строк TR таблицы.
+// table.caption/tHead/tFoot – ссылки на элементы таблицы CAPTION, THEAD, TFOOT.
+// table.tBodies – коллекция элементов таблицы TBODY, по спецификации их может быть несколько.
+// THEAD/TFOOT/TBODY
+// tbody.rows – коллекция строк TR секции.
+    // TR
+// tr.cells – коллекция ячеек TD/TH
+// tr.sectionRowIndex – номер строки в текущей секции THEAD/TBODY
+// tr.rowIndex – номер строки в таблице
+    // TD/TH
+// td.cellIndex – номер ячейки в строке
+
+// Выведет дитё body и содержимое номера столбца и строки
+var table = document.body.children[2];
+console.log(table.rows[0].cells[0].innerHTML) ;
+
+
+
+console.log('Лекционная практика');
+console.log(document.head);
+console.log(document.body.children[1]);
+console.log(document.body.children[1].children[1]);
+
+console.log(document.body.children[3]);
+var table1 = document.body.children[3];
+
+for(var i=0; i<table1.rows.length; i++){
+    // for(var j=0;j<table1.rows[i].cells.length;j++){
+        // if(i==j){
+            // table1.rows[i].cells[j].style.backgroundColor = 'red';
+        // };
+
+    // };
+    table1.rows[i].cells[i].style.backgroundColor = 'red';
+};
+

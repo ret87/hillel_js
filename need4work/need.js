@@ -861,3 +861,34 @@ parentElement
 for (var i=0; i<document.body.children.length; i++){
     console.log(document.body.children[i]);
 };
+
+    // Особые ссылки для таблиц
+    // TABLE
+// коллекция строк TR таблицы.
+table.rows
+// ссылки на элементы таблицы CAPTION, THEAD, TFOOT.
+table.caption/tHead/tFoot
+// коллекция элементов таблицы TBODY, по спецификации их может быть несколько.
+table.tBodies
+// THEAD/TFOOT/TBODY
+// коллекция строк TR секции.
+tbody.rows
+    // TR
+// коллекция ячеек TD/TH
+tr.cells
+// номер строки в текущей секции THEAD/TBODY
+tr.sectionRowIndex
+// номер строки в таблице
+tr.rowIndex
+    // TD/TH
+// номер ячейки в строке
+td.cellIndex 
+
+// Выведет дитё body и содержимое номера столбца и строки
+var table = document.body.children[2];
+console.log(table.rows[0].cells[0].innerHTML) ;
+
+    // Проверка elem существования детей
+if (!elem.childNodes.length) { }
+if (!elem.firstChild) { }
+if (!elem.lastChild) { }
