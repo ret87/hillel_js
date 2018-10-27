@@ -812,3 +812,52 @@ $2.style
 $$("div.my")
 // ищет первый элемент в DOM по данному CSS-селектору.
 $("div.my") 
+
+    // Навигация по DOM-элементам (чтение)
+// <HTML> =     
+document.documentElement
+// <BODY> =     
+document.body
+// <head> =     
+document.head
+// Перебор всех елементов documentв body
+for(var i=0; i<document.body.childNodes.length; i++){
+    console.log(document.body.childNodes[i]);
+};
+// Первый потомок елемента
+elem.firstChild
+// Последний потомок елемента
+elem.lastChild
+
+    // Что бы пользоваться методами массива: 
+// 1. Применить метод массива через call/apply
+var elems = document.documentElement.childNodes;
+[].forEach.call(elems, function(elem) {
+    console.log( elem ); // HEAD, текст, BODY
+});
+
+// 2. При помощи Array.prototype.slice сделать из коллекции массив.
+var elems = document.documentElement.childNodes;
+elems = Array.prototype.slice.call(elems);
+elems.forEach(function(elem){
+    console.log(elem.tagName);
+});
+
+    // Доступ к соседям и родителю данного елемента
+console.log(document.body.previousSibling); // Доступ к элементам слева данного 
+console.log(document.head.nextSibling); // Доступ к элементам справа данного 
+console.log(document.body.parentNode);  // Доступ к элементам родителя данного 
+
+    // Навигация только по элементам
+// только дочерние узлы-элементы, то есть соответствующие тегам:
+children     
+// соответственно, первый и последний дети-элементы:
+firstElementChild, lastElementChild      
+// соседи-элементы:
+previousElementSibling, nextElementSibling   
+// родитель-элемент:
+parentElement    
+// перебор всех детей елемента
+for (var i=0; i<document.body.children.length; i++){
+    console.log(document.body.children[i]);
+};
