@@ -927,3 +927,38 @@ console.log(document.querySelectorAll('ul > li:last-child'));
 for(var i=0;i<document.querySelectorAll('ul > li:last-child').length;i++){
     console.log(document.querySelectorAll('ul > li:last-child')[i].innerHTML);
 };
+
+    // querySelector
+// Вызов elem.querySelector(css) возвращает не все, а только первый элемент, соответствующий CSS-селектору css.
+console.log(document.querySelectorAll('ul > li:last-child')[0])
+
+    // matches
+// Метод elem.matches(css) ничего не ищет, а проверяет, удовлетворяет ли elem селектору css. Он возвращает true либо false.
+// Этот метод бывает полезным, когда мы перебираем элементы (в массиве или по обычным навигационным ссылкам) 
+// и пытаемся отфильтровать те из них, которые нам интересны.
+for(var i=0; i<document.body.children.length;i++){ 
+    if(document.body.children[i].matches('div')){
+        console.log(document.body.children[i].innerHTML);
+    }; 
+};
+
+    // closest
+// Метод elem.closest(css) ищет ближайший элемент выше по иерархии DOM, подходящий под CSS-селектор css. Сам элемент включчительно.
+// Иначе говоря, метод closest бежит от текущего элемента вверх по цепочке родителей и проверяет, 
+// подходит ли элемент под указанный CSS-селектор. Если подходит – останавливается и возвращает его.
+console.log(document.querySelector('.inputer_td').closest('td').className);
+console.log(document.querySelector('.inputer_td').closest('td').tagName);
+
+    // .trim()
+// Убирает лишние пробелы - перед и после значений 
+for (i = 0; i < lis.length; i++) {
+    console.log(document.getElementsByTagName('li').innerHTML.trim());
+};
+
+// Метод	                    Ищет по...	    Ищет внутри элемента?
+// getElementById	            id	                -
+// getElementsByName	        name	            -	
+// getElementsByTagName	        тег или '*'	        ✔	
+// getElementsByClassName	    классу	            ✔	
+// querySelector	            CSS-селектор	    ✔	
+// querySelectorAll	            CSS-селектор	    ✔	
