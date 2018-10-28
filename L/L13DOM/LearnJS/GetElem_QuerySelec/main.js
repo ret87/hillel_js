@@ -41,3 +41,8 @@ for(var i=0; i<inputEl.length; i++){
 };
 
 var inputEl = ageTable.getElementsByTagName('*'); // - все елементы в ageTable
+
+
+    // document.getElementsByName
+// Вызов document.getElementsByName(name) позволяет получить все элементы с данным атрибутом name.
+console.log(document.getElementsByName('age'));
