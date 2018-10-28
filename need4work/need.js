@@ -888,7 +888,25 @@ td.cellIndex
 var table = document.body.children[2];
 console.log(table.rows[0].cells[0].innerHTML) ;
 
-    // Проверка elem существования детей
+// Проверка елементов на существования детей
 if (!elem.childNodes.length) { }
 if (!elem.firstChild) { }
 if (!elem.lastChild) { }
+    
+// Поиск елементов по id 
+console.log(idName); // - к вложенным
+console.log(window['content-holder']);  // - из глобального потока 
+// Общепринятой практикой является доступ к элементу вызовом -  document.getElementById("идентификатор").
+console.log(document.getElementById("idName"));
+
+// Поиск елементов по тэгу
+document.getElementsByTagName('div');
+ 
+// Перебор в input в table c опред ID и показать его свойства value и checked
+var tableID = document.getElementById('age-table');
+var input = tableID.getElementsByTagName('input');
+for(var i=0; i<input.length; i++){
+    console.log(input[i].value +' - '+ input[i].checked);
+};
+
+var inputEl = tableID.getElementsByTagName('*'); // - все елементы в tableID
