@@ -962,3 +962,10 @@ for (i = 0; i < lis.length; i++) {
 // getElementsByClassName	    классу	            ✔	
 // querySelector	            CSS-селектор	    ✔	
 // querySelectorAll	            CSS-селектор	    ✔	
+
+    // Проверка на принадлежность к классу
+console.log( document.body instanceof HTMLBodyElement ); // true
+// выводит элемент в виде, удобном для исследования HTML-структуры.
+console.log();
+// выводит элемент в виде JavaScript-объекта, удобно для анализа его свойств.
+console.dir();
