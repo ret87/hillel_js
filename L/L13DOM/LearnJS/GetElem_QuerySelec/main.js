@@ -33,7 +33,6 @@ cont.style.background = 'yellow';
 var divs = document.getElementsByTagName('div');
 console.log(divs);
 
-
 var ageTable = document.getElementById('age-table');
 var inputEl = ageTable.getElementsByTagName('input');
 for(var i=0; i<inputEl.length; i++){
@@ -46,3 +45,18 @@ var inputEl = ageTable.getElementsByTagName('*'); // - все елементы �
     // document.getElementsByName
 // Вызов document.getElementsByName(name) позволяет получить все элементы с данным атрибутом name.
 console.log(document.getElementsByName('age'));
+
+
+    // getElementsByClassName
+// Вызов elem.getElementsByClassName(className) возвращает коллекцию элементов с классом className. 
+// Находит элемент и в том случае, если у него несколько классов, а искомый – один из них.
+console.log(document.getElementsByClassName('content'));
+
+
+    // querySelectorAll
+// Вызов elem.querySelectorAll(css) возвращает все элементы внутри elem, удовлетворяющие CSS-селектору css.
+// Псевдо-классы в CSS-селекторе, в частности :hover и :active, также поддерживаются. 
+console.log(document.querySelectorAll('ul > li:last-child'));
+for(var i=0;i<document.querySelectorAll('ul > li:last-child').length;i++){
+    console.log(document.querySelectorAll('ul > li:last-child')[i].innerHTML);
+};

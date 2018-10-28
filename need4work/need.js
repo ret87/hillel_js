@@ -893,12 +893,14 @@ if (!elem.childNodes.length) { }
 if (!elem.firstChild) { }
 if (!elem.lastChild) { }
     
+    // .getElementById("idName")
 // Поиск елементов по id 
 console.log(idName); // - к вложенным
 console.log(window['content-holder']);  // - из глобального потока 
 // Общепринятой практикой является доступ к элементу вызовом -  document.getElementById("идентификатор").
 console.log(document.getElementById("idName"));
 
+    // .getElementsByTagName('div');
 // Поиск елементов по тэгу
 document.getElementsByTagName('div');
  
@@ -908,5 +910,20 @@ var input = tableID.getElementsByTagName('input');
 for(var i=0; i<input.length; i++){
     console.log(input[i].value +' - '+ input[i].checked);
 };
+// Bсе елементы в tableID
+var inputEl = tableID.getElementsByTagName('*'); 
 
-var inputEl = tableID.getElementsByTagName('*'); // - все елементы в tableID
+    // .getElementsByName('age')
+// Позволяет получить все элементы с данным атрибутом name.
+document.getElementsByName('age');
+
+    // .getElementsByClassName(className)
+// Вызов elem.getElementsByClassName(className) возвращает коллекцию элементов с классом className. 
+document.getElementsByClassName('content');
+
+    // .querySelectorAll
+// Вызов elem.querySelectorAll(css) возвращает все элементы внутри elem, удовлетворяющие CSS-селектору css в том числе и псевдоклассы
+console.log(document.querySelectorAll('ul > li:last-child'));
+for(var i=0;i<document.querySelectorAll('ul > li:last-child').length;i++){
+    console.log(document.querySelectorAll('ul > li:last-child')[i].innerHTML);
+};

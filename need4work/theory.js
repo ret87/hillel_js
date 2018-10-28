@@ -562,3 +562,11 @@
 // Возвращается коллекция, а не элемент, её нужно или перебрать в цикле или получить элемент по номеру и уже ему присваивать value
 // elem.getElementsByTagName(*) - выдаст все елементы
 // document.getElementById.getElementsByTagName(*) - выдаст все тэги, определённого ID елементa
+
+    // document.getElementsByName
+// Вызов document.getElementsByName(name) позволяет получить все элементы с данным атрибутом name.
+
+    // getElementsByClassName
+// Вызов elem.getElementsByClassName(className) возвращает коллекцию элементов с классом className. 
+// Находит элемент и в том случае, если у него несколько классов, а искомый – один из них.
+
