@@ -246,6 +246,21 @@
 //     console.log( childNodes[i] + ' = ' + childNodes[i].nodeType);
 // }
 
+// Всевозможные значения nodeType
+// interface Node {
+//     const unsigned short ELEMENT_NODE = 1;
+//     const unsigned short ATTRIBUTE_NODE = 2;
+//     const unsigned short TEXT_NODE = 3;
+//     const unsigned short CDATA_SECTION_NODE = 4;
+//     const unsigned short ENTITY_REFERENCE_NODE = 5;
+//     const unsigned short ENTITY_NODE = 6;
+//     const unsigned short PROCESSING_INSTRUCTION_NODE = 7;
+//     const unsigned short COMMENT_NODE = 8;
+//     const unsigned short DOCUMENT_NODE = 9;
+//     const unsigned short DOCUMENT_TYPE_NODE = 10;
+//     const unsigned short DOCUMENT_FRAGMENT_NODE = 11;
+//     const unsigned short NOTATION_NODE = 12;
+// };
 
         // Тег: nodeName и tagName
 // nodeName - содержит название(тег) 
@@ -271,3 +286,35 @@
 
 
         // nodeValue/data: содержимое текстового узла
+// Содержимое других узлов, например, текстовых или комментариев, доступно на чтение и запись через свойство data.
+// Его тоже можно читать и обновлять. 
+// console.log(document.body.childNodes[0].data);
+// for(var i=0; i<document.body.childNodes.length;i++){
+//         console.log(document.body.childNodes[i].data);
+// };
+// Свойство nodeValue используется в некоторых узлах где нет data - которые редко используют.
+
+
+        // Текст: textContent
+// Свойство textContent содержит только текст внутри элемента, за вычетом всех <тегов>.
+// elem.textContent возвращает конкатенацию всех текстовых узлов внутри elem.
+// Есть возможность записать текст в элемент, причём именно как текст!
+// Возвращается в точности весь текст, включая переводы строк и пробелы, но без тегов.
+// for(var i=0; i<document.body.childNodes.length;i++){
+//         console.log(i + ' = ' + document.body.childNodes[i].textContent);
+// };
+// console.log(document.body.childNodes[7].textContent = prompt('vvedite vashe imja', 'Artem'));
+
+
+        // innerText
+// innerText возвращает текст не в том виде, в котором он в DOM, а в том, в котором он виден –  как если бы выбрали содержимое элемента 
+// мышкой и скопировали его. В частности, если элемент невидим, то его текст возвращён не будет
+// при записи значения innerText работает так же, как и textContent.
+// console.log(document.body.childNodes[6].innerText = 'innerText change');
+
+
+        // Свойство hidden
+// Должен приравниваться к 'true' or 'false'
+// Скрывает наши елементы как буд-то display: none им присвоили;
+// console.log(document.body.childNodes[8].hidden = 'true');
+

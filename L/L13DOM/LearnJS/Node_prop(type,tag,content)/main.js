@@ -37,7 +37,7 @@ console.log('Node Proporties (type, tag, content) DOM L13');
 
 var childNodes = document.body.childNodes;
 for (var i = 0; i < childNodes.length; i++) {
-    // if (childNodes[i].nodeType != 1) continue;
+    if (childNodes[i].nodeType != 1) continue;
     // console.log( childNodes[i] );
     console.log( childNodes[i] + ' = ' + childNodes[i].nodeType);
 }
@@ -80,4 +80,43 @@ console.log(document.body.children[1].outerHTML);
 
 
         // nodeValue/data: содержимое текстового узла
+// Содержимое других узлов, например, текстовых или комментариев, доступно на чтение и запись через свойство data.
+// Его тоже можно читать и обновлять. 
+console.log(document.body.childNodes[0].data);
+for(var i=0; i<document.body.childNodes.length;i++){
+        console.log(document.body.childNodes[i].data);
+};
+// Свойство nodeValue используется в некоторых узлах где нет data - которые редко используют.
 
+
+        // Текст: textContent
+// Свойство textContent содержит только текст внутри элемента, за вычетом всех <тегов>.
+// elem.textContent возвращает конкатенацию всех текстовых узлов внутри elem.
+// Есть возможность записать текст в элемент, причём именно как текст!
+// Возвращается в точности весь текст, включая переводы строк и пробелы, но без тегов.
+for(var i=0; i<document.body.childNodes.length;i++){
+        console.log(i + ' = ' + document.body.childNodes[i].textContent);
+};
+console.log(document.body.childNodes[6].textContent = 'textContent change');
+console.log(document.body.childNodes[7].textContent = prompt('vvedite vashe imja', 'Artem'));
+
+
+        // innerText
+// innerText возвращает текст не в том виде, в котором он в DOM, а в том, в котором он виден –  как если бы выбрали содержимое элемента 
+// мышкой и скопировали его. В частности, если элемент невидим, то его текст возвращён не будет
+// при записи значения innerText работает так же, как и textContent.
+console.log(document.body.childNodes[6].innerText);
+console.log(document.body.childNodes[7].innerText = 'innerText change');
+console.log(document.body.childNodes[6].innerText = 'innerText change');
+
+
+        // Свойство hidden
+// Должен приравниваться к 'true' or 'false'
+// Скрывает наши елементы как буд-то display: none им присвоили;
+console.log(document.body.childNodes[8]);
+console.log(document.body.childNodes[8].hidden = 'true');
+
+
+
+console.log('Лекционная практика');
+// console.dir(HTMLDocument.prototype.__proto__.__proto__.constructor);

@@ -963,16 +963,32 @@ for (i = 0; i < lis.length; i++) {
 // querySelector	            CSS-селектор	    ✔	
 // querySelectorAll	            CSS-селектор	    ✔	
 
-    // Проверка на принадлежность к классу
+    // instanceof Проверка на принадлежность к классу
 console.log( document.body instanceof HTMLBodyElement ); // true
 // выводит элемент в виде, удобном для исследования HTML-структуры.
 console.log();
 // выводит элемент в виде JavaScript-объекта, удобно для анализа его свойств.
 console.dir();
 
-// содержит название(тег) 
+// Всевозможные значения nodeType
+// interface Node {
+//     const unsigned short ELEMENT_NODE = 1;
+//     const unsigned short ATTRIBUTE_NODE = 2;
+//     const unsigned short TEXT_NODE = 3;
+//     const unsigned short CDATA_SECTION_NODE = 4;
+//     const unsigned short ENTITY_REFERENCE_NODE = 5;
+//     const unsigned short ENTITY_NODE = 6;
+//     const unsigned short PROCESSING_INSTRUCTION_NODE = 7;
+//     const unsigned short COMMENT_NODE = 8;
+//     const unsigned short DOCUMENT_NODE = 9;
+//     const unsigned short DOCUMENT_TYPE_NODE = 10;
+//     const unsigned short DOCUMENT_FRAGMENT_NODE = 11;
+//     const unsigned short NOTATION_NODE = 12;
+// };
+
+// nodeName содержит название(тег) 
 console.dir(document.body.nodeName);
-// содержит элемента узла
+// tagName содержит элемента узла
 console.dir(document.body.tagName);
 
     // innerHTML: содержимое элемента
@@ -983,3 +999,28 @@ console.dir(document.body.querySelector('div').innerHTML = '<p> yohoho </p>');
     // outerHTML: HTML элемента целиком
 // Свойство outerHTML содержит HTML элемента целиком. Изменить outerHTML элемента невозможно.
 console.log(document.body.children[1].outerHTML);
+
+    // data: содержимое текстового узла
+// Содержимое других узлов, например, текстовых или комментариев, доступно на чтение и запись через свойство data.
+console.log(document.body.childNodes[0].data);
+for(var i=0; i<document.body.childNodes.length;i++){
+    console.log(document.body.childNodes[i].data);
+};
+
+    // Текст: textContent
+// Свойство textContent содержит только текст внутри элемента, за вычетом всех <тегов>. Есть возможность записи именно текста в элемент
+for(var i=0; i<document.body.childNodes.length;i++){
+    console.log(i + ' = ' + document.body.childNodes[i].textContent);
+};
+console.log(document.body.childNodes[7].textContent = prompt('vvedite vashe imja', 'Artem'));
+
+    // innerText
+// innerText возвращает текст не в том виде, в котором он в DOM, а в том, в котором он виден –  как если бы выбрали содержимое элемента
+// мышкой и скопировали его. В частности, если элемент невидим, то его текст возвращён не будет
+// при записи значения innerText работает так же, как и textContent.
+console.log(document.body.childNodes[6].innerText = 'innerText change');
+
+    // Свойство hidden
+// Должен приравниваться к 'true' or 'false'. Скрывает наши елементы как буд-то display: none им присвоили;
+console.log(document.body.childNodes[8].hidden = 'true');
+
