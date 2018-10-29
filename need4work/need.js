@@ -1024,3 +1024,9 @@ console.log(document.body.childNodes[6].innerText = 'innerText change');
 // Должен приравниваться к 'true' or 'false'. Скрывает наши елементы как буд-то display: none им присвоили;
 console.log(document.body.childNodes[8].hidden = 'true');
 
+    // isFinite(n)
+alert( isFinite(1) ); // true
+alert( isFinite(Infinity) ); // false
+
+    // Мягкое преобразование: parseInt и parseFloat
+// alert( parseInt('12px') ) // 12, ошибка на символе 'p'
