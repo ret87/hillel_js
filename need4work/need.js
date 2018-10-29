@@ -969,3 +969,17 @@ console.log( document.body instanceof HTMLBodyElement ); // true
 console.log();
 // выводит элемент в виде JavaScript-объекта, удобно для анализа его свойств.
 console.dir();
+
+// содержит название(тег) 
+console.dir(document.body.nodeName);
+// содержит элемента узла
+console.dir(document.body.tagName);
+
+    // innerHTML: содержимое элемента
+// позволяет получить HTML-содержимое элемента в виде строки. В innerHTML можно и читать и писать.
+console.dir(document.body.innerHTML);
+console.dir(document.body.querySelector('div').innerHTML = '<p> yohoho </p>');
+
+    // outerHTML: HTML элемента целиком
+// Свойство outerHTML содержит HTML элемента целиком. Изменить outerHTML элемента невозможно.
+console.log(document.body.children[1].outerHTML);
