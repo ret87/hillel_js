@@ -155,7 +155,6 @@
 
         // // Поиск: getElement* и querySelector*
 
-
     // document.getElementById или просто id
 // Cтоит следовать правилу уникальности id.
 // Если элементу назначен специальный атрибут id, то можно получить его прямо по переменной с именем из значения id.
@@ -231,9 +230,7 @@
 // console.log( document.body instanceof HTMLElement ); // true
 // console.log( document.body instanceof Element ); // true
 // console.log( document.body instanceof Node ); // true
-
 // DOM-узлы – обычные JavaScript-объекты. Их классы заданы в прототипном стиле. Имеют свои свойства и методы.
-
 
         // Тип: nodeType
 // Тип узла содержится в его свойстве nodeType. Всего их 12.
@@ -271,7 +268,6 @@
 // console.dir(document.body.nodeName);
 // console.dir(document.body.tagName);
 
-
         // innerHTML: содержимое элемента
 // позволяет получить HTML-содержимое элемента в виде строки. В innerHTML можно и читать и писать.
 // innerHTML += осуществляет перезапись - Так как новое значение записывается, то все изображения и другие ресурсы перезагружаются 
@@ -279,11 +275,9 @@
 // Скрипты не выполняются
 // console.dir(document.body.querySelector('div').innerHTML = '<p> this is my inner </p>');
 
-
         // outerHTML: HTML элемента целиком
 // Свойство outerHTML содержит HTML элемента целиком. Изменить outerHTML элемента невозможно.
 // console.log(document.body.children[1].outerHTML);
-
 
         // nodeValue/data: содержимое текстового узла
 // Содержимое других узлов, например, текстовых или комментариев, доступно на чтение и запись через свойство data.
@@ -293,7 +287,6 @@
 //         console.log(document.body.childNodes[i].data);
 // };
 // Свойство nodeValue используется в некоторых узлах где нет data - которые редко используют.
-
 
         // Текст: textContent
 // Свойство textContent содержит только текст внутри элемента, за вычетом всех <тегов>.
@@ -305,13 +298,11 @@
 // };
 // console.log(document.body.childNodes[7].textContent = prompt('vvedite vashe imja', 'Artem'));
 
-
         // innerText
 // innerText возвращает текст не в том виде, в котором он в DOM, а в том, в котором он виден –  как если бы выбрали содержимое элемента 
 // мышкой и скопировали его. В частности, если элемент невидим, то его текст возвращён не будет
 // при записи значения innerText работает так же, как и textContent.
 // console.log(document.body.childNodes[6].innerText = 'innerText change');
-
 
         // Свойство hidden
 // Должен приравниваться к 'true' or 'false'
