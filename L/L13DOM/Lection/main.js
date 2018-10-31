@@ -30,7 +30,10 @@ console.log('DOM L13');
 
 // window.onload = function(){} - когда загрузится окно, запускается функция (все теги, все скрипты, все стили, но не все картинки);
 // с помощью window.onload = function(){} - мы можем скрипты запускать из head, а не из тела html
-// Все атрибуты которые могут быть применимы к тэгу - прописаны в свойствах его объекта (console.dir и выбрать нужный елемент) 
+// Все атрибуты которые могут быть применимы к тэгу - прописаны в свойствах его объекта (console.dir и выбрать нужный елемент)
+
+
+        // // getElementBy
 // Можно обращаться ко всем встроенным свойствам экземпляров, как к объект.свойство: object.align = 'name'
 window.onload = function(){
     console.log(document.getElementById('block'));
@@ -70,5 +73,10 @@ window.onload = function(){
 var olga = document.getElementsByClassName('Olga');
 console.log(olga);
 for(var i=0; i<olga.length;i++){
-    olga[i].innerHTML = 'selected';
+    olga[i].innerHTML += 'selected';
 };
+
+        // // querySelector
+// Методы querySelector - работает по логике обращения CSS селекторов - выбирает первый элемент подходящий по условиям (классу тэгу...)
+// Селектор - шаблон по которому можно выбрать элемент (работа CSS) 
+console.log(document.querySelector('div.Olga ul>li'));

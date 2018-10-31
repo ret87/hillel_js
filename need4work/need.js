@@ -1079,3 +1079,8 @@ console.log(className);
 for(var i=0; i<className.length;i++){
     className[i].innerHTML = 'selected';
 };
+
+// Методы querySelector - работает по логике обращения CSS селекторов - выбирает первый элемент подходящий по условиям (классу тэгу...)
+// Селектор - шаблон по которому можно выбрать элемент (работа CSS)
+console.log(document.querySelector('div.className'));
+
