@@ -1033,7 +1033,49 @@ console.log(document.body.childNodes[6].innerText = 'innerText change');
 // Должен приравниваться к 'true' or 'false'. Скрывает наши елементы как буд-то display: none им присвоили;
 console.log(document.body.childNodes[8].hidden = 'true');
 
+// c Лекции
 // - когда загрузится окно, запускается функция (все теги, все скрипты, все стили, но не все картинки);
 window.onload = function(){
     console.log(document.getElementById('block'));
+};
+// Можно изменять свойства элементов, обращаясь к ним как к объектам object.property
+document.getElementById('block').align = 'FOO';         // добавит свойству object.align = 'FOO' у елемента с id = 'block'
+// Задать изменения через определённое время
+setTimeout(function(){document.getElementById('block').align = 'left';}, 2000);  // изменит определённые свойства через опред время
+// Можно вкладывать временную функцию одну в другую
+window.onload = function(){
+    console.dir(document.getElementById('block'));
+    document.getElementById('block').align = 'FOO';         // добавит свойству align = 'FOO'
+    setTimeout(function(){
+        document.getElementById('block').align = 'left';
+        document.getElementById('block').style.backgroundColor = 'darkred';
+        setTimeout(function(){
+            document.getElementById('block').style.backgroundColor = 'darkblue';
+            document.getElementById('block').style.color = 'white';
+        }, 1000)
+    }, 2000);  // изменит определённые свойства через опред время
+};
+// можно узнать размер елемента - обращаясь к свойству object.clientWidth
+window.onload = function(){
+    console.dir(document.getElementById('block').clientWidth);
+};
+// можно вывести всё сожержимое в елементе - обращаясь к свойству object.innerHTML;
+window.onload = function(){
+    console.dir(document.getElementById('block').innerHTML);
+};
+// можно вывести исключительно текст сожержащийся в елементе - обращаясь к свойству object.innerTEXT;
+window.onload = function(){
+    console.dir(document.getElementById('block').innerText);
+};
+// innerHTML можно изменять, добавляя текст или теги через object.innerHTML += some tags
+document.getElementById('block').innerHTML += '<hr /> Underline'
+// innerText выведет непосредственно сам текс
+console.dir(document.getElementById('block').innerText += ' <hr /> <br />  Underline');
+// Вывести элементы по классу - выводит в коллекцию элементов
+document.getElementsByClassName('className');
+// Коллекция - это подобные элементы. Что бы обратиться к её элементам, нужно перебрать их через цикл
+var className = document.getElementsByClassName('className');
+console.log(className);
+for(var i=0; i<className.length;i++){
+    className[i].innerHTML = 'selected';
 };

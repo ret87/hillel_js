@@ -30,8 +30,45 @@ console.log('DOM L13');
 
 // window.onload = function(){} - когда загрузится окно, запускается функция (все теги, все скрипты, все стили, но не все картинки);
 // с помощью window.onload = function(){} - мы можем скрипты запускать из head, а не из тела html
+// Все атрибуты которые могут быть применимы к тэгу - прописаны в свойствах его объекта (console.dir и выбрать нужный елемент) 
+// Можно обращаться ко всем встроенным свойствам экземпляров, как к объект.свойство: object.align = 'name'
 window.onload = function(){
-    // console.log(document.getElementById('block'));
+    console.log(document.getElementById('block'));
+};
+window.onload = function(){
+    console.dir(document.getElementById('block'));
+    document.getElementById('block').align = 'FOO';         // добавит свойству align = 'FOO'
+    setTimeout(function(){
+        document.getElementById('block').align = 'left';
+        document.getElementById('block').style.backgroundColor = 'darkred';
+        setTimeout(function(){
+            document.getElementById('block').style.backgroundColor = 'darkblue';
+            document.getElementById('block').style.color = 'white';
+        }, 1000)
+    }, 2000);  // изменит определённые свойства через опред время
+};
+// можно узнать размер елемента - обращаясь к свойству object.clientWidth;
+window.onload = function(){
+    console.dir(document.getElementById('block').clientWidth);
+};
+
+// можно вывести исключительно текст сожержащийся в елементе - обращаясь к свойству object.innerTEXT;
+// можно вывести всё сожержимое в елементе - обращаясь к свойству object.innerHTML;
+// innerHTML можно изменять, добавляя текст или теги через object.innerHTML += some tags
+window.onload = function(){
+    console.dir(document.getElementById('block').innerText);
+    console.dir(document.getElementById('block').innerHTML);
+    setTimeout(function(){
+        document.getElementById('block').innerHTML += ' <hr /> <br />  Underline';
+    }, 3000);
+    console.dir(document.getElementById('block').innerText += ' <hr /> <br />  Underline');
     console.dir(document.getElementById('block'));
 };
-// Все атрибуты которые могут быть применимы к тэгу - прописаны в свойствах его объекта (console.dir и выбрать нужный елемент) 
+
+// Вывести элементы по классу - выводит в коллекцию элементов
+// Коллекция - это подобные элементы. Что бы обратиться к её элементам, нужно перебрать их через цикл
+var olga = document.getElementsByClassName('Olga');
+console.log(olga);
+for(var i=0; i<olga.length;i++){
+    olga[i].innerHTML = 'selected';
+};
