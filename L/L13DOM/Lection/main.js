@@ -26,4 +26,12 @@ console.log('DOM L13');
 // document - все манипуляции и обращения, работают из js в html, с помощью методов (getElementById());
 // Если мы ввидим отсылку на Element - нам по любому нужно будет добавлять какое-то имя, т.к. мы обращаемся к елементу по чём-то;
 // getElementById(); -возвращает ссылку на элемент по ID (который заранее установлен в html определённом элементу);
-console.log(document.getElementById('form'));
+// console.log(document.getElementById('block'));
+
+// window.onload = function(){} - когда загрузится окно, запускается функция (все теги, все скрипты, все стили, но не все картинки);
+// с помощью window.onload = function(){} - мы можем скрипты запускать из head, а не из тела html
+window.onload = function(){
+    // console.log(document.getElementById('block'));
+    console.dir(document.getElementById('block'));
+};
+// Все атрибуты которые могут быть применимы к тэгу - прописаны в свойствах его объекта (console.dir и выбрать нужный елемент) 

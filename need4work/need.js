@@ -1,3 +1,11 @@
+// isFinite(n)
+alert( isFinite(1) ); // true
+alert( isFinite(Infinity) ); // false
+
+// Мягкое преобразование: parseInt и parseFloat
+alert( parseInt('12px') ) // 12, ошибка на символе 'p'
+    
+
 // Код для генерации случайного целого от min to max включительно:
 var rand = min + Math.floor(Math.random() * (max + 1 - min));
 
@@ -863,7 +871,7 @@ for (var i=0; i<document.body.children.length; i++){
 };
 
     // Особые ссылки для таблиц
-    // TABLE
+// TABLE
 // коллекция строк TR таблицы.
 table.rows
 // ссылки на элементы таблицы CAPTION, THEAD, TFOOT.
@@ -873,7 +881,8 @@ table.tBodies
 // THEAD/TFOOT/TBODY
 // коллекция строк TR секции.
 tbody.rows
-    // TR
+
+// TR
 // коллекция ячеек TD/TH
 tr.cells
 // номер строки в текущей секции THEAD/TBODY
@@ -893,14 +902,14 @@ if (!elem.childNodes.length) { }
 if (!elem.firstChild) { }
 if (!elem.lastChild) { }
     
-    // .getElementById("idName")
+// .getElementById("idName")
 // Поиск елементов по id 
 console.log(idName); // - к вложенным
 console.log(window['content-holder']);  // - из глобального потока 
 // Общепринятой практикой является доступ к элементу вызовом -  document.getElementById("идентификатор").
 console.log(document.getElementById("idName"));
 
-    // .getElementsByTagName('div');
+// .getElementsByTagName('div');
 // Поиск елементов по тэгу
 document.getElementsByTagName('div');
  
@@ -913,26 +922,26 @@ for(var i=0; i<input.length; i++){
 // Bсе елементы в tableID
 var inputEl = tableID.getElementsByTagName('*'); 
 
-    // .getElementsByName('age')
+// .getElementsByName('age')
 // Позволяет получить все элементы с данным атрибутом name.
 document.getElementsByName('age');
 
-    // .getElementsByClassName(className)
+// .getElementsByClassName(className)
 // Вызов elem.getElementsByClassName(className) возвращает коллекцию элементов с классом className. 
 document.getElementsByClassName('content');
 
-    // .querySelectorAll
+// .querySelectorAll
 // Вызов elem.querySelectorAll(css) возвращает все элементы внутри elem, удовлетворяющие CSS-селектору css в том числе и псевдоклассы
 console.log(document.querySelectorAll('ul > li:last-child'));
 for(var i=0;i<document.querySelectorAll('ul > li:last-child').length;i++){
     console.log(document.querySelectorAll('ul > li:last-child')[i].innerHTML);
 };
 
-    // querySelector
+// querySelector
 // Вызов elem.querySelector(css) возвращает не все, а только первый элемент, соответствующий CSS-селектору css.
 console.log(document.querySelectorAll('ul > li:last-child')[0])
 
-    // matches
+// matches
 // Метод elem.matches(css) ничего не ищет, а проверяет, удовлетворяет ли elem селектору css. Он возвращает true либо false.
 // Этот метод бывает полезным, когда мы перебираем элементы (в массиве или по обычным навигационным ссылкам) 
 // и пытаемся отфильтровать те из них, которые нам интересны.
@@ -942,14 +951,14 @@ for(var i=0; i<document.body.children.length;i++){
     }; 
 };
 
-    // closest
+// closest
 // Метод elem.closest(css) ищет ближайший элемент выше по иерархии DOM, подходящий под CSS-селектор css. Сам элемент включчительно.
 // Иначе говоря, метод closest бежит от текущего элемента вверх по цепочке родителей и проверяет, 
 // подходит ли элемент под указанный CSS-селектор. Если подходит – останавливается и возвращает его.
 console.log(document.querySelector('.inputer_td').closest('td').className);
 console.log(document.querySelector('.inputer_td').closest('td').tagName);
 
-    // .trim()
+// .trim()
 // Убирает лишние пробелы - перед и после значений 
 for (i = 0; i < lis.length; i++) {
     console.log(document.getElementsByTagName('li').innerHTML.trim());
@@ -963,7 +972,7 @@ for (i = 0; i < lis.length; i++) {
 // querySelector	            CSS-селектор	    ✔	
 // querySelectorAll	            CSS-селектор	    ✔	
 
-    // instanceof Проверка на принадлежность к классу
+// instanceof Проверка на принадлежность к классу
 console.log( document.body instanceof HTMLBodyElement ); // true
 // выводит элемент в виде, удобном для исследования HTML-структуры.
 console.log();
@@ -991,42 +1000,40 @@ console.dir(document.body.nodeName);
 // tagName содержит элемента узла
 console.dir(document.body.tagName);
 
-    // innerHTML: содержимое элемента
+// innerHTML: содержимое элемента
 // позволяет получить HTML-содержимое элемента в виде строки. В innerHTML можно и читать и писать.
 console.dir(document.body.innerHTML);
 console.dir(document.body.querySelector('div').innerHTML = '<p> yohoho </p>');
 
-    // outerHTML: HTML элемента целиком
+// outerHTML: HTML элемента целиком
 // Свойство outerHTML содержит HTML элемента целиком. Изменить outerHTML элемента невозможно.
 console.log(document.body.children[1].outerHTML);
 
-    // data: содержимое текстового узла
+// data: содержимое текстового узла
 // Содержимое других узлов, например, текстовых или комментариев, доступно на чтение и запись через свойство data.
 console.log(document.body.childNodes[0].data);
 for(var i=0; i<document.body.childNodes.length;i++){
     console.log(document.body.childNodes[i].data);
 };
 
-    // Текст: textContent
+// Текст: textContent
 // Свойство textContent содержит только текст внутри элемента, за вычетом всех <тегов>. Есть возможность записи именно текста в элемент
 for(var i=0; i<document.body.childNodes.length;i++){
     console.log(i + ' = ' + document.body.childNodes[i].textContent);
 };
 console.log(document.body.childNodes[7].textContent = prompt('vvedite vashe imja', 'Artem'));
 
-    // innerText
+// innerText
 // innerText возвращает текст не в том виде, в котором он в DOM, а в том, в котором он виден –  как если бы выбрали содержимое элемента
 // мышкой и скопировали его. В частности, если элемент невидим, то его текст возвращён не будет
 // при записи значения innerText работает так же, как и textContent.
 console.log(document.body.childNodes[6].innerText = 'innerText change');
 
-    // Свойство hidden
+// Свойство hidden
 // Должен приравниваться к 'true' or 'false'. Скрывает наши елементы как буд-то display: none им присвоили;
 console.log(document.body.childNodes[8].hidden = 'true');
 
-    // isFinite(n)
-alert( isFinite(1) ); // true
-alert( isFinite(Infinity) ); // false
-
-    // Мягкое преобразование: parseInt и parseFloat
-// alert( parseInt('12px') ) // 12, ошибка на символе 'p'
+// - когда загрузится окно, запускается функция (все теги, все скрипты, все стили, но не все картинки);
+window.onload = function(){
+    console.log(document.getElementById('block'));
+};
