@@ -76,7 +76,18 @@ for(var i=0; i<olga.length;i++){
     olga[i].innerHTML += 'selected';
 };
 
-        // // querySelector
-// Методы querySelector - работает по логике обращения CSS селекторов - выбирает первый элемент подходящий по условиям (классу тэгу...)
+
+        // // JquerySelector
+    // querySelector()
+// Метод querySelector - работает по логике обращения CSS селекторов - выбирает первый элемент подходящий по условиям (классу тэгу...)
 // Селектор - шаблон по которому можно выбрать элемент (работа CSS) 
 console.log(document.querySelector('div.Olga ul>li'));
+console.log(document.querySelector('#block'));
+    // querySelectorAll()
+// Метод querySelectorAll() - позволяет выбрать все элементы по селекторам, удовлетворяющие условиям поиска (образует массив)
+console.log(document.querySelectorAll('div.Olga ul>li'));
+
+var blocks = document.querySelectorAll('div.Olga ul>li');
+blocks.forEach(item => item.innerHTML += ' selector');
+
+

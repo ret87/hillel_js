@@ -1079,8 +1079,17 @@ console.log(className);
 for(var i=0; i<className.length;i++){
     className[i].innerHTML = 'selected';
 };
-
-// Методы querySelector - работает по логике обращения CSS селекторов - выбирает первый элемент подходящий по условиям (классу тэгу...)
+        // // Jquery
+// Метод querySelector() - работает по логике обращения CSS селекторов - выбирает первый элемент подходящий по условиям (классу тэгу...)
 // Селектор - шаблон по которому можно выбрать элемент (работа CSS)
 console.log(document.querySelector('div.className'));
-
+// Вывести елемент по id 
+console.log(document.querySelector('#idName'));
+// Вывести елемент по имени класса
+console.log(document.querySelector('.className'));
+// Вывести елемент который является дочерним у другого элемента
+console.log(document.querySelector('div > ul'));
+// Метод querySelectorAll() - позволяет выбрать все элементы по селекторам, удовлетворяющие условиям поиска (образует массив)
+console.log(document.querySelectorAll('div.className')); 
+// перебор елементов из querySelectorAll через foreaсh
+blocks.forEach(item => item.innerHTML += ' selector');
