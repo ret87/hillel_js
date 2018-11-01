@@ -1093,4 +1093,18 @@ console.log(document.querySelector('div > ul'));
 console.log(document.querySelectorAll('div.className')); 
 // перебор елементов из querySelectorAll через foreaсh
 blocks.forEach(item => item.innerHTML += ' selector');
+    block.className += ' block1';
 
+    // Свойства элементов
+// element.className = '' - можно узнаить или менять имя класса или добавлять класс к существующему, определённом элементу.
+document.querySelector('#idName').className += ' className';
+// element.classList.add - добавит ещё один класс элементу
+document.querySelector('#idName').classList.add('className');
+document.querySelector('#idName').classList.add('act', 'act1', 'act2'); // - можно задавать сразу несколько классов
+// element.classList.remove - удаляет определённый класс
+document.querySelector('#idName').classList.remove('action');
+document.querySelector('#idName').classList.remove('act1', 'act2', 'act3'); // - можно удалять сразу несколько классов
+// element.classList.toogle('className') -проверяет наличие класса и в зависимости от результата, перекл.- удаляет или добавляет класс 
+document.querySelector('#idName').classList.toogle('className');
+// element.classList.value ='' - удаляет все классы 
+document.querySelector('#idName').classList.value = "";
