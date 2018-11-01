@@ -1093,3 +1093,4 @@ console.log(document.querySelector('div > ul'));
 console.log(document.querySelectorAll('div.className')); 
 // перебор елементов из querySelectorAll через foreaсh
 blocks.forEach(item => item.innerHTML += ' selector');
+
