@@ -24,7 +24,14 @@ window.onload = function(){
 
 console.log('Задача №1');
 // Есть 3 блока различных цветов. Раз в 2 секунды они перемещаются на случайное положение в пределах окна.
+    var random = document.querySelectorAll('.random');
+    // var rand = min + Math.floor(Math.random() * (max + 1 - min));
+    var rand = Math.floor(Math.random() * Math.floor(640));
+    for(var i=0; i<random.length; i++){
 
+        console.log(random[i].style.left = Math.floor(Math.random() * Math.floor(640)) + 'px');
+        console.log(random[i].style.top = Math.floor(Math.random() * Math.floor(640)) + 'px');
+    };
 
 
 

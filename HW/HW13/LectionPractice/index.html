@@ -13,16 +13,22 @@
             border: 2px solid blue;
         }
         .red{
-            width: 120px;
+            position: fixed;
+
+            width: 200px;
             height: 70px;
             background-color: rgb(151, 1, 1);   
         }
         .green{
+            position: fixed;
+
             width: 170px;
             height: 90px;
             background-color: rgb(1, 90, 45);   
         }
         .blue{
+            position: fixed;
+
             width:90px;
             height: 100px;
             background-color: rgb(13, 4, 145);   
@@ -32,9 +38,14 @@
 </head>
 <body>
     <div class="block"></div>
-    <div class="red"></div>
-    <div class="green"></div>
-    <div class="blue"></div>
+    <div class="random red"></div>
+    <div class="random green"></div>
+    <div class="random blue"></div>
+    <div>
+        <p>Кликая по квадрату изменяем его координаты</p>
+        <div id="sq"></div>
+    </div>
+            
 
 </body>
 </html>
