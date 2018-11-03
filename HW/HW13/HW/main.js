@@ -11,15 +11,16 @@ window.onload = function(){
     console.dir(innerTextarea);    
     var innerInput = document.querySelectorAll('.inInput');
     console.dir(innerInput);
-
     var inInputFunc = function (){
         for(var i=0; i<innerInput.length; i++){
-            // console.log(innerInput[i].placeholder);
-            // console.log(innerInput[i].innerHTML);
-            // console.log(innerInput[i].innerHTML);
-            // console.log(innerInput[i].value);
-            console.log(innerInput[i].value);
+            do {innerTextarea.innerHTML += innerInput[i].value + ', '; i++ } while(i < (innerInput.length-1));
+            if(i == (innerInput.length-1)){
+                innerTextarea.innerHTML += innerInput[i].value;
+            };
         };
-    };
-    setInterval(inInputFunc, 5000);  
+    };  
+    var timerInputFunc = setInterval(inInputFunc, 10000);
+    setTimeout(function(){
+        clearInterval(timerInputFunc);
+    }, 10000);
 };

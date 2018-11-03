@@ -359,7 +359,7 @@
 //     console.dir(document.getElementById('block').clientWidth);
 // };
 
-// можно вывести исключительно текст сожержащийся в елементе - обращаясь к свойству object.innerTEXT;
+// можно вывести исключительно текст содержащийся в елементе - обращаясь к свойству object.innerTEXT;
 // можно вывести всё сожержимое в елементе - обращаясь к свойству object.innerHTML;
 // innerHTML можно изменять, добавляя текст или теги через object.innerHTML += some tags
 // window.onload = function(){
