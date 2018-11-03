@@ -1109,20 +1109,32 @@ document.querySelector('#idName').classList.toogle('className');
 // element.classList.value ='' - удаляет все классы 
 document.querySelector('#idName').classList.value = "";
 
-
-        // // Функции таймеры
-
-    // setTimeout
-// Запустить один раз через определённое время
+        // // Функции-таймеры
+// setTimeout запустить один раз через определённое время
 var func = function(){console.log('hello')}
 var timerId = setTimeout(func, 1000);
-    // clearTimeout 
-// * Отмена исполнения функций c таймером - надо быть аккуратнее, может отменить не только таймер но и исполнение всей функции
+// clearTimeout - отмена исполнения функций c таймером, может отменить не только таймер но и исполнение всей функции
 var timerId = setTimeout(func, 1000);
 clearTimeout(timerId); 
-    // setInterval
-// Регулярно повторяет функцию через указанный интервал времени
+// setInterval - регулярно повторяет функцию через указанный интервал времени
 var timerId = setInterval(func, 1000);
+
+// Рекурсивный setTimeout
+var timerId = setTimeout(function tick(){
+    document.write('<p> тик </p>');
+    setTimeout(tick, 2000);
+}, 2000);
+
+// Можно запускать определённые повторяющиеся действия, на определённое время (останавливать их через определённое время)
+// запускаем каждые 2 сек тик
+var timerId = setInterval(function() {
+    alert( "тик" );
+}, 2000);
+// через 5 сек остановить повторы
+setTimeout(function() {
+    clearInterval(timerId);
+    alert( 'стоп' );
+}, 5000);
 
 // Рандомный цвет блоков с определённым классом
 var random = document.querySelectorAll('.random');
