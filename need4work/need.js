@@ -1118,7 +1118,6 @@ var timerId = setTimeout(func, 1000);
 clearTimeout(timerId); 
 // setInterval - регулярно повторяет функцию через указанный интервал времени
 var timerId = setInterval(func, 1000);
-
 // Рекурсивный setTimeout
 var timerId = setTimeout(function tick(){
     document.write('<p> тик </p>');
