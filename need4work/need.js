@@ -1108,3 +1108,19 @@ document.querySelector('#idName').classList.remove('act1', 'act2', 'act3'); // -
 document.querySelector('#idName').classList.toogle('className');
 // element.classList.value ='' - удаляет все классы 
 document.querySelector('#idName').classList.value = "";
+
+
+        // // Функции таймеры
+
+    // setTimeout
+// Запустить один раз через определённое время
+var func = function(){console.log('hello')}
+var timerId = setTimeout(func, 1000);
+    // clearTimeout 
+// * Отмена исполнения функций c таймером - надо быть аккуратнее, может отменить не только таймер но и исполнение всей функции
+var timerId = setTimeout(func, 1000);
+clearTimeout(timerId); 
+
+    // setInterval
+// Регулярно повторяет функцию через указанный интервал времени
+var timerId = setInterval(func, 1000);
