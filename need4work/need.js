@@ -1120,7 +1120,6 @@ var timerId = setTimeout(func, 1000);
 // * Отмена исполнения функций c таймером - надо быть аккуратнее, может отменить не только таймер но и исполнение всей функции
 var timerId = setTimeout(func, 1000);
 clearTimeout(timerId); 
-
     // setInterval
 // Регулярно повторяет функцию через указанный интервал времени
 var timerId = setInterval(func, 1000);

@@ -27,13 +27,22 @@ console.log('Задача №1');
     var random = document.querySelectorAll('.random');
     var randPosition = function(){
         for(var i=0; i<random.length; i++){
+            getRandColor();
             console.log(random[i].style.left = Math.floor(Math.random() * Math.floor(640)) + 'px');
             console.log(random[i].style.top = Math.floor(Math.random() * Math.floor(640)) + 'px');
         };
     };
-    // var timerPosition = setInterval(randPosition, 2000);
+    var timerPosition = setInterval(randPosition, 2000);
 
 console.log('Задача №2');
 // Каждое перемещение также меняет цвет блока на случайный. Создать фунцию getRandColor()
     // getRandColor()
+    var getRandColor = function(){
+        for(var i=0; i<random.length; i++){
+            var randColor1 = 0 + Math.floor(Math.random() * (255 + 1 - 0));
+            var randColor2 = 0 + Math.floor(Math.random() * (255 + 1 - 0));
+            var randColor3 = 0 + Math.floor(Math.random() * (255 + 1 - 0));
+            random[i].style.backgroundColor = 'rgb(' + randColor1 + ',' + randColor2 + ',' + randColor3 + ')';
+        };
+    };
 };
