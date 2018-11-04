@@ -9,17 +9,17 @@ str.toUpperCase();
 // Infinity - бесконечность можно присвоить и в явном виде
 var x = Infinity;
 
-// isNaN(n) - преобразует аргумент к числу и возвращает true, если NaN, и false – для любого другого значения.
+// Метод isNaN(n) - преобразует аргумент к числу и возвращает true, если NaN, и false – для любого другого значения.
 isNaN(numb);
 
-// isFinite(n)
+// Метод isFinite(n)
 alert( isFinite(1) ); // true
 alert( isFinite(Infinity) ); // false
 
-// Мягкое преобразование: parseInt и parseFloat
+// Мягкое преобразование: Методы parseInt и parseFloat
 alert( parseInt('12px') ) // 12, ошибка на символе 'p'
 
-// * isNaN посчитает числами значения false, true, null, так как они хотя и не числа, но преобразуются к ним.
+// Метод isNaN посчитает числами значения false, true, null, так как они хотя и не числа, но преобразуются к ним.
 var x = prompt("Введите значение", "-11.5");
 if(isNaN(x)){
     console.log('не число');
@@ -27,12 +27,33 @@ if(isNaN(x)){
     console.log('число');
 };
 
-// // isNumeric -проверка только на числа
+// Метод isNumeric -проверка только на числа
 function isNumeric(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
 };
 
+// Метод toString(система счисления)
+// Выдаёт представление числа в строке исходя из системы исчисления (от 2х - побитовое, до 36 - алфавитное, цветовые исчисления);
+var n = 10; 
+console.log(n.toString(2));  // => 0101
 
+    // Округление
+// Math.floor - округляет вниз
+console.log( Math.floor(3.1) );  // 3
+// Math.ceil - округляет вверх
+console.log( Math.ceil(3.1) );   // 4
+// Math.round - округляет до ближайшего целого
+console.log( Math.round(3.1) );  // 3
+// Короткие записик округления
+// ~~ - скоращенная запись округления до целого число вниз
+console.log( ~~3.9 );  // 3
+// ^ 0 - скоращенная запись округления до целого число вниз
+console.log( 3.9 + 4.9 ^ 0 );  // 8
+// Math.round(n*100)/100)   - для округления до нужной цифры после запятой можно умножить и поделить на 10 с нужным количеством нулей
+console.log( Math.round(3.954 *100) / 100) ;  // 3.95
+// Mетод num.toFixed(precision) - округляет (как Math.round) число num до точности precision и возвращает результат в виде строки
+var n = 1.535;
+console.log(n.toFixed(2));
 
 
 
