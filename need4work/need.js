@@ -1,10 +1,41 @@
+
+// Метод str.toUpperCase() - возвращает строку в верхнем регистре
+str.toUpperCase();
+
+// Метод num.toFixed(n)
+// Округляет число num до n знаков после запятой, при необходимости добивает нулями до данной длины и возвращает в виде строки
+12.345.toFixed(1); // 12.3
+
+// Infinity - бесконечность можно присвоить и в явном виде
+var x = Infinity;
+
+// isNaN(n) - преобразует аргумент к числу и возвращает true, если NaN, и false – для любого другого значения.
+isNaN(numb);
+
 // isFinite(n)
 alert( isFinite(1) ); // true
 alert( isFinite(Infinity) ); // false
 
 // Мягкое преобразование: parseInt и parseFloat
 alert( parseInt('12px') ) // 12, ошибка на символе 'p'
-    
+
+// * isNaN посчитает числами значения false, true, null, так как они хотя и не числа, но преобразуются к ним.
+var x = prompt("Введите значение", "-11.5");
+if(isNaN(x)){
+    console.log('не число');
+} else {
+    console.log('число');
+};
+
+// // isNumeric -проверка только на числа
+function isNumeric(n) {
+    return !isNaN(parseFloat(n)) && isFinite(n);
+};
+
+
+
+
+
 
 // Код для генерации случайного целого от min to max включительно:
 var rand = min + Math.floor(Math.random() * (max + 1 - min));
@@ -1154,3 +1185,4 @@ var randPosition = function(){
     };
 };
 var timerPosition = setInterval(randPosition, 2000);
+
