@@ -94,6 +94,9 @@ number.toLocaleString(); // 123,456,789
 // Код для генерации случайного целого от min to max включительно:
 var rand = min + Math.floor(Math.random() * (max + 1 - min));
 
+// Код для генерации случайного целого от min to max включительно через round:
+var rand = min - 0.5 + Math.random() * (max - min + 1); rand = Math.round(rand);
+
 // Перебор элементов в массиве.
 for(var i=0; i < cars.length; i++){
     console.log(cars[i]);
