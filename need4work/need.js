@@ -415,7 +415,7 @@ function makeCounter() {
     return function() {
         return currentCount++;
     };
-}
+};
 var counter = makeCounter();
 console.log(counter());
 console.log(counter());
