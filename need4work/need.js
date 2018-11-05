@@ -759,10 +759,10 @@ Object.prototype.each = function(f){                // код создания �
         if (!this.hasOwnProperty(prop)) continue;    
         var value = this[prop];
         f.call(value, prop, value);
-    }
-}
+    };
+};
 user.each(function(prop, val){                      // выозов нового метода
-    console.log(prop);    
+    console.log(prop);
 });
 
 // Изменение существующего метода, через (String.prototype.repeat = function(param){}
@@ -1243,3 +1243,95 @@ var randPosition = function(){
 };
 var timerPosition = setInterval(randPosition, 2000);
 
+// Функция-задержка (функция которая задерживает вызов других функций на N миллисекунд)
+function  delay (f, ms){
+    return function (){
+        var savedThis = this;
+        var savedArgs = arguments;
+        setTimeout(function(){
+            f.apply(savedThis, savedArgs);
+        }, ms);
+    };
+};
+function f(x) {
+    console.log(x);
+};
+var f1000 = delay(f, 1000);
+f1000("тест"); // выведет "тест" через 1000 миллисекунд
+
+// Вызов не чаще чем в N миллисекунд
+function debounce(f, ms) {
+    let timer = null;
+    return function (...args) {
+        const onComplete = () => {
+            f.apply(this, args);
+            timer = null;
+        }
+        if (timer) {
+            clearTimeout(timer);
+        }
+        timer = setTimeout(onComplete, ms);
+    };
+};  
+function f(x) { alert(x) }
+let f = debounce(f, 1000);
+f(1); // вызов отложен на 1000 мс
+f(2); // предыдущий отложенный вызов игнорируется, текущий (2) откладывается на 1000 мс
+// через 1 секунду появится alert(2)
+setTimeout( function() { f(3) }, 1100); // через 1100 мс отложим вызов еще на 1000 мс
+setTimeout( function() { f(4) }, 1200); // игнорируем вызов (3)
+// через 2200 мс от начала выполнения появится alert(4)
+
+// Тормозилка
+function throttle(func, ms) {
+    var isThrottled = false,
+    savedArgs,
+    savedThis;
+    function wrapper() {
+        if (isThrottled) { // (2)
+            savedArgs = arguments;
+            savedThis = this;
+            return;
+        };
+        func.apply(this, arguments); // (1)
+        isThrottled = true;
+        setTimeout(function() {
+            isThrottled = false; // (3)
+            if (savedArgs) {
+                wrapper.apply(savedThis, savedArgs);
+                savedArgs = savedThis = null;
+            };
+        }, ms);
+    };
+    return wrapper;
+};
+
+// Прямое обращение к свойствам другого метода через call - // func.call(context, arg1, arg2, ...) - синтаксис
+function showFullName(){
+    console.log(this.firstName + ' ' + this.lastName);
+}
+var user = {
+    firstName: 'Artem',
+    lastName: 'Retun'
+};
+showFullName.call(user);
+
+// Обращение к изменяемым свойствам другого объекта через call и - // func.call(context, arg1, arg2, ...) - синтаксис
+function showFullName(first, last){
+    first = this[first];
+    last = this[last];
+    console.log(first + ' ' + last);
+};
+var user = {
+    firstName: 'Artem',
+    lastName: 'Retun',
+    nickName: 'Charli'
+};
+showFullName.call(user, 'firstName', 'nickName');
+
+// «Одалживание метода»
+function printArgs(){
+    arguments.join = [].join;                   // мы можем скопировать любое свойство любого объекта
+    console.log(arguments.join(':'));           // запускаем метод с новым объектом
+};
+printArgs(1,2,3);
