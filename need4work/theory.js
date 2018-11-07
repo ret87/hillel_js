@@ -550,3 +550,6 @@
 // var join = [].join; // скопируем ссылку на функцию в переменную
 //   var argStr = join.call(arguments, ':');
 
+// Ещё пример: [].slice.call(arguments)
+
+
