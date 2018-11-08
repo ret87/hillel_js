@@ -1335,3 +1335,13 @@ function printArgs(){
     console.log(arguments.join(':'));           // запускаем метод с новым объектом
 };
 printArgs(1,2,3);
+
+// Метод: [].slice.call(arguments)
+// arr.slice(start, end) создаёт новый массив и копирует в него элементы массива arr от start до end.
+// А если start и end не указаны, то копирует весь массив.
+function printArgs() {
+    // вызов arr.slice() скопирует все элементы из this в новый массив
+    var args = [].slice.call(arguments);
+    alert( args.join(', ') ); // args - полноценный массив из аргументов
+};
+printArgs('Привет', 'мой', 'мир'); // Привет, мой, мир
