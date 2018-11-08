@@ -1348,4 +1348,28 @@ printArgs('Привет', 'мой', 'мир'); // Привет, мой, мир
 
 
 // Math.max(a, b, c...) - возвращает максимальное число из перечисляемых
+// Math.min(a, b, c...) - возвращает минимальное число из перечисляемых
 Math.max(a, b, c);
+
+// Суммирование аргументов через reduce
+function sumArgs() {
+    arguments.reduce = [].reduce;
+    return arguments.reduce(function(a, b){
+        return a + b;
+    });
+};
+console.log(sumArgs(1, 2, 3, 5, 7, 2));   
+
+// Суммирование аргументов через reduce call arguments
+function sum() {
+    return [].reduce.call(arguments, function(a, b){
+        return a + b;
+    });
+};
+console.log(sum(1, 2, 3, 5, 7, 2));
+
+// Задавание любой функии и любых аргументов, через apply
+function aplyAll(func) {
+    return func.apply(this, [].slice.call(arguments, 1));
+};
+console.log(aplyAll(Math.min, 5, 7, 2, -2));
