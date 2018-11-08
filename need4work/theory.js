@@ -550,7 +550,7 @@
 // var join = [].join; // скопируем ссылку на функцию в переменную
 //   var argStr = join.call(arguments, ':');
 
-// Метод: [].slice.call(arguments)
+    // Метод: [].slice.call(arguments)
 // arr.slice(start, end) создаёт новый массив и копирует в него элементы массива arr от start до end.
 // А если start и end не указаны, то копирует весь массив.
 // function printArgs() {
@@ -559,3 +559,21 @@
 //     alert( args.join(', ') ); // args - полноценный массив из аргументов
 // };
 // printArgs('Привет', 'мой', 'мир'); // Привет, мой, мир
+
+    // Метод apply
+// Если не известно количество аргументов
+// Вызов функции при помощи func.apply работает аналогично func.call, но принимает массив аргументов вместо списка.
+// func.apply(context, [arg1, arg2]);
+// Math.max.apply(null, arr); // 5
+
+        // Значение this устанавливается в зависимости от того, как вызвана функция:
+    // При вызове функции как метода:
+// obj.func(...)    // this = obj
+// obj["func"](...)
+    // При обычном вызове:
+// func(...) // this = window (ES3) /undefined (ES5)
+    // В new:
+// new func() // this = {} (новый объект)
+    // Явное указание:
+// func.apply(context, args) // this = context (явная передача)
+// func.call(context, arg1, arg2, ...)

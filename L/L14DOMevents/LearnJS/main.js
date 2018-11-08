@@ -11,5 +11,4 @@ function printArgs(){
 };
 printArgs(1,2,3);
 
-
 };
