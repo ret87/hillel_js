@@ -1374,6 +1374,11 @@ function aplyAll(func) {
 };
 console.log(aplyAll(Math.min, 5, 7, 2, -2));
 
-// Включает собыитие: onchange - то выведет/передаст, то что мы вводим в поле
+// Включает собыитие: onchange - то выведет/передаст, то что мы вводим, используем
 // <input type="select" onchange="console.log(this.value)">
 // <input type="button" value="button">
+
+// Передаёт/выводит моментально инфу в зависимости от типа елемента что мы используем
+// <input type="button" value="button">
+// <input><input type="text" oninput="console.log(this.value)">
+// <input type="radio" oninput="console.log(this.value)" >

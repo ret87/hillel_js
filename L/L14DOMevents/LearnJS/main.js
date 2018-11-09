@@ -17,8 +17,17 @@ window.onload = function(){
 // В современных браузерах oninput – самое главное событие для работы с элементом формы.
 
     // событие propertychange
+// Используется вместо input - работает только в старых (до 10го) IE
 
-
+    // События cut, copy, paste
+//  происходят при вырезании/вставке/копировании значения
+// их основное применение – это отмена соответствующей операции.
+var input = document.querySelectorAll('.input');
+var span = document.querySelectorAll('.span');
+input.oncut = input.oncopy = input.onpaste = function(){
+    span.innerHTML = event.type + ' ' + input.value;
+    return false;
+};
 
 
 };
