@@ -1373,3 +1373,7 @@ function aplyAll(func) {
     return func.apply(this, [].slice.call(arguments, 1));
 };
 console.log(aplyAll(Math.min, 5, 7, 2, -2));
+
+// Включает собыитие: onchange - то выведет/передаст, то что мы вводим в поле
+// <input type="select" onchange="console.log(this.value)">
+// <input type="button" value="button">
