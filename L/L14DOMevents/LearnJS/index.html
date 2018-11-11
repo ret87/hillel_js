@@ -8,14 +8,45 @@
     <script src="main.js"></script>
 </head>
 <body>
-    <input type="button" value="button">
+    
+    <!-- <input type="button" value="button">
     <input type="select" onchange="console.log(this.value)">
-    <!-- <input type="text" onchange="console.log(this.value)"> -->
+    <input type="text" onchange="console.log(this.value)">
     <br>
     <br>
     <input type="button" value="button">
     <input class="input" type="text" id='event'> event: <span class="span" id='result'></span>
-    <!-- <input type="radio" oninput="console.log(this.value)" > -->
+    <input type="radio" oninput="console.log(this.value)" > -->
+    <p>Калькулятор процентов, из расчёта 12% годовых.</p>
+    <table>
+        <tr>
+            <td>Сумма</td>
+            <td><input class="summ" type="text" id='event'></td>
+        </tr>
+        <tr>
+            <td>Срок в месяцах</td>
+            <td>
+                <select name="" id="" style="width: 300 px;">
+                    <option value="three">3 (минимум)</option>
+                    <option value="six">6 (пол года)</option>
+                    <option value="twelve">12 (год)</option>
+                    <option value="eighteen">18 (1.5 года)</option>
+                    <option value="twentyfour">24 (2 года)</option>
+                    <option value="thirty">30(2.5 года)</option>
+                    <option value="thirtysix">36 (3 годв)</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>С капитализацией</td>
+            <td><input class="checkbox" type="checkbox" id='event'></td>
+        </tr>        
+    </table>
+    <p>Было: Станет:</p>
+    <span class="span" id='result'>1000</span>
+    <span class="span" id='result'>1200</span>
     
+
+
 </body>
 </html>

@@ -22,12 +22,20 @@ window.onload = function(){
     // События cut, copy, paste
 //  происходят при вырезании/вставке/копировании значения
 // их основное применение – это отмена соответствующей операции.
-var input = document.querySelectorAll('.input');
-var span = document.querySelectorAll('.span');
-input.oncut = input.oncopy = input.onpaste = function(){
-    span.innerHTML = event.type + ' ' + input.value;
-    return false;
-};
+
+// var input = document.querySelectorAll('.input');
+// var span = document.querySelectorAll('.span');
+// input.oncut = input.oncopy = input.onpaste = function(){
+//     span.innerHTML = event.type + ' ' + input.value;
+//     return false;
+// };
+
+
+
+console.log('practice DOM events 14');
+
+
+
 
 
 };
