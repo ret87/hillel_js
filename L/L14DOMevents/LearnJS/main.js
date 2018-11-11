@@ -33,9 +33,12 @@ window.onload = function(){
 
 
 console.log('practice DOM events 14');
-
-
-
-
+var summInn = document.querySelector('.summ');
+var summWas = document.querySelector('.was');
+summInn.oninput = function() {
+    summWas.innerHTML = summInn.value; 
+};
+// console.dir(summInn);
+// console.dir(summInn.oninput);
 
 };

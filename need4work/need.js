@@ -1027,7 +1027,7 @@ for(var i=0;i<document.querySelectorAll('ul > li:last-child').length;i++){
 
 // querySelector
 // Вызов elem.querySelector(css) возвращает не все, а только первый элемент, соответствующий CSS-селектору css.
-console.log(document.querySelectorAll('ul > li:last-child')[0])
+console.log(document.querySelector('ul > li:last-child')[0])
 
 // matches
 // Метод elem.matches(css) ничего не ищет, а проверяет, удовлетворяет ли elem селектору css. Он возвращает true либо false.
