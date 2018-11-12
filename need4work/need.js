@@ -1382,3 +1382,26 @@ console.log(aplyAll(Math.min, 5, 7, 2, -2));
 // <input type="button" value="button">
 // <input><input type="text" oninput="console.log(this.value)">
 // <input type="radio" oninput="console.log(this.value)" >
+
+// Получение координат элемента относительно страницы
+function getCoords(elem) {
+    var box = elem.getBoundingClientRect();
+    return {
+        top: box.top + pageYOffset,
+        left: box.left + pageXOffset
+    };
+};
+
+        // Получение координат
+    // Получение данных об объекте в виде массива (размеры, растояния) 
+elem.getBoundingClientRect();
+
+    // function getCoords(elem) - получение координат элемента относительно страницы
+function getCoords(elem) {
+    var box = elem.getBoundingClientRect();
+    return {
+        top: box.top + pageYOffset,
+        left: box.left + pageXOffset
+    };
+};
+console.log(getCoords(elem));

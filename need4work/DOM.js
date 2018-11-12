@@ -427,3 +427,167 @@
     // События cut, copy, paste
 //  происходят при вырезании/вставке/копировании значения
 // их основное применение – это отмена соответствующей операции.
+
+
+    // Получение координат
+// pageY = clientY + текущая вертикальная прокрутка
+
+// Получение данных об объекте в виде массива (размеры, растояния) 
+// elem.getBoundingClientRect();
+
+// получение координат элемента относительно страницы
+// function getCoords(elem) {
+//     var box = elem.getBoundingClientRect();
+//     return {
+//         top: box.top + pageYOffset,
+//         left: box.left + pageXOffset
+//     };
+// };
+
+
+// Создать элемент с тегом tag
+// document.createElement(tag)
+
+// Создать текстовый узел с текстом txt
+// document.createTextNode(txt)
+
+// Клонировать существующий узел, если deep=false, то без потомков.
+// node.cloneNode(deep)
+
+    // Свойства узлов
+// Тип узла: 1(элемент) / 3(текст) / другие.
+// node.nodeType
+// Тег элемента.
+// elem.tagName
+// HTML внутри элемента.
+// elem.innerHTML
+// Весь HTML элемента, включая сам тег. На записи, не модифицирует элемент, а вставляет новый вместо него
+// elem.outerHTML
+// Содержимое узла любого типа, кроме элемента.
+// node.data / node.nodeValue
+// Текстовое содержимое узла, для элементов содержит текст с вырезанными тегами (IE9+).
+// node.textContent
+// Если поставить true, то элемент будет скрыт (IE10+).
+// elem.hidden
+
+    // Атрибуты    
+// Чтение атрибута, проверка наличия и запись.
+// elem.getAttribute(name), elem.hasAttribute(name), elem.setAttribute(name, value)
+
+    // Значения атрибутов вида data-* (IE10+).
+// elem.dataset.*
+
+    // Ссылки
+// Элемент <HTML>
+// document.documentElement
+// Элемент <BODY>
+// document.body
+// Элемент <HEAD> (IE9+)
+// document.head
+
+    // По всем узлам:
+// parentNode
+// nextSibling previousSibling
+// childNodes firstChild lastChild
+
+    // Только по элементам:
+// parentElement
+// nextElementSibling previousElementSibling
+// children, firstElementChild lastElementChild
+// Все они IE9+, кроме children, который работает в IE8-, но содержит не только элементы, но и комментарии (ошибка в браузере).
+
+    // Дополнительно у некоторых типов элементов могут быть и другие ссылки, свойства, коллекции для навигации, например для таблиц:
+// строка TR номер N.
+// table.rows[N]
+// ячейка TH/TD номер N.
+// tr.cells[N]
+// номер строки в таблице в секции THEAD/TBODY.
+// tr.sectionRowIndex
+// номер ячейки в строке.
+// td.cellIndex
+
+    // Поиск
+// По селектору, только первый элемент
+// *.querySelector(css)
+// По селектору CSS3, в IE8 по CSS 2.1
+// *.querySelectorAll(css)
+// По уникальному id
+// document.getElementById(id)
+// По атрибуту name, в IE9- работает только для элементов, где name предусмотрен стандартом.
+// document.getElementsByName(name)
+// По тегу tag
+// *.getElementsByTagName(tag)
+// По классу, IE9+, корректно работает с элементами, у которых несколько классов.
+// *.getElementsByClassName(class)
+// Вообще, обычно можно использовать только querySelector/querySelectorAll. Методы getElement* работают быстрее 
+// (за счёт более оптимальной внутренней реализации), но в 99% случаев это различие очень небольшое и роли не играет.
+
+    // Дополнительно есть методы:
+// Проверяет, подходит ли элемент под CSS-селектор.
+// elem.matches(css)
+// Ищет ближайший элемент сверху по иерархии DOM, подходящий под CSS-селектор. Первым проверяется сам elem. Этот элемент возвращается.
+// elem.closest(css)
+// Возвращает true, если elemA является предком (содержит) elemB.
+// elemA.contains(elemB)
+// Возвращает битовую маску, которая включает в себя отношение вложенности между elemA и elemB, а также – какой из элементов появляется в DOM первым.
+// elemA.compareDocumentPosition(elemB)
+
+    // Изменение
+// parent.appendChild(newChild)
+// parent.removeChild(child)
+// parent.insertBefore(newChild, refNode)
+// parent.insertAdjacentHTML("beforeBegin|afterBegin|beforeEnd|afterEnd", html)
+// parent.insertAdjacentElement("beforeBegin|...|afterEnd", element) (кроме FF)
+// parent.insertAdjacentText("beforeBegin|...|afterEnd", text) (кроме FF)
+// document.write(...)
+
+    // Скорее всего, понадобятся полифиллы для:
+// node.append(...nodes)
+// node.prepend(...nodes)
+// node.after(...nodes),
+// node.before(...nodes)
+// node.replaceWith(...nodes)
+
+    // Классы и стили
+// Атрибут class
+// elem.className
+// Управление классами, для IE9- есть эмуляция.
+// elem.classList.add(class) remove(class) toggle(class) contains(class) 
+// Стили в атрибуте style элемента
+// elem.style
+// Стиль, с учётом всего каскада, вычисленный и применённый (только чтение)
+// getComputedStyle(elem, "")
+
+    // Размеры и прокрутка элемента
+// Ширина левой/верхней рамки border
+// clientLeft/Top
+// Ширина/высота внутренней части элемента, включая содержимое и padding, не включая полосу прокрутки (если есть).
+// clientWidth/Height
+// Ширина/высота внутренней части элемента, с учетом прокрутки.
+// scrollWidth/Height
+// Ширина/высота прокрученной области.
+// scrollLeft/Top
+// Полный размер элемента: ширина/высота, включая border.
+// offsetWidth/Height
+
+// Размеры и прокрутка страницы
+// ширина/высота видимой области: 
+// document.documentElement.clientHeight
+// прокрутка(чтение): 
+// window.pageYOffset || document.documentElement.scrollTop
+
+// прокрутка(изменение):
+// на x,y относительно текущей позиции.
+// window.scrollBy(x,y)
+// на координаты в документе.
+// window.scrollTo(pageX, pageY)
+// прокрутить, чтобы elem стал видимым и оказался вверху окна(true) или внизу(false)
+// elem.scrollIntoView(true/false)
+
+    // Координаты
+// относительно окна
+//  elem.getBoundingClientRect()
+// относительно документа
+//  elem.getBoundingClientRect() + прокрутка страницы
+// получить элемент по координатам
+// document.elementFromPoint(clientX, clientY)

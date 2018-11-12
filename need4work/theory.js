@@ -577,3 +577,4 @@
     // Явное указание:
 // func.apply(context, args) // this = context (явная передача)
 // func.call(context, arg1, arg2, ...)
+
