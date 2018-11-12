@@ -23,12 +23,12 @@ window.onload = function(){
 //  происходят при вырезании/вставке/копировании значения
 // их основное применение – это отмена соответствующей операции.
 
-// var input = document.querySelectorAll('.input');
-// var span = document.querySelectorAll('.span');
-// input.oncut = input.oncopy = input.onpaste = function(){
-//     span.innerHTML = event.type + ' ' + input.value;
-//     return false;
-// };
+var input = document.querySelectorAll('.input');
+var span = document.querySelectorAll('.span');
+input.oncut = input.oncopy = input.onpaste = function(){
+    span.innerHTML = event.type + ' ' + input.value;
+    return false;
+};
 
 
 
@@ -44,26 +44,16 @@ summInn.oninput = function() {
 
 };
 
-
 select.oninput = function () {
     var selectedInd = select.options.selectedIndex;
     var selectedNumb = parseInt(this.children[selectedInd].innerHTML); 
     console.log(selectedNumb);
-
-    // been.innerHTML = +summInn.value + (+summInn.value)/100*selectedNumb;
     been.innerHTML = +summInn.value + (+summInn.value)/100*selectedNumb*(12/12);
 };
 
-// summInn.onchange = select.oninput;
-
-
 var timerId = setTimeout(function tick(){
-    // summInn.oninput;
     select.oninput;
     setTimeout(tick, 1000);
 }, 1000);
-
-// console.log(select.oninput);
-// console.dir(summInn.oninput);
 
 };
