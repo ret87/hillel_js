@@ -33,12 +33,37 @@ window.onload = function(){
 
 
 console.log('practice DOM events 14');
+
 var summInn = document.querySelector('.summ');
 var summWas = document.querySelector('.was');
+var select  = document.querySelector('.select');
+var been = document.querySelector('.been');
+
 summInn.oninput = function() {
-    summWas.innerHTML = summInn.value; 
+    summWas.innerHTML = summInn.value;
+
 };
-// console.dir(summInn);
+
+
+select.oninput = function () {
+    var selectedInd = select.options.selectedIndex;
+    var selectedNumb = parseInt(this.children[selectedInd].innerHTML); 
+    console.log(selectedNumb);
+
+    // been.innerHTML = +summInn.value + (+summInn.value)/100*selectedNumb;
+    been.innerHTML = +summInn.value + (+summInn.value)/100*selectedNumb*(12/12);
+};
+
+// summInn.onchange = select.oninput;
+
+
+var timerId = setTimeout(function tick(){
+    // summInn.oninput;
+    select.oninput;
+    setTimeout(tick, 1000);
+}, 1000);
+
+// console.log(select.oninput);
 // console.dir(summInn.oninput);
 
 };
