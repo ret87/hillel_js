@@ -48,9 +48,36 @@ dblclick
 // Если мы не хотим, чтобы показывалось встроенное меню, например потому что показываем своё
 // <button oncontextmenu="alert('Клик!');return false">Правый клик сюда</button>
 
+    // Модификаторы shift, alt, ctrl и meta
+// Во всех событиях мыши присутствует информация о нажатых клавишах-модификаторах.
+// Соответствующие свойства:
+// * shiftKey
+// * altKey
+// * ctrlKey
+// * metaKey (для Mac)
 
+    // Кнопка ниже сработает только на Alt+Shift+Клик:
+// document.body.children[0].onclick = function(e) {
+//     if (!e.altKey || !e.shiftKey) return;
+//     alert( 'Ура!' );
+// };
 
+    // Правый клик: oncontextmenu
+// Это событие срабатывает при клике правой кнопкой мыши (меню будет стандартным от клика мышки):
+// document.getElementsByTagName('button').oncontextmenu="alert('Клик!');"
+// Если мы не хотим, чтобы показывалось встроенное меню, например потому что показываем своё
+// document.getElementsByTagName('button').oncontextmenu="alert('Клик!');return false"
 
+    // Координаты в окне: clientX/Y
+// clientX/clientY содержат координаты курсора считаются относительно окна, а не документа.
+// В той же системе координат работает и метод elem.getBoundingClientRect(), возвращающий координаты элемента, а также position:fixed.
+// document.getElementsByTagName('input').onmousemove="this.value = event.clientX+':'+event.clientY"
+
+    // Относительно документа: pageX/Y
+// Координаты курсора относительно документа находятся в свойствах pageX/pageY.
+// Эти координаты – относительно левого-верхнего узла документа, а не окна, то они учитывают прокрутку
+// document.getElementsByTagName('input').onmousemove="this.value = event.pageX+':'+event.pageY"
+// В той же системе координат работает position:absolute, если элемент позиционируется относительно документа.
 
 
 

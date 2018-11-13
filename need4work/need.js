@@ -1476,3 +1476,24 @@ div.style.cssText="color: red !important; \
     // window.getComputedStyle
 // Для того, чтобы получить текущее используемое значение свойства, используется метод 
 // getComputedStyle(element[, pseudo])
+
+        // // События в деталях
+
+    // Кнопка ниже сработает только на Alt+Shift+Клик:
+document.body.children[0].onclick = function(e) {
+    if (!e.altKey || !e.shiftKey) return;
+    alert( 'Ура!' );
+};
+
+    // Правый клик: oncontextmenu
+// Это событие срабатывает при клике правой кнопкой мыши (меню будет стандартным от клика мышки):
+document.getElementsByTagName('button').oncontextmenu="alert('Клик!');"
+// Если мы не хотим, чтобы показывалось встроенное меню, например потому что показываем своё
+document.getElementsByTagName('button').oncontextmenu="alert('Клик!');return false"
+
+    // Координаты в окне: clientX/clientY содержат координаты курсора считаются относительно окна, а не документа.
+document.getElementsByTagName('input').onmousemove="this.value = event.clientX+':'+event.clientY"
+
+    // Относительно документа: pageX/Y - координаты относительно левого-верхнего узла документа, а не окна, они учитывают прокрутку
+document.getElementsByTagName('input').onmousemove="this.value = event.pageX+':'+event.pageY"
+
