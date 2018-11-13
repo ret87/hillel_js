@@ -1405,3 +1405,74 @@ function getCoords(elem) {
     };
 };
 console.log(getCoords(elem));
+
+
+    // Координаты
+// относительно окна
+ elem.getBoundingClientRect()
+// относительно документа
+ elem.getBoundingClientRect() + // прокрутка страницы
+// получить элемент по координатам
+document.elementFromPoint(clientX, clientY)
+
+    // Метод contains для проверки на вложенность
+// Возвращает true, если parent содержит child или parent == child.
+var result = parent.contains(child);
+
+    // Метод compareDocumentPosition для порядка узлов
+// предоставляет одновременно информацию и о содержании и об относительном порядке элементов.
+compareDocumentPosition 
+
+    // Добавляет elem в конец дочерних элементов parentElem.
+parentElem.appendChild(elem)
+
+    // Вставляет elem в коллекцию детей parentElem, перед элементом nextSibling.
+parentElem.insertBefore(elem, nextSibling)
+
+    // Добавление множества узлов
+ul.innerHTML += "<li>1</li><li>2</li>...";
+
+    // вставить UL в документ, а потом добавить к нему LI:
+var ul = document.createElement('ul');
+document.body.appendChild(ul); // сначала в документ
+for (var i=0; i<li.length;i++) ul.appendChild(li); // потом узлы
+
+    // Полностью создать список «вне DOM», а потом – вставить в документ:
+var ul = document.createElement('ul');
+for(var i=0; i<li.length;i++) ul.appendChild(li);   // сначала вставить узлы
+document.body.appendChild(ul); // затем в документ
+
+    // Метод insertAdjacentHTML позволяет вставлять произвольный HTML в любое место документа, в том числе и между узлами!
+elem.insertAdjacentHTML(where, html);
+// html - Строка HTML, которую нужно вставить
+// where - Куда по отношению к elem вставлять строку. Всего четыре варианта:
+// beforeBegin – перед elem.
+// afterBegin – внутрь elem, в самое начало.
+// beforeEnd – внутрь elem, в конец.
+// afterEnd – после elem.
+
+    // DocumentFragment
+// Вставляет пачку узлов -  особенный кросс-браузерный DOM-объект, который похож на обычный DOM-узел, но им не является.
+var fragment = document.createDocumentFragment();
+fragment.appendChild(node);     // В него можно добавлять другие узлы.
+fragment.cloneNode(true);       // клонирование с подэлементами
+
+    // Стили элемента: свойство style
+// возвращает объект, который дает доступ к стилю элемента на чтение и запись.
+element.style // 
+// Чтобы сбросить поставленный стиль, присваивают в style пустую строку: 
+elem.style.width=""
+
+    // style.cssText
+// Свойство style.cssText позволяет поставить стиль целиком в виде строки.
+var div = document.body.children[0];
+div.style.cssText="color: red !important; \
+    background-color: yellow; \
+    width: 100px; \
+    text-align: center; \
+    blabla: 5; \
+";
+
+    // window.getComputedStyle
+// Для того, чтобы получить текущее используемое значение свойства, используется метод 
+// getComputedStyle(element[, pseudo])

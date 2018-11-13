@@ -542,11 +542,11 @@
 // document.write(...)
 
     // Скорее всего, понадобятся полифиллы для:
-// node.append(...nodes)
-// node.prepend(...nodes)
-// node.after(...nodes),
-// node.before(...nodes)
-// node.replaceWith(...nodes)
+// node.append(...nodes) – вставляет nodes в конец node,
+// node.prepend(...nodes) – вставляет nodes в начало node,
+// node.after(...nodes) – вставляет nodes после узла node,
+// node.before(...nodes) – вставляет nodes перед узлом node,
+// node.replaceWith(...nodes) – вставляет nodes вместо node.
 
     // Классы и стили
 // Атрибут class
@@ -591,3 +591,65 @@
 //  elem.getBoundingClientRect() + прокрутка страницы
 // получить элемент по координатам
 // document.elementFromPoint(clientX, clientY)
+
+    // Метод contains для проверки на вложенность
+// Возвращает true, если parent содержит child или parent == child.
+// var result = parent.contains(child);
+
+    // Метод compareDocumentPosition для порядка узлов
+// Метод compareDocumentPosition –  предоставляет одновременно информацию и о содержании и об относительном порядке элементов.
+
+
+    // Вставляет elem в коллекцию детей parentElem, перед элементом nextSibling.
+// parentElem.insertBefore(elem, nextSibling)
+
+    // Добавление множества узлов
+// ul.innerHTML += "<li>1</li><li>2</li>...";
+
+    // вставить UL в документ, а потом добавить к нему LI:
+// var ul = document.createElement('ul');
+// document.body.appendChild(ul); // сначала в документ
+// for () ul.appendChild(li); // потом узлы
+
+    // Полностью создать список «вне DOM», а потом – вставить в документ:
+// var ul = document.createElement('ul');
+// for() ul.appendChild(li);   // сначала вставить узлы
+// document.body.appendChild(ul); // затем в документ
+
+
+    // Метод insertAdjacentHTML позволяет вставлять произвольный HTML в любое место документа, в том числе и между узлами!
+// elem.insertAdjacentHTML(where, html);
+// html - Строка HTML, которую нужно вставить
+// where - Куда по отношению к elem вставлять строку. Всего четыре варианта:
+// beforeBegin – перед elem. afterBegin – внутрь elem, в самое начало. beforeEnd – внутрь elem, в конец. afterEnd – после elem.
+
+
+    // DocumentFragment
+// Вставляет пачку узлов -  особенный кросс-браузерный DOM-объект, который похож на обычный DOM-узел, но им не является.
+// var fragment = document.createDocumentFragment();
+// fragment.appendChild(node); - В него можно добавлять другие узлы.
+// fragment.cloneNode(true); // клонирование с подэлементами
+
+
+    // Стили элемента: свойство style
+// element.style - возвращает объект, который дает доступ к стилю элемента на чтение и запись.
+// Чтобы сбросить поставленный стиль, присваивают в style пустую строку: elem.style.width="".
+// Стиль в style находится в формате браузера, а не в том, в котором его присвоили.
+
+    // style.cssText
+// Свойство style.cssText позволяет поставить стиль целиком в виде строки.
+// При установке style.cssText все предыдущие свойства style удаляются.
+// var div = document.body.children[0];
+// div.style.cssText="color: red !important; \
+//     background-color: yellow; \
+//     width: 100px; \
+//     text-align: center; \
+//     blabla: 5; \
+// ";
+
+    // window.getComputedStyle
+// Для того, чтобы получить текущее используемое значение свойства, используется метод 
+// getComputedStyle(element[, pseudo])
+// element - Элемент, значения для которого нужно получить
+// pseudo - Указывается, если нужен стиль псевдо-элемента, например "::before". Пустая строка или отсутствие означают сам элемент.
+
