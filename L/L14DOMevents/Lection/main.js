@@ -3,32 +3,19 @@ window.onload = function(){
 console.log('DOM events 14');
 console.log('Lection');
 
-// var block = document.querySelector('.block');
-// console.log(block.getBoundingClientRect());
-// console.dir(block);
+        // // События
+// Модель экшна - когда система может реагировать на определённые процессы.
+// События: 
+// клавиатура, мышь, окно браузера.
+// Открытие/закрытие окна, ресайз, скролл.
+// Формы отправка, фокус, инпут, чендж, сабгет.
+// Ссылки нажатие, переход
+// Каммон события клики разными кнопками (нажатие, удержание, отпуск, даблклик), движени мышки (приход, уход, движение по объекту)
+// Клавиатурные нажатия (разные клавиши)
 
-// function getCoords(elem) {
-//     var box = elem.getBoundingClientRect();
-//     return {
-//         // top: box.top + pageYOffset,
-//         // left: box.left + pageXOffset
-//     };
-// };
-// console.log(getCoords(block));
+// События - это заранее отложенное действие (callback функция, с определёнными параметрами и контекстом).
+// В событиях this всегда смотрит на тот тег на котором это событие было вызвано.
 
-
-function getDocumentScroll() {
-var scrollHeight = Math.max(
-    document.body.scrollHeight, document.documentElement.scrollHeight,
-    document.body.offsetHeight, document.documentElement.offsetHeight,
-    document.body.clientHeight, document.documentElement.clientHeight
-    );
-    return {
-        top: pageYOffset,
-        bottom: pageYOffset + document.documentElement.clientHeight,
-        height: scrollHeigh
-    };
-};
-
+console.log('Примеры');
 
 };
