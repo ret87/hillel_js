@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 window.onload = function(){
 
     console.log('DOM events 14');
@@ -10,25 +10,33 @@ window.onload = function(){
         // // Мышь: клики, кнопка, координаты
     // Типы событий мыши
 
-// Простые события
-// Кнопка мыши нажата над элементом.
-mousedown
-// Кнопка мыши отпущена над элементом.
-mouseup
-// Мышь появилась над элементом.
-mouseover
-// Мышь ушла с элемента.
-mouseout
-// Каждое движение мыши над элементом генерирует это событие.
-mousemove
+    // // Простые события
 
-// Комплексные события -  можно составить из простых
-// Вызывается при клике мышью, то есть при mousedown, а затем mouseup на одном элементе
-click
-// Вызывается при клике правой кнопкой мыши на элементе.
-contextmenu
-// Вызывается при двойном клике по элементу.
-dblclick
+    // Кнопка мыши нажата над элементом.
+// mousedown
+
+    // Кнопка мыши отпущена над элементом.
+// mouseup
+
+    // Мышь появилась над элементом.
+// mouseover
+
+    // Мышь ушла с элемента.
+// mouseout
+
+    // Каждое движение мыши над элементом генерирует это событие.
+// mousemove
+
+    // // Комплексные события -  можно составить из простых
+    
+    // Вызывается при клике мышью, то есть при mousedown, а затем mouseup на одном элементе
+// click
+
+    // Вызывается при клике правой кнопкой мыши на элементе.
+// contextmenu
+
+    // Вызывается при двойном клике по элементу.
+// dblclick
 
     // Порядок срабатывания событий:
 // * Одно действие может вызывать несколько событий.
@@ -78,6 +86,60 @@ dblclick
 // Эти координаты – относительно левого-верхнего узла документа, а не окна, то они учитывают прокрутку
 // document.getElementsByTagName('input').onmousemove="this.value = event.pageX+':'+event.pageY"
 // В той же системе координат работает position:absolute, если элемент позиционируется относительно документа.
+
+var ul = document.querySelector('ul');
+console.dir(ul);
+var lastClickedLi = null;
+ul.onclick = function(event) {
+    var target = event.target;
+    // // возможно, клик был внутри списка UL, но вне элементов LI
+    if (target.tagName != "LI") return;
+    // // для Mac проверяем Cmd, т.к. Ctrl + click там контекстное меню
+    if (event.metaKey || event.ctrlKey) {
+        toggleSelect(target);
+    } else if (event.shiftKey) {
+        selectFromLast(target);
+    } else {
+        selectSingle(target);
+    };
+    lastClickedLi = target;
+};
+
+ul.onmousedown = function() {
+    return false;
+};
+
+function toggleSelect(li){
+    li.classList.toggle('selected');
+};
+
+function selectFromLast(target) {
+    var startElem = lastClickedLi || ul.children[0];
+    var isLastClickedBefore = startElem.compareDocumentPosition(target) & 4;
+    if (isLastClickedBefore) {
+        for (var elem = startElem; elem != target; elem = elem.nextElementSibling) {
+            elem.classList.add('selected');
+        };
+    } else {
+        for (var elem = startElem; elem != target; elem = elem.previousElementSibling) {
+            elem.classList.add('selected');
+        };
+    };
+    elem.classList.add('selected');
+};
+
+function deselectAll() {
+  for (var i = 0; i < ul.children.length; i++) {
+      ul.children[i].classList.remove('selected');
+    };
+};
+
+function selectSingle(li) {
+    deselectAll();
+    li.classList.add('selected');
+};
+
+
 
 
 
