@@ -21,11 +21,12 @@ console.log('Lection');
 // - target ссылка на элемент - target (работает как this, но предпочтительнее)
 // - path - показывает путь к элементу, это массив и у него есть длинна (4 это минимальная длинна - windows.document.html.body)
 // - timeStamp - таймер, показывает время нажатия елемента, после того как страница загрузилась
-// - altKey, ctrlKey, shiftKey, metaKey
+// - altKey, ctrlKey, shiftKey, metaKey - события при использовании клавиш (альт, контрл, шифл, мета-на маковских клавишах)
 
 console.log('Пример 1');
 
 var block = document.querySelector('.block');
+console.log(block);
 
 var fooBar = null;
 function click(elem){
@@ -45,8 +46,21 @@ block.onclick = function(elem){
         if(elem.altKey === true){
             console.log(elem.altKey);
         };
+        if(elem.ctrlKey === true){
+            console.dir(block);
+        };
+    };
+    if(elem.metaKey === true){
+        console.dir(block);
     };
 };
+
+block.onclick = function(elem){
+    console.log(elem);
+};
+    
+// DOM lvl2
+// програмные события (возможность сделать вызов из кода)
 
 
 

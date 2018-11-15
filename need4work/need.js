@@ -1559,7 +1559,7 @@ function click(elem){
     elem.onclick = console.log(fooBar);
 };
 block.onclick = click;
-// обращается на тег block
+// обращается на тегу block
 block.onclick = function(){
     console.log(this);
 };
