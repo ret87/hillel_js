@@ -1549,3 +1549,18 @@ function selectSingle(li) {
     deselectAll();
     li.classList.add('selected');
 };
+
+
+// Событие onclick - при нажатии передаёт значение переменной
+var block = document.querySelector('.block');
+
+var fooBar = null;
+function click(elem){
+    elem.onclick = console.log(fooBar);
+};
+block.onclick = click;
+// обращается на тег block
+block.onclick = function(){
+    console.log(this);
+};
+
