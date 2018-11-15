@@ -19,8 +19,9 @@ console.log('Lection');
 // У MouseEvent есть много различных свойств: 
 // - координаты курсора, его клацания - относительно страницы, елемента, с учетом прокрутки страницы и т.д.
 // - target ссылка на элемент - target (работает как this, но предпочтительнее)
-// - path - показывает путь к элементу
-// 
+// - path - показывает путь к элементу, это массив и у него есть длинна (4 это минимальная длинна - windows.document.html.body)
+// - timeStamp - таймер, показывает время нажатия елемента, после того как страница загрузилась
+// - altKey, ctrlKey, shiftKey, metaKey
 
 console.log('Пример 1');
 
@@ -33,12 +34,18 @@ function click(elem){
 
 block.onclick = click;
 block.onclick = function(elem){
-    console.log(elem);
-    console.log(elem.pageX);
-    console.log(elem.pageY);
-    console.log(elem.target);
-    console.log(this);
-    console.log(elem.path);
+    if(elem.timeStamp > 100){
+        console.log(elem);
+        console.log(elem.pageX);
+        console.log(elem.pageY);
+        console.log(elem.target);
+        console.log(this);
+        console.log(elem.path);
+        console.log(elem.timeStamp);
+        if(elem.altKey === true){
+            console.log(elem.altKey);
+        };
+    };
 };
 
 
