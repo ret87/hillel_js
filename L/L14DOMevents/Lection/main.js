@@ -29,41 +29,54 @@ var block = document.querySelector('.block');
 console.log(block);
 
 var fooBar = null;
-function click(elem){
-    elem.onclick = console.log(fooBar);
+function click(event){
+    event.onclick = console.log(fooBar);
 };
 
 block.onclick = click;
-block.onclick = function(elem){
-    if(elem.timeStamp > 100){
-        console.log(elem);
-        console.log(elem.pageX);
-        console.log(elem.pageY);
-        console.log(elem.target);
+block.onclick = function(event){
+    if(event.timeStamp > 100){
+        console.log(event);
+        console.log(event.pageX);
+        console.log(event.pageY);
+        console.log(event.target);
         console.log(this);
-        console.log(elem.path);
-        console.log(elem.timeStamp);
-        if(elem.altKey === true){
-            console.log(elem.altKey);
+        console.log(event.path);
+        console.log(event.timeStamp);
+        if(event.altKey === true){
+            console.log(event.altKey);
         };
-        if(elem.ctrlKey === true){
+        if(event.ctrlKey === true){
             console.dir(block);
         };
     };
-    if(elem.metaKey === true){
+    if(event.metaKey === true){
         console.dir(block);
     };
 };
 
-block.onclick = function(elem){
-    console.log(elem);
-};
+
     
-// DOM lvl2
+    // DOM lvl2
 // програмные события (возможность сделать вызов из кода)
+// с помощью метода .addEventListener('click', function(elem){} - можно передавать функцию как параметр
+// .addEventListener разрешает использовать повторно- заключая более одного действия при одном событии, не перезаписывая предыдущий
+// то есть можно передать 2 абсолютно разные задачи при одном действии
+// this так же всегда смотрит на элемент его вызвавший - но всегда использовать event.target - он так же смотрит на this 
+
+var block2 = document.querySelector('.block2');
+block2.addEventListener('click', function(event){
+    console.log(event);
+});
+block2.addEventListener('click', function(event){
+    console.log('second', this);
+});
+block2.addEventListener('click', function(event){
+    console.log('third', this === event.target);
+});
 
 
-
+    // events
 
 
 

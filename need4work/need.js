@@ -1564,3 +1564,14 @@ block.onclick = function(){
     console.log(this);
 };
 
+// .addEventListener разрешает использовать повторно- заключая более одного действия при одном событии, не перезаписывая предыдущий
+var block2 = document.querySelector('.block2');
+block.addEventListener('click', function(event){
+    console.log(event);
+});
+block.addEventListener('click', function(event){
+    console.log('second', event);
+});
+block2.addEventListener('click', function(event){
+    console.log('third', this === event.target);
+});

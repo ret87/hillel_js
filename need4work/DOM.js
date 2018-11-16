@@ -698,3 +698,39 @@
 // - target ссылка на элемент - target (работает как this, но предпочтительнее)
 // - path - показывает путь к элементу, это массив и у него есть длинна (4 это минимальная длинна - windows.document.html.body)
 // - altKey, ctrlKey, shiftKey, metaKey - события при использовании клавиш (альт, контрл, шифл, мета-на маковских клавишах)
+// block.onclick = function(elem){
+//     if(elem.timeStamp > 100){
+//         console.log(elem);
+//         console.log(elem.pageX);
+//         console.log(elem.pageY);
+//         console.log(elem.target);
+//         console.log(this);
+//         console.log(elem.path);
+//         console.log(elem.timeStamp);
+//         if(elem.altKey === true){
+//             console.log(elem.altKey);
+//         };
+//         if(elem.ctrlKey === true){
+//             console.dir(block);
+//         };
+//     };
+//     if(elem.metaKey === true){
+//         console.dir(block);
+//     };
+// };
+
+
+    // DOM lvl2
+// програмные события (возможность сделать вызов из кода)
+// с помощью метода .addEventListener('click', function(elem){} - можно передавать функцию как параметр
+// .addEventListener разрешает использовать повторно- заключая более одного действия при одном событии, не перезаписывая предыдущий
+// то есть можно передать 2 абсолютно разные задачи при одном действии
+// this так же всегда смотрит на элемент его вызвавший - но всегда использовать event.target - он так же смотрит на this 
+
+
+// block.addEventListener('click', function(elem){
+//     console.log(elem);
+// });
+// block.addEventListener('click', function(elem){
+//     console.log('second', elem);
+// });
