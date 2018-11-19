@@ -76,9 +76,40 @@ block2.addEventListener('click', function(event){
 });
 
 
-    // events
-
-
+        // // events
+    // События мыши
+var block3 = document.querySelector('.block3');
+// dblclick - показывает состояние елемента после одинарного нажатия на него - это составное событие из mousedown и mouseup
+block3.addEventListener('click', function(event){
+    console.log(event.type, event);
+});
+// dblclick - показывает состояние елемента после двойного нажатия на него
+block3.addEventListener('dblclick', function(event){
+    console.log(event.type, event);
+});
+// mouseover и mouseout - определяют даже при зажатой клавиши мыши
+// mouseover - показывает состояние елемента когда мышка наведена на него
+block3.addEventListener('mouseover', function(event){
+    console.log(event.type, event);
+});
+// mouseout - показывает состояние елемента после увода курсора мышки с него
+block3.addEventListener('mouseout', function(event){
+    console.log(event.type, event);
+});
+// mousemove - показывает состояние елемента во время всего движения курсора мышки по нему
+block3.addEventListener('mousemove', function(event){
+    console.log(event.type, event);
+});
+// mousedown - показывает состояние елемента во время нажатия ЛК мышки по нему
+block3.addEventListener('mousedown', function(event){
+    console.log(event.type, event);
+    block3.style.background = 'red';
+});
+// mouseup - показывает состояние елемента во время отжатия ЛК мышки по нему
+block3.addEventListener('mouseup', function(event){
+    console.log(event.type, event);
+    block3.style.background = 'green';
+});
 
 
 };

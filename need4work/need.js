@@ -1563,7 +1563,10 @@ block.onclick = click;
 block.onclick = function(){
     console.log(this);
 };
-
+// К елементу после действия click (ф-ия передана как параметр) - применяется определённый код (передан ф-ией во 2ом параметре) 
+elem.addEventListener('click', function(event){
+    console.log(event);
+});
 // .addEventListener разрешает использовать повторно- заключая более одного действия при одном событии, не перезаписывая предыдущий
 var block2 = document.querySelector('.block2');
 block.addEventListener('click', function(event){
@@ -1608,3 +1611,46 @@ function getCoords(elem) {   // кроме IE8-
         left: box.left + pageXOffset
     };
 };
+
+// Покажет ивент который мы выбрали первым аргументом
+var block3 = document.querySelector('.block3');
+block3.addEventListener('mouseover', function(event){
+    console.log(event.type, event);
+});
+block3.addEventListener('click', function(event){
+    console.log(event.type, event);
+});
+
+    // События мыши
+var block3 = document.querySelector('.block3');
+// dblclick - показывает состояние елемента после одинарного нажатия на него - это составное событие из mousedown и mouseup
+block3.addEventListener('click', function(event){
+    console.log(event.type, event);
+});
+// dblclick - показывает состояние елемента после двойного нажатия на него
+block3.addEventListener('dblclick', function(event){
+    console.log(event.type, event);
+});
+// mouseover и mouseout - определяют даже при зажатой клавиши мыши
+// mouseover - показывает состояние елемента когда мышка наведена на него
+block3.addEventListener('mouseover', function(event){
+    console.log(event.type, event);
+});
+// mouseout - показывает состояние елемента после увода курсора мышки с него
+block3.addEventListener('mouseout', function(event){
+    console.log(event.type, event);
+});
+// mousemove - показывает состояние елемента во время всего движения курсора мышки по нему
+block3.addEventListener('mousemove', function(event){
+    console.log(event.type, event);
+});
+// mousedown - показывает состояние елемента во время нажатия ЛК мышки по нему
+block3.addEventListener('mousedown', function(event){
+    console.log(event.type, event);
+    block3.style.background = 'red';
+});
+// mouseup - показывает состояние елемента во время отжатия ЛК мышки по нему
+block3.addEventListener('mouseup', function(event){
+    console.log(event.type, event);
+    block3.style.background = 'green';
+});
