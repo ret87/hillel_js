@@ -1550,7 +1550,6 @@ function selectSingle(li) {
     li.classList.add('selected');
 };
 
-
 // Событие onclick - при нажатии передаёт значение переменной
 var block = document.querySelector('.block');
 
@@ -1612,6 +1611,14 @@ function getCoords(elem) {   // кроме IE8-
     };
 };
 
+// Функция покажет координаты елемента
+function getCoords(elem) {
+    var box = elem.getBoundingClientRect();
+    return {
+        top: box.top + pageYOffset,
+        left: box.left + pageXOffset
+    };
+};
 // Покажет ивент который мы выбрали первым аргументом
 var block3 = document.querySelector('.block3');
 block3.addEventListener('mouseover', function(event){
