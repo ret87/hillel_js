@@ -1380,7 +1380,7 @@ console.log(aplyAll(Math.min, 5, 7, 2, -2));
 
 // Передаёт/выводит моментально инфу в зависимости от типа елемента что мы используем
 // <input type="button" value="button">
-// <input><input type="text" oninput="console.log(this.value)">
+// <input type="text" oninput="console.log(this.value)">
 // <input type="radio" oninput="console.log(this.value)" >
 
 // Получение координат элемента относительно страницы
