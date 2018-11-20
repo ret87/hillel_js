@@ -1661,3 +1661,14 @@ block3.addEventListener('mouseup', function(event){
     console.log(event.type, event);
     block3.style.background = 'green';
 });
+
+// Связать слайдер (input type=”range”) и поле ввода (input type=”number”)
+var slider = document.querySelector('.slider');
+var numb = document.querySelector('.number');
+slider.addEventListener('click', function(){
+    console.dir(numb.value = slider.value);
+});
+numb.addEventListener('click', function(){
+    console.dir(slider.value = numb.value);
+});
+

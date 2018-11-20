@@ -19,21 +19,66 @@ window.onload = function(){
 
 var slider = document.querySelector('.slider');
 var numb = document.querySelector('.number');
-slider.oninput = function(){
-    numb.oninput = function(){
-        console.dir(numb.value = slider.value);
-        numb.value = null;
-    };
-    // console.dir(slider.value = numb.valueAsNumber);
-};
-numb.oninput = function(){
-    slider.oninput = function(){
-        console.dir(slider.value = numb.valueAsNumber);
-        slider.value = null;
-    };
-    // console.dir(numb.value = slider.value);
-};
 
+var calc = document.querySelector('.calc');
+var range = document.querySelector('.range');
+var empty = document.querySelector('.empty');
+var noEmpty = document.querySelector('.noEmpty');
+var percent = document.querySelector('.percent');
+var sliderValue = slider.value;
+var numbValue = numb.value;
+var percVal = 0.04;
+
+
+slider.addEventListener('click', function(){
+    numb.value = slider.value;
+    numbValue = numb.value;
+    range.style.height = numb.value + 'px';
+    if(sliderValue <= 20){
+        percVal = 0.02;
+    } else if (20 < sliderValue <= 50){
+        percVal = 0.04;
+    } else if (50 < sliderValue <= 75){
+        percVal = 0.06;
+    } else if (75 < sliderValue <= 100){
+        percVal = 0.08;
+    };
+    percent.style.height = numb.value*0.08 + 'px';
+
+});
+numb.addEventListener('click', function(){
+    slider.value = numb.value;
+    sliderValue = slider.value;
+    range.style.height = sliderValue + 'px';
+    if(sliderValue <= 20){
+        percVal = 0.02;
+    } else if (20 < sliderValue <= 50){
+        percVal = 0.04;
+    } else if (50 < sliderValue <= 75){
+        percVal = 0.06;
+    } else if (75 < sliderValue <= 100){
+        percVal = 0.08;
+    };
+    percent.style.height = sliderValue*percVal + 'px';
+});
+
+
+calc.style.width = 50 + 'px';
+calc.style.margin = 50 + 'px' + ' ' + 50 + 'px' + ' ' + 50 + 'px' + ' ' + 50 + 'px';
+calc.style.height = 200 + 'px';
+calc.style.border = 2 + 'px' + ' ' + 'solid' + ' ' + 'black';
+
+empty.style.height = 92 + 'px';
+
+noEmpty.style.height = 108 + 'px';
+noEmpty.style.display = 'flex';
+noEmpty.style.flexDirection = 'column-reverse';
+
+range.style.background = 'green';
+percent.style.background = 'red';
+
+range.style.height = sliderValue + 'px';
+percent.style.height = sliderValue*percVal + 'px';
 
 
 };
