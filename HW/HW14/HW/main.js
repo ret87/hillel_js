@@ -75,10 +75,11 @@ noEmpty.style.display = 'flex';
 noEmpty.style.flexDirection = 'column-reverse';
 
 range.style.background = 'green';
-percent.style.background = 'red';
-
 range.style.height = sliderValue + 'px';
+
+percent.style.background = 'red';
 percent.style.height = sliderValue*percVal + 'px';
+
 
 
 };
