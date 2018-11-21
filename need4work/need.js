@@ -1753,3 +1753,6 @@ for(var i=0; i<tds.length;i++){
     tds[i].style.border = 1 + 'px' + ' ' + 'solid' + ' ' + 'red';
 };
 
+    // Добавление множества узлов insertAdjacent*, а конкретно insertAdjacentHTML
+// elem.insertAdjacentHTML(where, html) - позволяет вставлять произвольный HTML в любое место документа, в том числе и между узлами
+document.body.children[0].children[2].insertAdjacentHTML("afterend", '<li>li3</li><li>li4</li>')
