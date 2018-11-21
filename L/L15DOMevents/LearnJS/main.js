@@ -25,6 +25,7 @@ for (var i=0;i<5;i++){
 // for(var i=0) ul.appendChild(li);   // сначала вставить узлы
 // document.body.appendChild(ul); // затем в документ
 
+// Быстрая вставка новых елементов на страницу (на примере ul li)
 var ul = document.createElement('ul');
 for(var i=0; i<5;i++){
     var li = document.createElement('li');
@@ -32,6 +33,7 @@ for(var i=0; i<5;i++){
 };
 document.body.appendChild(ul); // затем в документ
 
+// Быстрое создание двумерного поля
 var table = document.createElement('table');
 document.body.appendChild(table); // затем в документ
 for(var i=0; i<5;i++){
@@ -42,13 +44,16 @@ for(var i=0; i<5;i++){
         tr.appendChild(td);   // сначала вставить узлы
     };
 };
+// Стили для двумерного поля
+var tbs = document.querySelector('table');
+tbs.style.border= 1 + 'px' + ' ' + 'solid' + ' ' + 'black';
+tbs.style.width = 100 + 'px';
+tbs.style.height = 100 + 'px';
 
-var tds = document.getElementsByTagName('td');
-console.log(tds.length);
-// tds.style =
-// for(var i=0; i<list;i++){
-    
-// };
+var tds = document.querySelectorAll('td');
+for(var i=0; i<tds.length;i++){
+    tds[i].style.border = 1 + 'px' + ' ' + 'solid' + ' ' + 'red';
+};
 
 
 

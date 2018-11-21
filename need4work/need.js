@@ -1732,5 +1732,24 @@ var ul = document.createElement('ul');
 for(var i=0; i<5;i++){
     var li = document.createElement('li');
     ul.appendChild(li);   // сначала вставить узлы
-} 
+};
 document.body.appendChild(ul); // затем в документ
+
+// Быстрое создание двумерного поля
+var table = document.createElement('table');
+document.body.appendChild(table); // затем в документ
+for(var i=0; i<5;i++){
+    var tr = document.createElement('tr');
+    table.appendChild(tr);   // сначала вставить узлы
+    for(var j=0;j<5;j++){
+        var td = document.createElement('td');
+        tr.appendChild(td);   // сначала вставить узлы
+    };
+};
+
+// Задавание стилей для нескольких елементов таблицы
+var tds = document.querySelectorAll('td');
+for(var i=0; i<tds.length;i++){
+    tds[i].style.border = 1 + 'px' + ' ' + 'solid' + ' ' + 'red';
+};
+
