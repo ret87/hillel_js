@@ -1672,3 +1672,5 @@ numb.addEventListener('click', function(){
     console.dir(slider.value = numb.value);
 });
 
+// Показать всю высоту елемента - если есть прокрутка по высоте и обрезание текста - уберет её
+element.style.height = element.scrollHeight + 'px';
