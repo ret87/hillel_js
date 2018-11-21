@@ -599,7 +599,6 @@
     // Метод compareDocumentPosition для порядка узлов
 // Метод compareDocumentPosition –  предоставляет одновременно информацию и о содержании и об относительном порядке элементов.
 
-
     // Вставляет elem в коллекцию детей parentElem, перед элементом nextSibling.
 // parentElem.insertBefore(elem, nextSibling)
 
@@ -673,6 +672,7 @@
 //                        если параметр top равен true, и внизу, если top равен false
 // document.body.style.overflow = "hidden"  - чтобы запретить прокрутку страницы.
 // document.body.style.overflow = " "        - что бы разморозить
+
 
         // // События Лекция
 // Модель экшна - когда система может реагировать на определённые процессы.

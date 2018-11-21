@@ -1578,6 +1578,29 @@ block2.addEventListener('click', function(event){
     console.log('third', this === event.target);
 });
 
+// Мышь: Drag'n'Drop - захватить мышью элемент и перенести его с position: fixed
+var block = document.querySelector('.block');
+block.style.position = 'fixed';
+
+block.addEventListener('mousedown', function(event){
+    var x0 = event.target.offsetLeft;
+    var y0 = event.target.offsetTop;
+    var mx = event.clientX;
+    var my = event.clientY;
+    document.addEventListener('mouseup', function(){
+        document.removeEventListener('mousemove', MoveElem);
+    });
+    document.addEventListener('mousemove', MoveElem);
+    function MoveElem(ev){
+        var mx2 = ev.clientX;
+        var my2 = ev.clientY;
+        var diffx = mx2 - mx;
+        var diffy = my2 - my;
+        event.target.style.left = x0 + diffx + 'px';
+        event.target.style.top = y0 + diffy + 'px';
+    };
+});
+
 // Мышь: Drag'n'Drop - захватить мышью элемент и перенести его
 var ball = document.getElementById('ball');
 ball.onmousedown = function(e) {
@@ -1692,4 +1715,13 @@ button.addEventListener('click', function(){
     // относительно елемента где вызван по оси координат внутри метода
     window.scrollBy(0,100);
 });
-
+// Самое простое обращение к елментам DOM
+var elem = document.querySelector('.elem');
+function fooBar(){
+    alert();
+};
+function f2(){
+    console.log(this)
+};
+elem.onclick = f2;
+elem.onmouseover = fooBar;
