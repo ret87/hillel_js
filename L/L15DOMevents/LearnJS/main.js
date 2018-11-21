@@ -5,6 +5,4 @@ window.onload = function(){
     
     console.log('Задача №1');
 
-    
-
 };

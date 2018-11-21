@@ -1674,3 +1674,22 @@ numb.addEventListener('click', function(){
 
 // Показать всю высоту елемента - если есть прокрутка по высоте и обрезание текста - уберет её
 element.style.height = element.scrollHeight + 'px';
+// Ширина и высота страницы 
+console.log(document.documentElement.clientHeight);
+console.log(document.documentElement.clientWidth);
+// Ширина и высота окна браузера
+window.innerWidth
+window.innerHeight
+// При нажатии на елемент переведёт страницу: 
+var button = document.querySelector('.but')
+button.addEventListener('click', function(){
+    // в самый низ относительно елемента
+    button.scrollIntoView(false);
+    // в самый верх относительно елемента
+    button.scrollIntoView();
+    // относительно её начала по оси координат внутри метода
+    window.scrollTo(0,0);
+    // относительно елемента где вызван по оси координат внутри метода
+    window.scrollBy(0,100);
+});
+
