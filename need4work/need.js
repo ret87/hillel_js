@@ -1725,3 +1725,12 @@ function f2(){
 };
 elem.onclick = f2;
 elem.onmouseover = fooBar;
+
+
+// Быстрая вставка новых елементов на страницу (на примере ul li)
+var ul = document.createElement('ul');
+for(var i=0; i<5;i++){
+    var li = document.createElement('li');
+    ul.appendChild(li);   // сначала вставить узлы
+} 
+document.body.appendChild(ul); // затем в документ
