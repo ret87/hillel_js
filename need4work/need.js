@@ -1840,3 +1840,32 @@ for(var i=0; i<document.querySelector('p').classList.length; i++){
 };
 
     // Нестандартные атрибуты
+// Значение атрибута – произвольная строка, значение класса – это «есть» или «нет», поэтому атрибуты «мощнее» и удобнее классов.
+
+// Обращение к атрибуту в CSS:
+// <style>      .order[order-state="new"]       {color: green;}    </style>
+// А после можно уже и через JS с ним обращаться
+// div.setAttribute('order-state', 'canceled');
+
+// Сделать фильтр по елементам по их CSS свойствам и добавить определённый класс  
+// ищем все ссылки, у которых в href есть протокол,
+// но адрес начинается не с http://internal.com
+var css = 'a[href*="://"]:not([href^="http://internal.com"])';
+var links = document.querySelectorAll(css);
+
+for (var i = 0; i < links.length; i++) {
+  links[i].classList.add('external');
+};
+
+    // // Свойство dataset, data-атрибуты
+// С помощью нестандартных атрибутов можно привязать к элементу данные, которые будут доступны в JavaScript.
+// Как правило, это делается при помощи атрибутов с названиями, начинающимися на data-, например:
+console.log(document.querySelector('p').setAttribute('data-p', 'p1'));
+console.log(document.querySelector('p').setAttribute('data-about', 'p-element'));
+console.log(document.querySelector('p').getAttribute('data-p'));
+
+// K таким атрибутам можно обратиться не только как к атрибутам, но и как к свойствам, при помощи специального свойства dataset
+console.log(document.querySelector('p').dataset.p);
+console.log(document.querySelector('p').dataset.about);
+
+
