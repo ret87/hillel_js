@@ -1785,3 +1785,38 @@ document.body.consName = function(){
     console.log(this.nodeName);
 };
 document.body.consName();
+
+    // Атрибуты
+// Элементам DOM, с другой стороны, соответствуют HTML-теги, у которых есть текстовые атрибуты.
+// Доступ к атрибутам осуществляется при помощи стандартных методов:
+// elem.hasAttribute(name)          – проверяет наличие атрибута
+// elem.getAttribute(name)          – получает значение атрибута
+// elem.setAttribute(name, value)   – устанавливает атрибут
+// elem.removeAttribute(name)       – удаляет атрибут
+console.log(document.body.children[0].setAttribute('id', 'p'));
+console.log(document.body.children[0].getAttribute('id'));
+console.log(document.body.children[0].hasAttribute('id'));
+console.log(document.body.children[0].removeAttribute('id'));
+
+    // elem.attributes
+// Также все атрибуты элемента можно получить с помощью свойства elem.attributes, которое содержит псевдо-массив объектов
+console.log(document.body.children[0].attributes);
+// Можно получить коллекцию атрибутов
+var attrs = elem.attributes; // (4) можно получить коллекцию атрибутов
+for (var i = 0; i < attrs.length; i++) {
+    alert( attrs[i].name + " = " + attrs[i].value );
+};
+
+// Вывести значение атрибута
+document.body.children[1].href = '/';
+console.log(document.body.children[1].getAttribute('href'));        // - выведет значение из href
+console.log(document.body.children[1].href);                        // - выведет значение в html
+
+// DOM-свойство которое имеет логическое значение true/false - можно убирать или задавать с помощью remove/set или = true/false
+// Aтрибут elem.getAttribute('value') хранит исходное значение даже после того, как пользователь заполнил поле и свойство изменилось.
+document.querySelector('a').value = 'b';
+console.log(document.querySelector('a').getAttribute('value'));
+console.log(document.querySelector('a').getAttribute('value') == 'b');
+console.log(document.querySelector('a').getAttribute('value') == 'a');
+console.log(document.querySelector('a').setAttribute('value', 'b'));
+console.log(document.querySelector('a').getAttribute('value'));

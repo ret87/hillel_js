@@ -841,12 +841,12 @@
 
     // insertAdjacentHTML
 // elem.insertAdjacentHTML(where, html) - позволяет вставлять произвольный HTML в любое место документа, в том числе и между узлами
-// html - Строка HTML, которую нужно вставить (что именно мы хотим вставить)
+// html     - Строка HTML, которую нужно вставить (что именно мы хотим вставить)
 // where    - Куда по отношению к elem вставлять строку. Всего четыре варианта:
-// beforeBegin – перед elem.
-// afterBegin – внутрь elem, в самое начало.
-// beforeEnd – внутрь elem, в конец.
-// afterEnd – после elem.
+// beforeBegin  – перед elem.
+// afterBegin   – внутрь elem, в самое начало.
+// beforeEnd    – внутрь elem, в конец.
+// afterEnd     – после elem.
 // document.body.children[0].children[2].insertAdjacentHTML("afterend", '<li>li3</li><li>li4</li>')
 
 
