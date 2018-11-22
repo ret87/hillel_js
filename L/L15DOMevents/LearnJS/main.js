@@ -1,4 +1,4 @@
-// 'use strict';
+'use strict';
 window.onload = function(){
 
     console.log('LearnJS DOM Events 15');
@@ -56,7 +56,12 @@ for(var i=0; i<tds.length;i++){
 };
 
 
-    // // Добавление множества узлов insertAdjacent*, а конкретно insertAdjacentHTML
+    // // Добавление множества узлов insertAdjacent
+// elem.insertAdjacentHTML(where, html)
+// elem.insertAdjacentElement(where, element)
+// elem.insertAdjacentText(where, text)
+
+// insertAdjacentHTML
 // elem.insertAdjacentHTML(where, html) - позволяет вставлять произвольный HTML в любое место документа, в том числе и между узлами
 // html - Строка HTML, которую нужно вставить (что именно мы хотим вставить)
 // where    - Куда по отношению к elem вставлять строку. Всего четыре варианта:
@@ -68,12 +73,29 @@ document.body.children[0].children[2].insertAdjacentHTML("afterend", '<li>li3</l
 
 
     // // DocumentFragment
-// Вставить пачку узлов единовременно поможет DocumentFragment. 
+// Вставить пачку узлов единовременно поможет DocumentFragment.  
+// У DocumentFragment нет обычных свойств DOM-узлов, таких как innerHTML, tagName и т.п. Это не узел.
+// Kогда DocumentFragment вставляется в DOM – то он исчезает, а вместо него вставляются его дети.
 
+// Синтаксис для его создания:              var fragment = document.createDocumentFragment();
+// В него можно добавлять другие узлы.      fragment.appendChild(node);
+// Его можно клонировать:                   fragment.cloneNode(true); // клонирование с подэлементами
 
+    // // append/prepend, before/after, replaceWith
+// nodes – DOM-узлы или строки, в любом сочетании и количестве
 
-
-
+// node.append(...nodes)        – вставляет nodes в конец node,
+// node.prepend(...nodes)       – вставляет nodes в начало node,
+// node.after(...nodes)         – вставляет nodes после узла node,
+// node.before(...nodes)        – вставляет nodes перед узлом node,
+// node.replaceWith(...nodes)   – вставляет nodes вместо node.
+var p = document.createElement('p');
+document.body.append('p');
+document.body.prepend('p');
+document.body.after('p');
+document.body.before('p');
+// document.body.replaceWith('p');
+document.body.children[1].replaceWith('p');
 
 
 

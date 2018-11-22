@@ -1727,7 +1727,7 @@ elem.onclick = f2;
 elem.onmouseover = fooBar;
 
 
-// Быстрая вставка новых елементов на страницу (на примере ul li)
+    // Быстрая вставка новых елементов на страницу (на примере ul li)
 var ul = document.createElement('ul');
 for(var i=0; i<5;i++){
     var li = document.createElement('li');
@@ -1735,7 +1735,7 @@ for(var i=0; i<5;i++){
 };
 document.body.appendChild(ul); // затем в документ
 
-// Быстрое создание двумерного поля
+    // Быстрое создание двумерного поля
 var table = document.createElement('table');
 document.body.appendChild(table); // затем в документ
 for(var i=0; i<5;i++){
@@ -1747,7 +1747,7 @@ for(var i=0; i<5;i++){
     };
 };
 
-// Задавание стилей для нескольких елементов таблицы
+    // Задавание стилей для нескольких елементов таблицы
 var tds = document.querySelectorAll('td');
 for(var i=0; i<tds.length;i++){
     tds[i].style.border = 1 + 'px' + ' ' + 'solid' + ' ' + 'red';
@@ -1756,3 +1756,21 @@ for(var i=0; i<tds.length;i++){
     // Добавление множества узлов insertAdjacent*, а конкретно insertAdjacentHTML
 // elem.insertAdjacentHTML(where, html) - позволяет вставлять произвольный HTML в любое место документа, в том числе и между узлами
 document.body.children[0].children[2].insertAdjacentHTML("afterend", '<li>li3</li><li>li4</li>')
+// elem.insertAdjacentElement(where, element)
+// elem.insertAdjacentText(where, text)
+
+
+    // append/prepend, before/after, replaceWith
+// nodes – DOM-узлы или строки, в любом сочетании и количестве
+// node.append(...nodes)        – вставляет nodes в конец node,
+// node.prepend(...nodes)       – вставляет nodes в начало node,
+// node.after(...nodes)         – вставляет nodes после узла node,
+// node.before(...nodes)        – вставляет nodes перед узлом node,
+// node.replaceWith(...nodes)   – вставляет nodes вместо node.
+var p = document.createElement('p');
+document.body.append('p');
+document.body.prepend('p');
+document.body.after('p');
+document.body.before('p');
+document.body.children[1].replaceWith('p');
+
