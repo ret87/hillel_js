@@ -1774,3 +1774,14 @@ document.body.after('p');
 document.body.before('p');
 document.body.children[1].replaceWith('p');
 
+    // Свои DOM-свойства
+// document.body.newProp = {key: value, key2: value};
+document.body.newProp = {
+    key: 'value',
+    key2: 'value2'
+};
+    // Свои DOM-методы
+document.body.consName = function(){
+    console.log(this.nodeName);
+};
+document.body.consName();

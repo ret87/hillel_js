@@ -5,4 +5,10 @@ window.onload = function(){
     
         console.log('Навигация по DOM-элементам');
 
+
+
+
+
+
+
 };
