@@ -70,6 +70,7 @@ for(var i=0; i<tds.length;i++){
 // beforeEnd – внутрь elem, в конец.
 // afterEnd – после elem.
 document.body.children[0].children[2].insertAdjacentHTML("afterend", '<li>li3</li><li>li4</li>')
+document.body.children[0].children[6].insertAdjacentHTML("beforeend", '<li>li5</li><li>li6</li>')
 
 
     // // DocumentFragment
