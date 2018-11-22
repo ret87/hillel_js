@@ -1820,3 +1820,23 @@ console.log(document.querySelector('a').getAttribute('value') == 'b');
 console.log(document.querySelector('a').getAttribute('value') == 'a');
 console.log(document.querySelector('a').setAttribute('value', 'b'));
 console.log(document.querySelector('a').getAttribute('value'));
+
+    // // Классы в виде строки: className
+// Атрибуту "class" соответствует свойство className.
+console.log(document.querySelector('p').className = 'p p2');
+
+// атрибуту for (<label for="...">) соответствует свойство с названием htmlFor.
+
+    // Методы classList:
+// elem.classList.contains("class")     – возвращает true/false, в зависимости от того, есть ли у элемента класс class.
+// elem.classList.add/remove("class")   – добавляет/удаляет класс class
+// elem.classList.toggle("class")       – если класса class нет, добавляет его, если есть – удаляет.
+console.log(document.querySelector('p').classList.add('p3'));
+console.log(document.querySelector('p').classList);
+
+// Mожно перебрать классы через for, так как classList – это псевдо-массив.
+for(var i=0; i<document.querySelector('p').classList.length; i++){
+    console.log(document.querySelector('p').classList[i]);
+};
+
+    // Нестандартные атрибуты
