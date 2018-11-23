@@ -1869,3 +1869,36 @@ console.log(document.querySelector('p').dataset.p);
 console.log(document.querySelector('p').dataset.about);
 
 
+        // // Навигация по DOM-элементам
+// Только для чтения 
+
+    // // Сверху documentElement и body
+// Самые верхние элементы дерева доступны напрямую из document.
+// <HTML> = document.documentElement
+console.log(document.documentElement);
+// <BODY> = document.body
+console.log(document.body);
+// <HEAD> = document.head
+console.log(document.head);
+
+    // Дочерние элементы
+// childNodes - Псевдо-массив который хранит все дочерние элементы, включая текстовые.
+console.log(document.childNodes);
+// Перебор всех детей можно сделать через for
+for(var i=0; i<document.body.childNodes.length;i++){
+    console.log(document.body.childNodes[i]);
+};
+
+    // Потомки
+// firstChild и lastChild обеспечивают быстрый доступ к первому и последнему элементу
+console.log(document.body.firstChild);
+console.log(document.body.lastChild);
+console.log(document.body.firstChild === document.body.childNodes[0]);
+
+// Применить метод массива через call/apply для его изменения:
+var arr = new Array;
+var elements = document.body.childNodes;
+arr.forEach.call(elements, function(elem){
+    console.log(elem);
+});
+
