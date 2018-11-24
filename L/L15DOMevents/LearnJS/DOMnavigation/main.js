@@ -50,6 +50,56 @@ arr.forEach.call(elements, function(elem){
 });
 
 // При помощи Array.prototype.slice сделать из коллекции массив.
+var elems = document.body.childNodes;
+elems = Array.prototype.slice.call(elems);
+elems.forEach(function(elems){
+    console.log(elems);
+});
+
+
+    // // Соседи и родитель
+// previousSibling / nextSibling - доступ к элементам слева и справа данного
+console.log(document.querySelector('p').nextSibling);
+console.log(document.querySelector('p').previousSibling);
+// parentNode                    - доступ к родителю элемента
+console.log(document.querySelector('li').parentNode);
+
+
+    // // Навигация только по элементам
+// Что бы осуществлять навигацию только по элементам (а не по пустым строчкам - узел текст, или узлам коментариям), используем:
+// children                                     – только дочерние узлы-элементы, то есть соответствующие тегам.
+console.log(document.querySelector('ul').children);
+// firstElementChild, lastElementChild          – соответственно, первый и последний дети-элементы.
+console.log(document.querySelector('ul').lastElementChild);
+console.log(document.querySelector('ul').firstElementChild);
+// previousElementSibling, nextElementSibling   – соседи-элементы.
+console.log(document.querySelector('div').previousElementSibling);
+console.log(document.querySelector('p').nextElementSibling);
+// parentElement                                – родитель-элемент.
+console.log(document.querySelector('li').parentElement);
+
+// Вывести только детей елементы:
+for(var i=0; i<document.body.children.length;i++){
+    console.log(document.body.children[i]);
+};
+
+
+    // // Особые ссылки для таблиц
+    // TABLE
+// table.rows – коллекция строк TR таблицы.
+// table.caption/tHead/tFoot – ссылки на элементы таблицы CAPTION, THEAD, TFOOT.
+// table.tBodies – коллекция элементов таблицы TBODY, по спецификации их может быть несколько.
+
+    // THEAD/TFOOT/TBODY
+// tbody.rows – коллекция строк TR секции.
+
+    // TR
+// tr.cells – коллекция ячеек TD/TH
+// tr.sectionRowIndex – номер строки в текущей секции THEAD/TBODY
+// tr.rowIndex – номер строки в таблице
+
+    // TD/TH
+// td.cellIndex – номер ячейки в строке
 
 
 

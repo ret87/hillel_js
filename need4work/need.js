@@ -1890,6 +1890,7 @@ for(var i=0; i<document.body.childNodes.length;i++){
 };
 
     // Потомки
+// Нельзя перебирать коллекцию через for..in
 // firstChild и lastChild обеспечивают быстрый доступ к первому и последнему элементу
 console.log(document.body.firstChild);
 console.log(document.body.lastChild);
@@ -1901,4 +1902,72 @@ var elements = document.body.childNodes;
 arr.forEach.call(elements, function(elem){
     console.log(elem);
 });
+
+// При помощи Array.prototype.slice сделать из коллекции массив.
+var elems = document.body.childNodes;
+elems = Array.prototype.slice.call(elems);
+elems.forEach(function(elems){
+    console.log(elems);
+});
+
+
+    // // Соседи и родитель
+// previousSibling / nextSibling - доступ к элементам слева и справа данного
+console.log(document.querySelector('p').nextSibling);
+console.log(document.querySelector('p').previousSibling);
+// parentNode                    - доступ к родителю элемента
+console.log(document.querySelector('p').parentNode);
+
+
+    // // Навигация только по элементам
+// Что бы осуществлять навигацию только по элементам (а не по пустым строчкам - узел текст, или узлам коментариям), используем:
+// children                                     – только дочерние узлы-элементы, то есть соответствующие тегам.
+console.log(document.querySelector('ul').children);
+// firstElementChild, lastElementChild          – соответственно, первый и последний дети-элементы.
+console.log(document.querySelector('ul').lastElementChild);
+console.log(document.querySelector('ul').firstElementChild);
+// previousElementSibling, nextElementSibling   – соседи-элементы.
+console.log(document.querySelector('div').previousElementSibling);
+console.log(document.querySelector('p').nextElementSibling);
+// parentElement                                – родитель-элемент.
+console.log(document.querySelector('li').parentElement);
+
+// Вывести только детей елементы:
+for(var i=0; i<document.body.children.length;i++){
+    console.log(document.body.children[i]);
+};
+
+    // // Особые ссылки для таблиц
+    // TABLE
+// коллекция строк TR таблицы.
+table.rows
+// ссылки на элементы таблицы CAPTION, THEAD, TFOOT.
+table.caption/tHead/tFoot
+// коллекция элементов таблицы TBODY, по спецификации их может быть несколько.
+table.tBodies
+
+    // THEAD/TFOOT/TBODY
+// коллекция строк TR секции.
+tbody.rows
+
+    // TR
+// коллекция ячеек TD/TH
+tr.cells
+//  номер строки в текущей секции THEAD/TBODY
+tr.sectionRowIndex
+// номер строки в таблице
+tr.rowIndex
+
+    // TD/TH
+// номер ячейки в строке
+td.cellIndex
+
+// Проверка элемента на наличие детей
+if (!elem.childNodes.length) { }
+
+if (!elem.firstChild) { }
+
+if (!elem.lastChild) { }
+
+elem.hasChildNodes()
 
