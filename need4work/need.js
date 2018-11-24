@@ -1986,3 +1986,22 @@ text.addEventListener('focus', function(){
     text.value += ' !focus '
 });
 
+ // Свойства объекта события
+ var button = document.getElementById('button');
+
+ // event.type - Тип события
+button.addEventListener('click', function(){
+    console.log(event.type);
+});
+
+// event.currentTarget - более правильная аналогия this только для DOM
+button.addEventListener('click', function(){
+    console.log(event.currentTarget);
+});
+
+// event.clientX / event.clientY - Координаты курсора в момент клика (относительно окна)
+button.addEventListener('click', function(){
+    console.log(event.clientX);
+    console.log(event.clientY);
+});
+
