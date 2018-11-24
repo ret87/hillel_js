@@ -63,9 +63,26 @@ text.onfocus = function(){
 
 console.log('Объект события');
     
+
         // // Объект события
+// Детали произошедшего браузер записывает в «объект события», который передаётся первым аргументом в обработчик.
 
+    // Свойства объекта события
 
+// event.type - Тип события
+button.addEventListener('click', function(){
+    console.log(event.type);
+});
 
+// event.currentTarget - более правильная аналогия this только для DOM
+button.addEventListener('click', function(){
+    console.log(event.currentTarget);
+});
+
+// event.clientX / event.clientY - Координаты курсора в момент клика (относительно окна)
+button.addEventListener('click', function(){
+    console.log(event.clientX);
+    console.log(event.clientY);
+});
 
 };

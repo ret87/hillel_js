@@ -1975,14 +1975,14 @@ elem.hasChildNodes()
 // Запустит onfocus сразу после выполнения onclick
 var button = document.getElementById('button');
 var text = document.getElementById('text');
-button.onclick = function(){
+button.addEventListener('click', function(){
     text.value += ' in onclick '
     setTimeout(function(){
         text.focus();
     }, 0);
     text.value += ' after onclick ' 
-};
-text.onfocus = function(){
+});
+text.addEventListener('focus', function(){
     text.value += ' !focus '
-}
+});
 
