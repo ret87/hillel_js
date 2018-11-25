@@ -2005,3 +2005,79 @@ button.addEventListener('click', function(){
     console.log(event.clientY);
 });
 
+        // // Мышь: клики, кнопка, координаты
+    // Типы событий мыши
+// Простые события
+var button = document.querySelector('button');
+button.style.width = 35+'px';
+button.style.height = 25+'px';
+// mousedown -  Кнопка мыши нажата над элементом.
+button.addEventListener('mousedown', function(){
+    console.log(event.type);
+});
+// mouseup   -  Кнопка мыши отпущена над элементом.
+button.addEventListener('mouseup', function(){
+console.log(event.currentTarget);
+});
+// mouseover -  Мышь появилась над элементом.
+button.addEventListener('mouseover', function(){
+    console.log(event.clientX);
+});
+// mouseout  -  Мышь ушла с элемента.
+button.addEventListener('mouseout', function(){
+console.log(event.clientY);
+});
+// mousemove -  Каждое движение мыши над элементом генерирует это событие.
+button.addEventListener('mousemove', function(){
+    console.log('mousemove');
+});
+
+// Комплексные события
+// click        - Вызывается при клике мышью, то есть при mousedown, а затем mouseup на одном элементе
+button.addEventListener('click', function(){
+    button.style.background = 'red';
+});
+// contextmenu  - Вызывается при клике правой кнопкой мыши на элементе.
+button.addEventListener('contextmenu', function(){
+    button.style.background = 'green';
+});
+// dblclick     - Вызывается при двойном клике по элементу.
+button.addEventListener('dblclick', function(){
+    button.style.background = 'blue';
+});
+
+    // Правый клик: oncontextmenu
+// Вызывает контекстное меню,  можно присвоить своё действие
+button.addEventListener('contextmenu', function(){
+    console.log('contextmenu');
+});
+// Можно отменить вызов контекстного меню по умолчанию
+button.oncontextmenu = function(){
+    return false;
+};
+
+
+    // Модификаторы shift, alt, ctrl и meta
+// Во всех событиях мыши присутствует информация о нажатых клавишах-модификаторах.
+// shiftKey             - shift
+button.addEventListener('click', function(e){
+    if(!e.shiftKey) return;
+    console.log('shift + click');
+});
+
+// altKey               - alt
+button.addEventListener('click', function(e){
+    if(!e.altKey) return; 
+    console.log('altKey + click');
+});
+// // ctrlKey              - ctrl
+button.addEventListener('click', function(e){
+    if(!e.ctrlKey) return;
+    console.log('ctrlKey + click');
+});
+// // metaKey (для Mac)    - CMD (mac)
+button.addEventListener('click', function(e){
+    if(!e.metaKey) return;
+    console.log('metaKey + click');
+});
+
