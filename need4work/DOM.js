@@ -1161,3 +1161,19 @@
 //     console.log(event.clientY);
 // });
 
+    // Координаты в окне: clientX/Y
+// Пара свойств clientX/clientY содержит координаты курсора относительно текущего окна.
+// В той же системе координат работает и метод elem.getBoundingClientRect(), возвращающий координаты элемента, а также position:fixed.
+// Координаты курсора относительно окна - выведны в значение елемента текст
+// var text = document.getElementById('text');
+// text.addEventListener('mousemove', function(e){
+//     this.value = event.clientX + ':' + event.clientY;
+// });
+
+    // Координаты относительно документа: pageX/Y
+// Координаты курсора относительно документа находятся в свойствах pageX/pageY.
+// Эти координаты – относительно левого-верхнего узла документа, а не окна, то они учитывают прокрутку. 
+// var textTwo = document.getElementById('textTwo');
+// textTwo.addEventListener('mousemove', function(e){
+//     this.value = event.pageX + ':' + event.pageY;
+// });
