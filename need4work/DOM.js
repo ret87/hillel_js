@@ -1177,3 +1177,67 @@
 // textTwo.addEventListener('mousemove', function(e){
 //     this.value = event.pageX + ':' + event.pageY;
 // });
+
+
+        // // Мышь: движение mouseover/out, mouseenter/leave
+
+    // События mouseover/mouseout, свойство relatedTarget
+// Событие mouseover происходит, когда мышь появляется над элементом, а mouseout – когда уходит из него.
+// textTwo.addEventListener('mouseover', function(e){
+//     this.style.background = 'red';
+// });
+// textTwo.addEventListener('mouseout', function(e){
+//     this.style.background = 'white';
+// });
+// relatedTarget - покажет, с какого элемента пришла (с помощью mouseover) или ушла (с помощью mouseout) мышь.
+// textTwo.addEventListener('mouseover', function(e){
+//     console.log(event.target);                  // елемент на который пришла мышь
+//     console.log(event.relatedTarget);           // елемент с которого пришла мышь
+
+// });
+// textTwo.addEventListener('mouseout', function(e){
+//     console.log('target' + event.target);                  // елемент с которого пришла мышь
+//     console.log('related' + event.relatedTarget);           // елемент на который пришла мыщь
+// });
+
+    // Частота событий
+// Событие mousemove срабатывает при передвижении мыши
+// События mousemove и mouseover/mouseout срабатывают так часто, насколько это позволяет внутренняя система взаимодействия браузера.
+// DOM-элементы, через которые мышь проходит на большой скорости, могут быть пропущены.
+
+    // «Лишний» mouseout при уходе на потомка
+// При переходе на потомка срабатывает mouseout на родителе.
+// Согласно браузерной логике, курсор мыши может быть только над одним элементом – самым глубоким в DOM (и верхним по z-index).
+// У обработчиков создаётся впечатление, что курсор ушёл mouseout с родителя, а затем тут же перешёл mouseover на него же 
+// (за счёт всплытия mouseover с потомка). Получается как бы он был вызван дважды (навели=1, отвели на потомка=1, навод на потомка=2)
+
+    // События mouseenter и mouseleave и mousemove
+// Бывает важно отследить момент «настоящего» ухода - понять, когда элемент зашёл на родителя, а когда ушёл – без учёта переходов.
+// Курсор заходит на элемент – срабатывает mouseenter, а затем – неважно, куда он внутри него переходит, mouseleave.
+// Но они не всплывают!
+// События mouseover/mouseout подразумевают, что курсор находится над одним, самым глубоким элементом.
+// Они срабатывают при переходе с родительского элемента на дочерний.
+
+// var block = document.getElementById('block');
+// block.style.width = 150+'px';
+// block.style.height = 150+'px';
+// block.style.border = 1+'px'+' '+"solid"+" "+"black";
+
+// block.addEventListener('mouseenter', function(e){
+//     block.style.background = 'brown';
+// });
+// block.addEventListener('mouseleave', function(e){
+//     block.style.background = null;
+// });
+
+    // Делегирование
+// события mouseenter/leave не всплывают, они срабатывают именно на том элементе, на котором стоит обработчик и только на нём.
+// Если обработчики mouseenter/leave стоят на <table>, то они сработают при входе-выходе из таблицы, 
+// но получить из них какую-то информацию о переходах по её ячейкам невозможно.
+// var table = document.getElementById('table');
+// table.addEventListener('mouseover', function(e){
+//     event.target.style.background = 'red';
+// });
+// table.addEventListener('mouseout', function(e){
+//     event.target.style.background = null;
+// });
