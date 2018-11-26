@@ -180,6 +180,50 @@ table.addEventListener('mouseout', function(e){
 });
 
 
+        // // Мышь: отмена выделения, невыделяемые элементы
+// рассмотрим основные способы, как делать элемент невыделяемым.
+
+    // Способ 1: отмена mousedown/selectstart
+// предотвратить действие браузера по умолчанию для события selectstart в IE и mousedown в других браузерах.
+// При установке на родителя – все его потомки станут невыделяемыми:
+// Выделение при помощи передвижения зажатой мыши всё еще работает, так что посетитель имеет возможность выделить содержимое элемента.
+// mousedown="return false"
+table.onmousedown =  function(){
+    return false;
+};
+
+    // Способ 2: снятие выделения пост-фактум
+// Можно снять выделение в обработчике события, после того, как оно уже произошло.
+// функция clearSelection, будет снимать выделение
+// Выделение всё же производится, но тут же снимается. Это выглядит как мигание и не очень красиво.
+// Выделение при помощи передвижения зажатой мыши всё еще работает, так что посетитель имеет возможность выделить содержимое элемента.
+table.addEventListener('dblclick', function(e){
+    clearSelection();
+});
+function clearSelection() {
+    if (window.getSelection) {
+      window.getSelection().removeAllRanges();
+    } else { // старый IE
+        document.selection.empty();
+    };
+};
+
+    // Способ 3: свойство user-select
+// нестандартное CSS-свойство user-select, которое делает элемент невыделяемым.
+// <style>
+//   b {
+    // -webkit-user-select: none;
+    // user-select -- это нестандартное свойство 
+    // -moz-user-select: none;
+    // поэтому нужны префиксы
+    // -ms-user-select: none;
+//   }
+// </style> 
+table.style.webkitUserSelect = 'none';
+// OR
+table.addEventListener('mouseover', function(){
+    event.target.style.webkitUserSelect = 'none';
+});
 
 
 
