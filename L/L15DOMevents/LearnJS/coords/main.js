@@ -30,6 +30,7 @@ console.log(strings.getClientRects());
 
     // elementFromPoint(x, y)
 // Возвращает элемент, который находится на координатах (x, y) относительно окна.
+// var elem = document.elementFromPoint(x, y);
 
 
 
