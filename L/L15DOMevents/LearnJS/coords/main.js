@@ -28,6 +28,10 @@ var strings = document.querySelector('.strings')
 console.log(strings.getClientRects());
 
 
+    // elementFromPoint(x, y)
+// Возвращает элемент, который находится на координатах (x, y) относительно окна.
+
+
 
 
 
