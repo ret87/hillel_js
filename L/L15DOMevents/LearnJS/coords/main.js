@@ -30,10 +30,23 @@ console.log(strings.getClientRects());
 
     // elementFromPoint(x, y)
 // Возвращает элемент, который находится на координатах (x, y) относительно окна.
+// Метод document.elementFromPoint(x,y) работает только если координаты (x,y) находятся в пределах окна.
 // var elem = document.elementFromPoint(x, y);
+// используются координаты относительно окна - без прокрутки
+// 
+
+var centerX = button.clientWidth
+console.log(centerX);
+var centerY = button.clientHeight
+console.log(centerY);
+var elem = document.elementFromPoint(centerX, centerY);
+console.log(elem);
+elem.style.background = "red";
+console.log(elem.tagName);
 
 
-
+    // Координаты для position:fixed
+// 
 
 
 };
