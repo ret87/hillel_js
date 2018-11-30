@@ -2241,16 +2241,52 @@ function getChar(event){
     return null; // спец. символ
 };
 
-
-        // // Координаты в окне
+    // // Координаты в окне
 // Координатная система относительно окна браузера начинается в левом-верхнем углу текущей видимой области окна.
 // координаты в ней clientX/clientY.
 
     //  getBoundingClientRect()
 // Метод elem.getBoundingClientRect() возвращает координаты элемента, относительно его краев (до девого и верхнего края)
 
-// Координаты относительно окна не учитывают прокрутку, они высчитываются от границ текущей видимой области.
+    // Координаты относительно окна не учитывают прокрутку, они высчитываются от границ текущей видимой области.
 var button = document.querySelector('.getCoords');
 console.log(button.getBoundingClientRect());
 
+    // Координаты для position:fixed 
+// После нажатия создать елемент после определённого елемента с определённым содержимым на определённое время 
+var butt = document.querySelector('.button');
+function createMessageUnder(elem, text){
+// получить координаты
+    var coords = elem.getBoundingClientRect();
+// создать элемент для сообщения
+    var message = document.createElement('div');
+    // стиль лучше задавать классом
+    message.style.cssText  = 'position: fixed; color: red';
+// второй аргумент функции - содержимое нового елемента
+    message.innerHTML  = text;
+// к координатам обязательно добавляем "px"!
+    message.style.left = coords.left + 'px';
+    message.style.top = coords.bottom + 'px';
+    return message;
+};
+// Использование при нажатии на butt  
+var mess = createMessageUnder(butt, 'hello');
+butt.addEventListener('click', function(){
+    document.body.appendChild(mess);
+// убрать через 5 сек после нажатия из документа
+    setTimeout(function() {
+        document.body.removeChild(mess);
+    }, 5000);
+});
+
+    // Получение координат относительно документа 
+function getCoords(elem){
+    var box = elem.getBoundingClientRect();
+    return {
+        top: box.top + pageYOffset,
+        left: box.left + pageXOffset,
+    };
+};
+var getCoords = getCoords(butt2);
+console.log(getCoords);
 

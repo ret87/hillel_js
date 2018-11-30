@@ -33,7 +33,6 @@ console.log(strings.getClientRects());
 // Метод document.elementFromPoint(x,y) работает только если координаты (x,y) находятся в пределах окна.
 // var elem = document.elementFromPoint(x, y);
 // используются координаты относительно окна - без прокрутки
-// 
 
 var centerX = button.clientWidth
 console.log(centerX);
@@ -45,8 +44,67 @@ elem.style.background = "red";
 console.log(elem.tagName);
 
 
-    // Координаты для position:fixed
-// 
+    // Координаты для position:fixed 
+// После нажатия создать елемент после определённого елемента с определённым содержимым на определённое время 
+var butt = document.querySelector('.button');
+function createMessageUnder(elem, text){
+// получить координаты
+    var coords = elem.getBoundingClientRect();
+// создать элемент для сообщения
+    var message = document.createElement('div');
+    // стиль лучше задавать классом
+    message.style.cssText  = 'position: fixed; color: red';
+// второй аргумент функции - содержимое нового елемента
+    message.innerHTML  = text;
+// к координатам обязательно добавляем "px"!
+    message.style.left = coords.left + 'px';
+    message.style.top = coords.bottom + 'px';
+    return message;
+};
+// Использование при нажатии на butt  
+var mess = createMessageUnder(butt, 'hello');
+butt.addEventListener('click', function(){
+    document.body.appendChild(mess);
+// убрать через 5 сек после нажатия из документа
+    setTimeout(function() {
+        document.body.removeChild(mess);
+    }, 5000);
+});
+
+
+        // // Координаты в документе
+// Система координат относительно страницы (относительно документа), начинается в левом-верхнем углу, но не окна, а именно страницы.
+// Если провести аналогию с CSS, то координаты относительно окна – это position:fixed, а относительно документа – position:absolute
+// координаты в ней называются pageX/pageY.
+
+    // Сравнение систем координат
+// Когда страница не прокручена, точки начала координат относительно окна (clientX,clientY) и документа (pageX,pageY) совпадают.
+
+    // Получение координат
+// pageY = clientY + текущая вертикальная прокрутка
+
+var butt2 = document.querySelector('.butt2');
+console.log('относительно окна '+ butt2.getBoundingClientRect().y);
+console.log('относительно документа '+ (butt2.getBoundingClientRect().y + pageYOffset));
+
+function getCoords(elem){
+    var box = elem.getBoundingClientRect();
+    return {
+        top: box.top + pageYOffset,
+        left: box.left + pageXOffset,
+    };
+};
+var getCoords = getCoords(butt2);
+console.log(getCoords);
+
+
+    // Координаты на экране screenX/screenY
+
+
+
+
+
+
 
 
 };
