@@ -112,12 +112,4 @@ console.log(screen.availWidth + ' x ' + screen.availHeight);
 console.log("Браузер находится на " + window.screenX + "," + window.screenY);
 
 
-
-
-
-
-
-
-
-
 };

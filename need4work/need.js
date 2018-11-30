@@ -2290,3 +2290,18 @@ function getCoords(elem){
 var getCoords = getCoords(butt2);
 console.log(getCoords);
 
+    // Координаты на экране screenX/screenY
+// Координаты относительно экрана screenX/screenY отсчитываются от его левого-верхнего угла именно вcего экрана, а не окна браузера.
+// Размеры экрана хранятся в глобальной переменной screen
+
+// общая ширина/высота
+console.log(screen.width + ' x ' + screen.height);
+
+// доступная ширина/высота (за вычетом таскбара и т.п.)
+console.log(screen.availWidth + ' x ' + screen.availHeight);
+
+// Координаты левого-верхнего угла браузера на экране хранятся в window.screenX, window.screenY 
+console.log("Браузер находится на " + window.screenX + "," + window.screenY);
+
+
+
