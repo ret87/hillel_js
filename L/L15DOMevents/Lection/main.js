@@ -28,4 +28,20 @@ document.querySelector('body').addEventListener('click', function(event){
 // Но если прировнять к перменной то будет в порядке очереди, или же регламентировать её с помощью false.
 
 
+var block1 = document.querySelector('.block1');
+var block2 = document.querySelector('.block2');
+var block3 = document.querySelector('.block3');
+var isTunnel = false;
+block1.addEventListener('click', function(event){
+    event.target.style.backgroundColor = 'red';
+}, isTunnel);
+block2.addEventListener('click', function(event){
+    event.target.style.backgroundColor = 'green';
+}, isTunnel);
+block3.addEventListener('click', function(event){
+    event.target.style.backgroundColor = 'yellow';
+}, isTunnel);
+
+
+
 };
