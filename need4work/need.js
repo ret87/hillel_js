@@ -2348,3 +2348,77 @@ block3.addEventListener('click', function(event){
 }, true);
 
 
+    // // Создание елементов
+// Создание елемента в памяти JS - document.createElement('div')
+var divElem = document.createElement('div');
+var spanElem = document.createElement('span');
+
+    // конфигурация - elem.classList.add('.class')
+divElem.classList.add('some_elem');
+    // Заполнение определённым контентом - elem.innerHTML = ('some') 
+divElem.innerHTML = ('some element');
+spanElem.innerHTML = (' span element ');
+
+    // Добавление в дерево - document.body.appendChild()
+// document.appendChild() - вставляет елемент во внутрь и вконец указанного елемента
+
+    // Ключевой момент - создание любого елемента - это создание 1го елемента, а не переменная с постоянным кодом создания новых ел-ов
+document.body.appendChild(divElem);
+    // Можно добавить фрагмент внутрь созданного елемента
+divElem.appendChild(spanElem);
+
+    // Добавление списка - document.body.appendChild() в цикле - нескольких елементов внутрь (как пример из массива)    
+    // Что бы создавать много елементов за раз - нужно запустить само событие создания в цикле, присваивая новые ел-ты куда либо
+var list = [10,25,13,47,15,28];
+var olElem = document.createElement('ol');
+document.body.appendChild(olElem);
+
+for(var i=0; i<list.length; i++){
+    var liElem = document.createElement('li');
+    liElem.classList.add('item');
+    liElem.innerHTML = 'item ' + (i+1) + ' = ' + list[i];
+    olElem.appendChild(liElem);
+    // удаление при нажатии
+    liElem.addEventListener('click', removeOnClick);
+    // добавление аттрибутов
+    liElem.setAttribute('title', 'value');
+    // получение номерa li который мы удаляем - присвоим аттрибут id со значением i, а в функции removeOnClick выведем его номер
+    liElem.dataset.id = i;
+
+};
+
+    // Удаление елементов - elem.remove()
+// При нажатии на пункт li - удаляется елемент c помощью event.target.remove();
+// 1ый вариант, найти все li по классу item через querySelector и с помощью el.addEventListener('click', function(){}) создать remove()
+// 2ой вариант, установить событие в цикле при самом созданиии этой li создать remove()
+function removeOnClick(event){
+    event.target.remove();
+    // получаем значение аттрибута id который мы удаляем
+    console.log(event.target.dataset.id);
+};
+
+liElem.addEventListener('click', removeOnClick);
+
+
+    // Добавление аттрибутов - elem.setAttribute('atr','val') 
+// elem.setAttribute('atr', 'value'); - если добавляем многим елементам, то нужно запустить через цикл
+liElem.setAttribute('title', 'value');
+olElem.setAttribute('attr', 'val');
+
+    // Получение значения аттрибутов - elem.getAttribute('attr')
+console.log(olElem.getAttribute('attr'));
+
+    // Удаление аттрибутов - removeAttribute('atr');
+olElem.removeAttribute('attr');
+
+    // dataset - валидные, собственные аттрибуты
+// data-attributes - аттрибуты которые вешают на любой тэг, это валидные, собственные атрибуты начинающиеся с data-attr.
+// Данные аттрибуты часто используются как система передачи данных.
+// У dataset есть своя иерархия, дря работы с атрибутами
+
+    // Что бы добавить атрибут существует синтаксис
+elem.dataset.attr = value;
+    // Что бы этот атрибут удленнить через "-", при названии его стоит просто след наше имя начать с Заглавной буквы
+elem.dataset.attrSecpart = value;
+    // Что бы получить значение аттрибута елемента
+elem.dataset.attrSecpart
