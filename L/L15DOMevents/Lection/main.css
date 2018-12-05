@@ -1,0 +1,38 @@
+*{
+    padding: 0;
+    box-sizing: border-box;
+}
+.block, .block1, .block2, .block3 {
+    border: 2px solid black;
+    margin: 5px;
+    text-align: center;
+}
+.block {
+    width: 100px;
+    height: 100px;
+}
+.block1 {
+    width: 800px;
+    height: 300px;
+    background: white;
+}
+.block2 {
+    width: 600px;
+    height: 200px;
+    margin: 0 auto;
+    background: white;
+}
+.block3 {
+    width: 400px;
+    height: 100px;
+    margin: 0 auto;
+    background: white;
+}
+.pBlock {
+    text-align: left;
+    margin-left: 100px;
+}
+.pBlockM {
+    margin-left: 10px;
+}
+
