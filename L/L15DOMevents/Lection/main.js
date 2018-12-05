@@ -95,6 +95,11 @@ for(var i=0; i<list.length; i++){
     olElem.appendChild(liElem);
     // удаление при нажатии
     liElem.addEventListener('click', removeOnClick);
+    // добавление аттрибутов
+    liElem.setAttribute('title', 'value');
+    // получение номерa li который мы удаляем - присвоим аттрибут id со значением i, а в функции removeOnClick выведем его номер
+    liElem.dataset.id = i;
+
 };
 
     // Удаление елементов - elem.remove()
@@ -103,17 +108,34 @@ for(var i=0; i<list.length; i++){
 // 2ой вариант, установить событие в цикле при самом созданиии этой li создать remove()
 function removeOnClick(event){
     event.target.remove();
+    // получаем значение аттрибута id который мы удаляем
+    console.log(event.target.dataset.id);
 };
+
 liElem.addEventListener('click', removeOnClick);
 
 
-    // Добавление атрибутов - set atribute 
+    // Добавление аттрибутов - elem.setAttribute('atr','val') 
+// elem.setAttribute('atr', 'value'); - если добавляем многим елементам, то нужно запустить через цикл
+liElem.setAttribute('title', 'value');
+olElem.setAttribute('attr', 'val');
 
+    // Получение значения аттрибутов - elem.getAttribute('attr')
+console.log(olElem.getAttribute('attr'));
 
+    // Удаление аттрибутов - removeAttribute('atr');
+olElem.removeAttribute('attr');
 
-
-
-
+    // dataset - валидные, собственные аттрибуты
+// data-attributes - аттрибуты которые вешают на любой тэг, это валидные, собственные атрибуты начинающиеся с data-attr.
+// Данные аттрибуты часто используются как система передачи данных.
+// У dataset есть своя иерархия, дря работы с атрибутами
+// Что бы добавить атрибут существует синтаксис
+// elem.dataset.attr = value;
+// Что бы этот атрибут удленнить через "-", при названии его стоит просто след наше имя начать с Заглавной буквы
+// elem.dataset.attrSecpart = value;
+// Что бы получить значение аттрибута елемента
+// elem.dataset.attrSecpart
 
 
 }
