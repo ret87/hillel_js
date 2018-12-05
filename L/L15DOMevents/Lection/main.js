@@ -3,9 +3,9 @@ window.onload = function(){
 
     console.log('Lection 15 DOM Events');
     
-        // // Событие
+        // // Распространение события
 
-    // Распространение события
+    // Порядок распространение события
 // Событие созданное на родители (по дереву ДОМ), отображается и используется так же на его детях.
 // При вызове события с чаилда, создаётся путь события (прокликивает от его родителя к чаилду и обратно). 
 // Захват (capturing) - Процес движения события от родителя к чаилду. 
@@ -63,6 +63,46 @@ block3.addEventListener('click', function(event){
 block3.addEventListener('click', function(event){
     event.stopPropagation();
 }, true);
+
+
+        // // Создание елементов
+    // Создание елемента в памяти JS
+var divElem = document.createElement('div');
+var spanElem = document.createElement('span');
+
+    // Заполнение определённым контентом и конфигурация
+divElem.classList.add('some_elem');
+divElem.innerHTML = ('some element');
+spanElem.innerHTML = (' span element ');
+
+    // Добавление в дерево appendChild
+// document.appendChild() - вставляет елемент во внутрь и вконец указанного елемента
+// Ключевой момент - создание любого елемента - это создание 1го елемента, а не переменная с постоянным кодом создания новых ел-ов
+document.body.appendChild(divElem);
+// Можно добавить фрагмент внутрь созданного елемента
+divElem.appendChild(spanElem);
+
+    // Добавление списка appendChild - нескольких елементов внутрь (как пример из массива) 
+// Что бы создавать много елементов за раз - нужно запустить само событие создания в цикле, присваивая новые ел-ты куда либо
+var list = [1,2,3,4,5];
+var olElem = document.createElement('ol');
+document.body.appendChild(olElem);
+
+for(var i=0; i<list.length; i++){
+    var liElem = document.createElement('li');
+    liElem.innerHTML = 'item ' + (i+1) + ' = ' + list[i];
+    olElem.appendChild(liElem);
+};
+
+
+console.log(divElem);
+console.dir(divElem);
+
+
+
+
+
+
 
 
 
